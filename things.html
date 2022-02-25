@@ -55,52 +55,102 @@
 
     <!--This tells the computer how to draw a button.-->
     <style>
+
+        .customshit {
+            background-image: linear-gradient(to top, white, #84e7c3);  
+        }
+
+        .title {
+            display: block;
+            width: 50%;
+            border-color: #000000;
+            border-radius: 8px;
+            background-color: #06cf85;
+            border-style: solid;
+            color: black;
+            padding: 20px 16px;
+            font-size: 25px;
+            font-family: "Monaco";
+            text-align:center;
+            cursor: pointer;
+            margin:auto;
+        }
+
+        .sub {
+            display: block;
+            width: 40%;
+            border-color: #000000;
+            border-radius: 8px;
+            background-color: #06cf85;
+            border-style: solid;
+            color: black;
+            padding: 20px 16px;
+            font-size: 15px;
+            font-family: "Monaco";
+            text-align:center;
+            cursor: pointer;
+            margin:auto;
+        }
+
         .block {
-          display: block;
-          width: 8%;
-          border-color: #000000;
-          background-color: #06cf85;
-          color: white;
-          padding: 8px 16px;
-          font-size: 16px;
-          font-family: "Monaco";
-          cursor: pointer;
-          text-align: left;
-          /*vv The rounding stuff vv*/
-          border-radius: 8px;
+            display: block;
+            width: 10%;
+            border-color: #000000;
+            border-radius: 8px;
+            background-color: #06cf85;
+            color: white;
+            padding: 15px 18px;
+            font-size: 20px;
+            font-family: "Monaco";
+            cursor: pointer;    
         }
         
         .block:hover {
-          background-color: #ddd;
-          color: black;
+            background-color: #ddd;
+            color: black;
         }
+        
+
     </style>
 
-    <body style = "font-family: Monaco">
-        <h1 style="text-align:center">
-            Welcome to Nate Levisons Wordle word Generator!
-        </h1>
-        <hr>
-        <h2>
-            <!--It's true! You've found your way to the source code!-->
-            This project is open source! Press RIGHT CLICK and VIEW PAGE SOURCE to see everything!<br>
+    <body style="font-family: Monaco">
+        <p class="title">
+            <b style="font-size: larger">Nate Levisons</b> Wordle word Generator
+        </p>
+        <br>
+        <p class="sub">
+            This project is open source! Press <b style="font-size: larger">RIGHT CLICK</b> <br>
+            and <b style="font-size: larger">VIEW PAGE SOURCE</b> to see everything!<br>
+        </p>
+        <br>
+
+        <p style="font-size:xx-large;margin:30px">
             <a href=https://borderpolar.com/wordle-answers>Verify our results!</a>
-        </h2>
+        </p>
         <!--This plainly displays the instructions.-->
-        <h4>
-            Input how many hours in advance you want to see, <br>
-            in the first green box below. <br><br>
+        <p style="font-size:larger;margin:20px">
+            Input how many hours in advance you <br>
+            want to see, in the first green box below. <br><br>
             Input <b style = "color:green">0</b> to see today's word. <br>
             Input <b style = "color:limegreen">1</b> to see tomorrow's word. <br>
             Input <b style = "color:yellowgreen">2</b> to see a week in advance. <br>
-            Input <b style = "color:gray">-1</b> to see yesterdays word. <br>
-            <i>Date input will be permitted eventually.</i><br>
-        </h4>
+            Input <b style = "color:gray">-1</b> to see yesterdays word. <br><br>
+            <b><i style="font-size:20px">Date input will be permitted eventually.</i></b><br>
+        </p>
         <!--Makes an input taking in numbers.-->
-        <input style="position:relative; left:500px; top:-200px" class="block" id="daysInput" type="number">
+        <input style="position:relative; left:600px; top:-200px" class="block" id="daysInput" type="number">
         <br>
-        <button style="position:relative; left:500px; top:-200px" class="block" id="confirm" onclick="run()">Generate</button>
-        <p style="position:relative; left:670px; top:-310px">&#8592;&#8592; Click and type here!</p>
+        <button style="position:relative; left:600px; top:-200px" class="block" id="confirm" onclick="run()">Generate</button>
+
+        <!--This allows the gradient to go further.-->
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
         <script>
 
             //This runs the script to generate the wordle word of the day.
