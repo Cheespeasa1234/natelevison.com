@@ -2,8 +2,8 @@
     display: block;
     width: 8%;
     border-color: #000000;
-    background-color: #06cf85;
-    color: white;
+    background-color: #67c392;
+    color: #f9f5f4;
     padding: 8px 16px;
     font-size: 16px;
     font-family: "Monaco";
@@ -14,7 +14,7 @@
   }
   
   .block:hover {
-    background-color: #ddd;
+    background-color: #f9f5f4;
     color: black;
   }
 
@@ -22,6 +22,7 @@
     position: absolute;
     background: url(img/questionmark.png);
   }
+
   .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -38,7 +39,7 @@
   
   /* Modal Content */
   .modal-content {
-    background-color: #fefefe;
+    background-color: #f9f5f4;
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
