@@ -52,11 +52,17 @@
     <title>
         Wordle Solution Generator -- By Nate Levison
     </title>
-
+    
     <!--This tells the computer how to draw a button.-->
     <style>
 
-        .customshit {
+        .shit {
+            position: relative;
+            left: -10px;
+            top: -10px;
+            right: 10px;
+            bottom: 10px;
+            width: 110%;
             background-image: linear-gradient(to top, white, #84e7c3);  
         }
 
@@ -71,9 +77,11 @@
             padding: 20px 16px;
             font-size: 25px;
             font-family: "Monaco";
-            text-align:center;
+            text-align: center;
             cursor: pointer;
-            margin:auto;
+            margin: auto;
+            position: relative;
+            left: -50px;
         }
 
         .sub {
@@ -90,6 +98,8 @@
             text-align:center;
             cursor: pointer;
             margin:auto;
+            position: relative;
+            left: -50px;
         }
 
         .block {
@@ -113,7 +123,9 @@
 
     </style>
 
-    <body style="font-family: Monaco">
+    <div class="shit">
+        <br>
+        <br>
         <p class="title">
             <b style="font-size: larger">Nate Levisons</b> Wordle word Generator
         </p>
@@ -127,29 +139,27 @@
         <p style="font-size:xx-large;margin:30px">
             <a href=https://borderpolar.com/wordle-answers>Verify our results!</a>
         </p>
+    </div>
+    <body style="font-family: Monaco">
+        
         <!--This plainly displays the instructions.-->
         <p style="font-size:larger;margin:20px">
             Input how many hours in advance you <br>
-            want to see, in the first green box below. <br><br>
+            want to see, in the first green box below. <br>
+
+            <br>
             Input <b style = "color:green">0</b> to see today's word. <br>
             Input <b style = "color:limegreen">1</b> to see tomorrow's word. <br>
             Input <b style = "color:yellowgreen">2</b> to see a week in advance. <br>
             Input <b style = "color:gray">-1</b> to see yesterdays word. <br><br>
             <b><i style="font-size:20px">Date input will be permitted eventually.</i></b><br>
         </p>
-        <!--Makes an input taking in numbers.-->
-        <input style="position:relative; left:600px; top:-200px" class="block" id="daysInput" type="number">
-        <br>
-        <button style="position:relative; left:600px; top:-200px" class="block" id="confirm" onclick="run()">Generate</button>
 
-        <!--This allows the gradient to go further.-->
+        <!--Makes an input taking in numbers.-->
+        <input style="position:relative; left:600px; top:-300px" class="block" id="daysInput" type="number">
         <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
+        <button style="position:relative; left:600px; top:-300px" class="block" id="confirm" onclick="run()">Generate</button>
+        <p style="position:relative; left:800px; top:-440px">&larr;&larr; Type in a number here</p>
 
         <script>
 
