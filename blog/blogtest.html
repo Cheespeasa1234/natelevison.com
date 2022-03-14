@@ -3,59 +3,76 @@
 
 <html>
 
-    <style>
-    
-        .entry {
-            font-family: "Monaco";
-            text-align: justify;
-        }
+<style>
+    .entry {
+        font-family: "Monaco";
+        text-align: justify;
+    }
 
-        .title {
-            font-family: "Monaco";
-            font-size: xx-large;
-        }
+    .title {
+        font-family: "Monaco";
+        font-size: xx-large;
+    }
 
-        .date {
-            font-family: "Monaco";
-            font-size: large;
-        }
+    .date {
+        font-family: "Monaco";
+        font-size: large;
+    }
 
-        .block {
-            display: block;
-            position: fixed;
-            top:10px;
-            z-index: 999;
-            font-family: "Monaco";
-            background-color: #11698E;
-            padding: 8px 16px;
-            border-radius: 8px;
-            width: 96%;
-            align-self: center;
-            text-align: center;
-            color: black;
-        }
-    
-    </style>
+    .block {
+        display: block;
+        width: 97%;
+        border-color: #000000;
+        background-color: #11698E;
+        color: #F8F1F1;
+        padding: 8px 16px;
+        font-size: 16px;
+        font-family: "Monaco";
+        cursor: pointer;
+        text-align: center;
+        /*vv The rounding stuff vv*/
+        border-radius: 8px;
+        position:fixed;
+    }
 
-    <span class="block">
-        <a style="color:black" href="http://natelevison.000webhostapp.com">Return to Hub</a>
-    </span>
-    
-    <br><br><br><hr>
+    .block:hover {
+        background-color: #16C79A;
+        color: black;
+    }
+</style>
 
-    <span class="date">March 11, 2022, 12:25</span><br>
-    <span class="title">The first entry.</span><br><hr>
-    <span class="entry">
-        This is the first entry. IDK what to put here. I might put a blog. After all, I did name this file blogtest.html . I kind of have an obligation now. Maybe it will be a coding blog. 
-        So lets start, then? I figured out subpages just now. Funny, cause my previous website didn't use those. Turns out it's just as easy as making subfolders. Next task, getting rid of the "something.html" on the nav. I want it to look clean. Lets see if I can figure that out. I also want to make an icon and a title in the tab. That would be cool.
-        Today, I have:
-        <ol>
-            <li>Made a subpage</li>
-            <li>Made a hub</li>
-            <li>Made this site</li>
-            <li>Fallen asleep during class</li>
-        </ol>
-        I know. Very productive. The goal of this, btw, is not to flex my skill, but just to flex my non-skill. I'm pretty bad at this shit, so I just want to see how far I can get before I die. Pretty cool. Alright goodbye
-    </span><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><p>hi</p>
+<button id="hubButton" class="block">Return to Hub</button>
+
+<script type="text/javascript">
+
+    document.getElementById("hubButton").onclick = function () {
+        location.href = "https://natelevison.000webhostapp.com";
+    }
+
+</script>
+
+<br><br><br>
+<hr>
+
+<span class="date">March 11, 2022, 12:25</span><br>
+<span class="title">The first entry.</span><br>
+<hr>
+<span class="entry">
+    This is the first entry. IDK what to put here. I might put a blog. After all, I did name this file blogtest.html . I
+    kind of have an obligation now. Maybe it will be a coding blog.
+    So lets start, then? I figured out subpages just now. Funny, cause my previous website didn't use those. Turns out
+    it's just as easy as making subfolders. Next task, getting rid of the "something.html" on the nav. I want it to look
+    clean. Lets see if I can figure that out. I also want to make an icon and a title in the tab. That would be cool.
+    Today, I have:
+    <ol>
+        <li>Made a subpage</li>
+        <li>Made a hub</li>
+        <li>Made this site</li>
+        <li>Fallen asleep during class</li>
+    </ol>
+    I know. Very productive. The goal of this, btw, is not to flex my skill, but just to flex my non-skill. I'm pretty
+    bad at this shit, so I just want to see how far I can get before I die. Pretty cool. Alright goodbye
+</span><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<p>hi</p>
 
 </html>
