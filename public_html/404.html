@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+
+    <style>
+
+        .fourofour {
+            font-size: 50px;
+            font-family: 'Monaco';
+            text-align: center;
+        }
+
+        .message {
+            font-size: 30px;
+            font-family: 'Monaco';
+            text-align: center;
+        }
+
+        body {
+            background: linear-gradient(black, white);
+            background-attachment: fixed; /*edit*/
+        }
+
+        .block {
+            display: block;
+            width: 97%;
+            border-color: #000000;
+            background-color: #11698E;
+            color: #F8F1F1;
+            padding: 8px 16px;
+            font-size: 16px;
+            font-family: "Monaco";
+            cursor: pointer;
+            text-align: center;
+            /*vv The rounding stuff vv*/
+            border-radius: 8px;
+            position:fixed;
+        }
+
+        .block:hover {
+            background-color: #16C79A;
+            color: black;
+        }
+
+    </style>
+
+    <body>
+        <div class="fourofour" style="position:absolute; top:202px; left:560px; color:#404040">404</div>
+        <div class="fourofour" style="position:relative; top:200px">404</div>
+        <br>
+        <div class="message" style="position:relative; top:200px; left:2px; color:#404040">The page you were looking for does not exist.</div>
+        <div class="message" style="position:relative; top:162px">The page you were looking for does not exist.</div>
+
+        <button id="hubButton" class="block" style="top:500px">Return to Hub</button>
+
+        <script type="text/javascript">
+
+            document.getElementById("hubButton").onclick = function () {
+                location.href = "../";
+            }
+
+        </script>
+    </body>
+
+
+</html>

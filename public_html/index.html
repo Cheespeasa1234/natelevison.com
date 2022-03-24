@@ -3,7 +3,7 @@
 
 <html>
 
-<link rel="icon" type="image" href="https://bit.ly/35sk4ql">
+<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
 
 <style>
     .title {
@@ -47,27 +47,22 @@
     <h1 class="title">Welcome to Nate Levison's Website!</h1>
 
     <button id="wordleButton" class="block">Wordle Solution Generator</button><br>
-    <button id="blogButton" class="block">Blog</button><br>
-    <button id="pagesButton" class="block">Pages Test</button><br>
+    <button id="aboutmeButton" class="block">About Me</button><br>
+    <button id="blogButton" class="block">My Coding Blog</button><br>
 
     <script type="text/javascript">
 
-        document.getElementById("wordleButton").onclick = function () {
-            location.href = "https://natelevison.000webhostapp.com/wordle/wordle.html";
-        };
+        function redirect(elementID, href) {
+            document.getElementById(elementID).onclick = function () {
+                location.href = href;
+            }
+        }
 
-        document.getElementById("blogButton").onclick = function () {
-            location.href = "https://natelevison.000webhostapp.com/blog/blogtest.html";
-        };
-
-        document.getElementById("pagesButton").onclick = function () {
-            location.href = "https://natelevison.000webhostapp.com/pages";
-        };
+        redirect("wordleButton", "wordle");
+        redirect("aboutmeButton", "aboutme")
+        redirect("blogButton", "blog/blogtest.html");
+        
     </script>
-
-    <!-- <li class="block"><a href="wordle/wordle.html">Wordlegen</a></li>
-        <br><br>
-        <li class="block"><a href="blog/blogtest.html">Blogtest</a></li> -->
 
 </body>
 
