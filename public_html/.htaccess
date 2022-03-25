@@ -1,5 +1,5 @@
 
 # HTID:19301808: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
 php_value display_errors 1
-ErrorDocument 404 page-not-found.html
+ErrorDocument 404 <script>location.href = "page-not-found.html";</script>
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:19301808:
