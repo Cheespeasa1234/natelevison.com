@@ -1,77 +1,13 @@
 <!DOCTYPE html>
-<!--This is the hub. It has subpages. Very cool-->
-
 <html>
 
-<title>Nate's Site || Hub</title>
-<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
-
-<style>
-    .title {
-        position: absolute;
-        right: 30px;
-        font-family: 'Helvetica';
-        font-weight: bolder;
-    }
-
-    .content {
-        font-family: 'Helvetica';
-        font-size: large;
-    }
-
-    .block {
-        display: block;
-        width: 20%;
-        border-color: #000000;
-        background-color: #11698E;
-        color: #F8F1F1;
-        padding: 8px 16px;
-        font-size: 16px;
-        font-family: "Monaco";
-        cursor: pointer;
-        text-align: left;
-        /*vv The rounding stuff vv*/
-        border-radius: 8px;
-    }
-
-    .block:hover {
-        background-color: #16C79A;
-        color: black;
-    }
-
-    body {
-        background-image: linear-gradient(to right, white, #11698E);
-    }
-</style>
+<head>
+    <title>HTML Meta Tag</title>
+    <meta http-equiv="refresh" content="0; url = hub" />
+</head>
 
 <body>
-    <h1 class="title">Welcome to Nate Levison's Website!</h1>
-
-    <button id="wordleButton" class="block">Wordle Solution Generator</button><br>
-    <button id="aboutmeButton" class="block">About Me</button><br>
-    <button id="blogButton" class="block">My Coding Blog</button><br>
-
-    <script type="text/javascript">
-
-        function redirect(elementID, href) {
-            document.getElementById(elementID).onclick = function () {
-                location.href = href;
-            }
-        }
-
-        redirect("wordleButton", "wordlesolutions");
-        redirect("aboutmeButton", "aboutme")
-        redirect("blogButton", "blog/blogtest.html");
-        
-    </script>
-
-    <p style = "font-family: 'Monaco">
-        Please note: We do not collect any data from you. When you log on to this site, <br>
-        the only thing that changes is a counter which counts how many people have ever <br>
-        used this site. No data is traced to you, and you are not advertised to because <br>
-        of it. Thank you for your understanding.
-    </p>
-
+    <p>Redirecting to another URL</p>
 </body>
 
 </html>

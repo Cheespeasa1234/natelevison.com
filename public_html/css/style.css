@@ -1,3 +1,13 @@
+@font-face {
+    font-family: "Monaco";
+    src: url("https://natelevison.000webhost.com/css/fonts/Monaco 400.ttf") format("ttf");
+}
+
+body {
+    font-family: "Monaco";
+    color: black;
+}
+
 .block {
     display: block;
     width: 8%;
@@ -76,4 +86,20 @@
 
 .title {
     color: black;
+    font-family: "Monaco";
+}
+
+.entry {
+    font-family: "Monaco";
+    text-align: justify;
+}
+
+.titlet {
+    font-family: "Monaco";
+    font-size: xx-large;
+}
+
+.date {
+    font-family: "Monaco";
+    font-size: large;
 }
