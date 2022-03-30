@@ -2,5 +2,4 @@
 # HTID:19301808: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
 php_value display_errors 1
 ErrorDocument 404 /page-not-found.html
-DirectoryIndex index.html index.htm hub.html
 # DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:19301808:
