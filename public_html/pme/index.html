@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+
+<html>
+
+<body>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    
+    <button id="backButton" class="block" style="width:97%; text-align:center">Return to Articles</button>
+    
+    <script type="text/javascript">
+
+        document.getElementById("backButton").onclick = function () {
+            location.href = "../";
+        }
+
+    </script>
+
+    <input id="code" type="text">
+    <button id="compile" onclick="run()">Compile</button>
+    <br>
+    <span id="output">Output will appear here.</span>
+    <p>Documentation</p>
+    <p>+ : Increment the accumulator by the increment.</p>
+    <p>- : Decrement the accumulator by the increment.</p>
+    <p>= : Output the accumulator in current mode.</p>
+    <p>/ : Switch mode from INT to ASCII. Default is INT.</p>
+    <p>} : Increment the increment.</p>
+    <p>{ : Decrement the increment.</p>
+    <p>, : Set the accumulator to 0</p>
+    <p>. : Set the increment to 0</p>
+</body>
+<script>
+    function run() {
+        let code = document.getElementById("code").value + ""
+        let output = document.getElementById("output")
+        let out = ""
+        let acc = 0
+        let inc = 1
+        let mode = 0
+
+        for(let i = 0; i < code.length; i++){
+            if(code.charAt(i) == '+')
+                acc+=inc
+            else if(code.charAt(i) == '-') {
+                acc-=inc
+            } else if(code.charAt(i) == '=') {
+                if(mode == 0)
+                    out += acc + "\n"
+                else {
+                    var chr = String.fromCharCode(acc + 65)
+                    out += chr + "\n"
+                }
+            } else if(code.charAt(i) == '/') {
+                if(mode == 0)
+                    mode = 1
+                else
+                    mode = 0
+            } else if(code.charAt(i) == '}') {
+                inc++
+            } else if(code.charAt(i) == '{') {
+                inc--
+            } else if(code.charAt(i) == ',') {
+                acc = 0;
+            } else if(code.charAt(i) == '.') {
+                inc = 0;
+            } else {
+                out = "syntax error: char " + i + ": " + code.charAt(i)+  " is not a valid token"
+                output.innerHTML = out
+            }
+        }
+        out.replace("\n", "<br>")
+        output.innerHTML = out;
+    }
+</script>
+
+</html>
