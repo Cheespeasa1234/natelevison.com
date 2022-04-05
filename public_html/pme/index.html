@@ -2,69 +2,56 @@
 
 <html>
 
+    
+
 <body>
+
 
     <link rel="stylesheet" href="../../css/style.css">
     
     <button id="backButton" class="block" style="width:97%; text-align:center">Return to Articles</button>
     
-    <script type="text/javascript">
-
-        document.getElementById("backButton").onclick = function () {
-            location.href = "../";
-        }
-
-    </script>
 
     <input id="code" type="text">
-    <button id="compile" onclick="run()">Compile</button>
+    <button id="compile">Compile</button>
+    
     <br>
+    
     <span id="output">Output will appear here.</span>
     <p>Documentation</p>
     <p>+ : Increment the accumulator by the increment.</p>
     <p>- : Decrement the accumulator by the increment.</p>
     <p>= : Output the accumulator in current mode.</p>
-    <p>/ : Switch mode from INT to ASCII. Default is INT.</p>
-    <p>} : Increment the increment.</p>
-    <p>{ : Decrement the increment.</p>
-    <p>, : Set the accumulator to 0</p>
-    <p>. : Set the increment to 0</p>
-</body>
-<script>
 
-    let vars = new Object();
-    let pointer = 0;
-    let mode = 0;
-    let code = document.getElementById("code").value + ""
-    let output = document.getElementById("output")
-
-    function output(what) {
-        if(mode == 0) {
-            output += what;
-        } else {
-            output += String.fromCharCode(what) + "\n";
-        }
-    }
-
-    function run() {
+    <script type="text/javascript">
         
-        vars.P = 3.14159265
+        document.getElementById("backButton").onclick = function () {
+            location.href = "../";
+        }
+        document.getElementById("compile").onclick = function () {
+            let code = document.getElementById("code").value + "";
+            document.getElementById("output").innerHTML = "";
 
-        for(let i = 0; i < code.length; i++) {
+            let acc = 0;
+            let inc = 1;
 
-            let c = code.charAt(i)
+            for(let i = 0; i < code.length; i++) {
+                let c = code.charAt(i);
 
-            if(c == '=') {
-                output(pointer);
-            } else if(c == '+') {
-                pointer++;
-            } else if(c == '-') {
-                pointer--;
+                if(c == '+')
+                    acc += inc;
+                if(c == '-')
+                    acc -= inc;
+                if(c == '=')
+                    document.getElementById("output").innerHTML += acc + "<br>";
+                if(c == '<')
+                    inc++;
+                if(c == '>')
+                    inc--;
             }
         }
-        out.replace("\n", "<br>")
-        output.innerHTML = out;
-    }
-</script>
+
+    </script>
+</body>
 
 </html>
