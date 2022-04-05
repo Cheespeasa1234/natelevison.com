@@ -1,0 +1,28 @@
+List of tokens (and how to detect them)
+
+One char tokens
+
++
+Increment the accumulator
+
+-
+Decrement the accumulator
+
+>
+Output the accumulator in current mode
+
+/
+Set mode to ascii
+
+
+?
+Will only do next token if the accumulator is truthy
+
+#
+Will only do next token if the accumulator is falsy
+
+=x
+Sets variable to pointer
+
+x
+Outputs variable- if null, outputs zero
