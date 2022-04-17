@@ -116,8 +116,8 @@
                 return words[a];
             }
             function getWord1(date) {
-                    var a = getDif(date);
-                    return words[a + 1];
+                var a = getDif(date);
+                return words[a + 1];
             }
 
             //this calls getIndex() on e and the starting date.
@@ -129,15 +129,12 @@
                 //this automatically gets the current date that your computer has.
                 let today = new Date();
                 let element = document.getElementById("dateToGet");
-                let dateToUse = new Date();
-                let word;
-
-                if(getWord(element.value) == undefined) {
-                    dateToUse = today;
-                    word = getWord(dateToUse);
+                let dateToUse = new Date(element.value).setHours(new Date(element.value).getHours() + 24);
+                let dateString = new Date(dateToUse)
+                if(element.value == undefined) {
+                    word = "Error- Invalid ID"
                 } else {
-                    dateToUse = new Date(dateToUse.getDate().getTime() + 86400000);
-                    word = getWord(dateToUse);
+                    word = getWord(dateToUse)
                 }
 
                 //this displays the results,
@@ -148,7 +145,7 @@
                 document.write('.block:hover {\nbackground-color: #ddd;\ncolor: black;\n}</style>');
                 document.write('<h1 style = "font-family:Trebuchet MS;text-align:center">The wordle word for ' + dateToUse + ' is</h1>');
                 document.write('<hr>')
-                document.write('<p style = "font-family:Trebuchet MS;text-align:center;color:green;font-size:70px">' + getWord(dateToUse) + '</p>');
+                document.write('<p style = "font-family:Trebuchet MS;text-align:center;color:green;font-size:70px">' + word + '</p>');
                 document.write('<button class="block" onClick="window.location.reload();">\u2190\u2190 Back</button>');
                 return
             }
