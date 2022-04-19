@@ -126,7 +126,7 @@
             }
 
             function run() {
-                //this automatically gets the current date that your computer has.
+                
                 let element = document.getElementById("dateToGet").value;
                 let dateToUse = new Date(element).setHours(new Date(element).getHours() + 24);
                 let dateString = new Date(dateToUse)
@@ -140,13 +140,12 @@
                 //by changing the html on the page.
 
                 document.write('<style>\n.block {\ndisplay: block;\nwidth: 100%;\nborder-color: #000000;\nbackground-color: #06cf85;\ncolor: white;\npadding: 8px 16px;\nfont-size: 16px;\nfont-family: "Monaco";\ncursor: pointer;\ntext-align: center;\nborder-radius: 8px;\n}');
-
                 document.write('.block:hover {\nbackground-color: #ddd;\ncolor: black;\n}</style>');
                 document.write('<h1 style = "font-family:Trebuchet MS;text-align:center">The wordle word for ' + dateString + ' is</h1>');
                 document.write('<hr>')
                 document.write('<p style = "font-family:Trebuchet MS;text-align:center;color:green;font-size:70px">' + word + '</p>');
                 document.write('<button class="block" onClick="window.location.reload();">\u2190\u2190 Back</button>');
-                return
+                return;
             }
 
             // Get the input field
