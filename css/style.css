@@ -3,6 +3,30 @@
     src: url("https://natelevison.000webhost.com/css/fonts/Monaco 400.ttf") format("ttf");
 }
 
+h1 {
+    font-family: "Monaco";
+}
+
+h2 {
+    font-family: "Monaco";
+}
+
+h3 {
+    font-family: "Monaco";
+}
+
+h4 {
+    font-family: "Monaco";
+}
+
+h5 {
+    font-family: "Monaco";
+}
+
+h6 { 
+    font-family: "Monaco";
+}
+
 body {
     font-family: "Monaco";
     color: black;
