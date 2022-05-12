@@ -1,54 +1,66 @@
-@font-face {
-    font-family: "Monaco";
-    src: url("https://natelevison.000webhost.com/css/fonts/Monaco 400.ttf") format("ttf");
-}
-
-h1 {
-    font-family: "Monaco";
-}
-
-h2 {
-    font-family: "Monaco";
-}
-
-h3 {
-    font-family: "Monaco";
-}
-
-h4 {
-    font-family: "Monaco";
-}
-
-h5 {
-    font-family: "Monaco";
-}
-
-h6 { 
-    font-family: "Monaco";
-}
+@font-face { font-family: Monaco; 
+    src: url('fonts/Monaco\ 400.ttf'); } 
 
 body {
-    font-family: "Monaco";
+    font-family: Monaco;
     color: black;
+    background-image: linear-gradient(to right, white, #11698E);
 }
 
 .block {
-    display: block;
-    width: 8%;
+    /* display: block; */
+    width: 10%;
     border-color: #000000;
     background-color: #11698E;
     color: #F8F1F1;
     padding: 8px 16px;
     font-size: 16px;
-    font-family: "Monaco";
+    font-family: Monaco;
     cursor: pointer;
-    text-align: left;
     /*vv The rounding stuff vv*/
     border-radius: 8px;
 }
 
 .block:hover {
     background-color: #16C79A;
+    color: black;
+}
+
+.pryblock {
+    /* display: block; */
+    width: 20%;
+    border-color: #000000;
+    background-image: linear-gradient(to right,blue,green);
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: Monaco;
+    cursor: pointer;
+    /*vv The rounding stuff vv*/
+    border-radius: 8px;
+}
+
+.pryblock:hover {
+    background-image: linear-gradient(to right,green, blue);
+    color: black;
+}
+
+.prnblock {
+    /* display: block; */
+    width: 20%;
+    border-color: #000000;
+    background-image: linear-gradient(to right,yellow,red);
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: Monaco;
+    cursor: pointer;
+    /*vv The rounding stuff vv*/
+    border-radius: 8px;
+}
+
+.prnblock:hover {
+    background-image: linear-gradient(to right,red,yellow);
     color: black;
 }
 
@@ -110,20 +122,20 @@ body {
 
 .title {
     color: black;
-    font-family: "Monaco";
+    font-family: Monaco;
 }
 
 .entry {
-    font-family: "Monaco";
+    font-family: Monaco;
     text-align: justify;
 }
 
 .titlet {
-    font-family: "Monaco";
+    font-family: Monaco;
     font-size: xx-large;
 }
 
 .date {
-    font-family: "Monaco";
+    font-family: Monaco;
     font-size: large;
 }
