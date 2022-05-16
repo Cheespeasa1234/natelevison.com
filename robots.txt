@@ -1,0 +1,9 @@
+# robots.txt for http://www.apple.com/
+
+User-agent: *
+Disallow: /*authtest*
+Disallow: /*css/*
+Disallow: /*img/*
+Disallow: /*test*
+Disallow: /*usernamegen*
+Sitemap: https://cheespeasa1234.github.io/sitemap.xml
