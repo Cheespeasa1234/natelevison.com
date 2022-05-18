@@ -24,22 +24,31 @@
     <body>
         <h1 class="title">Welcome to Cheespeasa's Website!</h1>
 
-        <button style="width:16%;" id="wordleButton" class="block">Wordle Solution Generator</button><br>
+        <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
         <br>
-        <button style="width:7%;" id="aboutmeButton" class="block">About Me</button><br>
         <br>
-        <button style="width:10%;" id="blogButton" class="block">My Coding Blog</button><br>
+        <button style="width:30%;" id="aboutmeButton" class="block">About Me</button>
         <br>
-        <button style="width:10%;" id="pmeButton" class="block">PME runner test</button>
+        <br>
+        <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
+        <br>
+        <br>
+        <button style="width:30%;" id="pmeButton" class="block">PME runner test</button>
+        <br>
+        <br>
+        <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
+        <br>
+        <br>
 
         <script type="text/javascript">
 
-            setRedirectOnClick=(e,h)=>document.getElementById(e).onclick=()=>{location.href=h;}
+            setRedirectOnClick=(e,h)=>document.getElementById(e).onclick=()=>location.href=h+"Button"
 
-            setRedirectOnClick("wordleButton", "wordlesolutions");
-            setRedirectOnClick("aboutmeButton", "aboutme");
-            setRedirectOnClick("blogButton", "blog");
-            setRedirectOnClick("pmeButton", "pme");
+            setRedirectOnClick("wordle", "wordlesolutions");
+            setRedirectOnClick("aboutme", "aboutme");
+            setRedirectOnClick("blog", "blog");
+            setRedirectOnClick("pme", "pme");
+            setRedirectOnClick("gen", "generators")
 
         </script>
 
