@@ -3,7 +3,7 @@
 
 <html>
 
-    <title>Nate's Site || Hub</title>
+    <title>Website Hub</title>
     <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
     <link rel="stylesheet" href="css/style.css">
 
@@ -22,7 +22,7 @@
     </style>
 
     <body>
-        <h1 class="title">Welcome to Nate Levison's Website!</h1>
+        <h1 class="title">Welcome to Cheespeasa's Website!</h1>
 
         <button style="width:16%;" id="wordleButton" class="block">Wordle Solution Generator</button><br>
         <br>
@@ -34,11 +34,7 @@
 
         <script type="text/javascript">
 
-            function setRedirectOnClick(elementID, href) {
-                document.getElementById(elementID).onclick = function () {
-                    location.href = href;
-                }
-            }
+            setRedirectOnClick=(e,h)=>document.getElementById(e).onclick=()=>{location.href=h;}
 
             setRedirectOnClick("wordleButton", "wordlesolutions");
             setRedirectOnClick("aboutmeButton", "aboutme");
