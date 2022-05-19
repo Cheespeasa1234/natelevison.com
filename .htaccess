@@ -1,2 +1,0 @@
-php_value display_errors 1
-ErrorDocument 404 /page-not-found.html

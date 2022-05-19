@@ -1,3 +1,19 @@
+<!--
+
+    No party may use, reproduce, change, or
+    claim the source code following this 
+    statement for commercial purposes. Any 
+    parties using code following must keep 
+    this notice visible, unmodified, and 
+    evident in edited and/or non-edited
+    code.
+
+    This program was made by Nate Levison
+    and Thomas Rottinger. This file and others 
+    are hosted at natelevison.000webhostapp.com 
+    for use.
+
+-->
 <!DOCTYPE html>
 
 <html>
@@ -8,7 +24,8 @@
 
 <body>
 
-    <input type="image" id="myBtn" class="info" src="../img/questionmark.png" name="submit" width="50" height="50" alt="submit" />
+    <input type="image" id="myBtn" class="info" src="../img/questionmark.png" name="submit" width="50" height="50"
+        alt="submit" />
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -25,14 +42,112 @@
 
     </div>
 
-    <script src="modal.js"></script>
-    <script src="gen.js"></script>
+    <script>
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
 
     <title>
         Wordle Solution Generator -- By Nate Levison
     </title>
 
     <body style="font-family: Monaco">
+        
+        <!--Loads in the words from nytimes.-->
+        <script src="https://www.nytimes.com/games/wordle/main.9622bc55.js">
+
+            //First, main.9622bc55.js runs because of the tag.
+            //Then, the following runs.
+            //We do this to load in the wordle words dynamically.
+
+            //This runs the script to generate the wordle word of the day.
+
+            let words = ko; //the words
+
+            var firstDay = new Date(2021, 5, 19, 0, 0, 0, 0);  //constant date that represents the "starting" point.
+
+            
+            function getIndex(e, a) { //this gets a number based on the difference between Ba and the chosen date. 
+                var s = new Date(e),
+                    t = new Date(a).setHours(0, 0, 0, 0) - s.setHours(0, 0, 0, 0);
+                return Math.round(t / 864e5);
+            }
+
+            //this gets a certain index of the list of wordle words.
+            function getWord(date) {
+                var a = getDif(date);
+                return words[a];
+            }
+
+            //this calls getIndex() on e and the starting date.
+            function getDif(e) {
+                return getIndex(firstDay, e);
+            }
+
+            function addHoursToDate(date, hours) {
+                //this adds hours to a date.
+                return new Date(new Date(date).setHours(date.getHours() + hours));
+            }
+
+            let run = function() {
+
+                console.log("Clicked!")
+
+                //this automatically gets the current date that your computer has.
+                var date = new Date();
+
+                //this takes the value you have entered and adds 24 * value hours to that time.
+                date = addHoursToDate(date, document.getElementById("dateToGet").value * 24);
+
+                var word = getWord(date);
+
+                //this displays the results,
+                //by changing the html on the page.
+
+                document.write('<style>\n.block {\ndisplay: block;\nwidth: 100%;\nborder-color: #000000;\nbackground-color: #06cf85;\ncolor: white;\npadding: 8px 16px;\nfont-size: 16px;\nfont-family: "Monaco";\ncursor: pointer;\ntext-align: center;\nborder-radius: 8px;\n}');
+                document.write('.block:hover {\nbackground-color: #ddd;\ncolor: black;\n}</style>');
+                document.write('<h1 style = "font-family:Trebuchet MS;text-align:center">The wordle word for ' + date.toDateString() + ' is</h1>');
+                document.write('<hr>')
+                document.write('<p style = "font-family:Trebuchet MS;text-align:center;color:green;font-size:70px">' + word + '</p>');
+                document.write('<button class="block" onClick="window.location.reload();">\u2190\u2190 Back</button>');
+                return;
+
+            }
+
+            // Get the input field
+            var input = document.getElementById("dateToGet");
+
+            // Execute a function when the user releases a key on the keyboard
+            input.addEventListener("keyup", function (event) {
+                if (event.keyCode === 13) {
+                    event.preventDefault();
+                    // Trigger the button element with a click
+                    document.getElementById("confirm").click();
+                }
+            });
+        </script>
+        
         <h1 class="title" style="text-align:center">
             Nate Levison's Wordle Word Generator
             <a href="../index.html">Return to Hub</a>
@@ -48,15 +163,19 @@
             <br> Input <b style="color:green">0</b> or <b style="color:green">leave blank</b> to see today's word.
             <br> Input <b style="color:limegreen">1</b> to see tomorrow's word.
             <br> Input <b style="color:yellowgreen">7</b> to see a week in advance.
-            <br> Input <b style="color:gray">-1</b>to see yesterdays word. <br>
+            <br> Input <b style="color:gray">-1</b> to see yesterdays word. <br>
             <br>
-            <i style="font-size:larger">Date input will be permitted eventually. I tried getting it to work but it doesn't :( </i><br>
+            <i style="font-size:larger">Date input will be permitted eventually. I tried getting it to work but it
+                doesn't :( </i><br>
         </h4>
         <!--Makes an input taking in a date.-->
-        <input class="block" type="number" id="dateToGet" name="dateToGet" style="position:relative; left:500px; top:-200px; width:10%">
+        <input class="block" type="number" id="dateToGet" name="dateToGet"
+            style="position:relative; left:500px; top:-200px; width:10%">
         <br>x
-        <button style="position:relative; left:500px; top:-200px" class="block" id="confirm" onclick="run()">Generate</button>
+        <button style="position:relative; left:500px; top:-200px" class="block" id="confirm" onclick="run();">Generate</button>
         <br>
         <p style="position:relative; left:700px; top:-330px">&#8592;&#8592; Click and put the days here!</p>
+
     </body>
+
 </html>
