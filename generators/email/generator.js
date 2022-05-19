@@ -1,29 +1,48 @@
-let startingLink = "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto"
-let get = id => {document.getElementById(id)};
+let startingLink = "mailto:"
+let get = (id) => {document.getElementById(id)};
 
-function hex(str) {
-    var arr1 = [];
-    for (var n = 0, l = str.length; n < l; n++) {
-        var hex = Number(str.charCodeAt(n)).toString(16);
-        arr1.push("%" + hex);
+
+let generateLink = () => {
+
+    let to = document.getElementById("to").innerHTML
+    if (document.getElementById("sep_to").checked)
+        to = to.replaceAll(" ", ",")
+    let cc = document.getElementById("cc").innerHTML
+    if (document.getElementById("sep_cc").checked)
+        console = cc.replaceAll(" ", ",")
+    let bcc = document.getElementById("bcc").innerHTML
+    if (document.getElementById("sep_bcc").checked)
+        bcc = bcc.replaceAll(" ", ",")
+    let su = document.getElementById("su").innerHTML
+    let bo = document.getElementById("bo").innerHTML
+    if(cc) {
+        cc = "?cc=" + cc;
+        bcc = "&bcc=" + bcc;
+        su = "&subject=" + su;
+        bo = "&body=" + bo;
+    } else if(bcc) {
+        cc = ""
+        bcc = "?bcc=" + bcc;
+        su = "&subject=" + su;
+        bo = "&body=" + bo;
+    } else if(su) {
+        cc = "";
+        bcc = "";
+        su = "?subject=" + su;
+        bo = "&body=" + bo;
+    } else if(bo) {
+        cc = "";
+        bcc = "";
+        su = "";
+        bo = "?body=" + bo;
+    } else {
+        cc = "";
+        bcc = "";
+        su = "";
+        bo = "";
     }
-    return arr1.join('');
-}
 
-let to = "cheespeasa@gmail.com"
-if (get("sep_to").checked) {
-    to = to.replaceAll(" ", ",")
-}
-let cc = "amongus@gmail.com"
-if (get("sep_to").checked) {
-    to = to.replaceAll(" ", ",")
-}
-let bcc = "sussy@gmail.com"
-if (get("sep_to").checked) {
-    to = to.replaceAll(" ", ",")
-}
-let subject = "SUS AMOGUS"
-let body = "vent haha funny"
-let newlink = startingLink + hex((to ? `&to=${to}` : '') + (cc ? `&cc=${cc}` : '') + (bcc ? `&bcc=${bcc}` : '') + (bcc ? `&bcc=${bcc}` : '') + (subject ? `&su=${subject}` : '') + (body ? `&body=${body}` : ''))
+    let newlink = startingLink + to + cc + bcc + su + bo;
 
-console.log(newlink);
+    document.getElementById("out").innerHTML = newlink;
+}

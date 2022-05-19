@@ -1,13 +1,16 @@
 <!DOCTYPE html>
 <html>
+    
+    <title>mailto Link Generator</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
 
     <body>
 
-        <h1>This is the email link generator</h1>
-        <h2>Follow the steps to make a clickable email link.</h2>
+        <button onclick="new function() {location.href='../';}" id="hubButton" class="block" style="width:100%">View other generators</button>
 
-        <link rel="stylesheet" href="../../css/style.css">
-        <script src="generator.js"></script>
+        <h1>This is the email link generator</h1>
+        <h2>Follow the simple steps to make a clickable email link.</h2>
 
         <style>
         </style>
@@ -19,19 +22,19 @@
             <input type="checkbox" id="sep_to" checked="false">
             <label for="sep_to">Use space as separator instead of ","</label><br>
 
-            <textarea rows="5" cols="40" name="List of emails to send to" id="to" type="text">someone@gmail.com,someoneelse@gmail.com</textarea>
+            <textarea title="Who the email will be sent to" rows="5" cols="40" name="List of emails to send to" id="to" type="text">someone@gmail.com,someoneelse@gmail.com</textarea>
             <br><hr>
 
             <input type="checkbox" id="sep_cc" checked="false">
             <label for="sep_cc">Use space as separator instead of ","</label><br>
 
-            <textarea rows="5" cols="40" name="List of emails to cc" id="cc" type="text">anothersomeone@gmail.com</textarea>
+            <textarea title="The people who will recieve the email also, without knowing who else got cc'd" rows="5" cols="40" name="List of emails to cc" id="cc" type="text">anothersomeone@gmail.com</textarea>
             <br><hr>
 
             <input type="checkbox" id="sep_bcc" checked="false">
             <label for="sep_bcc">Use space as separator instead of ","</label><br>
 
-            <textarea rows="5" cols="40" name="List of emails to bcc" id="bcc" type="text">secretsomeone@gmail.com</textarea>
+            <textarea title="The people who will recieve the email also, without knowing any other recipient" rows="5" cols="40" name="List of emails to bcc" id="bcc" type="text">secretsomeone@gmail.com</textarea>
             <br><hr>
 
         </div>
@@ -40,7 +43,7 @@
         <h3>Choose the subject</h3>
         <div>
 
-            <textarea rows="5" cols="40" name="Subject of message" id="to" type="text">Important Email!</textarea>
+            <textarea title="The notice that will appear at the top of the email" rows="5" cols="40" name="Subject of message" id="su" type="text">Important Email!</textarea>
 
         </div>
 
@@ -48,9 +51,17 @@
         <h3>Choose the body</h3>
         <div>
         
-            <textarea rows="5" cols="40" name="Message body" id="to" type="text">Hello.</textarea>
+            <textarea title='The content of the email. Use "\n" to make a newline and "\t" to make a tab.' rows="5" cols="40" name="Message body" id="bo" type="text">Hello.</textarea>
         
         </div>
+
+        <h3>Step four:</h3>
+        <h3>Generate the link</h3>
+
+        <script src="generator.js"></script>
+        <button onclick="generateLink();" id="runner">Generate</button>
+        <br>
+        <textarea id="out" rows="5" cols="50">Output will appear here.</textarea>
 
     </body>
 
