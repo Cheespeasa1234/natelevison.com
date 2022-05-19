@@ -110,7 +110,7 @@
                 return new Date(new Date(date).setHours(date.getHours() + hours));
             }
 
-            let run = function() {
+            document.getElementById("confirm").onclick = function() {
 
                 console.log("Clicked!")
 
@@ -171,8 +171,8 @@
         <!--Makes an input taking in a date.-->
         <input class="block" type="number" id="dateToGet" name="dateToGet"
             style="position:relative; left:500px; top:-200px; width:10%">
-        <br>x
-        <button style="position:relative; left:500px; top:-200px" class="block" id="confirm" onclick="run();">Generate</button>
+        <br>
+        <button style="position:relative; left:500px; top:-200px" class="block" id="confirm">Generate</button>
         <br>
         <p style="position:relative; left:700px; top:-330px">&#8592;&#8592; Click and put the days here!</p>
 
