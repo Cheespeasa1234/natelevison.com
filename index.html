@@ -42,7 +42,7 @@
 
         <script type="text/javascript">
 
-            setRedirectOnClick=(e,h)=>document.getElementById(e+"Button").onclick=function(){location.href=h}
+            let setRedirectOnClick=(e,h)=>document.getElementById(e+"Button").onclick=function(){location.href=h}
             setRedirectOnClick("wordle", "wordlesolutions");
             setRedirectOnClick("aboutme", "aboutme");
             setRedirectOnClick("blog", "blog");
