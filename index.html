@@ -28,7 +28,7 @@
     <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
     <br>
     <br>
-    <button style="width:30%;" id="aboutmeButton" class="block">About Me</button>
+    <button style="width:30%;" id="aboutButton" class="block">About Me</button>
     <br>
     <br>
     <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
@@ -44,9 +44,12 @@
 
     <script type="text/javascript">
 
+        if(location.href==="cheespeasa1234.github.io/index.html")
+            location.href="cheespeasa1234.github.io"
+
         let setRedirectOnClick = (e, h) => document.getElementById(e + "Button").onclick = function () { location.href = h }
         setRedirectOnClick("wordle", "wordlesolutions");
-        setRedirectOnClick("aboutme", "aboutme");
+        setRedirectOnClick("about", "about");
         setRedirectOnClick("blog", "blog");
         setRedirectOnClick("pme", "pme");
         setRedirectOnClick("gen", "generators")
