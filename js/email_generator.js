@@ -4,17 +4,17 @@ let get = (id) => {document.getElementById(id)};
 
 let generateLink = () => {
 
-    let to = document.getElementById("to").innerHTML
+    let to = document.getElementById("to").value
     if (document.getElementById("sep_to").checked)
         to = to.replaceAll(" ", ",")
-    let cc = document.getElementById("cc").innerHTML
+    let cc = document.getElementById("cc").value
     if (document.getElementById("sep_cc").checked)
         console = cc.replaceAll(" ", ",")
-    let bcc = document.getElementById("bcc").innerHTML
+    let bcc = document.getElementById("bcc").value
     if (document.getElementById("sep_bcc").checked)
         bcc = bcc.replaceAll(" ", ",")
-    let su = document.getElementById("su").innerHTML
-    let bo = document.getElementById("bo").innerHTML
+    let su = document.getElementById("su").value
+    let bo = document.getElementById("bo").value
     if(cc) {
         cc = "?cc=" + cc;
         bcc = "&bcc=" + bcc;
