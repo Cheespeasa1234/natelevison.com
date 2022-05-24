@@ -1,0 +1,61 @@
+#DEFINE root ''
+#DEFINE dir '>'
+#DEFINE file '}'
+#DEFINE hide '-'
+#DEFINE noupdate '_'
+#DEFINE gitignore '.gitignore'
+#SETTING inheritparent true
+#SETTING startatroot true
+-_>.idea
+>}.gitignore
+>}.name
+>}misc.xml
+>}modules.xml
+>}vcs.xml
+>}website.iml
+>}workspace.xml
+-_>.vscode
+>}launch.json
+>about
+>}index.html
+>blog
+>}index.html
+>css
+>>fonts
+>>}Monaco%s400.ttf
+>}style.css
+>emojisearch
+>}index.html
+>generators
+>>email
+>>}index.html
+>>username
+>>}index.html
+>}index.html
+>img
+>}questionmark.png
+>}spotlight.jpeg
+>}spotlight.png
+>}willsmithsearches.png
+>js
+>}email_generator.js
+>}emoji_lib.js
+>}jquery-3.6.0.min.js
+>}pme_runner.js
+>}username_exporter.js
+>}username_wordchooser.js
+>}wordle_modal.js
+>pme
+>}index.html
+>privacy
+>}index.html
+>wordlesolutions
+>}index.html
+-_}.gitattributes
+}404.html
+-_}google2c69e3ced3275889.html
+}index.html
+-_}map.txt
+-_}README.md
+-_}robots.txt
+-_}sitemap.xml
