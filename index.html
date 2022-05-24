@@ -3,58 +3,61 @@
 
 <html>
 
-    <title>Cheespeasa Hub</title>
-    <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
-    <link rel="stylesheet" href="css/style.css">
+<title>Cheespeasa Hub</title>
+<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+<link rel="stylesheet" href="css/style.css">
 
-    <style>
-        .title {
-            position: absolute;
-            right: 30px;
-            font-family: Monaco;
-            font-weight: bolder;
-        }
+<style>
+    .title {
+        position: absolute;
+        right: 30px;
+        font-family: Monaco;
+        font-weight: bolder;
+    }
 
-        .content {
-            font-family: Monaco;
-            font-size: large;
-        }    
-    </style>
+    .content {
+        font-family: Monaco;
+        font-size: large;
+    }
+</style>
 
-    <body>
-        <h1 class="title">Welcome to Cheespeasa's Website!</h1>
+<body>
 
-        <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
-        <br>
-        <br>
-        <button style="width:30%;" id="aboutmeButton" class="block">About Me</button>
-        <br>
-        <br>
-        <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
-        <br>
-        <br>
-        <button style="width:30%;" id="pmeButton" class="block">PME runner test</button>
-        <br>
-        <br>
-        <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
-        <br>
-        <br>
+    <h1 class="title">Welcome to Cheespeasa's Website!</h1>
 
-        <script type="text/javascript">
+    <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="aboutmeButton" class="block">About Me</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="pmeButton" class="block">PME runner test</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
+    <br>
 
-            let setRedirectOnClick=(e,h)=>document.getElementById(e+"Button").onclick=function(){location.href=h}
-            setRedirectOnClick("wordle", "wordlesolutions");
-            setRedirectOnClick("aboutme", "aboutme");
-            setRedirectOnClick("blog", "blog");
-            setRedirectOnClick("pme", "pme");
-            setRedirectOnClick("gen", "generators")
+    <h3>Welcome, </h3>
+    <p id="user"></p>
 
-        </script>
+    <script type="text/javascript">
 
-        <p style = "font-family: 'Monaco';">
-            View the <a href="privacy">Privacy Policy</a> here.
-        </p>
+        let setRedirectOnClick = (e, h) => document.getElementById(e + "Button").onclick = function () { location.href = h }
+        setRedirectOnClick("wordle", "wordlesolutions");
+        setRedirectOnClick("aboutme", "aboutme");
+        setRedirectOnClick("blog", "blog");
+        setRedirectOnClick("pme", "pme");
+        setRedirectOnClick("gen", "generators")
 
-    </body>
+    </script>
+
+    <p style="font-family: 'Monaco';">
+        View the <a href="privacy">Privacy Policy</a> here.
+    </p>
+
+</body>
 
 </html>

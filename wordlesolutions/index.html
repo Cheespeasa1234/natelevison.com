@@ -78,31 +78,28 @@
             //Then, the following runs.
             //We do this to load in the wordle words dynamically.
 
-            //This runs the script to generate the wordle word of the day.
-
             let words = ko; //the words
 
             var firstDay = new Date(2021, 5, 19, 0, 0, 0, 0);  //constant date that represents the "starting" point.
 
-            
-            function getIndex(e, a) { //this gets a number based on the difference between Ba and the chosen date. 
+            let getIndex = (e, a) => { //this gets a number based on the difference between Ba and the chosen date. 
                 var s = new Date(e),
                     t = new Date(a).setHours(0, 0, 0, 0) - s.setHours(0, 0, 0, 0);
                 return Math.round(t / 864e5);
             }
 
             //this gets a certain index of the list of wordle words.
-            function getWord(date) {
+            let getWord = (date) => {
                 var a = getDif(date);
                 return words[a];
             }
 
             //this calls getIndex() on e and the starting date.
-            function getDif(e) {
+            let getDif = (e) => {
                 return getIndex(firstDay, e);
             }
 
-            function addHoursToDate(date, hours) {
+            let addHoursToDate = (date, hours) => {
                 //this adds hours to a date.
                 return new Date(new Date(date).setHours(date.getHours() + hours));
             }
