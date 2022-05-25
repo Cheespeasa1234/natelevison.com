@@ -8,21 +8,39 @@
     evident in edited and/or non-edited
     code.
 
+    And yes, we can legally advertise on here,
+    the source code says so at the top. Here
+    is the notice:
+
+
     This program was made by Cheespeasa and Quasar.
 
 -->
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
 
 <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
 <link rel="stylesheet" href="../css/style.css">
-<title>Nate's Site || Wordlegen</title>
+
+<head>
+
+    <meta name="apple-mobile-web-app-title" content="Wordle Solution Generator - By Cheespeasa">
+    <meta name="application-name" content="Wordle Solution Generator - By Cheespeasa">
+    <meta property="og:title" content="Wordle Solution Generator - By Cheespeasa">
+    <meta property="og:url" content="https://www.cheespeasa1234.github.io/wordlesolutions">
+    <meta property="og:description" content="Program to generate the wordle word of the day.">
+    <meta property="description" content="Program to generate the wordle word of the day.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta charset="UTF-8">
+
+    <title>Nate's Site || Wordlegen</title>
+
+</head>
 
 <body>
 
-    <input type="image" id="myBtn" class="info" src="../img/questionmark.png" name="submit" width="50" height="50"
-        alt="submit" />
+    <input type="image" id="myBtn" class="info" src="../img/questionmark.png" name="submit" width="50" height="50">
 
     <!-- The Modal -->
     <div id="myModal" class="modal">
@@ -40,7 +58,7 @@
     </div>
 
     <h1 class="title" style="text-align:center">
-        Cheespeasa's Wordle Word Generator<a href="../">Return to Hub</a></h1>
+        Cheespeasa's Wordle Word Generator <a href="../">Return to Hub</a></h1>
 
     <hr>
     <!--This plainly displays the instructions.-->
@@ -50,13 +68,14 @@
         <br> Input <b style="color:limegreen">1</b> to see tomorrow's word.
         <br> Input <b style="color:yellowgreen">7</b> to see a week in advance.
         <br> Input <b style="color:gray">-1</b> to see yesterdays word. <br><br>
-        <i style="font-size:larger">Date input will be permitted eventually. I tried getting it to work but it
-            doesn't :( </i><br>
+        <i style="font-size:larger">Date input will be permitted eventually. I tried getting it to work but it doesn't
+            :( </i><br>
     </h4>
     <!--Makes an input taking in a date.-->
     <input class="block" type="number" id="dateToGet" name="dateToGet"
         style="position:relative; left:500px; top:-200px; width:10%"><br>
-    <button style="position:relative; left:500px; top:-200px" class="block" id="confirm" onclick="console.log('Not loaded yet!');">Generate</button><br>
+    <button style="position:relative; left:500px; top:-200px" class="block" id="confirm"
+        onclick="console.log('Not loaded yet!');">Generate</button><br>
     <p style="position:relative; left:700px; top:-330px">&#8592;&#8592; Click and put the days here!</p>
 
     <!--Loads in the words from nytimes.-->
