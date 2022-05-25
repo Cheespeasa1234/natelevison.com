@@ -1,4 +1,7 @@
 let href = location.href;
-let returnTo = href.substring(href.indexOf("?r="));
 
-document.getElementById("y").onclick = function() {location.href=returnTo}
+let getYes=()=>location.href.substring(location.href.indexOf("?y=")+3,location.href.indexOf("?n="))
+let getNo=()=>location.href.substring(location.href.indexOf("?n=")+3)
+
+document.getElementById("y").onclick = function() {location.href=getYes()}
+document.getElementById("n").onclick = function() {location.href=getNo()}
