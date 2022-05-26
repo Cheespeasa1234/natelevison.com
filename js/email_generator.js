@@ -1,8 +1,22 @@
 let startingLink = "mailto:"
-let get = (id) => {document.getElementById(id)};
 
 
-let generateLink = () => {
+/**
+ * @name get
+ * @description Gets an HTML element from document by ID.
+ * @param {string} text - the ID to lookup
+ * @version 1.0
+ *
+ * @returns {HTMLELement} element - The element with the ID
+ */
+function get(id) {return document.getElementById(id)};
+
+/**
+ * @name generateLink
+ * @description Generates a link from text input on screen.
+ * @version 1.0
+ */
+function generateLink() {
 
     let to = document.getElementById("to").value
     if (document.getElementById("sep_to").checked)
@@ -44,5 +58,5 @@ let generateLink = () => {
 
     let newlink = startingLink + to + cc + bcc + su + bo;
 
-    document.getElementById("out").innerHTML = newlink;
+    document.getElementById("out").innerHTML = sanitizeText(newLink, [">","<",";","%"]);
 }
