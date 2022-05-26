@@ -58,7 +58,7 @@ let decompressNames = () => {
     for(let i = 0; i < names.length; i++) {
         let current = names[i]
         if(names[i].charAt(0) === ">") {
-            current.replace(">", shortcut)
+            current.replaceAll(">", shortcut)
         } else {
             shortcut = names[i]
         }
