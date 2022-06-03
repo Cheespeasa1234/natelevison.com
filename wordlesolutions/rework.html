@@ -33,12 +33,14 @@
     <meta property="description" content="Program to generate the wordle word of the day.">
     <meta property="twitter:card" content="summary_large_image">
     <meta charset="UTF-8">
-
-    <title>Wordle Solution Generator</title>
+    <script src="../js/wordle_modal.js"></script>
+    <script src="../js/wordle_lib_rework.js"></script>
+    
+    <title>Nate's Site || Wordlegen</title>
 
 </head>
 
-<body style="font-size:larger">
+<body>
 
     <input type="image" id="myBtn" class="info" src="../img/questionmark.png" name="submit" width="50" height="50">
 
@@ -57,23 +59,37 @@
 
     </div>
 
-    <h1 class="title" style="text-align:center">
-        Cheespeasa's Wordle Word Generator <a href="../">Return to Hub</a></h1>
-
+    <h1 class="title" style="text-align:center">Cheespeasa's Wordle Word Generator <a href="../">Return to Hub</a></h1>
     <hr>
+
     <!--This plainly displays the instructions.-->
-    <h3>Input how many days in advance you want to see<br>In the first blue box to the right.</h3>
-    <h4>
-        <br> Input <b style="color:green">0</b> or <b style="color:green">leave blank</b> to see today's word.
-        <br> Input <b style="color:limegreen">1</b> to see tomorrow's word.
-        <br> Input <b style="color:yellowgreen">7</b> to see a week in advance.
-        <br> Input <b style="color:gray">-1</b> to see yesterdays word. <br><br>
-    </h4>
+    <h3>Select a search mode:</h3>
 
-    <input class="block" type="number" id="dateToGet" name="dateToGet" style="width:10%"><br>
-    <button class="block" id="confirm" onclick="console.log('Not loaded yet!');">Generate</button><br>
+    <div>
+    
+        <form>
+            <label> Select </label>
+            <select id="searchType" onchange="setMenus();">
+                <option value="days"> Search for the word in X days from today
+                </option>
+                <option value="word"> Search for the date that word X will be on
+                </option>
+            </select>
+        </form>
+    
+        <input id="in"></input>
 
-    <script src="../js/wordle_modal.js"></script>
-    <script src="../js/wordle_lib.js"></script>
+        <div id="help">
+
+        </div>
+    
+    </div>
+    <br>
+    <button id="generate" onclick="generate();">Generate</button>
+    <br>
+    <div id="out">
+        Your answer will appear here once you generate it.
+    </div>
+
 
 </html>
