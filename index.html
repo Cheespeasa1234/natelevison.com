@@ -1,77 +1,64 @@
 <!DOCTYPE html>
+<!--This is the hub. It has subpages. Very cool-->
 
-<html lang = "en">
-    
-<head>
-    <title>Cheespeasa Hub</title>
-</head>
+<html>
+
+<title>Cheespeasa Hub</title>
+<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+<link rel="stylesheet" href="css/style.css">
+
+<style>
+    .title {
+        position: absolute;
+        right: 30px;
+        font-family: Monaco;
+        font-weight: bolder;
+    }
+
+    .content {
+        font-family: Monaco;
+        font-size: large;
+    }
+</style>
 
 <body>
 
-    <style>
-        body {
-            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
-            line-height: 0.7;
-        }
-        .i {
-            font-style: italic;
-            white-space: nowrap;
-        }
-    </style>
+    <h1 class="title">Welcome to Cheespeasa's Website!</h1>
 
-    <div>
-        <h2>Reviews for Product</h2>
-        <h3>10 reviewers averaged ⭐⭐⭐★★</h3>
+    <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="aboutButton" class="block">About Me</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="pmeButton" class="block">PME runner test</button>
+    <br>
+    <br>
+    <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
+    <br>
 
-        <button id="rev">Leave a review</button>
-        <button id="rrl">Report a bug</button>
-        <br>
-    </div>
+    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.13.1</h3>
 
-    <script>
-        document.getElementById("rev").onclick = ()=>{
-            document.body.innerHTML = "<h1>YOU CAN'T LMAO!!</h1>"
-        }
+    <script type="text/javascript">
 
-        document.getElementById("rrl").onclick = ()=>{
-            location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-        }
+        if(location.href==="cheespeasa1234.github.io/index.html")
+            location.href="cheespeasa1234.github.io"
 
-        class review {
-
-            constructor(author, star, msg) {
-                this.html = `<div><h3><div class="i">${author}</div> rates this product ${getstar(star)}</h3>\n<p>${msg}</p>`
-            }
-
-        }
-
-        reviews = [
-            new review("Bob", 5, "I loved this product. It was very easy to use and exceedingly easy to learn."),
-            new review("Joe", 1, "This product sucks. It is useless."),
-            new review("Billy", 3, "I did not get much use out of the product before it broke, but while it was working, it was very useful."),
-            new review("Lily", 5, "This item is the best thing I have ever bought!"),
-            new review("Little Timmy", 1, "I THOUGHT THIS WAS FREE BOBUX >:("),
-            new review("ASdoosdjasid", 3, "Where are the light up parts."),
-            new review("AMOGUS!", 5, "AMOGUS!"),
-            new review("Lillian Levison", 2, "The product was not as expected."),
-            new review("Maximillian M", 4, "Amazing product, but took a while to deliver."),
-            new review("You're Mother", 1, "YOU SUCK!!!")
-        ]
-
-        function getstar(num) {
-            out = ""
-            for(let i = 0; i <= num; i++) 
-                out += '⭐'
-            while(out.length < 5)
-                out += '★'
-            return out
-        }
-
-        for(let i = 0; i < reviews.length; i++)
-            document.body.innerHTML += reviews[i].html
-            console.log(reviews.length)
+        let setRedirectOnClick = (e, h) => document.getElementById(e + "Button").onclick = function () { location.href = h }
+        setRedirectOnClick("wordle", "wordlesolutions");
+        setRedirectOnClick("about", "about");
+        setRedirectOnClick("blog", "blog");
+        setRedirectOnClick("pme", "pme");
+        setRedirectOnClick("gen", "generators")
 
     </script>
+
+    <p style="font-family: 'Monaco';">
+        View the <a href="https://cheespeasa1234.github.io/privacy/?y=https://cheespeasa1234.github.io?n=https://www.google.com">Privacy Policy</a> here.
+    </p>
 
 </body>
 
