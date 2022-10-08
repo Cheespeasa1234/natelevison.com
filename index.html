@@ -25,10 +25,13 @@
 
     <h1 class="title">Welcome to Cheespeasa's Website!</h1>
 
+    <button style="width:30%;" id="mndlButton" class="block">Mandlebrot Generator</button>
+    <br>
+    <br>
     <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
     <br>
     <br>
-    <button style="width:30%;" id="downloadButton" class="block"><b>Java Array Downloads</b></button>
+    <button style="width:30%;" id="downloadButton" class="block">Java Array Class Downloads</button>
     <br>
     <br>
     <button style="width:30%;" id="aboutButton" class="block">About Me</button>
@@ -37,24 +40,21 @@
     <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
     <br>
     <br>
-    <button style="width:30%;" id="pmeButton" class="block">PME runner test</button>
-    <br>
-    <br>
     <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
     <br>
 
-    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.14.2</h3>
+    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.15</h3>
 
     <script type="text/javascript">
 
-        if(location.href==="cheespeasa1234.github.io/index.html")
+        if(location.href!="cheespeasa1234.github.io")
             location.href="cheespeasa1234.github.io"
 
         let setRedirectOnClick = (e, h) => document.getElementById(e + "Button").onclick = function () { location.href = h }
         setRedirectOnClick("wordle", "wordlesolutions")
         setRedirectOnClick("about", "about")
         setRedirectOnClick("blog", "blog")
-        setRedirectOnClick("pme", "pme")
+        setRedirectOnClick("mndl", "mandlebrot")
         setRedirectOnClick("gen", "generators")
         setRedirectOnClick("download", "downloads")
 

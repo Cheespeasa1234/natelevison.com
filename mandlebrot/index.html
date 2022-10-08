@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <body>
+
+        <h1>Mandlebrot Generator</h1>
+
+        <input id="zoom" type="number">
+        <label for="zoom">Zoom</label>
+        <br>
+
+        <input id="movex" type="number">
+        <label for="movex">X Offset</label>
+        <br>
+
+        <input id="movey" type="number">
+        <label for="movey">Y Offset</label>
+        <br>
+
+        <input id="time" type="number">
+        <label for="time">Time</label>
+        <br>
+
+        <button id="go">Generate</button>
+
+        <script>
+
+            document.getElementById("go").onclick = () => {
+                zoom = document.getElementById("zoom").value;
+                movex = document.getElementById("movex").value;
+                movey = document.getElementById("movey").value;
+                time = document.getElementById("time").value;
+                loc = `generated.html/?z=${zoom}&x=${movex}&y=${movey}&t=${time}`
+                location.href = loc;
+            }
+
+        </script>
+
+    </body>
+</html>
