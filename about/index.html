@@ -2,67 +2,85 @@
 
 <html>
 
-    <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
-    <title>About Me</title>
+<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+<link rel="stylesheet" href="/css/links.css">
+<title>About Me</title>
 
-    <style>
+<style>
+    body {
+        font-family: "Monaco";
+    }
 
-        body {
-            font-family: "Monaco";
-        }
+    .block {
+        display: block;
+        width: 97%;
+        border-color: #000000;
+        background-color: #11698E;
+        color: #F8F1F1;
+        padding: 8px 16px;
+        font-size: 16px;
+        font-family: "Monaco";
+        cursor: pointer;
+        text-align: center;
+        /*vv The rounding stuff vv*/
+        border-radius: 8px;
+        position: fixed;
+    }
 
-        .block {
-            display: block;
-            width: 97%;
-            border-color: #000000;
-            background-color: #11698E;
-            color: #F8F1F1;
-            padding: 8px 16px;
-            font-size: 16px;
-            font-family: "Monaco";
-            cursor: pointer;
-            text-align: center;
-            /*vv The rounding stuff vv*/
-            border-radius: 8px;
-            position:fixed;
-        }
+    .block:hover {
+        background-color: #16C79A;
+        color: black;
+    }
+</style>
 
-        .block:hover {
-            background-color: #16C79A;
-            color: black;
-        }
+<body>
 
-    </style>
+    <h1>About Cheespeasa</h1>
 
-    <body>
+    <hr>
 
-        <h1>About Cheespeasa</h1>
+    <button onclick="new function() {location.href='../';}" id="hubButton" class="block">Return to Hub</button>
 
-        <hr>
+    <br><br>
+    <hr>
 
-        <button onclick="new function() {location.href='../';}" id="hubButton" class="block">Return to Hub</button>
+    <p>
+        Cheespeasa is 15 years old. He likes coding and making useless stuff.<br>
+        Sometimes he accidentally puts semicolons after sentences<br>
 
-        <br><br><hr> 
+        With his insignificant life, so far, he has:
+        <ol>
+            <li>Made a wordle solution generator <a href="/wordlesolutions">here</a></li>
+            <li>Made a mandelbrot fractal <a href="/mandelbrot/">here</a></li>
+            <li>Learned the HTML CSS Node stack, C++, Java, and Processing</li>
+            <li>Made <b>three</b> functional and interactive discord bots (DELETE DISCORD!!)</li>
+            <li>Developed multiple (bad) games in Java using Swing</li>
+            <li>Failed multiple hearing screenings</li>
+            <li>Been banned from stack overflow 2 times for asking "stupid questions"</li>
+            <li>a cold :(</li>
+        </ol>
 
-        <p>
-            Cheespeasa is 15 years old. He likes coding and making useless stuff.<br>
-            Sometimes he accidentally puts semicolons after sentences<br>
+        You can contact him with questions, concerns, and suggestions at <a
+            href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20">My
+            Email Address.</a>
+        <span class="links">
+            <ul class="wrapper">
+                <li class="icon twitter" id="tw">
+                    <span class="tooltip">Twitter</span>
+                    <a href="https://www.twitter.com/CiY310"><i class="fab fa-twitter"></i></a>
+                </li>
+                <li class="icon instagram" id="is">
+                    <span class="tooltip">Instagram</span>
+                    <a href="https://www.instagram.com/latenevison_1099"><i class="fab fa-instagram"></i></a>
+                </li>
+                <li class="icon github" id="gh">
+                    <span class="tooltip">Github</span>
+                    <a href="https://www.github.com/cheespeasa1234"><i class="fab fa-github"></i></a>
+                </li>
+            </ul>
+        </span>
+    </p>
 
-            With his insignificant life, so far, he has:
-            <ol>
-                <li>Made a wordle solution generator</li>
-                <li>Learned HTML, JavaScript, Node.JS & Discord.JS, CSS, Java, and Processing</li>
-                <li>Made <b>three</b> functional and interactive discord bots</li>
-                <li>Developed multiple (bad) games in Java using Swing</li>
-                <li>Failed multiple hearing screenings</li>
-                <li>Been banned from stack overflow 2 times for asking "stupid questions"</li>
-                <li>gotta pay attention in class now</li>
-            </ol>
-            
-            You can contact him with questions, concerns, and suggestions at <a href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20">My Email Address.</a>
-
-        </p>
-
-    </body>
+</body>
 
 </html>

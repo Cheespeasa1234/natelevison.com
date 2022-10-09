@@ -4,8 +4,11 @@
 <html>
 
 <title>Cheespeasa Hub</title>
+<meta charset="UTF-8">
 <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/links.css">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
 
 <style>
     .title {
@@ -14,18 +17,19 @@
         font-family: Monaco;
         font-weight: bolder;
     }
-
+    
     .content {
         font-family: Monaco;
         font-size: large;
     }
-</style>
+    </style>
 
 <body>
 
-    <h1 class="title">Welcome to Cheespeasa's Website!</h1>
+    <h1 class="title">Welcome to Nate's Website!</h1>
+    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.15.2</h3>
 
-    <button style="width:30%;" id="mndlButton" class="block">Mandlebrot Generator</button>
+    <button style="width:30%;" id="mdlButton" class="block">Mandelbrot Generator</button>
     <br>
     <br>
     <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
@@ -43,22 +47,43 @@
     <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
     <br>
 
-    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.15</h3>
+    <span class="links">
+    <ul class="wrapper">
+        <li class="icon twitter" id="tw">
+          <span class="tooltip">Twitter</span>
+          <a href="https://www.twitter.com/CiY310"><i class="fab fa-twitter"></i></a>
+        </li>
+        <li class="icon instagram" id="is">
+          <span class="tooltip">Instagram</span>
+          <a href="https://www.instagram.com/latenevison_1099"><i class="fab fa-instagram"></i></a>
+        </li>
+        <li class="icon github" id="gh">
+          <span class="tooltip">Github</span>
+          <a href="https://www.github.com/cheespeasa1234"><i class="fab fa-github"></i></a>
+        </li>
+      </ul>
+    </span>
 
     <script type="text/javascript">
-
-        let setRedirectOnClick = (e, h) => document.getElementById(e + "Button").onclick = function () { location.href = h }
-        setRedirectOnClick("wordle", "wordlesolutions")
-        setRedirectOnClick("about", "about")
-        setRedirectOnClick("blog", "blog")
-        setRedirectOnClick("mndl", "mandlebrot")
-        setRedirectOnClick("gen", "generators")
-        setRedirectOnClick("download", "downloads")
+        let get = (s) => document.getElementById(s);
+        let redirect = (e, h) => {
+            document.getElementById(e).onclick = function () {
+                location.href = h;
+            }
+        }
+        redirect("mdlButton", "mandelbrot")
+        redirect("wordleButton", "wordlesolutions")
+        redirect("aboutButton", "about")
+        redirect("blogButton", "blog")
+        redirect("genButton", "generators")
+        redirect("downloadButton", "downloads")
 
     </script>
 
     <p style="font-family: 'Monaco';">
-        View the <a href="https://cheespeasa1234.github.io/privacy/?y=https://cheespeasa1234.github.io?n=https://www.google.com">Privacy Policy</a> here.
+        View the <a
+            href="https://cheespeasa1234.github.io/privacy/?y=https://cheespeasa1234.github.io?n=https://www.google.com">Privacy
+            Policy</a> here.
     </p>
 
 </body>

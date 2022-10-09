@@ -2,32 +2,46 @@
 <html>
 
 <body>
-    
-    <canvas id="gardun" width="1000" height="1000"></canvas>
+
+    <button id="zoomin">Zoom In</button>
+    <button id="zoomout">Zoom Out</button>
+
+    <hr>
+
+    <canvas id="canv" width="1000" height="1000"></canvas>
 
     <script>
 
         // grab url params
         let paramstr = window.location.search;
         const urlParams = new URLSearchParams(paramstr);
-        
+
         // init sim
-        m = document.getElementById("gardun").getContext("2d")
+        m = document.getElementById("canv").getContext("2d")
         moveX = Number( urlParams.get("x") ) || 0.12
         moveY = Number( urlParams.get("y") ) || 0.82
         zoom  = Number( urlParams.get("z") ) || 200
         time  = Number( urlParams.get("t") ) || 1000
-        
+
+        document.getElementById("zoomin").onclick = () => {
+            location.href = location.href.substring(0, location.href.indexOf("?")) + `?x=${moveX}&y=${moveY}&z=${zoom + 100}&t=${time}`
+        }
+
+        document.getElementById("zoomout").onclick = () => {
+            location.href = location.href.substring(0, location.href.indexOf("?")) + `?x=${moveX}&y=${moveY}&z=${zoom - 100}&t=${time}`
+        }
+
+
         console.log([moveX, moveY, zoom, time])
 
-        atom = function (x, y, c) {
+        atom = (x, y, c) => {
             m.fillStyle = c;
             m.fillRect(x, y, 3, 3)
         }
         for (y = 1; y < 1000; y++) {
         for (x = 1; x < 1000; x++) {
 
-        dx = (x - 500) / zoom - moveX 
+        dx = (x - 500) / zoom - moveX
         dy = (y - 500) / zoom - moveY
         a = dx
         b = dy
