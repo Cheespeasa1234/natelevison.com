@@ -9,18 +9,18 @@
 
     <url>
         <loc>https://cheespeasa1234.github.io/aboutme</loc>
-        <lastmod>2022-05-18</lastmod>
+        <lastmod>2022-10-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
 
     <url>
         <loc>https://cheespeasa1234.github.io/blog</loc>
-        <lastmod>2022-05-26</lastmod>
+        <lastmod>2022-10-09</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
-    
+
     <url>
         <loc>https://cheespeasa1234.github.io/pme</loc>
         <lastmod>2022-05-10</lastmod>
@@ -40,6 +40,13 @@
         <lastmod>2022-05-26</lastmod>
         <changefreq>daily</changefreq>
         <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/mandelbrot</loc>
+        <lastmod>2022-05-26</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
     </url>
 
     <url>
