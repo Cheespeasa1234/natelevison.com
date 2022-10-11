@@ -3,9 +3,11 @@
 <html>
 
 <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
-<link rel="stylesheet" href="/css/links.css">
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/links.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
 <title>About Me</title>
-<meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
     body {
@@ -64,23 +66,48 @@
         You can contact him with questions, concerns, and suggestions at <a
             href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20">My
             Email Address.</a>
-        <span class="links">
-            <ul class="wrapper">
-                <li class="icon twitter" id="tw">
-                    <span class="tooltip">Twitter</span>
-                    <a href="https://www.twitter.com/CiY310"><i class="fab fa-twitter"></i></a>
-                </li>
-                <li class="icon instagram" id="is">
-                    <span class="tooltip">Instagram</span>
-                    <a href="https://www.instagram.com/latenevison_1099"><i class="fab fa-instagram"></i></a>
-                </li>
-                <li class="icon github" id="gh">
-                    <span class="tooltip">Github</span>
-                    <a href="https://www.github.com/cheespeasa1234"><i class="fab fa-github"></i></a>
-                </li>
-            </ul>
-        </span>
+
+
     </p>
+    <span class="links linkset">
+        <ul class="wrapper">
+            <li class="icon twitter" id="tw">
+                <span class="tooltip">Twitter</span>
+                <i class="fab fa-twitter"></i>
+            </li>
+            <li class="icon github" id="gh">
+                <span class="tooltip">Github</span>
+                <i class="fab fa-github"></i>
+            </li>
+            <li class="icon youtube" id="yt">
+                <span class="tooltip">YouTube</span>
+                <i class="fab fa-youtube"></i>
+            </li>
+            <li class="icon instagram" id="is">
+                <span class="tooltip">Instagram</span>
+                <i class="fab fa-instagram"></i>
+            </li>
+            <li class="icon email" id="em">
+                <span class="tooltip">Email Me</span>
+                <i class="fa fa-paper-plane"></i>
+            </li>
+        </ul>
+    </span>
+    <script>
+        let get = (s) => document.getElementById(s);
+        let redirect = (e, h) => {
+            document.getElementById(e).onclick = function () {
+                location.href = h;
+            }
+        }
+        redirect("tw", "https://www.twitter.com/CiY310")
+        redirect("gh", "https://www.github.com/cheespeasa1234")
+        redirect("yt", "https://www.youtube.com/channel/UCkcC8RSKaj7x_mqFuM-hVAg")
+        redirect("is", "https://www.instagram.com/latenevison_1099")
+        redirect("em",
+            "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20"
+        )
+    </script>
 
 </body>
 

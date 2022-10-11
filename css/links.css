@@ -6,14 +6,14 @@
 
 a { color: inherit; }
 
-* {
+.linkset {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-*:focus,
-*:active {
+.linkset:focus,
+.linkset:active {
   outline: none !important;
   -webkit-tap-highlight-color: transparent;
 }
@@ -87,10 +87,10 @@ a { color: inherit; }
   text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
 }
 
-.wrapper .facebook:hover,
-.wrapper .facebook:hover .tooltip,
-.wrapper .facebook:hover .tooltip::before {
-  background: #1877F2;
+.wrapper .email:hover,
+.wrapper .email:hover .tooltip,
+.wrapper .email:hover .tooltip::before {
+  background: #e26161;
   color: #ffffff;
 }
 
