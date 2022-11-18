@@ -30,70 +30,50 @@
     <h1 class="title">Welcome to Nate's Website!</h1>
     <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.15.2</h3>
 
-    <button style="width:30%;" id="mdlButton" class="block">Mandelbrot Generator</button>
+    <button style="width:30%;" href="mandelbrot" id="mdlButton" class="block">Mandelbrot Generator</button>
     <br>
     <br>
-    <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
+    <button style="width:30%;" href="wordlesolutions" id="wordleButton" class="block">Wordle Solution Generator</button>
     <br>
     <br>
-    <button style="width:30%;" id="downloadButton" class="block">Java Array Class Downloads</button>
+    <button style="width:30%;" href="downloads" id="downloadButton" class="block">Java Array Class Downloads</button>
     <br>
     <br>
-    <button style="width:30%;" id="aboutButton" class="block">About Me</button>
+    <button style="width:30%;" href="about" id="aboutButton" class="block">About Me</button>
     <br>
     <br>
-    <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
+    <button style="width:30%;" href="blog" id="blogButton" class="block">My Coding Blog</button>
     <br>
     <br>
-    <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
+    <button style="width:30%;" href="generators" id="genButton" class="block">Generators (WIP)</button>
     <br>
 
     <span class="links linkset">
         <ul class="wrapper">
-            <li class="icon twitter" id="tw">
+            <li class="icon twitter" href="https://www.twitter.com/CiY310" id="tw">
                 <span class="tooltip">Twitter</span>
                 <i class="fab fa-twitter"></i>
             </li>
-            <li class="icon github" id="gh">
+            <li class="icon github" href="https://www.github.com/cheespeasa1234" id="gh">
                 <span class="tooltip">Github</span>
                 <i class="fab fa-github"></i>
             </li>
-            <li class="icon youtube" id="yt">
+            <li class="icon youtube" href="https://www.youtube.com/channel/UCkcC8RSKaj7x_mqFuM-hVAg" id="yt">
                 <span class="tooltip">YouTube</span>
                 <i class="fab fa-youtube"></i>
             </li>
-            <li class="icon instagram" id="is">
+            <li class="icon instagram" href="https://www.instagram.com/latenevison_1099" id="is">
                 <span class="tooltip">Instagram</span>
                 <i class="fab fa-instagram"></i>
             </li>
-            <li class="icon email" id="em">
+            <li class="icon email"
+                href="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20"
+                id="em">
                 <span class="tooltip">Email Me</span>
                 <i class="fa fa-paper-plane"></i>
             </li>
         </ul>
     </span>
-
-    <script type="text/javascript">
-        let get = (s) => document.getElementById(s);
-        let redirect = (e, h) => {
-            document.getElementById(e).onclick = function () {
-                location.href = h;
-            }
-        }
-        redirect("mdlButton", "mandelbrot")
-        redirect("wordleButton", "wordlesolutions")
-        redirect("aboutButton", "about")
-        redirect("blogButton", "blog")
-        redirect("genButton", "generators")
-        redirect("downloadButton", "downloads")
-        redirect("tw", "https://www.twitter.com/CiY310")
-        redirect("gh", "https://www.github.com/cheespeasa1234")
-        redirect("yt", "https://www.youtube.com/channel/UCkcC8RSKaj7x_mqFuM-hVAg")
-        redirect("is", "https://www.instagram.com/latenevison_1099")
-        redirect("em",
-            "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20"
-        )
-    </script>
 
     <p style="font-family: 'Monaco';">
         View the <a
