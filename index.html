@@ -4,8 +4,12 @@
 <html>
 
 <title>Cheespeasa Hub</title>
+<meta charset="UTF-8">
 <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/links.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css'>
 
 <style>
     .title {
@@ -23,12 +27,16 @@
 
 <body>
 
-    <h1 class="title">Welcome to Cheespeasa's Website!</h1>
+    <h1 class="title">Welcome to Nate's Website!</h1>
+    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.15.2</h3>
 
+    <button style="width:30%;" id="mdlButton" class="block">Mandelbrot Generator</button>
+    <br>
+    <br>
     <button style="width:30%;" id="wordleButton" class="block">Wordle Solution Generator</button>
     <br>
     <br>
-    <button style="width:30%;" id="downloadButton" class="block"><b>Java Downloads</b></button>
+    <button style="width:30%;" id="downloadButton" class="block">Java Array Class Downloads</button>
     <br>
     <br>
     <button style="width:30%;" id="aboutButton" class="block">About Me</button>
@@ -37,31 +45,60 @@
     <button style="width:30%;" id="blogButton" class="block">My Coding Blog</button>
     <br>
     <br>
-    <button style="width:30%;" id="pmeButton" class="block">PME runner test</button>
-    <br>
-    <br>
     <button style="width:30%;" id="genButton" class="block">Generators (WIP)</button>
     <br>
 
-    <h3 style="position:absolute;bottom:85%;left:86%;">Version 1.14</h3>
+    <span class="links linkset">
+        <ul class="wrapper">
+            <li class="icon twitter" id="tw">
+                <span class="tooltip">Twitter</span>
+                <i class="fab fa-twitter"></i>
+            </li>
+            <li class="icon github" id="gh">
+                <span class="tooltip">Github</span>
+                <i class="fab fa-github"></i>
+            </li>
+            <li class="icon youtube" id="yt">
+                <span class="tooltip">YouTube</span>
+                <i class="fab fa-youtube"></i>
+            </li>
+            <li class="icon instagram" id="is">
+                <span class="tooltip">Instagram</span>
+                <i class="fab fa-instagram"></i>
+            </li>
+            <li class="icon email" id="em">
+                <span class="tooltip">Email Me</span>
+                <i class="fa fa-paper-plane"></i>
+            </li>
+        </ul>
+    </span>
 
     <script type="text/javascript">
-
-        if(location.href==="cheespeasa1234.github.io/index.html")
-            location.href="cheespeasa1234.github.io"
-
-        let setRedirectOnClick = (e, h) => document.getElementById(e + "Button").onclick = function () { location.href = h }
-        setRedirectOnClick("wordle", "wordlesolutions")
-        setRedirectOnClick("about", "about")
-        setRedirectOnClick("blog", "blog")
-        setRedirectOnClick("pme", "pme")
-        setRedirectOnClick("gen", "generators")
-        setRedirectOnClick("download", "downloads")
-
+        let get = (s) => document.getElementById(s);
+        let redirect = (e, h) => {
+            document.getElementById(e).onclick = function () {
+                location.href = h;
+            }
+        }
+        redirect("mdlButton", "mandelbrot")
+        redirect("wordleButton", "wordlesolutions")
+        redirect("aboutButton", "about")
+        redirect("blogButton", "blog")
+        redirect("genButton", "generators")
+        redirect("downloadButton", "downloads")
+        redirect("tw", "https://www.twitter.com/CiY310")
+        redirect("gh", "https://www.github.com/cheespeasa1234")
+        redirect("yt", "https://www.youtube.com/channel/UCkcC8RSKaj7x_mqFuM-hVAg")
+        redirect("is", "https://www.instagram.com/latenevison_1099")
+        redirect("em",
+            "https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=Cheespeasa@gmail.com&su=About%20Website&body=I%20have%20a%20suggestion%20%2f%20comment%20%2f%20issue:%20"
+        )
     </script>
 
     <p style="font-family: 'Monaco';">
-        View the <a href="https://cheespeasa1234.github.io/privacy/?y=https://cheespeasa1234.github.io?n=https://www.google.com">Privacy Policy</a> here.
+        View the <a
+            href="https://cheespeasa1234.github.io/privacy/?y=https://cheespeasa1234.github.io?n=https://www.google.com">Privacy
+            Policy</a> here.
     </p>
 
 </body>

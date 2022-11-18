@@ -5,6 +5,7 @@ body {
     font-family: Monaco;
     color: black;
     background-image: linear-gradient(to right, white, #11698E);
+    place-items: center;
 }
 
 .block {
