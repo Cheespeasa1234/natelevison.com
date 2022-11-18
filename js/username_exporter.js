@@ -5,7 +5,7 @@ let start = () => {
 
     if(exportType === "view") {
 
-        out = "<ul>"
+        out = "<ul>";
         for(let i = 0; i < count; i++) {
             var n = getName();
             console.log(n);
@@ -16,11 +16,11 @@ let start = () => {
 
     } else if(exportType === "copy") {
 
-        out = "<ul>"
+        out = "<ul>";
         let unformatted = "";
         for (let i = 0; i < count; i++) {
             out += "<li>" + getName() + "</li>";
-            unformatted += getName() + ",\n"
+            unformatted += getName() + ",\n";
         }
 
         get("out").innerHTML = "<h2>Your usernames are below.</h2>" + out + "</ul>"
@@ -33,14 +33,14 @@ let start = () => {
 
     } else if(exportType === "share") {
 
-        out = "<ul>"
+        out = "<ul>";
         let unformatted = "";
         for (let i = 0; i < count; i++) {
             out += "<li>" + getName() + "</li>";
-            unformatted += getName + ",\n"
+            unformatted += getName + ",\n";
         }
 
-        get("out").innerHTML = "<h2>Your usernames are below.</h2>" + out + "</ul>"
+        get("out").innerHTML = "<h2>Your usernames are below.</h2>" + out + "</ul>";
 
         /* Copy the text inside the text field */
         navigator.clipboard.writeText("I generated random usernames with " + location.href + "! Here are my results: "+out);
