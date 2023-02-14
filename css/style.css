@@ -128,7 +128,6 @@ body {
 
 .entry {
     font-family: Monaco;
-    text-align: justify;
 }
 
 .titlet {
@@ -139,4 +138,10 @@ body {
 .date {
     font-family: Monaco;
     font-size: large;
+}
+
+.sub {
+    font-family: Monaco;
+    font-size: small;
+    color:#888
 }
