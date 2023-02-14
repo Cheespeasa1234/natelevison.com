@@ -1,0 +1,26 @@
+:root {
+  --prim-color: rgb(0,117,163);
+  --secondary-color: rgb(20, 137, 183);
+}
+
+nav {
+  display: flex;
+  align-items: flex-start;
+  background-color: var(--prim-color);
+  margin: 0;
+  padding: 0;
+}
+
+nav > a {
+  background-color: var(--prim-color);
+  padding: 5px;
+}
+
+nav > a:hover {
+  background-color: var(--secondary-color);
+}
+
+body, main {
+  margin: 0;
+  padding: 0;
+}
