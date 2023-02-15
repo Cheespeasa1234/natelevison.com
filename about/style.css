@@ -42,3 +42,7 @@ ul {
 li:hover .fa-brands {
   transform: scale(1.2, 1.2);
 }
+
+li {
+  width: fit-content;
+}
