@@ -6,8 +6,8 @@ let a=(active)=>{
         <div>
           <a class="nav-link${active[0]?' active':''}" href="../">Home</a>
           <a class="nav-link${active[1]?' active':''}" href="../about">About</a>
-          <a class="nav-link${active[2]?' active':''}" href="../subpage">Contact</a>
-          <a class="nav-link${active[3]?' active':''}" href="../subpage">Projects</a>
+          <a class="nav-link${active[2]?' active':''}" href="../contact">Contact</a>
+          <a class="nav-link${active[3]?' active':''}" href="../projects">Projects</a>
         </div>
         <div>
           <a class="nav-link scl" href="https://www.github.com/Cheespeasa1234" target="_blank">
