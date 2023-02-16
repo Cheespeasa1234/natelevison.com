@@ -5,97 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
     <link rel="stylesheet" href="style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="/components/nav.css">
   </head>
 
   <body>
     <header>
-      <link rel="stylesheet" href="nav.css" />
-      <nav>
-        <div>
-          <a class="nav-link active" href="../">Home</a>
-          <a class="nav-link" href="../about">About</a>
-          <a class="nav-link" href="../subpage">Contact</a>
-          <a class="nav-link" href="../subpage">Projects</a>
-        </div>
-        <div>
-          <a
-            class="nav-link scl"
-            href="https://www.github.com/Cheespeasa1234"
-            target="_blank"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-          <a
-            class="nav-link scl"
-            href="https://www.twitter.com/CiY310"
-            target="_blank"
-          >
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a
-            class="nav-link scl"
-            href="mailto:natelevison@gmail.com"
-            target="_blank"
-          >
-            <i class="fa-solid fa-envelope"></i>
-          </a>
-        </div>
-      </nav>
+      <my-nav></my-nav>
     </header>
     <main>
       <h2>Welcome to Nate Levison's Homepage!</h2>
       <hr />
     </main>
+    
+    <my-foot></my-foot>
 
-    <footer>
-      <div class="footer-sec">
-        <h5>This Website</h5>
-        <ul>
-          <li class="footer-link"><a href="../">Home</a></li>
-          <li class="footer-link"><a href="../about/">About</a></li>
-          <li class="footer-link"><a href="../contact">Contact</a></li>
-          <li class="footer-link"><a href="../projects">Projects</a></li>
-        </ul>
-      </div>
-      <div class="footer-sec">
-        <h5>Links & Resources</h5>
-        <ul>
-          <li class="footer-link">
-            <a href="https://www.codecademy.com">Learn code</a>
-          </li>
-          <li class="footer-link">
-            <a href="https://www.w3schools.com">Learn code</a>
-          </li>
-          <li class="footer-link">
-            <a href="../about-site">About this site</a>
-          </li>
-        </ul>
-      </div>
-      <div class="footer-sec">
-        <h5>Contact & Help</h5>
-        <ul>
-          <li class="footer-link">
-            <a href="mailto:natelevison@gmail.com">Email me</a>
-          </li>
-          <li class="footer-link">
-            <a
-              href="https://github.com/Cheespeasa1234/cheespeasa1234.github.io/issues/new"
-              >Report an issue</a
-            >
-          </li>
-          <li class="footer-link">
-            <a href="mailto:natelevison@gmail.com">Legal</a>
-          </li>
-        </ul>
-      </div>
-    </footer>
+    <script src="components/my-nav.js"></script>
+    <script src="components/my-foot.js"></script>
+    <script>
+      a([true, false, false, false])
+    </script>
   </body>
 </html>

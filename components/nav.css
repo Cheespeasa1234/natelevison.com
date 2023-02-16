@@ -13,14 +13,14 @@ main {
 }
 
 nav > div {
-  display:flex;
+  display: flex;
 }
 
 .nav-link {
   background-color: var(--prim-color);
   padding: 10px;
   color: black;
-  text-decoration: none;;
+  text-decoration: none;
 }
 
 .active {
@@ -44,7 +44,7 @@ footer ul {
   font-size: 16px;
   padding-left: 0;
   margin-top: 0;
-  cursor:pointer;
+  cursor: pointer;
 }
 
 .footer-link > a {
@@ -74,6 +74,15 @@ footer {
   text-align: center;
 }
 
-.footer-sec h5 {
+.footer-sec {
   text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.footer-link {
+  text-align: center;
+}
+ul {
+  list-style: none;
 }

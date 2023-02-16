@@ -28,7 +28,7 @@ nav > div {
   background-color: var(--prim-color);
   padding: 10px;
   color: black;
-  text-decoration: none;;
+  text-decoration: none;
 }
 
 .active {

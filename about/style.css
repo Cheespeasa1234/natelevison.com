@@ -6,7 +6,7 @@
   font-family: sans-serif;
 }
 
-footer  ul {
+footer ul {
   font-size: 16px;
 }
 
@@ -31,18 +31,9 @@ p {
   font-size: 18px;
 }
 
-ul {
-  list-style: none;
-  padding-left: 20px;
-}
-
 .fa-brands {
   transition: transform 0.2s;
 }
 li:hover .fa-brands {
   transform: scale(1.2, 1.2);
-}
-
-li {
-  width: fit-content;
 }

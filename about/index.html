@@ -1,114 +1,79 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/components/nav.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"/>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>About Me</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="../nav.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-
-<body>
-  <header>
-    <nav>
-      <div>
-        <a class="nav-link" href="../">Home</a>
-        <a class="nav-link active" href="../about">About</a>
-        <a class="nav-link" href="../subpage">Contact</a>
-        <a class="nav-link" href="../subpage">Projects</a>
-      </div>
-      <div>
-        <a class="nav-link scl" href="https://www.github.com/Cheespeasa1234" target="_blank">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a class="nav-link scl" href="https://www.twitter.com/CiY310" target="_blank">
-          <i class="fa-brands fa-twitter"></i>
-        </a>
-        <a class="nav-link scl" href="mailto:natelevison@gmail.com" target="_blank">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <h2>About Nate Levison</h2>
-    <p>
-      Nate Levison is an aspiring computer programmer who likes full-stack development, game programming, and learning
-      new things. He is a dog person and a video game enjoyer.
-    </p>
-    <h3>Skills</h3>
-    <p>
-      Nate is skilled in many programming languages, and he can take on any challenge thrown his way. These languages
-      are:
-    </p>
-    <ul>
-      <li><i class="fa-brands fa-js"></i> Java (1.5y)</li>
-      <li><i class="fa-brands fa-html5"></i> Web2 (1.2y)</li>
-      <li><i class="fa-brands fa-node-js"></i> Node.js (1.2y)</li>
-      <li><i class="fa-brands fa-python"></i> Python (8m)</li>
-    </ul>
-    <p>
-      He particuarily enjoys making simple websites to screw around with and try new things on.
-    </p>
-    <h3>Accomplishments & Creations</h3>
-    <p>
-      Nate has accomplished many things in his computer career. His greatest accomplishment is making his first
-      full-stack website (a private blog for friends). He has also designed many of his own stylesheets and designs
-      which he uses on his own projects. Additionally, he has recreated multiple arcade-like games in Java. And lastly,
-      he has made multiple machine learning programs in Python.
-    </p>
-    <h3>Private Life</h3>
-    <p>
-      Nate enjoys spending time with his family, especially with his dog. He can cook well enough that he won't cause a
-      fire, but he still loves mom's cooking. Drop by my house and try some carrot soufflé. Do it, you won't regret it.
-    </p>
-    <p>
-      With his free time, he likes to code frivolous projects and play Minecraft or Geometry Dash. When he isn't using
-      his computer (or his phone), he is probably sleeping!
-    </p>
-    <p>
-      Nate is a energetic, creative, and curious person, who takes every disadvantage he is given and turns it into an
-      advantage.
-    </p>
-    <p>
-      Nate always tries to live by Confucian principles, meaning he always makes the choice that is the best for
-      everyone, not just himself. He is Jewish and likes learning about Jewish history.
-    </p>
-  </main>
-
-  <footer>
-    <div class="footer-sec">
-      <h5>This Website</h5>
+  <body>
+    <header>
+      <my-nav></my-nav>
+    </header>
+    <main>
+      <h2>About Nate Levison</h2>
+      <p>
+        Nate Levison is an aspiring computer programmer who likes full-stack
+        development, game programming, and learning new things. He is a dog
+        person and a video game enjoyer.
+      </p>
+      <h3>Skills</h3>
+      <p>
+        Nate is skilled in many programming languages, and he can take on any
+        challenge thrown his way. These languages are:
+      </p>
       <ul>
-        <li class="footer-link"> <a href="../">Home</a></li>
-        <li class="footer-link"> <a href="../about/">About</a></li>
-        <li class="footer-link"> <a href="../contact">Contact</a></li>
-        <li class="footer-link"> <a href="../projects">Projects</a></li>
+        <li><i class="fa-brands fa-js"></i> Java (1.5y)</li>
+        <li><i class="fa-brands fa-html5"></i> Web2 (1.2y)</li>
+        <li><i class="fa-brands fa-node-js"></i> Node.js (1.2y)</li>
+        <li><i class="fa-brands fa-python"></i> Python (8m)</li>
       </ul>
-    </div>
-    <div class="footer-sec">
-      <h5>Links & Resources</h5>
-      <ul>
-        <li class="footer-link"><a href="https://www.codecademy.com">Learn code</a></li>
-        <li class="footer-link"><a href="https://www.w3schools.com">Learn code</a></li>
-        <li class="footer-link"><a href="../about-site">About this site</a></li>
-      </ul>
-    </div>
-    <div class="footer-sec">
-      <h5>Contact & Help</h5>
-      <ul>
-        <li class="footer-link"><a href="mailto:natelevison@gmail.com">Email me</a></li>
-        <li class="footer-link"><a href="https://github.com/Cheespeasa1234/cheespeasa1234.github.io/issues/new">Report an issue</a></li>
-        <li class="footer-link"><a href="mailto:natelevison@gmail.com">Legal</a></li>
-      </ul>
-    </div>
-  </footer>
-</body>
+      <p>
+        He particuarily enjoys making simple websites to screw around with and
+        try new things on.
+      </p>
+      <h3>Accomplishments & Creations</h3>
+      <p>
+        Nate has accomplished many things in his computer career. His greatest
+        accomplishment is making his first full-stack website (a private blog
+        for friends). He has also designed many of his own stylesheets and
+        designs which he uses on his own projects. Additionally, he has
+        recreated multiple arcade-like games in Java. And lastly, he has made
+        multiple machine learning programs in Python.
+      </p>
+      <h3>Private Life</h3>
+      <p>
+        Nate enjoys spending time with his family, especially with his dog. He
+        can cook well enough that he won't cause a fire, but he still loves
+        mom's cooking. Drop by my house and try some carrot soufflé. Do it, you
+        won't regret it.
+      </p>
+      <p>
+        With his free time, he likes to code frivolous projects and play
+        Minecraft or Geometry Dash. When he isn't using his computer (or his
+        phone), he is probably sleeping!
+      </p>
+      <p>
+        Nate is a energetic, creative, and curious person, who takes every
+        disadvantage he is given and turns it into an advantage.
+      </p>
+      <p>
+        Nate always tries to live by Confucian principles, meaning he always
+        makes the choice that is the best for everyone, not just himself. He is
+        Jewish and likes learning about Jewish history.
+      </p>
+    </main>
 
+    <my-foot></my-foot>
+
+    <script src="../components/my-nav.js"></script>
+    <script src="../components/my-foot.js"></script>
+    <script>
+      a([false, true, false, false]);
+    </script>
+  </body>
 </html>
