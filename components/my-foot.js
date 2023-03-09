@@ -5,10 +5,10 @@ class MyFooter extends HTMLElement {
       <div class="footer-sec">
         <h5>This Website</h5>
         <ul>
-          <li class="footer-link"><a href="../">Home</a></li>
-          <li class="footer-link"><a href="../about/">About</a></li>
-          <li class="footer-link"><a href="../contact">Contact</a></li>
-          <li class="footer-link"><a href="../my_projects/">Projects</a></li>
+          <li class="footer-link"><a href="${ROOT}">Home</a></li>
+          <li class="footer-link"><a href="${ROOT}about/">About</a></li>
+          <li class="footer-link"><a href="${ROOT}contact">Contact</a></li>
+          <li class="footer-link"><a href="${ROOT}my_projects/">Projects</a></li>
         </ul>
       </div>
       <div class="footer-sec">

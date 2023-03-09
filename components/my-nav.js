@@ -4,10 +4,10 @@ let a=(active)=>{
       this.innerHTML = /*html*/`
       <nav>
         <div>
-          <a class="nav-link${active[0]?' active':''}" href="../">Home</a>
-          <a class="nav-link${active[1]?' active':''}" href="../about">About</a>
-          <a class="nav-link${active[2]?' active':''}" href="../contact">Contact</a>
-          <a class="nav-link${active[3]?' active':''}" href="../my_projects">Projects</a>
+          <a class="nav-link${active[0]?' active':''}" href="${ROOT}">Home</a>
+          <a class="nav-link${active[1]?' active':''}" href="${ROOT}about">About</a>
+          <a class="nav-link${active[2]?' active':''}" href="${ROOT}contact">Contact</a>
+          <a class="nav-link${active[3]?' active':''}" href="${ROOT}my_projects">Projects</a>
         </div>
         <div>
           <a class="nav-link scl" href="https://www.github.com/Cheespeasa1234" target="_blank">
