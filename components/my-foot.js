@@ -8,7 +8,7 @@ class MyFooter extends HTMLElement {
           <li class="footer-link"><a href="../">Home</a></li>
           <li class="footer-link"><a href="../about/">About</a></li>
           <li class="footer-link"><a href="../contact">Contact</a></li>
-          <li class="footer-link"><a href="../projects/">Projects</a></li>
+          <li class="footer-link"><a href="../my_projects/">Projects</a></li>
         </ul>
       </div>
       <div class="footer-sec">
