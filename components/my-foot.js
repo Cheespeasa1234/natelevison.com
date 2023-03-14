@@ -7,7 +7,7 @@ class MyFooter extends HTMLElement {
         <ul>
           <li class="footer-link"><a href="${ROOT || "../"}">Home</a></li>
           <li class="footer-link"><a href="${ROOT || "../"}about/">About</a></li>
-          <li class="footer-link"><a href="${ROOT || "../"}contact">Contact</a></li>
+          <li class="footer-link"><a href="${ROOT || "../"}blog">Blog</a></li>
           <li class="footer-link"><a href="${ROOT || "../"}my_projects/">Projects</a></li>
         </ul>
       </div>
