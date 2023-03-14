@@ -12,33 +12,6 @@ body {
   background-color: var(--bg-color);
 }
 
-nav {
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
-  background-color: var(--prim-color);
-  margin: 0;
-}
-
-nav > div {
-  display:flex;
-}
-
-.nav-link {
-  background-color: var(--prim-color);
-  padding: 10px;
-  color: black;
-  text-decoration: none;
-}
-
-.active {
-  background-color: var(--third-color);
-}
-
-.nav-link:hover {
-  background-color: var(--secondary-color);
-}
-
 body {
   margin-top: 0;
   margin-left: 0;

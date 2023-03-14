@@ -4,7 +4,7 @@ let a=(active)=>{
       this.innerHTML = /*html*/`
       <nav>
         <div>
-          <a class="nav-link${active[0]?' active':''}" href="${ROOT}">Home</a>
+          <a class="first-link nav-link${active[0]?' active':''}" href="${ROOT}">Home</a>
           <a class="nav-link${active[1]?' active':''}" href="${ROOT}about">About</a>
           <a class="nav-link${active[2]?' active':''}" href="${ROOT}blog">Blog</a>
           <a class="nav-link${active[3]?' active':''}" href="${ROOT}my_projects">Projects</a>
