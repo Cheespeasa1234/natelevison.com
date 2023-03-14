@@ -215,6 +215,32 @@ const posts = [
         </p>
     `,
     },
+    {
+        id: 9,
+        title: "Migration halfway complete",
+        date_display: "March 13, 2023, 21:29",
+        date_iso: "2023-03-14T01:29:32.410Z",
+        content: /* html */ `
+        <p>
+            I finished migrating the blog over to the new site. By the way, I didn't post here for a while because I was busy with school. I am still not doing well, though. 
+        </p>
+        <p>
+            I have changed a lot of things with this website, so here they are...
+            <ol>
+                <li>I redesigned everything</li>
+                <li>I made a custom and consistent header & footer</li>
+                <li>I made a more consistent website style</li>
+                <li>I rewrote the blog</li>
+            </ol>
+        </p>
+        <p>
+            I have also learned a lot about CS, programming, and computers in general. I especially have improved with HTML, CSS, and JS. I learned a bit of Rust and C++, with OpenGL. I am excited for all that is to come.
+        </p>
+        <p>
+            Anyway, happy new year, (3 months late), and much love!
+        </p>
+    `,
+    },
 ].reverse();
 
 let articlesDiv = document.querySelector("#articles");
@@ -236,14 +262,14 @@ for (let post of posts) {
 const queryString = window.location.search;
 const urlParams = new URLSearchParams(queryString);
 if (urlParams.has("post")) {
-    const post = urlParams.get("post")
+    const post = urlParams.get("post");
     const id = `post-${post}`;
     const element = document.getElementById(id);
     const y = element.getBoundingClientRect().top + window.pageYOffset - 50;
     scrollTo({ top: y, behavior: "smooth" });
     highlightme.classList.add("highlighted");
-    setTimeout(()=>{
+    setTimeout(() => {
         element.classList.add("nothighlighted");
-        element.classList.remove("highlighted")
-    }, 1000)
+        element.classList.remove("highlighted");
+    }, 1000);
 }
