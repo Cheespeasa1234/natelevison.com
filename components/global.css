@@ -64,10 +64,6 @@ nav > div {
   background-color: var(--secondary-color);
 }
 
-.active {
-  background-color: var(--third-color);
-}
-
 .scl {
   transition: transform 0.2s;
   background-color: transparent;
