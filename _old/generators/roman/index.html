@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+
+<html>
+
+<link rel="stylesheet" href="../../css/style.css">
+<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+<title>Roman Numeral to Number Calculator</title>
+
+<body>
+
+    <style>
+        .a {
+            width: 60px;
+        }
+    </style>
+
+    <h1>Follow the steps below to calculate</h1>
+
+    <h2>Step one: Define your numerals used</h2>
+
+    <div>
+        <label for="I">I: </label>
+        <input id="I" type="number" class="a" value="1">
+        <br>
+        <label for="V">V: </label>
+        <input id="V" type="number" class="a" value="5">
+        <br>
+        <label for="X">X: </label>
+        <input id="X" type="number" class="a" value="10">
+        <br>
+        <label for="L">L: </label>
+        <input id="L" type="number" class="a" value="50">
+        <br>
+        <label for="C">C: </label>
+        <input id="C" type="number" class="a" value="100">
+        <br>
+        <label for="D">D: </label>
+        <input id="D" type="number" class="a" value="500">
+        <br>
+        <label for="M">M: </label>
+        <input id="M" type="number" class="a" value="1000">
+        <br><br>
+        <button id="resetNumerals">Reset Settings</button>
+    </div>
+
+    <h2>Step two: Input the roman numeral given</h2>
+    <div>
+        <input id="numeral" type="text" style="transform:scale(2,2);position:relative;left:100px;">
+    </div>
+
+
+    <h3>Press to Solve</h3>
+    <button id="solve">Solve</button>
+    
+    <script>
+        
+        let g=(i)=>document.getElementById(i)
+        let a = []
+
+        function start() {
+            a['I'] = g('I').value
+            a['V'] = g('V').value
+            a['X'] = g('X').value
+            a['L'] = g('L').value
+            a['C'] = g('C').value
+            a['D'] = g('D').value
+            a['M'] = g('M').value
+
+
+        }
+
+        g('resetNumerals').onclick = function() {
+            g('I').value = 1
+            g('V').value = 5
+            g('X').value = 10
+            g('L').value = 50
+            g('C').value = 100
+            g('D').value = 500
+            g('M').value = 1000
+        }
+
+    </script>
+
+</body>
+
+</html>

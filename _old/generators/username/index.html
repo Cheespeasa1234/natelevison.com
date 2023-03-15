@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+    <title>Random Username Generator</title>
+
+    <body>
+
+        <script src="../../js/wordchoosers.js"></script>
+        <script src="../../js/exporter.js"></script>
+
+        <button onclick="new function() {location.href='../';}" id="hubButton" class="block" style="width:100%">View other generators</button>
+
+        <h1>Welcome to the Username Generator</h1>
+
+        <h3>Select your preferences</h3>
+        <div>
+            
+
+            <input type="checkbox" id="useadj" checked=true>
+            <label style="cursor:pointer;" title="Usernames will have random adjectives." for="checkbox">Use a random adjective</label>
+            <br>
+
+            <input type="checkbox" id="usenoun" checked=true >
+            <label style="cursor:pointer;" title="Usernames will have random nouns." for="checkbox">Use a random noun</label>
+            <br>
+
+            <input type="checkbox" id="usenum" checked=true>
+            <label style="cursor:pointer;" title="Usernames will have random numbers." for="checkbox">Use a random set of numbers</label>
+            <br>
+
+            <input id="count" type="number" min="1" max="50" value="1">
+            <label style="cursor:pointer;" title="How many usernames you want generated" for="count">Number of usernames to generate</label>
+            <br>
+
+            <input id="maxlen" type="number" min="1" max="50" value="15">
+            <label style="cursor:pointer;" title="Usernames will continuously generate until it's length is less than this. Keep this value relatively high." for="maxlen">Maximum letter count of usernames</label>
+            <br>
+
+            <input id="maxatt" type="number" min="1" max="50" value="50">
+            <label style="cursor:pointer;" title="If a username does not pass the above test in this amount of tries, it will move on. Keep this value high." for="maxatt"> Maximum attempts to pass length checks</label>
+            <br>
+            
+            
+        </div>
+
+        <h3>Get your results</h3>
+        <div>
+
+            <form>
+                <label> Select Export Type </label>
+                <select id="exportType">
+                    <option value="view"> View results
+                    </option>
+                    <option value="copy"> Copy and view results
+                    </option>
+                    <option value="share"> Share and view results
+                    </option>
+                </select>
+            </form>
+
+            <button id="start" onclick="start();">Generate</button>
+
+        </div>
+
+        <div id="out">
+
+        </div>
+
+    </body>
+</html>

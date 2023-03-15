@@ -1,0 +1,147 @@
+@font-face { font-family: Monaco; 
+    src: url('fonts/Monaco\ 400.ttf'); } 
+
+body {
+    font-family: Monaco;
+    color: black;
+    background-image: linear-gradient(to right, white, #11698E);
+    place-items: center;
+}
+
+.block {
+    /* display: block; */
+    width: 10%;
+    border-color: #000000;
+    background-color: #11698E;
+    color: #F8F1F1;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: Monaco;
+    cursor: pointer;
+    /*vv The rounding stuff vv*/
+    border-radius: 8px;
+}
+
+.block:hover {
+    background-color: #16C79A;
+    color: black;
+}
+
+.pryblock {
+    /* display: block; */
+    width: 20%;
+    border-color: #000000;
+    background-image: linear-gradient(to right,blue,green);
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: Monaco;
+    cursor: pointer;
+    /*vv The rounding stuff vv*/
+    border-radius: 8px;
+}
+
+.pryblock:hover {
+    background-image: linear-gradient(to right,green, blue);
+    color: black;
+}
+
+.prnblock {
+    /* display: block; */
+    width: 20%;
+    border-color: #000000;
+    background-image: linear-gradient(to right,yellow,red);
+    color: black;
+    padding: 8px 16px;
+    font-size: 16px;
+    font-family: Monaco;
+    cursor: pointer;
+    /*vv The rounding stuff vv*/
+    border-radius: 8px;
+}
+
+.prnblock:hover {
+    background-image: linear-gradient(to right,red,yellow);
+    color: black;
+}
+
+.info {
+    position: absolute;
+    background: url(img/questionmark.png);
+}
+
+.modal {
+    display: none;
+    /* Hidden by default */
+    position: fixed;
+    /* Stay in place */
+    z-index: 1;
+    /* Sit on top */
+    padding-top: 100px;
+    /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%;
+    /* Full width */
+    height: 100%;
+    /* Full height */
+    overflow: auto;
+    /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0);
+    /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Black w/ opacity */
+}
+
+
+/* Modal Content */
+
+.modal-content {
+    background-color: #F8F1F1;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+}
+
+
+/* The Close Button */
+
+.close {
+    color: #F8F1F1;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.title {
+    color: black;
+    font-family: Monaco;
+}
+
+.entry {
+    font-family: Monaco;
+}
+
+.titlet {
+    font-family: Monaco;
+    font-size: xx-large;
+}
+
+.date {
+    font-family: Monaco;
+    font-size: large;
+}
+
+.sub {
+    font-family: Monaco;
+    font-size: small;
+    color:#888
+}

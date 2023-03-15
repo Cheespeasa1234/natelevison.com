@@ -1,0 +1,33 @@
+body {
+  background: #333;
+}
+
+#rectangle {
+  position:absolute;
+  z-index: -999;
+  left: 3px;
+  top: 10px;
+  width: 100vw;
+  height: 25px;
+  background: blue;
+}
+
+.top {
+  color: white;
+  font-family: monospace;
+  white-space: pre;
+}
+
+.log-boolean,
+.log-undefined {
+  color: magenta;
+}
+
+.log-object,
+.log-string {
+  color: orange;
+}
+
+.log-number {
+  color: cyan;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+    <input type="image" id="myBtn" class="info" src="../../img/questionmark.png" name="submit" width="50" height="50"
+        alt="submit" />
+    
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+    
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>
+                This program will generate a link that will lead you off site. You can use the link to let people email you with a template just with one click! And don't worry, we do not take any of the data you submit here! View the <a href="https://cheespeasa1234.github.io/privacy/?y=https://cheespeasa1234.github.io/generators/email?n=https://www.google.com">Privacy Policy</a> <br>
+            </h2>
+        </div>
+    
+    </div>
+    
+    <script>
+        var modal = document.getElementById("myModal");
+        // Get the button that opens the modal
+        var btn = document.getElementById("myBtn");
+
+        // Get the <span> element that closes the modal
+        var span = document.getElementsByClassName("close")[0];
+
+        // When the user clicks the button, open the modal 
+        btn.onclick = function () {
+            modal.style.display = "block";
+        }
+
+        // When the user clicks on <span> (x), close the modal
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+    </script>
+
+    <title>mailto Link Generator</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+
+    <body>
+
+        <button onclick="new function() {location.href='../';}" id="hubButton" class="block" style="width:90%;position:absolute;left:5%;">View other generators</button>
+        <br><br>
+
+        <h1>This is the email link generator</h1>
+        <h2>Follow the simple steps to make a clickable email link.</h2>
+
+        <h3>Step one:</h3>
+        <h3>Choose people to send the email to</h3>
+        <div>
+
+            <input type="checkbox" id="sep_to" checked="false">
+            <label for="sep_to">Use space as separator instead of ","</label><br>
+
+            <textarea title="Who the email will be sent to" rows="5" cols="40" name="List of emails to send to" id="to" type="text">someone@gmail.com,someoneelse@gmail.com</textarea>
+            <br><hr>
+
+            <input type="checkbox" id="sep_cc" checked="false">
+            <label for="sep_cc">Use space as separator instead of ","</label><br>
+
+            <textarea title="The people who will recieve the email also, without knowing who else got cc'd" rows="5" cols="40" name="List of emails to cc" id="cc" type="text">anothersomeone@gmail.com</textarea>
+            <br><hr>
+
+            <input type="checkbox" id="sep_bcc" checked="false">
+            <label for="sep_bcc">Use space as separator instead of ","</label><br>
+
+            <textarea title="The people who will recieve the email also, without knowing any other recipient" rows="5" cols="40" name="List of emails to bcc" id="bcc" type="text">secretsomeone@gmail.com</textarea>
+            <br><hr>
+
+        </div>
+
+        <h3>Step two:</h3>
+        <h3>Choose the subject</h3>
+        <div>
+
+            <textarea title="The notice that will appear at the top of the email" rows="5" cols="40" name="Subject of message" id="su" type="text">Important Email!</textarea>
+
+        </div>
+
+        <h3>Step three:</h3>
+        <h3>Choose the body</h3>
+        <div>
+
+            <textarea title='The content of the email. Use "\n" to make a newline and "\t" to make a tab.' rows="5" cols="40" name="Message body" id="bo" type="text">Hello.</textarea>
+
+        </div>
+
+        <h3>Step four:</h3>
+        <h3>Generate the link</h3>
+
+        <script src="../../js/email_generator.js"></script>
+        <script src="../../js/lib_sanitizer.js"></script>
+        <button onclick="generateLink();" id="runner">Generate</button>
+        <br>
+        <textarea id="out" rows="5" cols="50">Output will appear here.</textarea>
+
+    </body>
+
+</html>

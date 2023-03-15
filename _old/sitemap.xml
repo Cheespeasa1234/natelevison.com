@@ -1,0 +1,73 @@
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/</loc>
+        <lastmod>2022-05-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/aboutme</loc>
+        <lastmod>2022-10-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/blog</loc>
+        <lastmod>2022-10-09</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/pme</loc>
+        <lastmod>2022-05-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/privacy</loc>
+        <lastmod>2022-05-26</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/wordlesolutions</loc>
+        <lastmod>2022-05-26</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/mandelbrot</loc>
+        <lastmod>2022-05-26</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/generators</loc>
+        <lastmod>2022-05-19</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/generators/username</loc>
+        <lastmod>2022-05-17</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+    <url>
+        <loc>https://cheespeasa1234.github.io/generators/email</loc>
+        <lastmod>2022-05-19</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.5</priority>
+    </url>
+
+</urlset>

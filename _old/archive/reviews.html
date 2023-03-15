@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+    
+<head>
+    <title>Cheespeasa Hub</title>
+</head>
+
+<body>
+
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', 'Trebuchet MS', sans-serif;
+            line-height: 0.7;
+        }
+        .i {
+            font-style: italic;
+            white-space: nowrap;
+        }
+    </style>
+
+    <div>
+        <h2>Reviews for Product</h2>
+        <h3>10 reviewers averaged ⭐⭐⭐★★</h3>
+
+        <button id="rev">Leave a review</button>
+        <button id="rrl">Report a bug</button>
+        <br>
+    </div>
+
+    <script>
+        document.getElementById("rev").onclick = ()=>{
+            document.body.innerHTML = "<h1>YOU CAN'T LMAO!!</h1>"
+        }
+
+        document.getElementById("rrl").onclick = ()=>{
+            location.href = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        }
+
+        class review {
+
+            constructor(author, star, msg) {
+                this.html = `<div><h3><div class="i">${author}</div> rates this product ${getstar(star)}</h3>\n<p>${msg}</p>`
+            }
+
+        }
+
+        reviews = [
+            new review("Bob", 5, "I loved this product. It was very easy to use and exceedingly easy to learn."),
+            new review("Joe", 1, "This product sucks. It is useless."),
+            new review("Billy", 3, "I did not get much use out of the product before it broke, but while it was working, it was very useful."),
+            new review("Lily", 5, "This item is the best thing I have ever bought!"),
+            new review("Little Timmy", 1, "I THOUGHT THIS WAS FREE BOBUX >:("),
+            new review("ASdoosdjasid", 3, "Where are the light up parts."),
+            new review("AMOGUS!", 5, "AMOGUS!"),
+            new review("Lillian Levison", 2, "The product was not as expected."),
+            new review("Maximillian M", 4, "Amazing product, but took a while to deliver."),
+            new review("You're Mother", 1, "YOU SUCK!!!")
+        ]
+
+        function getstar(num) {
+            out = ""
+            for(let i = 0; i <= num; i++) 
+                out += '⭐'
+            while(out.length < 5)
+                out += '★'
+            return out
+        }
+
+        for(let i = 0; i < reviews.length; i++)
+            document.body.innerHTML += reviews[i].html
+            console.log(reviews.length)
+
+    </script>
+
+</body>
+
+</html>

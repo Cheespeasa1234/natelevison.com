@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+    <link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/style.css">
+
+    <body>
+
+        <h1>Mandlebrot Fractal Generator</h1>
+
+        <input id="movex" type="number" value="0.12">
+        <label for="movex">X Offset</label>
+        <br>
+
+        <input id="movey" type="number" value="0.82">
+        <label for="movey">Y Offset</label>
+        <br>
+
+        <input id="zoom" type="number" value="200">
+        <label for="zoom">Zoom</label>
+        <br>
+
+        <input id="time" type="number" value="1000">
+        <label for="time">Time</label>
+        <br>
+
+        <button class="block" id="go">Generate</button>
+
+        <script>
+
+            document.getElementById("go").onclick = () => {
+                zoom = document.getElementById("zoom").value;
+                movex = document.getElementById("movex").value;
+                movey = document.getElementById("movey").value;
+                time = document.getElementById("time").value;
+                loc = `generated.html?x=${movex}&y=${movey}&z=${zoom}&t=${time}`
+                location.href = loc;
+            }
+
+        </script>
+
+    </body>
+</html>

@@ -1,0 +1,95 @@
+<!--
+
+    No party may use, reproduce, change, or
+    claim the source code following this 
+    statement for commercial purposes. Any 
+    parties using code following must keep 
+    this notice visible, unmodified, and 
+    evident in edited and/or non-edited
+    code.
+
+    And yes, we can legally advertise on here,
+    the source code says so at the top. Here
+    is the notice:
+
+
+    This program was made by Cheespeasa and Quasar.
+
+-->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<link rel="icon" type="image" href="https://bit.ly/3NhO21q">
+<link rel="stylesheet" href="../css/style.css">
+
+<head>
+
+    <meta name="apple-mobile-web-app-title" content="Wordle Solution Generator - By Cheespeasa">
+    <meta name="application-name" content="Wordle Solution Generator - By Cheespeasa">
+    <meta property="og:title" content="Wordle Solution Generator - By Cheespeasa">
+    <meta property="og:url" content="https://www.cheespeasa1234.github.io/wordlesolutions">
+    <meta property="og:description" content="Program to generate the wordle word of the day.">
+    <meta property="description" content="Program to generate the wordle word of the day.">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta charset="UTF-8">
+    <script src="../js/wordle_modal.js"></script>
+    <script src="../js/wordle_lib_rework.js"></script>
+    
+    <title>Nate's Site || Wordlegen</title>
+
+</head>
+
+<body>
+
+    <input type="image" id="myBtn" class="info" src="../img/questionmark.png" name="submit" width="50" height="50">
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>
+                This project is open source! Press RIGHT CLICK and VIEW PAGE SOURCE to see everything!<br>
+                <a href=https://borderpolar.com/wordle-answers>Verify our results!</a>
+                <i>(This will redirect you off of this website!)</i>
+            </h2>
+        </div>
+
+    </div>
+
+    <h1 class="title" style="text-align:center">Cheespeasa's Wordle Word Generator <a href="../">Return to Hub</a></h1>
+    <hr>
+
+    <!--This plainly displays the instructions.-->
+    <h3>Select a search mode:</h3>
+
+    <div>
+    
+        <form>
+            <label> Select </label>
+            <select id="searchType" onchange="setMenus();">
+                <option value="days"> Search for the word in X days from today
+                </option>
+                <option value="word"> Search for the date that word X will be on
+                </option>
+            </select>
+        </form>
+    
+        <input id="in"></input>
+
+        <div id="help">
+
+        </div>
+    
+    </div>
+    <br>
+    <button id="generate" onclick="generate();">Generate</button>
+    <br>
+    <div id="out">
+        Your answer will appear here once you generate it.
+    </div>
+
+
+</html>
