@@ -34,6 +34,7 @@ nav {
   align-content: center;
   background-color: var(--prim-color);
   margin: 0;
+  z-index:1;
 }
 
 nav > div {
@@ -118,4 +119,19 @@ footer {
 }
 ul {
   list-style: none;
+}
+
+.logo {
+  aspect-ratio: 1/1;
+  width: 64px;
+  height: auto;
+  position: fixed;
+  z-index: 3;
+  left: calc(50% - 50px);
+  top: 0;
+  transition: transform 0.4s;
+}
+
+.logo:hover {
+  transform: scale(1.1, 1.1) rotate(10deg)
 }
