@@ -241,6 +241,23 @@ const posts = [
         </p>
     `,
     },
+    {
+        id: 10,
+        title: "Absolute grindset",
+        date_display: "March 23, 2023, 15:05",
+        date_iso: "2023-03-23T19:05:40.049Z",
+        content: /* html */ `
+        <p>
+            Yeah, I'm on a grindset, baby. So rad dude. For real, homes. Anyway, back to my real voice. I have been trying to work more on schoolwork, and by that I mean make a java program to make a schedule. Yeah, very productive.
+        </p>
+        <p>
+            But seriously, I did make a scheduling program. It isn't 100% finished, but it is safe to say that it is safely at version 1.0 . It uses a bunch of cool math and object patterns, and I even made a file format for it that stores schedules. I spent some time to learn making a vscode extension (if you can even call it that) just to make a syntax highlighter for the files. I don't think anyone will use it but it's interesting never the less.
+        </p>
+        <p>
+            All in all, I haven't modified this website at all, but I hope to be documenting more of my coding journey online, as to make a portfolio. Speaking of which, check out my <a href="https://www.github.com/Cheespeasa1234">GitHub profile readme.</a> I spent a bit of time on it, as you will see!
+        </p>
+        `
+    }
 ].reverse();
 
 let articlesDiv = document.querySelector("#articles");
