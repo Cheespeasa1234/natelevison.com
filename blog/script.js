@@ -256,8 +256,31 @@ const posts = [
         <p>
             All in all, I haven't modified this website at all, but I hope to be documenting more of my coding journey online, as to make a portfolio. Speaking of which, check out my <a href="https://www.github.com/Cheespeasa1234">GitHub profile readme.</a> I spent a bit of time on it, as you will see!
         </p>
+        `,
+    },
+    {
+        id: 11,
+        title: "Long time no c++",
+        date_display: "May 3, 2023, 10:40",
+        date_iso: "2023-05-03T14:40:25.680Z",
+        content: /* html */ `
+        <p>
+            Like the title? Yeah, I'm kinda proud of it. It took me a while! ;)
+        </p>
+        <p>
+            Seriously though, times have been tough, but huge news in the coding world for a while. I realize that I have yet to comment on the AI situation, so here we go.
+        </p>
+        <p>
+            I see AI as a huge moral issue. I don't know who said it, and how exactly they did so, but this is a quote that I agree with strongly. "The powers of technology shall be used to eliminate the tedium of our lives, and to allow humans to do something only humans can do- be creative." But of course, that is what AI is being used to do now- be "creative". And I use those words loosely. Most people don't understand that AI doesn't come up with ANYTHING original. Ask it for a business idea. You might think that is a really unique idea, but someone has already come up with it, somewhere in the AI's dataset. Ask it for a story, no other prompts. It will make you a story, whose elements and plot points have already been concieved on some corner of the internet. But the facade that the AI produces makes it seem like it has been creative. And that is enough for the artistic world itself to be on fire. I believe AI should ONLY be used for cubicle work, for the mindless robotic tedium that our human talents are restrained to. For the impossible to concieve concepts the human mind could never wrap itself around. For the symptoms of society a human would be traumatized by, physically and mentally. Why is AI being made to write stories, draw paintings, create businesses? Why are people being forced to work more, write more emails, build more apps, sign more papers? Why can't we switch these roles significantly?
+        </p>
+        <p>
+            I think it is pretty clear that I am very strongly opinionated on this topic, and that I feel extremely strongly on it. But it would be unfair of me to ignore the benefits of AI. AI can help with communication. In fact, I use ChatGPT for this often. It is sometimes difficult for me to get my words out in a way that doesn't make me look like a lunatic in a cage. But ChatGPT helps me sound like a human. It can also help you ask questions you can't ask Google, or another person. For example, I can ask ChatGPT what the word is for what I am trying to say, and ChatGPT helps greatly with that. Additionally, I can ask it to explain a word to me, but instead of giving me a Webster-style explanation like Google, I can have it explain it to me as I as a highschooler. It will adjust vocabulary and make connections which allow my mind to comprehend the defenition to a higher level. Other benefits of AI are that it can do things that are far too dangerous for humans, such as complex surgeries and medicines, and stuff like that.
+        </p>
+        <p>
+            Anyway, I am off to lunch, then my APCS test. I am very scared but confident. I will create another blog post about how that goes, and about my recent programming bouts and adventures. Goodbye!
+        </p>
         `
-    }
+    },
 ].reverse();
 
 let articlesDiv = document.querySelector("#articles");
