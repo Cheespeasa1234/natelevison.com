@@ -279,7 +279,33 @@ const posts = [
         <p>
             Anyway, I am off to lunch, then my APCS test. I am very scared but confident. I will create another blog post about how that goes, and about my recent programming bouts and adventures. Goodbye!
         </p>
-        `
+        `,
+    },
+    {
+        id: 12,
+        title: "So much work, I can't even c#",
+        date_display: "May 6, 2023, 8:26",
+        date_iso: "2023-05-05T12:26:17.450Z",
+        content: /* html */ `
+        <p>
+            Yes, I know it's been two days. I have been very busy. But I hope that I did well on the AP test. It was a very long test, maybe 3-4 hours? Also, the stickers that you had to use smelled very good. I smelled them alot during the test. Did I mention I have a sinus infection now? Also a headache. Probably a coincidence.
+        </p>
+        <p>
+            Tons of work, no time, barely even enough to do any coding. Or sleeping. Also I am pretty proud of this post's title as well ;)
+        </p>
+        <p>
+            But I think it is time I explain my bouts in the world of the ones and the zeros. With all this AI nonsense, I have been very worried for my future in programming, but I hope that the environment changes, but programmers still exist. Otherwise, what will all of this have been for? I understand I am being a bit of a doomer but when you grew up with tech and coding, code.org, scratch, whatnot, it is really hard to see everything you ever knew about tech just go out the window.
+        </p>
+        <p>
+            I have still been programming, although at a lower frequency; mainly because I was studying for the AP test, or I was on my ass. But I have been working on <a href="https://www.github.com/Cheespeasa/LeviAntSim">Boids simulation</a> to get better at mathematical functions in computer science. I have struggled with angles because it is so difficult to visualize the internal mathematics for debugging purposes.
+        </p>
+        <p>
+            In the physical realm, I have been waiting for a new desk, and possibly a new SSD. The physical storage situation has become ever more dire, and I am seriously almost out of capacity. I predict I have one more month of regular programming usage until I am <i>out</i>.
+        </p>
+        <p>
+            Anyway, I wanted to just finish this post by saying that I know no one reads this. My goal is that someone who wants to know more about me can see my internal train of thought and understand what I do with my time. And sometimes for mom. Hi mom!! But thanks for reading. Bye.
+        </p>
+        `,
     },
 ].reverse();
 
