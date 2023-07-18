@@ -8,7 +8,7 @@ cards.forEach(card => {
         const animationKeyframes = [
             { transform: 'rotateY(0deg) rotate(0deg)' },
             { 
-                transform: 'rotateY(180deg) rotate(-10deg)',
+                transform: 'rotateY(180deg) rotate(-10deg) translateY(-100px)',
                 opacity: 0,
             },
             // { transform: 'rotateY(0deg) rotate(0deg)' },
