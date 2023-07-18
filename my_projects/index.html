@@ -1,61 +1,88 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nate Levison's Projects - cheespeasa1234.github.io</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../global/components/global.css" />
-    <script>
-      ROOT = "../";
-    </script>
-  </head>
-  <body>
-    <h1 class="tempbanner">THIS PAGE IS NOT COMPLETE YET!</h1>
-    <header>
-      <my-nav></my-nav>
-    </header>
-    <main>
-      <h2>My Projects</h2>
-      <hr />
 
-      <h3>Frontend Projects</h3>
-      <ul>
-        <li>This webpage</li>
-        <li>
-          <a href="https://github.com/Cheespeasa1234/Old-Website"
-            >A wordle solution generator</a
-          >
-        </li>
-        <li>
-          A "<a href="https://lore.cheespeasa.repl.co/">blog</a>" for my friend
-          in Svelte (it wont wake up anymore)
-        </li>
-        <li>
-          <a href="https://np.cheespeasa.repl.co">Multiple</a>
-          <a href="https://ws.cheespeasa.repl.co">webapps</a>
-        </li>
-      </ul>
-      <h3>Backend Projects</h3>
-      <h3>Java Projects</h3>
-      <ul>
-        <li>A scheduling program <a href="https://www.github.com/Cheespeasa1234/LeviSchedule">here</a></li>
-      </ul>
-      <h3>Other Projects</h3>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nate Levison's Projects - cheespeasa1234.github.io</title>
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="../global/components/globalComponents.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+  <script>
+    ROOT = "../";
+  </script>
+</head>
 
-    <my-foot></my-foot>
+<body>
+  <header>
+    <my-nav></my-nav>
+  </header>
+  <main>
+    <h2>Projects</h2>
+    <hr>
 
-    <script src="../global/components/my-nav.js"></script>
-    <script src="../global/components/my-foot.js"></script>
-    <script>
-      ([false, false, false, true]);
-    </script>
-  </body>
+    <div class="cards-container">
+
+      <div class="card card-java">
+        <div class="card-top-aligned">
+          <div class="card-lang-name">
+            JAVA
+            <br>
+            <div style="font-size:15px;">3 YEARS</div>
+          </div>
+        </div>
+        <img class="card-lang-logo" src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png">
+        <div class="card-bottom-aligned">
+          <div class="divider"></div>
+          <p class="card-seemore">SEE MORE</p>
+        </div>
+      </div>
+
+      <div class="card card-python">
+        <div class="card-top-aligned">
+          <div class="card-lang-name">
+            PYTHON
+            <br>
+            <div style="font-size:15px;">2 YEARS</div>
+          </div>
+        </div>
+        <img class="card-lang-logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png">
+        <div class="card-bottom-aligned">
+          <div class="divider"></div>
+          <p class="card-seemore">SEE MORE</p>
+        </div>
+      </div>
+
+      <div class="card card-node">
+        <div class="card-top-aligned">
+          <div class="card-lang-name">
+            NODE.JS
+            <br>
+            <div style="font-size:15px;">2 YEARS</div>
+          </div>
+        </div>
+        <img class="card-lang-logo"
+          src="https://cdn-icons-png.flaticon.com/512/5968/5968322.png">
+        <div class="card-bottom-aligned">
+          <div class="divider"></div>
+          <p class="card-seemore">SEE MORE</p>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <my-foot></my-foot>
+
+  <script src="../global/components/my-nav.js"></script>
+  <script src="../global/components/my-foot.js"></script>
+  <script src="script.js"></script>
+  <script>
+    loadNav([false, false, false, true]);
+  </script>
+</body>
+
 </html>
