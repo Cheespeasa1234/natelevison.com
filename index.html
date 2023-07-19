@@ -30,6 +30,13 @@
         <script src="/global/components/my-foot.js"></script>
         <script>
             loadNav([true, false, false, false]);
+        
+            // if user href is cheespeasa1234.github.io:
+            if (window.location.href == "https://cheespeasa1234.github.io/") {
+                // redirect to natelevison.com
+                alert("Redirecting to natelevison.com");
+                window.location.href = "https://natelevison.com";
+            }
         </script>
     </body>
 </html>
