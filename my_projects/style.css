@@ -36,6 +36,11 @@ main {
   background-color: #57e18a;
 }
 
+.card-web {
+  border: 2px solid #a42aa4;
+  background-color: #e157e1;
+}
+
 /* for the first card */
 .card:first-child {
   margin-left: 0px;

@@ -1,6 +1,7 @@
 const javaCard = document.querySelector('.card-java');
 const pythonCard = document.querySelector('.card-python');
 const nodeCard = document.querySelector('.card-node');
+const webCard = document.querySelector('.card-web');
 const cards = [javaCard, pythonCard, nodeCard];
 
 cards.forEach(card => {

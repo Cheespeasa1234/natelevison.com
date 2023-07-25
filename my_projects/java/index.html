@@ -1,1 +1,66 @@
-underwhelming page for java
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Projects - natelevison.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="../subpagestyle.css" />
+    <link rel="stylesheet" href="../../global/components/globalComponents.css" />
+</head>
+<script>
+    ROOT = "../../";
+</script>
+
+<body>
+    <header>
+        <my-nav></my-nav>
+    </header>
+    <main>
+        <h2>Nate's Java Projects</h2>
+        <hr />
+        <ul>
+            <li>
+                <div class="project-head">
+                    <span class="project-title">LEVITD</span>
+                    <span class="project-time-range">March 2023 - June 2023</span>
+                    <a href="https://www.github.com/Cheespeasa1234/LeviTD" class="project-lnk">GitHub</a>
+                </div>
+                <p class="project-desc">
+                    LeviTD is a simple remake of early Bloons Tower Defense. I took heavy inspiration from BTD5 and
+                    BTD3, as they were my favorite entries of the franchise. I learned a lot of new things, and I 
+                </p>
+            </li>
+
+            <li>
+                <div class="project-head">
+                    <span class="project-title">LEVIPIC</span>
+                    <span class="project-time-range">October 2022 - January 2023</span>
+                    <a href="https://www.github.com/Cheespeasa1234/LeviTD" class="project-lnk">GitHub</a>
+                </div>
+                <p class="project-desc">
+                    A fork project of Mr Uhl's UPicLab. I added and changed a few features, and reworked the UI to be more to my liking. I even used the editor a bit before I learned how to pirate adobe products. This project represents the dark ages of the 2022-2023 school year, as this was the time period during which I was forbidden from sitting next to my friends.
+                </p>
+            </li>
+        </ul>
+    </main>
+
+    <my-foot></my-foot>
+
+    <script src="../../global/components/my-nav.js"></script>
+    <script src="../../global/components/my-foot.js"></script>
+    <script>
+        loadNav([true, false, false, false]);
+
+        // if user href is cheespeasa1234.github.io:
+        if (window.location.href == "https://cheespeasa1234.github.io/") {
+            // redirect to natelevison.com
+            alert("Redirecting to natelevison.com");
+            window.location.href = "https://natelevison.com";
+        }
+    </script>
+</body>
+
+</html>
