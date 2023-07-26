@@ -3,7 +3,7 @@ class MyNav extends HTMLElement {
         let root = this.getAttribute("root") || "../";
         let selected = this.getAttribute("selected-index");
         this.innerHTML = /*html*/ `
-      <img class="logo" alt="logo" src="${ROOT}img/logo.png">
+      <img class="logo" alt="logo" src="${root}img/logo.png">
       <nav>
       <div>
       <a class="first-link nav-link${
