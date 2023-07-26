@@ -10,33 +10,23 @@
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
         />
         <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="/global/components/globalComponents.css" />
+        <link rel="stylesheet" href="./global/components/globalComponents.css" />
     </head>
     <script>
         ROOT = "./";
     </script>
+    <script src="./global/components/my-nav.js"></script>
+    <script src="./global/components/my-foot.js"></script>
     <body>
         <header>
-            <my-nav></my-nav>
+            <my-nav selected-index=0></my-nav>
         </header>
         <main>
             <h2>Welcome to Nate Levison's Homepage!</h2>
-            <hr/>
+            <hr />
         </main>
 
         <my-foot></my-foot>
 
-        <script src="/global/components/my-nav.js"></script>
-        <script src="/global/components/my-foot.js"></script>
-        <script>
-            loadNav([true, false, false, false]);
-        
-            // if user href is cheespeasa1234.github.io:
-            if (window.location.href == "https://cheespeasa1234.github.io/") {
-                // redirect to natelevison.com
-                alert("Redirecting to natelevison.com");
-                window.location.href = "https://natelevison.com";
-            }
-        </script>
     </body>
 </html>

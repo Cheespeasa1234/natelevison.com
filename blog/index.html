@@ -12,14 +12,16 @@
     <link rel="stylesheet" href="../style.css" />
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../global/components/globalComponents.css" />
-    <script>
-      ROOT = "../";
-    </script>
   </head>
+
+  <script>ROOT = "../";</script>
+  <script src="../global/components/my-nav.js"></script>
+  <script src="../global/components/my-foot.js"></script>
+  <script src="script.js"></script>
 
   <body>
     <header>
-      <my-nav></my-nav>
+      <my-nav selected-index=2></my-nav>
     </header>
 
     <main>
@@ -30,11 +32,5 @@
     </main>
 
     <my-foot></my-foot>
-    <script src="../global/components/my-nav.js"></script>
-    <script src="../global/components/my-foot.js"></script>
-    <script src="script.js"></script>
-    <script>
-      loadNav([false, false, true, false]);
-    </script>
   </body>
 </html>
