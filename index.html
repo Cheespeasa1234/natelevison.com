@@ -12,21 +12,18 @@
         <link rel="stylesheet" href="style.css" />
         <link rel="stylesheet" href="./global/components/globalComponents.css" />
     </head>
-    <script>
-        ROOT = "./";
-    </script>
     <script src="./global/components/my-nav.js"></script>
     <script src="./global/components/my-foot.js"></script>
     <body>
         <header>
-            <my-nav selected-index=0></my-nav>
+            <my-nav root="./" selected-index=0></my-nav>
         </header>
         <main>
             <h2>Welcome to Nate Levison's Homepage!</h2>
             <hr />
         </main>
 
-        <my-foot></my-foot>
+        <my-foot root="./"></my-foot>
 
     </body>
 </html>

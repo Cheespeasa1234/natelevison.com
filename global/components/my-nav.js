@@ -1,5 +1,6 @@
 class MyNav extends HTMLElement {
     connectedCallback() {
+        let root = this.getAttribute("root") || "../";
         let selected = this.getAttribute("selected-index");
         this.innerHTML = /*html*/ `
       <img class="logo" alt="logo" src="${ROOT}img/logo.png">
@@ -7,16 +8,16 @@ class MyNav extends HTMLElement {
       <div>
       <a class="first-link nav-link${
           selected == 0 ? " active" : ""
-      }" href="${ROOT}">Home</a>
+      }" href="${root}">Home</a>
       <a class="nav-link${
           selected == 1 ? " active" : ""
-      }" href="${ROOT}about">About</a>
+      }" href="${root}about">About</a>
       <a class="nav-link${
           selected == 2 ? " active" : ""
-      }" href="${ROOT}blog">Blog</a>
+      }" href="${root}blog">Blog</a>
       <a class="nav-link${
           selected == 3 ? " active" : ""
-      }" href="${ROOT}my_projects">Projects</a>
+      }" href="${root}my_projects">Projects</a>
       </div>
       <div>
           <a class="nav-link scl" href="https://www.github.com/Cheespeasa1234" target="_blank">
