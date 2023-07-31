@@ -6,7 +6,7 @@ class ProjectElement extends HTMLElement {
         let timerange = this.getAttribute("proj-time") || "no timerange given";
         let linkhref = this.getAttribute("proj-href") || undefined;
         let linkname = this.getAttribute("proj-linkname") || undefined;
-        let desc = this.innerHTML || "no innerhtml found";
+        let desc = this.innerText || "no innerhtml found";
 
         let link = `<a href="${linkhref}" class="project-lnk">${linkname}</a>`;
 
@@ -16,8 +16,7 @@ class ProjectElement extends HTMLElement {
                 <span class="project-time-range">${timerange}</span>
                 ${linkhref == undefined ? "no link" : link}
             </div>
-            </p class="project-desc">${desc}</p>
-            asdasdasd
+            </p class="project-desc">Desc: ${desc} end of desc</p>
         `;
     }
     connectedCallback() {
