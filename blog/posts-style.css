@@ -3,12 +3,27 @@
     border-radius: 10px;
     padding: 5px;
     margin-top: 10px;
+    cursor: pointer;
+}
+
+.post-container:hover {
+    box-shadow: 0 0 5px 0 black;
+}
+
+.post-tags {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.post-date {
+    font-size: 14px;
+    color: #808080;
 }
 
 .post-tag {
     border: 1px solid black;
     border-radius: 5px;
-    padding: 1px;
+    padding: 2px;
     font-size: 12px;
     margin-right: 5px;
 }
@@ -18,4 +33,87 @@ body {
 }
 main {
     padding: 10px;
+}
+
+#searchbox {
+    border: 1px solid black;
+    width: fit-content;
+    padding: 0px;
+    border-radius: 5px;
+}
+
+input#search-input {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    margin: 0px;
+    max-width: 100px;
+}
+
+button.search-button {
+    background: none;
+    border: none;
+    border-radius: 5px;
+    margin: 0px;
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+button.search-button:hover {
+    background: #e0e0e0;
+}
+
+input#search-input:placeholder-shown {
+    font-style: italic;
+}
+input:focus {
+    outline: none;
+}
+
+#search-config-modal {
+    border: 1px solid black;
+    height: 100px;
+    position: absolute;
+    background: white;
+    padding: 10px;
+    overflow: auto;
+    border-radius: 5px;
+    z-index: 3;
+    margin-left: 10px;
+    transform: translateY(-200%);
+}
+
+.tag-selected {
+    background-color: rgb(41, 197, 41);
+}
+
+.tag-selected:hover, .config-tag:hover {
+    cursor: pointer;
+}
+
+.config-tag {
+    transition: all 0.2s;
+    user-select: none;
+}
+
+.config-tag:hover:not(.tag-selected) {
+    background-color: #9eff92;
+}
+
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(359deg);
+    }
+}
+
+.rotate {
+    animation: rotation 2s infinite linear;
 }

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -9,11 +10,18 @@
 </head>
 <body>
     <header>
-        <my-nav root="../" selected-index=3></my-nav>
+        <my-nav root="../" selected-index=2></my-nav>
     </header>
     <main>
-        <input type="text" id="search-input" placeholder="Search Posts...">
-        <button id="search">Search</button>
+        <div id="searchbox">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button class="search-button" id="search"><i class="fa-solid fa-search"></i></button>
+            <button class="search-button" id="config"><i id="config-icon" class="fa-solid fa-gear"></i></button>
+            <span id="search-config-modal">
+                <span id="filtered-msg">Filtered Tags: 0</span> 
+                <div id="search-config-tags"></div>
+            </span>
+        </div>
         <div id="results"></div>
     </main>
     <my-foot root="../"></my-foot>
