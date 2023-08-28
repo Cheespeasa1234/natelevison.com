@@ -8,7 +8,7 @@
 }
 
 /* if screen width is small */
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 600px) {
     .projects {
         /* grid layout: 1 per row, take up whole row space */
         grid-template-columns: 1fr;
@@ -19,7 +19,7 @@
     font-weight: bold;
     font-size: 30px;
     margin-top: 10px;
-    text-shadow: 0px 0px 2px black;
+    /* text-shadow:  0px 0px 2px black; */
 }
 
 .project-container {
@@ -27,8 +27,61 @@
     border: 1px solid black;
     border-radius: 5px;
     margin: 10px;
+    /* transition box shadow and transform */
     transition: box-shadow 0.5s;
-    background-color: #eeeeee;
+    overflow: hidden;
+    position: relative;
+}
+
+.project-container > img {
+    transition: transform 0.5s;
+}
+
+.project-container:hover > img:not(.bg-smaller) {
+    transform: translateX(20px);
+}
+
+.project-container:hover > img.bg-smaller:not(img[src="painpo.png"]) {
+    transform: scale(0.7) translateX(calc(50% + 20px)) translateY(-50%);
+}
+
+.project-container:hover > img[src="painpo.png"] {
+    transform: translateX(40px);
+}
+
+.project-desc {
+    max-width: 400px;
+}
+
+.project-background-image {
+    /* set a mask that makes it more transparent from left to right, starting at 50% width */
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+    -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+    -ms-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+    -o-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: -1;
+}
+
+.bg-smaller {
+    --switch: 90%;
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    transform: scale(0.7) translateX(50%) translateY(-50%);
+}
+
+img[src="painpo.png"] {
+    --switch: 90%;
+    transform: translateX(20px);
+    mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
 }
 
 .project-lnk {
@@ -37,6 +90,7 @@
     font-weight: bold;
     transition: color 0.5s;
 }
+
 .project-lnk:hover {
     color: black;
     text-decoration: underline;

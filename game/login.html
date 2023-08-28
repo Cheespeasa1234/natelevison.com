@@ -1,0 +1,71 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Login</h1>
+    <a href="./reg.html">Go to registration</a>
+    <input type="text" name="username" placeholder="put a username here" required>
+    <input type="text" name="password" placeholder="put a password here" required>
+    <button id="submit">Login</button>
+</body>
+<script>
+    // see if https
+    const isHttps = window.location.protocol === 'https:';
+    if (!isHttps) {
+        alert('Redirecting to https');
+        window.location.href = 'https://' + window.location.host + window.location.pathname;
+    }
+
+    // on form submission
+    const form = document.querySelector('form');
+    form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const username = form.querySelector('input[name="username"]').value;
+        const password = form.querySelector('input[name="password"]').value;
+        const data = { username, password };
+
+        async function sha256(message) {
+            const msgBuffer = new TextEncoder().encode(message);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));             
+            const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+            return hashHex;
+        }
+
+        fetch('https://natelevison.com/game/login', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(res => {
+                if (res.status === 'success') {
+                    alert('Login successful');
+                    const pepper = res.pepper;
+                    const tohash = password + pepper;
+                    // set cookie with sessionID, expire after 1 day
+                    sha256(tohash).then(hash => {
+                        document.cookie = `sessionID=${hash}; expires=${new Date(Date.now() + 86400e3).toUTCString()}; path=/game`;
+                    })
+                    window.location.href = 'https://natelevison.com/game/do';
+                } else {
+                    alert('Login failed');
+                }
+            })
+            .catch(err => {
+                console.log(err);
+                alert('Login failed');
+            });
+    });
+</script>
+
+</html>

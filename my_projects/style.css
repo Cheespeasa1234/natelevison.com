@@ -15,12 +15,6 @@ main {
   padding: 10px;
 }
 
-
-.cards-container {
-  display: flex;
-  justify-content: flex-left;
-}
-
 .card-java {
   border: 2px solid #a42a2a;
   background-color: #e15757;
@@ -41,25 +35,41 @@ main {
   background-color: #e157e1;
 }
 
-/* for the first card */
-.card:first-child {
-  margin-left: 0px;
-}
-
 .card {
   perspective: 150rem;
   width: 30%;
   height: 300px;
   max-width: 200px;
   max-height: 300px;
-  margin-left: 10px;
+  margin: 5px;
   border-radius: 10px;
+  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-shadow: 0px 0px 5px #000000;
   overflow: hidden;
+  transition: all 0.5s;
+}
+
+.cards-container {
+  display: flex;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    align-self: center;
+  }
 }
 
 .card-seemore {
@@ -84,6 +94,7 @@ main {
 
 .card:hover {
   cursor: pointer;
+  box-shadow: 0px 0px 5px black;
 }
 
 .card-lang-name {
@@ -102,4 +113,9 @@ main {
   
   /* add a glow behind it */
   filter: drop-shadow(0px 0px 2px #000000);
+}
+
+.spinner {
+  display: none;
+  width: 20%;
 }

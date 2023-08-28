@@ -32,7 +32,6 @@ class ProjectElement extends HTMLElement {
     }
 
     static get observedAttributes() {return ["proj-title", "proj-time", "proj-href", "proj-linkname"]}
-    
 
 }
 

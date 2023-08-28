@@ -1,0 +1,31 @@
+fieldset {
+    display: flex;
+}
+
+.form_labels {
+    display: flex;
+    flex-direction: column;
+    padding-right: 10px;
+}
+
+.form_inputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.form_buttons {
+    display: flex;
+    padding: 8 0 8 10;
+}
+
+#signin {
+    margin-left: 3px;
+}
+
+.formgroup {
+    display: inline-flex;
+}
+
+fieldset {
+    font-family: sans-serif;
+}

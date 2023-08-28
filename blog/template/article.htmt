@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${TITLE}</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <link rel="stylesheet" href="../../global/components/globalComponents.css">
+</head>
+<body>
+    <header>
+        <my-nav root="../../" selected-index=3></my-nav>
+    </header>
+    <main>
+        <a href="https://natelevison.com/blog">Return to menu</a>
+        ${MAIN}
+    </main>
+    <my-foot root="../../"></my-foot>
+</body>
+
+<script src="../../global/components/my-nav.js"></script>
+<script src="../../global/components/my-foot.js"></script>
+</html>

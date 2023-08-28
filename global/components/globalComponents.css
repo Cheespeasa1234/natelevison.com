@@ -1,9 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
+
 :root {
   --prim-color: rgb(40, 156, 202);
   --secondary-color: rgb(20, 137, 183);
   --third-color: rgb(39, 136, 151);
   --bg-color: #eaeaea;
-  font-family: sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 nav {
@@ -121,6 +123,38 @@ ul {
   list-style: none;
 }
 
+@media only screen and (min-width: 600px) {
+  .small-logo {
+    display: none;
+  }
+}
+/* if the screen is smaller than 600 px width */
+@media only screen and (max-width: 600px) {
+  .logo {
+    display: none;
+  }
+  .small-logo {
+    width: 30px;
+    height: max-content;
+    z-index: 3;
+    padding-top: 2px;
+    transition: transform 0.4s;
+  }
+  .social-links {
+    display: none;
+  }
+  .main-links {
+    width: 100%;
+    display: flex;
+    /* make content take up whole width */
+    justify-content: center;
+  }
+  .main-links > a {
+    width: 100%;
+    text-align: center;
+  }
+}
+
 .logo {
   aspect-ratio: 1/1;
   width: 64px;
@@ -134,4 +168,11 @@ ul {
 
 .logo:hover {
   transform: scale(1.1, 1.1) rotate(10deg)
+}
+
+.blog-heading {
+  background-color: #a0a0a0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 }

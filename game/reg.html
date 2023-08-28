@@ -1,0 +1,26 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Register</h1>
+    <a href="./login.html">Go to login</a>
+    <form action="https://natelevison.com/game/register" method="post">
+        <input type="text" name="username" placeholder="put a username here" required>
+        <input type="text" name="password" placeholder="put a password here" required>
+        <input type="submit">
+    </form>
+</body>
+<script>
+    // see if https
+        const isHttps = window.location.protocol === 'https:';
+        if (!isHttps) {
+            alert('Redirecting to https');
+            window.location.href = 'https://' + window.location.host + window.location.pathname;
+        }
+</script>
+</html>

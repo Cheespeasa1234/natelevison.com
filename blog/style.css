@@ -1,46 +1,7 @@
-.title {
-    font-weight: bold;
-    font-size: 30px;
-    margin-bottom: 10px;
-}
-
-.content {
-    border-left: 5px solid rgb(192, 192, 192);
-    padding-left: 10px;
-    border-radius: 3px;
-}
-
-.highlighted {
-    color: red;
-}
-
-.nothighlighted {
-    color: black;
-    transition: color 1s;
-}
-
-#latest {
-  font-size: 10px;
-}
-
-#welcome {
-  font-size: 1.5em;
-  margin-top: 0.83em;
-  margin-bottom: 0.83em;
-  font-weight: bold;
-  width: fit-content;
+body {
+    margin: 0;
 }
 
 main {
-    padding: 20px;
-}
-
-body {
-    padding: 0;
-    margin: 0;
-}
-
-html {
-    padding: 0;
-    margin: 0;
+    margin-top: 10px;
 }

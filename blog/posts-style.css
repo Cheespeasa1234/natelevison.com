@@ -1,0 +1,21 @@
+.post-container {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+.post-tag {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 1px;
+    font-size: 12px;
+    margin-right: 5px;
+}
+
+body {
+    margin: 0;
+}
+main {
+    padding: 10px;
+}
