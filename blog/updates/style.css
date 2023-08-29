@@ -31,17 +31,12 @@
   width: fit-content;
 }
 
+body {
+    padding-top: 20px;
+}
+
 main {
     padding: 20px;
-}
-
-body {
-    padding: 0;
-    margin: 0;
-    max-width: 600px;
-}
-
-html {
-    padding: 0;
-    margin: 0;
+    max-width: 1000px;
+    margin: auto;
 }

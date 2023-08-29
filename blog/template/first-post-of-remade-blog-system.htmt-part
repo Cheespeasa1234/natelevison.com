@@ -1,2 +1,23 @@
-<h1>Hello, HTMT. This is the first post of the remade blog system.</h1>
-<h2>:)</h2>
+<p>Welcome to the all new blog system!</p>
+<p>
+    I have been working for a week or so on this new blog system. I am quite proud of it, so lets dive into more
+    detail about the blog system, and how it works!
+</p>
+<section>
+    <h3>Blog API</h3>
+    <p>
+        The blog system's foundation is on the API which I coded. The API has three parts- the <b>Post Listing</b>, and the <b>Article Compilation</b>. The first part, the Post Listing, is what you interact with when you go to <a href="../../">the blog home page</a>. The page sends a request to the API, which contains certain query parameters. They are the name, tags, and sort by. The name parameter specifies the title to match an article against. The tags, if provided, specify tags an article must have. And sort by tells the API in what order to send the valid articles. The API checks both parameters, and for every single post, if it matches the parameters, it gets sent back to the search page. It seems quite complicated, and to be honest, it was (mainly because I overcomplicated it). But it works effectively, so that is great.
+    </p>
+    <p>
+        The second part is the Article Compilation. When the user clicks on the link for an article, a request is sent to the server specifying the article name. Every single blog article has the same template structure, and the same CSS, JS, and other stuff. This is both a great boost to productivity, and a setback in setting up the system. What I ended up doing, is writing a template HTML file, where the differing features of a blog post are replaced in the template. You can see the actual template file by clicking <a href="../../template/article.htmt">this link</a>. You will see some weird looking code, but it is just HTML with some fancy variables. The backend takes this template, and grabs the post content as well. You can see the raw post content for this article by clicking <a href="../../template/first-post-of-remade-blog-system.htmt-part">this link</a>. It then puts this raw content into the template file, and sends the compiled file back to the user as the blog page.
+    </p>
+    <p>
+        So that is pretty much how the Blog API works, but we aren't done yet. Lets talk about the <b>Search Page</b>, possibly the most time consuming phase of this project.
+    </p>
+</section>
+<section>
+    <h3>The Search Page</h3>
+    <p>
+        As I stated earlier, the search page took a significant chunk of time out of my life to "perfect". The animations and visuals were the biggest strain, but it also took a while to properly interface with my API.
+    </p>
+</section>

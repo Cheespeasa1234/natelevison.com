@@ -4,6 +4,8 @@
     padding: 5px;
     margin-top: 10px;
     cursor: pointer;
+    transition: box-shadow 0.2s;
+    width: 500px;
 }
 
 .post-container:hover {
@@ -26,6 +28,13 @@
     padding: 2px;
     font-size: 12px;
     margin-right: 5px;
+    background-color:#b6b6b6;
+}
+
+.post-share {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    float: right;
 }
 
 body {
@@ -50,6 +59,7 @@ input#search-input {
     font-size: 16px;
     margin: 0px;
     max-width: 100px;
+    background-color: #eaeaea;
 }
 
 button.search-button {
@@ -79,13 +89,19 @@ input:focus {
     border: 1px solid black;
     height: 100px;
     position: absolute;
-    background: white;
+    background: #eaeaea;
     padding: 10px;
     overflow: auto;
     border-radius: 5px;
     z-index: 3;
     margin-left: 10px;
     transform: translateY(-200%);
+    opacity: 0.5;
+    transition: all 0.5s;
+}
+
+#search-config-modal:hover {
+    opacity: 1;
 }
 
 .tag-selected {

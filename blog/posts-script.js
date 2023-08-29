@@ -1,8 +1,30 @@
 // get all the blog posts
 function getResults(postList) {
     postList.innerHTML = "";
-    fetch("https://natelevison.com/blog/all?sort=date").then(res => res.json()).then(postsJSON => {
+    const selectedTags = document.querySelectorAll(".tag-selected");
+    const filteredTags = Array.from(selectedTags).map(tag => tag.innerHTML);
+
+    const paramName = document.querySelector("#search-input").value;
+    const paramTags = filteredTags.join(",");
+    const paramSort = "date";
+
+    const parameters = new URLSearchParams({
+        name: paramName,
+        tags: paramTags,
+        sort: paramSort
+    });
+    
+    fetch(`https://natelevison.com/blog/all?${parameters.toString()}`).then(res => res.json()).then(postsJSON => {
+    
         const posts = postsJSON.filtered;
+        const resultCount = posts.length;
+
+        if(resultCount == 0) {
+            postList.innerHTML = "No results found.";
+        } else {
+            postList.innerHTML = `Found ${resultCount} result${resultCount == 1 ? "" : "s"}!`;
+        }
+
         // display the posts on a list element
         posts.forEach(post => {
             
@@ -25,13 +47,32 @@ function getResults(postList) {
             date.classList.add(["post-date"]);
             date.innerHTML = " - " + new Date(post.created).toLocaleDateString();
 
+            const share = document.createElement("button");
+            share.classList.add(["post-share"]);
+            share.innerHTML = "<i class=\"fa-solid fa-share-from-square\"></i>";
+            share.addEventListener("click", (ev) => {
+                const url = "https://natelevison.com/blog/article/" + post.name;
+                navigator.clipboard.writeText(url);
+                alert("Copied to clipboard!");
+            });
+
+            if(post.starred) {
+                const star = document.createElement("span");
+                star.innerHTML = "★ ";
+                container.appendChild(star);
+            }
+            container.appendChild(share);
             container.appendChild(title);
             container.appendChild(date);
             container.appendChild(tags);
 
             container.classList.add(["post-container"])
             container.addEventListener("click", (ev) => {
-                if(post.id == 0) window.location.href = "https://natelevison.com/blog/updates"
+
+                // make sure only the container is clicked, not the tags or title
+                if(ev.target == share) return;
+
+                if(post.id == 0) window.location.href = "https://natelevison.com/blog/updates";
                 else window.location.href = "https://natelevison.com/blog/article/" + post.name;
             });
             // clear postlist
@@ -102,14 +143,11 @@ fetch("https://natelevison.com/blog/tags").then(res => res.json()).then(tagsJSON
         tag.innerHTML = tagName; 
         tag.addEventListener("click", () => {
             tag.classList.toggle("tag-selected");
-
             const count = document.querySelectorAll(".tag-selected").length;
             configFilteredMsg.innerHTML = `Filtered Tags: ${count}`
             
             if(count > 0 != selectedAny) {
-                // make it ease out of the rotation
                 configIcon.classList.toggle("rotate");
-
                 selectedAny = !selectedAny;
             }
         });

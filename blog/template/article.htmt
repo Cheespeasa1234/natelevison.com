@@ -5,20 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${TITLE}</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../glossary.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
     <link rel="stylesheet" href="../../global/components/globalComponents.css">
 </head>
 <body>
     <header>
-        <my-nav root="../../" selected-index=3></my-nav>
+        <my-nav root="../../" selected-index=2></my-nav>
     </header>
     <main>
-        <a href="https://natelevison.com/blog">Return to menu</a>
-        ${MAIN}
+        <div class="article-head">
+            <div class="article-head-background"></div>
+            <div>
+                <div class="article-title">${TITLE}</div>
+                <div class="article-author">Nate Levison</div>
+                <div class="article-date">Created on ${DATE}</div>
+            </div>
+        </div>
+        <div class="content">
+            ${MAIN}
+        </div>
     </main>
     <my-foot root="../../"></my-foot>
 </body>
 
 <script src="../../global/components/my-nav.js"></script>
 <script src="../../global/components/my-foot.js"></script>
+<script src="../glossary.js"></script>
+<script>
+    // const back = document.querySelector("#back");
+    // back.addEventListener("click", () => {
+    //     window.location.href = "../";
+    // })
+
+    const head = document.querySelector(".article-head");
+    document.addEventListener("mousemove", (e) => {
+        
+        const headBounds = head.getBoundingClientRect();
+        const hovering = e.clientX > headBounds.left && e.clientX < headBounds.right && e.clientY > headBounds.top && e.clientY < headBounds.bottom;
+        
+        if(hovering) {
+            // move the background position to follow the mouse, based on center of head
+            const x = (e.clientX - headBounds.left) - (headBounds.width / 2);
+            const y = (e.clientY - headBounds.top) - (headBounds.height / 2);
+            
+            head.style.backgroundPositionX = `${x}px`;
+            head.style.backgroundPositionY = `${y}px`;
+        } else {
+            head.style.backgroundPosition = "50% 50%";
+        }
+
+    })
+
+</script>
 </html>
