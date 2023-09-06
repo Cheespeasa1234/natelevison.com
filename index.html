@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+<<<<<<< HEAD
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -74,4 +75,31 @@
             opacity: 0;
         }
     </style>
+=======
+  <head>
+    <meta http-equiv="refresh" content="7; url='https://www.w3docs.com'" />
+  </head>
+  <body>
+    <main>
+      <noscript>
+        <span style="color: red; font-size: smaller;">You have disabled JavaScript, so you will not be automatically redirected.</span>        
+      </noscript>
+      <h1>Redirection Notice!</h1>
+      <h2>This website is now hosted on <a href="https://natelevison.com">natelevison.com!</a></h2>
+      <h2>Redirecting in <span id="time">7</span> seconds...</h2>
+    </main>
+  </body>
+  <script>
+    const timeElement = document.querySelector("#time");
+    let timeRemaining = 7;
+    const countdown = setInterval(()=>{
+      timeRemaining--;
+      timeElement.innerHTML = timeRemaining;
+      if(timeRemaining == 0) {
+        clearInterval(countdown);
+        window.location.href = "https://natelevison.com";
+      }
+    }, 1000);
+  </script>
+>>>>>>> 24d344d595329443d0864e6212727546cc80c309
 </html>
