@@ -6,10 +6,10 @@
 <section>
     <h3>Blog API</h3>
     <p>
-        The blog system's foundation is on the API which I coded. The API has three parts- the <b>Post Listing</b>, and the <b>Article Compilation</b>. The first part, the Post Listing, is what you interact with when you go to <a href="../../">the blog home page</a>. The page sends a request to the API, which contains certain query parameters. They are the name, tags, and sort by. The name parameter specifies the title to match an article against. The tags, if provided, specify tags an article must have. And sort by tells the API in what order to send the valid articles. The API checks both parameters, and for every single post, if it matches the parameters, it gets sent back to the search page. It seems quite complicated, and to be honest, it was (mainly because I overcomplicated it). But it works effectively, so that is great.
+        The blog system's foundation is on the API which I coded. The API has two parts- the <b>Post Listing</b>, and the <b>Article Compilation</b>. The first part, the Post Listing, is what you interact with when you go to <a href="../../">the blog home page</a>. The page sends a request to the API, which contains certain query parameters. They are the name, tags, and sort by. The name parameter specifies the title to match an article against. The tags, if provided, specify tags an article must have. And sort by tells the API in what order to send the valid articles. The API checks both parameters, and for every single post, if it matches the parameters, it gets sent back to the search page. It seems quite complicated, and to be honest, it was (mainly because I overcomplicated it). But it works effectively, so that is great.
     </p>
     <p>
-        The second part is the Article Compilation. When the user clicks on the link for an article, a request is sent to the server specifying the article name. Every single blog article has the same template structure, and the same CSS, JS, and other stuff. This is both a great boost to productivity, and a setback in setting up the system. What I ended up doing, is writing a template HTML file, where the differing features of a blog post are replaced in the template. You can see the actual template file by clicking <a href="../../template/article.htmt">this link</a>. You will see some weird looking code, but it is just HTML with some fancy variables. The backend takes this template, and grabs the post content as well. You can see the raw post content for this article by clicking <a href="../../template/first-post-of-remade-blog-system.htmt-part">this link</a>. It then puts this raw content into the template file, and sends the compiled file back to the user as the blog page.
+        The second part is the Article Compilation. When the user clicks on the link for an article, a request is sent to the server specifying the article name. Every single blog article has the same template structure, and the same CSS, JS, and other stuff. This is both a great boost to productivity, and a setback in setting up the system. What I ended up doing, is writing a template HTML file, where the differing features of a blog post are replaced in the template. You can see the actual template file by clicking <a href="../../blog/template/article.htmt">this link</a>. You will see some weird looking code, but it is just HTML with some fancy variables. The backend takes this template, and grabs the post content as well. You can see the raw post content for this article by clicking <a href="../../blog/template/first-post-of-remade-blog-system.htmt-part">this link</a>. It then puts this raw content into the template file, and sends the compiled file back to the user as the blog page.
     </p>
     <p>
         So that is pretty much how the Blog API works, but we aren't done yet. Lets talk about the <b>Search Page</b>, possibly the most time consuming phase of this project.
@@ -18,6 +18,29 @@
 <section>
     <h3>The Search Page</h3>
     <p>
-        As I stated earlier, the search page took a significant chunk of time out of my life to "perfect". The animations and visuals were the biggest strain, but it also took a while to properly interface with my API.
+        As I stated earlier, the search page took a significant chunk of time out of my life to "perfect". The animations and visuals were the biggest strain, but it also took a while to properly interface with my API. Another big struggle was making the CSS all good, because of animations, modals, and whatnot.
+    </p>
+    <p>
+    	In a nutshell, the way it works is in the page sends a one-time request to the API, asking for a list of all the tags. It assembles the modal for configuring the search parameters, and sets up the animations all in JS (very fun to do !!!11). Whenever a tag is activated, it gets added to a list of tags to filter by. Just like in cooking, we set the "bowl" of tags aside for the next step.
+    </p>
+    <p>
+    	Next, the page checks the search bar, and grabs that value. Literally, that is it. It sends that value in a query to the all parameter of the API, and the API will assemble all of the posts that match the parameters. With the posts that the API sent back, the page loops over each post, and assembles a search result for it, buttons and all. That was actually quite complicated, because it was mostly done in JS. And that is pretty much all for the search page, unless you want to hear about my struggles with pixel-perfect image alignment- oh you don't? I'm surprised.
+    </p>
+</section>
+<section>
+    <h3><s>Grandmaifier</s> Glossarizer</h3>
+    <p>
+    	But don't let me forget the most important part- the grandmaifier feature (better known as the glossary feature)! This is a simple frontend script I wrote, that has a big list of terms that might be a bit confusing. The script finds all of the mentions of this word, but only the first of each paragraph. It adds an underline and when you hover over it, you see a small definition. Allow me to demonstrate: "API". See how there is a definition? Now, "API". There is no definition. And even if I say "API" again, there isn't one. This allows for a non-space-cluttering solution to provide context in my articles.
+    </p>
+    <p>
+    	This feature also is in use on the updates page, which by the way, has its own page now! (Well, it always did, but now, it still does. Let me have this, okay?) Hopefully everything goes well with the blog revamp, so I am excited to see what you think, Grandma!
+</section>
+<section>
+    <h3>Conclusion</h3>
+    <p>
+	Well, that is how the blog system works! Thanks for reading. And Grandma, again, I heard you stopped by while we were gone last week, by the way. I hope you had a good time. I'll see you guys soon!
+    </p>
+    <p>
+    	And to Thomas? <a href="https://www.youtube.com/watch?v=nHRbZW097Uk&list=PL3KnTfyhrIlcudeMemKd6rZFGDWyK23vx&index=15">Click here.</a>
     </p>
 </section>
