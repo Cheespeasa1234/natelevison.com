@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
     <head>
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -15,91 +14,16 @@
     </head>
     <script src="./global/components/my-nav.js"></script>
     <script src="./global/components/my-foot.js"></script>
-    <body>
+    <body>    
         <header>
             <my-nav root="./" selected-index=0></my-nav>
         </header>
         <main>
-            <h2>Welcome to Nate Levison's Homepage!</h2> 
-            <hr>
-            <div class="up30">+30</div>
+            <h2>Welcome to Nate Levison's Homepage!</h2>
+            <hr />
         </main>
 
         <my-foot root="./"></my-foot>
 
     </body>
-    <script>
-        function konamiAward() {
-            const awardspan = document.querySelector(".up30");
-            const animation = awardspan.animate(
-                [{ opacity: 1 }, { opacity: 0, transform: "translateY(50px)" }],
-                { duration: 1000, fill: "forwards" }
-            )
-            animation.onfinish = () => {
-                awardspan.animate(
-                    [{ opacity: 0, transform: "translateY(0px)" }],
-                    { duration: 1, fill: "forwards" }
-                )
-            }
-        }
-        function leviAward() {
-            window.open("https://LeviServer.VictorUrumov.repl.co/", "_blank");
-        }
-        
-        let keys = []
-        const konamiCode = "ArrowUp ArrowUp ArrowDown ArrowDown ArrowLeft ArrowRight ArrowLeft ArrowRight b a".split(" ");
-        const leviCode = "stfuattdlagg".split("");
-        
-        const code = leviCode;
-        const award = leviAward;
-
-        document.addEventListener("keyup", (event) => {
-            const key = event.key;
-            // submit the current code
-            if(key === "Enter") {
-                if(keys.length == code.length && keys.every((key, idx) => key === code[idx])) {
-                    award();
-                } else keys = [];
-            } else {
-
-                keys.push(key);
-                if(keys.length > code.length) keys.shift();
-
-            }
-            console.log(keys.join(""))
-        })
-    </script>
-    <style>
-        .up30 {
-            color: green;
-            opacity: 0;
-        }
-    </style>
-=======
-  <head>
-    <meta http-equiv="refresh" content="7; url='https://www.w3docs.com'" />
-  </head>
-  <body>
-    <main>
-      <noscript>
-        <span style="color: red; font-size: smaller;">You have disabled JavaScript, so you will not be automatically redirected.</span>        
-      </noscript>
-      <h1>Redirection Notice!</h1>
-      <h2>This website is now hosted on <a href="https://natelevison.com">natelevison.com!</a></h2>
-      <h2>Redirecting in <span id="time">7</span> seconds...</h2>
-    </main>
-  </body>
-  <script>
-    const timeElement = document.querySelector("#time");
-    let timeRemaining = 7;
-    const countdown = setInterval(()=>{
-      timeRemaining--;
-      timeElement.innerHTML = timeRemaining;
-      if(timeRemaining == 0) {
-        clearInterval(countdown);
-        window.location.href = "https://natelevison.com";
-      }
-    }, 1000);
-  </script>
->>>>>>> 24d344d595329443d0864e6212727546cc80c309
 </html>

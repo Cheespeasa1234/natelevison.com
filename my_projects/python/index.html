@@ -1,1 +1,68 @@
-underwhelming page for python
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Java Projects - natelevison.com</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="../subpagestyle.css" />
+    <link rel="stylesheet" href="../../global/components/globalComponents.css" />
+</head>
+<script src="../../global/components/my-nav.js"></script>
+<script src="../../global/components/my-foot.js"></script>
+
+<body>
+    <header>
+        <my-nav root="../../" selected-index=3></my-nav>
+    </header>
+    <script src="../projectelement.js"></script>
+    <main>
+        <div class="inlinehead">
+            <h2 id="projects-title">Nate's Python Projects</h2>
+            <button id="back-btn" onclick="window.location.href='../'">Back to Projects</button>
+        </div>
+        <hr />
+
+        <div class="projects">
+            <div class="project-container">
+                <div>
+                    <span class="project-title">CaMuL</span>
+                    <div class="project-date">February 2023 - April 2023</div>
+                    <div class="project-links">
+                        <a class="project-link" href="https://github.com/Cheespeasa1234/CaMuL">GitHub</a>
+                    </div>
+                    <p class="project-desc">
+                        This is most definitely NOT a blazingly fast JavaScript framework. It is a object-based DOM replacement that allows you to build repetitive DOMs with less code, in a more readable format. Written in Python, the CaMuL compiler allows you to create HTML, CSS, and JS while using any other Python features you could ever want!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <my-foot root="../"></my-foot>
+
+</body>
+
+<script>
+
+    // for every project container
+    const containers = document.getElementsByClassName("project-container");
+    for (let i = 0; i < containers.length; i++) {
+        const container = containers.item(i);
+        const title = container.querySelector(".project-title").innerText.toLowerCase().replaceAll(" ", "");
+        const titlecrop = title.substring(0, Math.min(title.length, 6));
+        const image = document.createElement("img");
+        image.src = `${titlecrop}.png`;
+        // make the image fade to transparent from right to left
+        image.classList.add("project-background-image");
+        if (titlecrop == "boomsh" || titlecrop == "calcul") image.classList.add("bg-smaller");
+        // make it the first child
+        container.insertBefore(image, container.firstChild);
+    };
+
+</script>
+
+</html>
