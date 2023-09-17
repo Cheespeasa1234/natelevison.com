@@ -24,7 +24,8 @@ const glossary = {
     "javascript": "JavaScript is the dominant programming language for web development, enabling interactive features like animations, games, and dynamic content.",
     "js": "JS is a common abbreviation for JavaScript, the scripting language widely used in web development for enhancing website interactivity and functionality.",
     "html": "HTML, or HyperText Markup Language, defines the structure and content of web pages, serving as the foundation for web document rendering in browsers.",
-    "tech stack": "A tech stack is the set of server softwares and tools in use by a website. A tech stack includes frontend softwares, databases, and compilers as well."
+    "tech stack": "A tech stack is the set of server softwares and tools in use by a website. A tech stack includes frontend softwares, databases, and compilers as well.",
+    "java swing": "A GUI library in the Java programming language, that allows for efficient creation of forms, charts, and other basic graphic contexts."
 }
 
 function glossarize(element) {

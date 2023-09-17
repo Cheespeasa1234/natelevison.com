@@ -16,10 +16,12 @@
     max-width: 200px;
     box-shadow: 0 0 5px 0 black;
     visibility: hidden;
+    text-decoration:solid;
 }
 
 .glossary:hover .tooltip:not(:hover) {
     visibility: visible;
+    text-decoration: none;
 }
 
 .glossary:hover {

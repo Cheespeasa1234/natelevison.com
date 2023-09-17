@@ -10,16 +10,26 @@
     height: 200px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
     margin: 10px;
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.01), rgba(0,0,0,0.1));
-    background-position: var(50%) var(50%);
     transition: background-position 0.5s cubic-bezier(0,.58,.5,1);
     position: relative;
+    margin-left: 10%;
+    margin-right: 10%;
+    overflow:auto;
+}
+
+
+
+.article-head-content {
+    /* center everythign */
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .article-head-background {
@@ -35,12 +45,10 @@
     opacity: 0.4;
 }
 
-.article-head:hover {
-    background-position: var(--x) var(--y);
-}
-
 .article-title {
     font-size: 40px;
+    text-align: center;
+    word-wrap:break-word;
 }
 
 .article-author, .article-date {
@@ -48,11 +56,92 @@
     color: #33212a;
 }
 
+.back-btn {
+    width: 100%;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    font-size: 20px;
+    transition: letter-spacing 1s;
+    max-width: 300px;
+    background-color: linear-gradient(90deg, rgba(157, 36, 227, 0.278), rgba(157, 36, 227, 0.141));
+}
+
+.back-btn-name {
+    margin-right: 100px;
+    transition: margin-right 1s;
+}
+
+.back-btn:hover .back-btn-name {
+    margin-right: 0px;
+}
+
+.back-btn:hover {
+    cursor: pointer;
+    letter-spacing: 10px;
+}
+
+.back-btn-arrow1 {
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0.1s;
+}
+
+.back-btn:hover .back-btn-arrow1 {
+    opacity: 1;
+}
+
+.back-btn-arrow2 {
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0.2s;
+}
+
+.back-btn:hover .back-btn-arrow2 {
+    opacity: 1;
+}
+
+.back-btn-arrow3 {
+    opacity: 0;
+    transition: opacity 0.5s;
+    transition-delay: 0.3s;
+}
+
+.back-btn:hover .back-btn-arrow3 {
+    opacity: 1;
+}
+
 div.content {
     max-width: 1000px;
     /* center it on the page */
     margin: auto;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: 30px;
+}
+
+img:not(.logo) {
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+/* if screen size small, make the article content font size smaller */
+@media only screen and (max-width: 600px) {
+    div.content {
+        font-size: 20px;
+    }
+    .article-head * {
+        font-size: 20px;
+    }
+    .back-btn {
+        font-size: 15px;
+        width: fit-content;
+    }
+
+    .back-btn-arrow1, .back-btn-arrow2, .back-btn-arrow3, .back-btn {
+        display: none;
+    }
+
+    img {
+        width: 100%;
+    }
 }

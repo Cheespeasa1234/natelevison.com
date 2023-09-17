@@ -191,7 +191,7 @@
         const title = container.querySelector(".project-title").innerText.toLowerCase().replaceAll(" ", "");
         const titlecrop = title.substring(0, Math.min(title.length, 6));
         const image = document.createElement("img");
-        image.src = `${titlecrop}.png`;
+        image.src = `https://static.natelevison.com/proj/proj_java_${titlecrop}.png`;
         // make the image fade to transparent from right to left
         image.classList.add("project-background-image");
         if(titlecrop == "boomsh" || titlecrop == "calcul") image.classList.add("bg-smaller");

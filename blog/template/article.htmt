@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>${TITLE}</title>
+    <title>${TITLE} - natelevison.com</title>
     <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../glossary.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
@@ -16,14 +16,29 @@
     <main>
         <div class="article-head">
             <div class="article-head-background"></div>
-            <div>
+            <div class="article-head-content">
                 <div class="article-title">${TITLE}</div>
                 <div class="article-author">Nate Levison</div>
                 <div class="article-date">Created on ${DATE}</div>
+                <button class="back-btn" onclick="window.location.href='../'">
+                    <span class="back-btn-arrow1"><</span>
+                    <span class="back-btn-arrow2"><</span>
+                    <span class="back-btn-arrow3"><</span>
+                    <span class="back-btn-name">Back</span>
+                </button>
             </div>
         </div>
         <div class="content">
             ${MAIN}
+        </div>
+
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <button style="width: 600px; max-width: 600px;" class="back-btn" onclick="window.location.href='../'">
+                <span class="back-btn-arrow1"><</span>
+                <span class="back-btn-arrow2"><</span>
+                <span class="back-btn-arrow3"><</span>
+                <span class="back-btn-name">Read more</span>
+            </button>
         </div>
     </main>
     <my-foot root="../../"></my-foot>

@@ -16,7 +16,12 @@ function getResults(postList) {
     
     fetch(`https://natelevison.com/blog/all?${parameters.toString()}`).then(res => res.json()).then(postsJSON => {
     
-        const posts = postsJSON.filtered;
+        let posts = postsJSON.filtered;
+        posts.forEach(post => {
+            post.createdInt = post.starred ? Date.now() : new Date(post.created).getTime();
+            console.log(post);
+        })
+        posts = posts.sort((a, b) => b.createdInt - a.createdInt);
         const resultCount = posts.length;
 
         if(resultCount == 0) {

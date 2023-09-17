@@ -2,12 +2,15 @@
     font-weight: bold;
     font-size: 30px;
     margin-bottom: 10px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .content {
     border-left: 5px solid rgb(192, 192, 192);
     padding-left: 10px;
     border-radius: 3px;
+    font-size: 25px;
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .highlighted {
