@@ -15,7 +15,18 @@ cards.forEach(card => {
             iterations: 1,
             fill: 'forwards',
         }).onfinish = () => {
-            window.location.href = `./${card.classList[1].split("-")[1]}`;
+            setTimeout(()=>{
+		card.style.cursor = "default";
+		card.animate([
+		    {transform:'translateY(-100px)', opacity: 0}, {transform:'translateY(0px)', opacity: 1}
+		], {
+		    duration: 500,
+		    easing: 'ease-in-out',
+		    iterations: 1,
+		    fill: 'forwards'
+		});
+	    },2000);
+	    window.location.href = `./${card.classList[1].split("-")[1]}`;
         };
     });
 });

@@ -13,7 +13,9 @@
 </head>
 <body>
     <header>
-        <my-nav root="../../" selected-index=2></my-nav>
+        <my-nav root="../../
+
+	" selected-index=2></my-nav>
     </header>
     <main>
         <div class="article-head">
@@ -75,6 +77,9 @@
     })
 
     hljs.highlightAll();
+
+    const fileNames = document.querySelector(".file-name");
+
 
 </script>
 </html>

@@ -26,7 +26,7 @@ main {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
-  max-width: 19%;
+  width: 300px;
 }
 
 .quick-link {

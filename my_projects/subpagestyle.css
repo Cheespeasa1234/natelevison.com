@@ -24,7 +24,7 @@
 
 .project-container {
     padding: 10px;
-    border: 1px solid black;
+    border: 2px solid var(--gray-1);
     border-radius: 5px;
     margin: 10px;
     /* transition box shadow and transform */
@@ -125,4 +125,18 @@ main {
     display: flex;
     align-items: center;
     flex-direction: row;
+}
+
+#back-btn {
+    margin: 5px;
+    padding: 5px;
+    background-color: var(--prim-color);
+    border: 1px solid black;
+    border-radius: 5px;
+    transition: all 0.5s;
+    color: white;
+}
+
+#back-btn:hover {
+    background-color: var(--secondary-color);
 }

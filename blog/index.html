@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
     <link rel="stylesheet" href="../global/components/globalComponents.css">
 </head>
+
 <body>
     <header>
         <my-nav root="../" selected-index=2></my-nav>
@@ -18,8 +20,10 @@
             <button class="search-button" id="search"><i class="fa-solid fa-search"></i></button>
             <button class="search-button" id="config"><i id="config-icon" class="fa-solid fa-gear"></i></button>
             <span id="search-config-modal">
-                <span id="filtered-msg">Filtered Tags: 0</span> 
+                <span id="filtered-msg">Filtered Tags: 0</span>
                 <div id="search-config-tags"></div>
+                <label for="enablerantCheckbox">Enable rants: </label>
+                <input id="enablerantCheckbox" type="checkbox">
             </span>
         </div>
         <div id="results"></div>
@@ -29,4 +33,5 @@
 <script src="posts-script.js"></script>
 <script src="../global/components/my-nav.js"></script>
 <script src="../global/components/my-foot.js"></script>
+
 </html>

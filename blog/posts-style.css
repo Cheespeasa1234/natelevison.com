@@ -27,12 +27,16 @@
 }
 
 .post-tag {
-    border: 1px solid black;
+    border: 2px solid var(--gray-1);
     border-radius: 5px;
     padding: 2px;
     font-size: 14px;
     margin-right: 5px;
     background-color:#b6b6b6;
+}
+
+.post-rant {
+    background-color: #730909;
 }
 
 .post-share {
@@ -49,7 +53,7 @@ main {
 }
 
 #searchbox {
-    border: 1px solid black;
+    border: 2px solid var(--gray-1);
     width: fit-content;
     padding: 0px;
     border-radius: 5px;
@@ -90,7 +94,7 @@ input:focus {
 }
 
 #search-config-modal {
-    border: 1px solid black;
+    border: 2px solid var(--gray-1);
     height: 100px;
     position: absolute;
     background: #eaeaea;
@@ -100,12 +104,7 @@ input:focus {
     z-index: 3;
     margin-left: 10px;
     transform: translateY(-200%);
-    opacity: 0.5;
     transition: all 0.5s;
-}
-
-#search-config-modal:hover {
-    opacity: 1;
 }
 
 .tag-selected {
