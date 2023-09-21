@@ -2,8 +2,10 @@ class MyNav extends HTMLElement {
   connectedCallback() {
     let root = this.getAttribute("root") || "../";
     let selected = this.getAttribute("selected-index");
+    let hideimg = this.getAttribute("hide-img");
+    let img = hideimg ? '' : `<img class="logo" alt="logo" src="${root}img/logo.png">`
     this.innerHTML = /*html*/ `
-      <img class="logo" alt="logo" src="${root}img/logo.png">
+
       <nav>
       <div class="main-links">
       <a class="first-link nav-link${selected == 0 ? " active" : ""}" href="${root}">Home</a>

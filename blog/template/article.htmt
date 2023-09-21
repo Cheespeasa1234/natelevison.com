@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>${TITLE} - natelevison.com</title>
-    <link rel="stylesheet" href="../style.css">
     <link rel="stylesheet" href="../glossary.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
     <link rel="stylesheet" href="../../global/components/globalComponents.css">
+    <link rel="stylesheet" href="https://static.natelevison.com/highlight/styles/github-dark-dimmed.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://static.natelevison.com/highlight/highlight.min.js"></script>
 </head>
 <body>
     <header>
@@ -48,10 +50,10 @@
 <script src="../../global/components/my-foot.js"></script>
 <script src="../glossary.js"></script>
 <script>
-    // const back = document.querySelector("#back");
-    // back.addEventListener("click", () => {
-    //     window.location.href = "../";
-    // })
+    if ("${DIS}" == "false") {
+        const articles = document.querySelectorAll("div.content")
+        articles.forEach(glossarize);
+    }
 
     const head = document.querySelector(".article-head");
     document.addEventListener("mousemove", (e) => {
@@ -71,6 +73,8 @@
         }
 
     })
+
+    hljs.highlightAll();
 
 </script>
 </html>

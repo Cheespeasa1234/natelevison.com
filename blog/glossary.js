@@ -55,6 +55,3 @@ function glossarize(element) {
         term.appendChild(tooltip);
     });
 }
-
-const articles = document.querySelectorAll("div.content")
-articles.forEach(glossarize);

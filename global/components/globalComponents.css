@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Cutive+Mono&family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
 
 :root {
   --prim-color: rgb(40, 156, 202);
@@ -7,7 +8,10 @@
   --third-color: rgb(39, 136, 151);
   --accent-1: #33212a;
   --bg-color: #eaeaea;
-  font-family: "Roboto", sans-serif;
+  --gray-1: #a0a0a0;
+  --gray-2: #474747;
+  --gray-3: #868686;
+  font-family: 'Nunito', sans-serif;
 }
 
 nav {
@@ -23,11 +27,12 @@ nav {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   margin: 0;
+  margin-bottom: 20px;
   z-index:1;
 }
 
 main {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 nav > div {
@@ -179,9 +184,4 @@ body {
   display: flex;
   flex-direction: column;
   margin: 0;
-}
-
-main {
-  flex: 1;
-  padding: 10px;
 }

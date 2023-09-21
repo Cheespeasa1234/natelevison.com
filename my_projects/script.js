@@ -6,7 +6,8 @@ const cards = [javaCard, pythonCard, nodeCard];
 
 cards.forEach(card => {
     card.addEventListener('click', () => {
-        card.animate([
+    	card.style.cursor = "wait";
+	card.animate([
             {transform:'rotateY(0deg) rotate(0deg)'},{transform:'rotateY(180deg) rotate(-10deg) translateY(-100px)',opacity:0}
         ], {
             duration: 500,
