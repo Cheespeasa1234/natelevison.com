@@ -54,11 +54,49 @@ const app = express(); // creates an app with express
     </p>
     <pre class="file-name code">index.js</pre>
     <pre><code class="language-js code snip">...
-app.use(express.static());
+app.use(express.static('public')); // set the static middleware to serve files from the '/public' folder
 
 const PORT = 3000;
 app.listen(PORT, () => {
     console.log("Server started on port " + PORT + "!");
 });
 </code></pre>
+    <p>
+    	So now, our server is almost ready. The last thing that we need to do, is to actually create some content to serve. As I explained previously, when you type in a path to a website, the server provides the file that you requested. But, why then do most webpages not have .html after every web link? Well, that is because they are using index.html. index.html is a conventional way to provide a file if no other one is provided. If someone goes to our server and does not give a path (e.g. 'http://example.com/'), the server software will instead send the index.html file at the location. Remember- this only applies to static server software, and everything we know will change when we write our own custom routing.
+    </p>
+    <p>
+    	Let's make that content. First, create a new file in the /public directory. Name it "index.html". Then open it. You can write whatever you want in there- it is your webpage! But just in case you are feeling a bit copy-pastey today, here is what I wrote:
+    </p>
+    <pre class="file-name code">index.html</pre>
+    <pre><code class="nohighlight code snip">&lt;!DOCTYPE html&gt;
+&lt;p&gt;Hello, custom server!&lt;\p&gt;
+</code></pre>
+    <p>
+	You can also add some content in the /about folder. I put an image there, and a file called index.html. Once again, here is what I put in the file:
+    </p>
+    <pre class="file-name code">about/index.html</pre>
+    <pre><code class="nohighlight code snip">&lt;!DOCTYPE html&gt;
+&lt;h3&gt;About me&lt;/h3&gt;
+&lt;p&gt;My name is Nate. I like to code.&lt;p&gt;
+</code></pre>
+</section>
+<section>
+    <h3>Starting the server</h3>
+    <p>
+	With all of our code ready, you should save all of your work. Then, go back into the same terminal that you created the folder with (if you deleted it- thats fine! Just make another) and launch the server.
+    </p>
+    <pre class="file-name code">Terminal (Administrator)</pre>
+    <pre><code class="language-js code snip">$ node .
+Server started on port 3000!
+...
+</code></pre>
+    <p>
+	Now, we are done! Whats that? You want to view your webpage? No problem. Go to your browser, and type in <pre>localhost:3000</pre>. You should now see your website!
+    </p>
+</section>
+<section>
+    <h3>Conclusion</h3>
+    <p>
+	In this blog post, we learned how to make an express.js static server, and view it on your browser. In the next blog post (if it exists), I will show you how to make custom responses to routes. Buh bye!
+    </p>
 </section>
