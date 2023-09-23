@@ -1,3 +1,15 @@
+function getColor(word) {
+    let hash = 0;
+    for (let i = 0; i < word.length; i++) {
+        hash = word.charCodeAt(i) + ((hash << 5) - hash);
+    }
+    const c = (hash & 0x00FFFFFF)
+        .toString(16)
+        .toUpperCase();
+
+    return "#" + "00000".substring(0, 6 - c.length) + c;
+}
+
 // get all the blog posts
 function getResults(postList) {
     postList.innerHTML = "";
@@ -44,7 +56,14 @@ function getResults(postList) {
             for (let i = 0; i < post.tags.length; i++) {
                 const tag = document.createElement("span");
                 tag.classList.add(["post-tag"]);
-                if (post.tags[i] == "rant") tag.classList.add(["post-rant"]);
+                if (post.tags[i] == "rant") {
+                    tag.classList.add(["post-rant"]);
+                } else {
+                    let col = getColor(post.tags[i]);
+                    // make it slightly transparent
+                    col += "22";
+                    tag.style.backgroundColor = col;   
+                }
                 tag.innerHTML = post.tags[i];
                 tags.appendChild(tag);
             }
@@ -163,3 +182,4 @@ fetch("https://natelevison.com/blog/tags").then(res => res.json()).then(tagsJSON
         configTags.appendChild(tag);
     }
 });
+

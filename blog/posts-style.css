@@ -99,7 +99,8 @@ input:focus {
     position: absolute;
     background: #eaeaea;
     padding: 10px;
-    overflow: auto;
+    max-width: 500px;
+    overflow: wrap;
     border-radius: 5px;
     z-index: 3;
     margin-left: 10px;

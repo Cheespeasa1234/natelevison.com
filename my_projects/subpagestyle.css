@@ -89,11 +89,13 @@ img[src="painpo.png"] {
     color: blue;
     font-weight: bold;
     transition: color 0.5s;
+    margin-right: 14px;
 }
 
 .project-lnk:hover {
     color: black;
     text-decoration: underline;
+    margin-right: 0px;
 }
 
 .project-lnk:hover::after {
