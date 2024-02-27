@@ -119,7 +119,7 @@ div.content {
     font-size: 20px;
 }
 
-img:not(.logo) {
+img:not(.logo):not(.banner-ico) {
     border: 1px solid black;
     border-radius: 10px;
 }
@@ -167,4 +167,10 @@ pre {
     border-bottom: 1px solid #ffffff;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+}
+
+.quote {
+    padding-left: 20px;
+    border-left: 2px solid gray;
+    color: #333;
 }

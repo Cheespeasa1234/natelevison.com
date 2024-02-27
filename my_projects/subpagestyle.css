@@ -27,9 +27,10 @@
     border: 2px solid var(--gray-1);
     border-radius: 5px;
     margin: 10px;
+    max-height: 250px;
     /* transition box shadow and transform */
     transition: box-shadow 0.5s;
-    overflow: hidden;
+    overflow: scroll;
     position: relative;
 }
 
@@ -50,7 +51,7 @@
 }
 
 .project-desc {
-    max-width: 400px;
+    max-width: 50%;
 }
 
 .project-background-image {
@@ -126,12 +127,14 @@ main {
 .inlinehead {
     display: flex;
     align-items: center;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 #back-btn {
     margin: 5px;
-    padding: 5px;
+    width: 180px;
+    height: 50px;
+    font-size: 20px;
     background-color: var(--prim-color);
     border: 1px solid black;
     border-radius: 5px;
@@ -141,4 +144,9 @@ main {
 
 #back-btn:hover {
     background-color: var(--secondary-color);
+}
+
+#projects-title {
+    margin: 0;
+    font-size: 28px;
 }

@@ -25,7 +25,8 @@ class MyNav extends HTMLElement {
             <i class="fa-solid fa-envelope"></i>
           </a>
         </div>
-      </nav>
+        </div>
+        </nav>
     `;
   }
 }

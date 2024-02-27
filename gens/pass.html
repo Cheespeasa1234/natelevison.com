@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Nate Levison's secure password generator</title>
+	</head>
+	<body>
+		<button id="generate">Generate Password</button>
+		<div id="output"></div>
+	</body>
+	<script>
+		const generateButton = document.querySelector("#generate");
+		const outputArea = document.querySelector("#output");		
+
+		const passLen = 10;
+		const consonants = "bcdfghjklmnpqstvwxz".split("");
+		const vowels = "aeiouy".split("");
+		const digits = "0123456789".split("");
+		generateButton.addEventListener("click", ()=>{
+			// alternate between consonant and vowel
+			let password = "";
+			for(let i = 0; i < passLen; i++){
+				if(i % 2 == 0){
+					password += consonants[Math.floor(Math.random() * consonants.length)];
+				}else{
+					password += vowels[Math.floor(Math.random() * vowels.length)];
+				}
+			}
+
+			// add four digits
+			for(let i = 0; i < 4; i++){
+				password += digits[Math.floor(Math.random() * digits.length)];
+			}
+
+			outputArea.innerHTML = password;
+		});
+	</script>
+</html>

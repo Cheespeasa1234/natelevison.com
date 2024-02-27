@@ -56,14 +56,6 @@ function getResults(postList) {
             for (let i = 0; i < post.tags.length; i++) {
                 const tag = document.createElement("span");
                 tag.classList.add(["post-tag"]);
-                if (post.tags[i] == "rant") {
-                    tag.classList.add(["post-rant"]);
-                } else {
-                    let col = getColor(post.tags[i]);
-                    // make it slightly transparent
-                    col += "22";
-                    tag.style.backgroundColor = col;   
-                }
                 tag.innerHTML = post.tags[i];
                 tags.appendChild(tag);
             }

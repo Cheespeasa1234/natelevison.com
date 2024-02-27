@@ -52,7 +52,7 @@
 <script src="../../global/components/my-foot.js"></script>
 <script src="../glossary.js"></script>
 <script>
-    if ("${DIS}" == "false") {
+    if ("${DIS}" == "false") { // what the fuck?
         const articles = document.querySelectorAll("div.content")
         articles.forEach(glossarize);
     }

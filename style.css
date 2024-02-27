@@ -4,6 +4,7 @@
   --third-color: rgb(39, 136, 151);
   --fourth-color: rgb(20, 130, 230, 0.1);
   --fifth-color: rgba(20, 129, 230, 0.287);
+  --bright-color: rgb(100, 187, 221);
   --bg-color: #eaeaea;
   --font: 'Nunito', sans-serif;
 }
@@ -24,9 +25,17 @@ main {
 .quick-links {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  align-content: center;
+  justify-content: center;
   text-align: center;
-  width: 300px;
+  margin: auto;
+  max-width: fit-content;
+}
+
+.ql-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .quick-link {
@@ -42,6 +51,7 @@ main {
   align-items: center;
   text-align: center;
   transition: box-shadow 0.2s ease-in-out;
+  width: 350px;
 }
 
 .quick-link:hover {
@@ -51,13 +61,13 @@ main {
 }
 
 .ql-ttl {
-  font-size: 1.2em;
+  font-size: 2em;
   font-weight: bold;
   margin: 0;
 }
 
 .ql-dsc {
-  font-size: 0.9em;
+  font-size: 1.2em;
   margin-bottom: 10px;
   font-weight: 600;
 }
@@ -79,13 +89,13 @@ main {
 }
 
 .home-h1 {
-  font-size: 1.5em;
+  font-size: 2.5em;
   font-weight: 600;
   display: flex;
 }
 
 .home-h2 {
-  font-size: 1.2em;
+  font-size: 2.2em;
 }
 
 .floatyletterpre {

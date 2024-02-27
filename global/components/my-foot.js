@@ -1,7 +1,8 @@
 class MyFooter extends HTMLElement {
     connectedCallback() {
         let root = this.getAttribute("root") || "../"
-        this.innerHTML = /*html*/ `
+        // DISABLED!
+        this._innerHTML = /*html*/ `
             <footer>
             <div class="footer-sec">
                 <h5>This Website</h5>
