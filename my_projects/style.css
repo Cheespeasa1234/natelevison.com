@@ -120,3 +120,19 @@ main {
   display: none;
   width: 20%;
 }
+
+.project-container > img {
+  transition: transform 0.5s;
+}
+
+.project-container:hover > img:not(.bg-smaller) {
+  transform: translateX(20px);
+}
+
+.project-container:hover > img.bg-smaller:not(img[src="painpo.png"]) {
+  transform: scale(0.7) translateX(calc(50% + 20px)) translateY(-50%);
+}
+
+.project-container:hover > img[src="painpo.png"] {
+  transform: translateX(40px);
+}

@@ -4,11 +4,11 @@ class BlogHeading extends HTMLElement {
         let date = this.getAttribute("date") || "No Date"
         this.innerHTML = /*html*/ `
         
-        <div class="blog-heading">
-            <h1>${title}</h1>
-            <h4>By Nate Levison - ${date}</h4>
-            <hr>
-        </div>
+            <div class="blog-heading">
+                <h1>${title}</h1>
+                <h4>By Nate Levison - ${date}</h4>
+                <hr>
+            </div>
 
         `;
     }
