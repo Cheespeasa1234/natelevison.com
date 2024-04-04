@@ -149,6 +149,23 @@ const projects = {
             ],
             desc: "This is most definitely NOT a blazingly fast JavaScript framework. It is a object-based DOM replacement that allows you to build repetitive DOMs with less code, in a more readable format. Written in Python, the CaMuL compiler allows you to create HTML, CSS, and JS while using any other Python features you could ever want!"
         },
+        {
+            title: "FRC Competition Predictor",
+            date: "February 2024 - Present",
+            links: [],
+            desc: "Although private, this project is probably the best neural network I have ever trained. It guesses the outcome of a match in Crescendo, the current robotics competition. I gained some very valuable experience while making this project, using the TheBlueAlliance API, Statbotics API, and with making large collections of training data, and in using Tensorflow and Jupyter Notebooks."
+        },
+        {
+            title: "Membakedbean",
+            date: "March 2022, September 2023",
+            links: [
+                {
+                    url: "https://github.com/Cheespeasa1234/membakedbean",
+                    text: "GitHub"
+                }
+            ],
+            desc: "This python app is a \"trainer\" for membean. It takes in the full text of your word list, parses it, and assists you in making guesses. There is a real problem with the way membean words, where instead of learning words, it rewards rope memorization. Membakedbean is meant to assist the user in getting around these outdated and unjust features, in order to maintain a reasonable vocab level."
+        }
     ],
     web: [
         {
@@ -198,6 +215,17 @@ const projects = {
                 }
             ],
             desc: "This is a journaling application that (will) utilize AI technology to assist users in writing more mindful and interesting journal entries. Making this project gave me the opportunity to learn how to use SQLite, and how to use it with node.js. I made it with typescript, which I have so far enjoyed quite a bit."
+        },
+        {
+            title: "Team 1676 Scouting Interface",
+            date: "December 2023 - February 2024",
+            links: [
+                {
+                    url: "https://github.com/PioneersTeam1676/scouting",
+                    text: "GitHub"
+                }
+            ],
+            desc: "This is the frontend interface for the mobile scouting application used during 2024 robotics tournaments. It utilizes Bootstrap and my own frameworks for some components, like 1-5 ratings, and number forms. It also has some (simple) frontend validation, so although useless, it is helpful for users who use mobile."
         }
     ]
 };

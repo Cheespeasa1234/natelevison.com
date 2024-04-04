@@ -118,3 +118,57 @@ main {
 .floatyletter {
   animation: float 0.5s ease-in-out 1;
 }
+
+.widgets {
+  display: flex;
+  justify-content: center;
+}
+
+.widget {
+  width: 350px;
+  height: 250px;
+  padding: 10px;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.widget-title {
+  font-size: 24px;
+  padding: 5px;
+}
+
+.widget-book-cover {
+  width: 40%;
+  border-radius: 5px;
+}
+
+.widget-content {
+  width: 100%;
+  display: flex;
+}
+
+.widget-book-text {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.widget-book-title {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.widget-book-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.widget-book-opinion {
+  font-size: 16px;
+  font-style: italic;
+}

@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Nate Levison's Projects - natelevison.com</title>
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="../global/components/globalComponents.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 </head>
 
 <script defer src="../global/components/components.js"></script>
-<script defer src="script.js"></script>
+<script defer src="./script.js"></script>
 
 <style>
     :root {
@@ -31,6 +31,9 @@
         margin-right: 0;
         background-color: var(--color-4);
         position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
     }
 
     .project-group {
@@ -59,27 +62,27 @@
         font-size: 16px;
     }
 
-    .page-hidden {
-        display: none;
-    }
-
+    
     .projects-container {
         padding: 10px;
         padding-left: calc(var(--sidebar-width) + 5px);
     }
-
-    .projects {
+    
+    .projects-content {
         /* grid layout: 2 per row, take up whole row space */
-        display: grid;
         grid-template-columns: repeat(2, 1fr);
-        grid-auto-rows: minmax(100px, auto);
+        /* grid-auto-rows: minmax(100px, auto); */
         grid-gap: 10px;
-
+        display: grid;
     }
 
+    .page-hidden {
+        display: none;
+    }
+    
     /* if screen width is small */
     @media screen and (max-width: 600px) {
-        .projects {
+        .projects-content {
             /* grid layout: 1 per row, take up whole row space */
             grid-template-columns: 1fr;
         }
@@ -97,11 +100,12 @@
         border: 2px solid var(--gray-1);
         border-radius: 5px;
         margin: 10px;
-        max-height: 250px;
+        max-height: 240px;
         /* transition box shadow and transform */
-        transition: box-shadow 0.5s;
+        transition: box-shadow 0.25s;
         overflow: scroll;
         position: relative;
+        overflow-x: hidden;
     }
 
     .project-container>img {
@@ -118,10 +122,6 @@
 
     .project-container:hover>img[src="painpo.png"] {
         transform: translateX(40px);
-    }
-
-    .project-desc {
-        max-width: 50%;
     }
 
     .project-background-image {
@@ -180,6 +180,13 @@
     .project-desc {
         margin-bottom: 0;
     }
+
+    .section-title {
+        height: fit-content;
+        font-size: 28px;
+        text-align: center;
+        width: 100%;
+    }
 </style>
 
 <body>
@@ -188,38 +195,44 @@
     </header>
     <main>
         <div class="sidebar">
-            <div class="project-group selected">
-                <span class="project-group-title">Java</span>
-                <span class="project-group-exp">
-                    <span class="project-count-java"></span>
-                    - 2.5 years
-                </span>
+            <div>
+                <div class="project-group selected">
+                    <span class="project-group-title">Java</span>
+                    <span class="project-group-exp">
+                        <span class="project-count-java"></span>
+                        - 2.5 years
+                    </span>
+                </div>
+                <div class="project-group">
+                    <span class="project-group-title">Python</span>
+                    <span class="project-group-exp">
+                        <span class="project-count-python"></span>
+                        - 1.5 years
+                    </span>
+                </div>
+                <div class="project-group">
+                    <span class="project-group-title">Frontend</span>
+                    <span class="project-group-exp">
+                        <span class="project-count-web"></span>
+                        - 2 years
+                    </span>
+                </div>
             </div>
-            <div class="project-group">
-                <span class="project-group-title">Python</span>
-                <span class="project-group-exp">
-                    <span class="project-count-python"></span>
-                    - 1.5 years
-                </span>
-            </div>
-            <div class="project-group">
-                <span class="project-group-title">Frontend</span>
-                <span class="project-group-exp">
-                    <span class="project-count-web"></span>
-                    - 2 years
-                </span>
+            <div>
+                Nate Levison's Projects
             </div>
         </div>
         <div class="projects-container">
             <div id="projects-java" class="projects-content">
-                Nate's Java Projects
+                <!-- <span class="section-title">Nate's Java Projects</span><span class="section-title"></span> -->
             </div>
             <div id="projects-python" class="projects-content">
-                Nate's Python Projects
+                <!-- <span class="section-title">Nate's Python Projects</span><span class="section-title"></span> -->
             </div>
             <div id="projects-web" class="projects-content">
-                Nate's Frontend Projects
+                <!-- <span class="section-title">Nate's Frontend Projects</span><span class="section-title"></span> -->
             </div>
+            <br>
         </div>
     </main>
 

@@ -39,55 +39,74 @@
                 <div class="floatyletter">!</div>
             </div>
         </div>
-        <div class="quick-links">
-            <span class="home-h2">Quick Links</span>
-            <div class="ql-row">
-                <div class="quick-link" id="ql-about">
-                    <span class="ql-ttl">About Nate Levison</span>
-                    <span class="ql-dsc">Learn about Nate,<br>or about this website.</span>
-                </div>
-                <div class="quick-link" id="ql-updates">
-                    <span class="ql-ttl">Website Update Page</span>
-                    <span class="ql-dsc">Read about any updates<br>since your last visit.</span>
+        <div class="widgets">
+            <div class="widget">
+                <div class="widget-title">Currently Reading</div>
+                <div class="widget-content">
+                    <img src="global/img/the-martian.jpeg" class="widget-book-cover" />
+                    <div class="widget-book-text">
+                        <div>
+                            <div class="widget-book-title">The Martian</div>
+                            <div class="widget-book-author">Andy Weir</div>
+                        </div>
+                        <div class="widget-book-opinion">Its pretty good so far. Not overly dramatic. The way it's written is awesome, it makes it very fun to read, never boring.</div>
+                    </div>
                 </div>
             </div>
-            <div class="ql-row">
-                <div class="quick-link" id="ql-blog">
-                    <span class="ql-ttl">Blog Search Page</span>
-                    <span class="ql-dsc">Search Nate's vast index<br>of interesting articles.</span>
-                </div>
-                <div class="quick-link" id="ql-projects">
-                    <span class="ql-ttl">Projects Home Page</span>
-                    <span class="ql-dsc">View sneak peeks at<br>all of Nate's projects.</span>
+            <div class="widget">
+                <div class="widget-title">Currently Reading</div>
+                <div class="widget-content">
+                    <img src="global/img/the-martian.jpeg" class="widget-book-cover" />
+                    <div class="widget-book-text">
+                        <div>
+                            <div class="widget-book-title">The Martian</div>
+                            <div class="widget-book-author">Andy Weir</div>
+                        </div>
+                        <div class="widget-book-opinion">Its pretty good so far. Not overly dramatic. The way it's written is awesome, it makes it very fun to read, never boring.</div>
+                    </div>
                 </div>
             </div>
         </div>
-        <canvas id="effect"></canvas>
     </main>
 
     <script>
 
-        const qlAbout = document.getElementById("ql-about");
-        const qlUpdates = document.getElementById("ql-updates");
-        const qlBlog = document.getElementById("ql-blog");
-        const qlProjects = document.getElementById("ql-projects");
+        // const qlAbout = document.getElementById("ql-about");
+        // const qlUpdates = document.getElementById("ql-updates");
+        // const qlBlog = document.getElementById("ql-blog");
+        // const qlProjects = document.getElementById("ql-projects");
 
-        qlAbout.addEventListener("click", () => {
-            window.location.href = "./about";
-        });
-        qlUpdates.addEventListener("click", () => {
-            window.location.href = "./blog/updates";
-        });
-        qlBlog.addEventListener("click", () => {
-            window.location.href = "./blog";
-        });
-        qlProjects.addEventListener("click", () => {
-            window.location.href = "./my_projects";
-        });
+        // qlAbout.addEventListener("click", () => {
+        //     window.location.href = "./about";
+        // });
+        // qlUpdates.addEventListener("click", () => {
+        //     window.location.href = "./blog/updates";
+        // });
+        // qlBlog.addEventListener("click", () => {
+        //     window.location.href = "./blog";
+        // });
+        // qlProjects.addEventListener("click", () => {
+        //     window.location.href = "./my_projects";
+        // });
 
         const floatyLetters = document.querySelectorAll(".floatyletter");
         for (let i = 0; i < floatyLetters.length; i++) {
             floatyLetters[i].style.animationDelay = (i * 0.1) + "s";
+        }
+
+        const bookCovers = document.querySelectorAll(".widget-book-cover");
+        for (const bookCover of bookCovers) {
+            bookCover.addEventListener("mouseover", () => {
+                const w = bookCover.width;
+                const h = bookCover.height;
+                const scale = 2;
+                const transformScale = scale * 2;
+                bookCover.style.transform = `scale(${scale}) translate(${w / transformScale}px, ${h / transformScale}px)`;
+            });
+
+            bookCover.addEventListener("mouseout", () => {
+                bookCover.style.transform = "";
+            });
         }
 
     </script>
