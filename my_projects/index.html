@@ -12,54 +12,245 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
 </head>
 
-<script src="../global/components/my-nav.js"></script>
-<script src="../global/components/my-foot.js"></script>
+<script defer src="../global/components/components.js"></script>
+<script defer src="script.js"></script>
+
+<style>
+    :root {
+        --sidebar-width: 200px;
+    }
+
+    main {
+        display: flex;
+        height: 100%;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: var(--sidebar-width);
+        margin-right: 0;
+        background-color: var(--color-4);
+        position: fixed;
+    }
+
+    .project-group {
+        display: flex;
+        flex-direction: column;
+        height: min-content;
+        transition: all 0.25s ease;
+        padding: 5px;
+    }
+
+    .project-group:hover,
+    .project-group.selected:hover {
+        background-color: rgba(0, 0, 255, 0.1);
+        cursor: pointer;
+    }
+
+    .project-group.selected {
+        background-color: rgba(0, 0, 255, 0.05);
+    }
+
+    .project-group-title {
+        font-size: 24px;
+    }
+
+    .project-group-exp {
+        font-size: 16px;
+    }
+
+    .page-hidden {
+        display: none;
+    }
+
+    .projects-container {
+        padding: 10px;
+        padding-left: calc(var(--sidebar-width) + 5px);
+    }
+
+    .projects {
+        /* grid layout: 2 per row, take up whole row space */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-auto-rows: minmax(100px, auto);
+        grid-gap: 10px;
+
+    }
+
+    /* if screen width is small */
+    @media screen and (max-width: 600px) {
+        .projects {
+            /* grid layout: 1 per row, take up whole row space */
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .project-title {
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 10px;
+        /* text-shadow:  0px 0px 2px black; */
+    }
+
+    .project-container {
+        padding: 10px;
+        border: 2px solid var(--gray-1);
+        border-radius: 5px;
+        margin: 10px;
+        max-height: 250px;
+        /* transition box shadow and transform */
+        transition: box-shadow 0.5s;
+        overflow: scroll;
+        position: relative;
+    }
+
+    .project-container>img {
+        transition: transform 0.5s;
+    }
+
+    .project-container:hover>img:not(.bg-smaller) {
+        transform: translateX(20px);
+    }
+
+    .project-container:hover>img.bg-smaller:not(img[src="painpo.png"]) {
+        transform: scale(0.7) translateX(calc(50% + 20px)) translateY(-50%);
+    }
+
+    .project-container:hover>img[src="painpo.png"] {
+        transform: translateX(40px);
+    }
+
+    .project-desc {
+        max-width: 50%;
+    }
+
+    .project-background-image {
+        /* set a mask that makes it more transparent from left to right, starting at 50% width */
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -ms-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -o-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+    }
+
+    .bg-smaller {
+        --switch: 90%;
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        transform: scale(0.7) translateX(50%) translateY(-50%);
+    }
+
+    img[src="painpo.png"] {
+        --switch: 90%;
+        transform: translateX(20px);
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    }
+
+    .project-lnk {
+        text-decoration: none;
+        color: blue;
+        font-weight: bold;
+        transition: color 0.5s;
+        margin-right: 14px;
+    }
+
+    .project-lnk:hover {
+        color: black;
+        text-decoration: underline;
+        margin-right: 0px;
+    }
+
+    .project-lnk:hover::after {
+        content: " >";
+    }
+
+    .project-container:hover {
+        box-shadow: 0px 0px 5px black;
+    }
+
+    .project-desc {
+        margin-bottom: 0;
+    }
+</style>
 
 <body>
     <header>
         <my-nav root="../" selected-index="3"></my-nav>
     </header>
     <main>
-        <div class="cards-container">
-            <div class="card card-java">
-                <div class="card-top-aligned">
-                    <div class="card-lang-name">
-                        JAVA
-                        <br />
-                        <div style="font-size: 15px">2 YEARS</div>
-                    </div>
-                </div>
-                <img class="card-lang-logo" src="https://cdn-icons-png.flaticon.com/512/5968/5968282.png" />
+        <div class="sidebar">
+            <div class="project-group selected">
+                <span class="project-group-title">Java</span>
+                <span class="project-group-exp">
+                    <span class="project-count-java"></span>
+                    - 2.5 years
+                </span>
             </div>
-
-            <div class="card card-python">
-                <div class="card-top-aligned">
-                    <div class="card-lang-name">
-                        PYTHON
-                        <br />
-                        <div style="font-size: 15px">1.5 YEARS</div>
-                    </div>
-                </div>
-                <img class="card-lang-logo"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/1869px-Python-logo-notext.svg.png" />
+            <div class="project-group">
+                <span class="project-group-title">Python</span>
+                <span class="project-group-exp">
+                    <span class="project-count-python"></span>
+                    - 1.5 years
+                </span>
             </div>
-
-            <div class="card card-web">
-                <div class="card-top-aligned">
-                    <div class="card-lang-name">
-                        WEB
-                        <br />
-                        <div style="font-size: 15px">1.5 YEARS</div>
-                    </div>
-                </div>
-                <img class="card-lang-logo"
-                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/2048px-HTML5_Badge.svg.png" />
+            <div class="project-group">
+                <span class="project-group-title">Frontend</span>
+                <span class="project-group-exp">
+                    <span class="project-count-web"></span>
+                    - 2 years
+                </span>
+            </div>
+        </div>
+        <div class="projects-container">
+            <div id="projects-java" class="projects-content">
+                Nate's Java Projects
+            </div>
+            <div id="projects-python" class="projects-content">
+                Nate's Python Projects
+            </div>
+            <div id="projects-web" class="projects-content">
+                Nate's Frontend Projects
             </div>
         </div>
     </main>
 
     <my-foot root="../"></my-foot>
-    <script src="script.js"></script>
+    <script>
+
+        const projectSelectors = document.querySelectorAll(".project-group");
+        const projectGroups = document.querySelectorAll(".projects-content");
+
+        function setPage(n) {
+            for (let i = 0; i < projectGroups.length; i++) {
+                if (i == n) {
+                    projectSelectors[i].classList.add(["selected"]);
+                    projectGroups[i].classList.remove(["page-hidden"]);
+                } else {
+                    projectSelectors[i].classList.remove(["selected"]);
+                    projectGroups[i].classList.add(["page-hidden"]);
+                }
+            }
+
+        }
+
+        setPage(0);
+        for (let i = 0; i < projectSelectors.length; i++) {
+            const sel = projectSelectors[i];
+            sel.addEventListener("click", () => {
+                setPage(i);
+            });
+        }
+
+    </script>
 </body>
 
 </html>

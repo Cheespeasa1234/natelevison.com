@@ -6,6 +6,7 @@
   --prim-color: rgb(40, 156, 202);
   --secondary-color: rgb(20, 137, 183);
   --third-color: rgb(39, 136, 151);
+  --color-4: rgb(61, 179, 226);
   --accent-1: #33212a;
   --bg-color: #eaeaea;
   --gray-1: #a0a0a0;
@@ -17,23 +18,23 @@
 nav {
   display: flex;
   justify-content: space-between;
-  align-content: center;
+  align-content: sticky;
   background-color: var(--prim-color);
   position: fixed; /* Set the navbar to fixed position */
   top: 0; /* Position the navbar at the top of the page */
   width: 100%; /* Full width */
+  height: 45px;
 
   /* Border smoothing */
   padding: 5px;
   padding-right: 10px;
-  margin: 0;
-  margin-bottom: 20px;
   z-index:1;
 }
 
 main {
-  margin-top: 40px;
-  padding-top: 20px;
+  padding: 0;
+  padding-top: 55px;
+  margin: 0;
 }
 
 nav > div {
