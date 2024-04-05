@@ -110,12 +110,6 @@ const projects = {
             desc: "This is my first ever java project. I used it to keep track of my progress over time as I got better with learning Java. It started as a console application, and slowly made the transformation into a fully-fledged Java Swing GUI application. I am very proud of it, even though it doesn't really work anymore. Not sure why."
         },
         {
-            title: "Pain Pong",
-            date: "March 2022 - April 2022",
-            links: [],
-            desc: "For my CS class, we had to make a Pong game but customize it. I don't know why I called it pain pong but it sounded cool, I guess. The theme I chose was breaking bad, cause I just had started watching it. I am still fond of this project because I presented it in front of the class and it wasn't the worst one."
-        },
-        {
             title: "Paint",
             date: "March 2022 - April 2022",
             links: [],

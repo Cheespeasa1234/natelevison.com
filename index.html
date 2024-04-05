@@ -43,29 +43,59 @@
             <div class="widget">
                 <div class="widget-title">Currently Reading</div>
                 <div class="widget-content">
-                    <img src="global/img/the-martian.jpeg" class="widget-book-cover" />
+                    <img src="global/img/the-martian.jpeg" class="widget-book-cover zoomable" />
                     <div class="widget-book-text">
                         <div>
                             <div class="widget-book-title">The Martian</div>
                             <div class="widget-book-author">Andy Weir</div>
                         </div>
-                        <div class="widget-book-opinion">Its pretty good so far. Not overly dramatic. The way it's written is awesome, it makes it very fun to read, never boring.</div>
+                        <div class="widget-book-opinion">Its pretty good so far. Not overly dramatic. The way it's
+                            written is awesome, it makes it very fun to read, never boring.</div>
                     </div>
                 </div>
             </div>
             <div class="widget">
-                <div class="widget-title">Currently Reading</div>
+                <div class="widget-title">Currently Coding</div>
                 <div class="widget-content">
-                    <img src="global/img/the-martian.jpeg" class="widget-book-cover" />
+                    <img src="favicon.ico" class="widget-book-cover" />
                     <div class="widget-book-text">
                         <div>
-                            <div class="widget-book-title">The Martian</div>
-                            <div class="widget-book-author">Andy Weir</div>
+                            <div class="widget-book-title">This Website</div>
+                            <div class="widget-book-author">natelevison.com</div>
                         </div>
-                        <div class="widget-book-opinion">Its pretty good so far. Not overly dramatic. The way it's written is awesome, it makes it very fun to read, never boring.</div>
+                        <div class="widget-book-opinion">I'm working on some polishing and consistency. Mostly to do
+                            with CSS, which I am not a fan of. But I think this new widget menu is cool.</div>
                     </div>
                 </div>
             </div>
+            <div class="widget">
+                <div class="widget-title">Quick Links</div>
+                <div class="widget-content"
+                    style="display: flex;flex-direction: column;width: 100%;height:100%;justify-content:center;">
+                    <a href="/about">
+                        <button class="widget-button">About</button>
+                    </a>
+                    <a href="/blog">
+                        <button class="widget-button">Blog</button>
+                    </a>
+                    <a href="/my_projects">
+                        <button class="widget-button">Projects</button>
+                    </a>
+                    <a href="/blog/updates">
+                        <button class="widget-button">Updates</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div style="width:100%;display:flex;justify-content:center;">
+            <marquee direction="down" width="250" height="200" behavior="alternate"
+                style="border: 2px solid black; border-radius: 5px;" scrollamount="5">
+                <marquee behavior="alternate" scrollamount="5"
+                    style="display: flex; flex-direction: column; justify-content:center;">
+                    <div style="text-decoration: underline;width:25px;height:25px;border:1px solid blue;font-size:10px;">
+                        DVD</div>
+                </marquee>
+            </marquee>
         </div>
     </main>
 
@@ -94,7 +124,7 @@
             floatyLetters[i].style.animationDelay = (i * 0.1) + "s";
         }
 
-        const bookCovers = document.querySelectorAll(".widget-book-cover");
+        const bookCovers = document.querySelectorAll(".widget-book-cover.zoomable");
         for (const bookCover of bookCovers) {
             bookCover.addEventListener("mouseover", () => {
                 const w = bookCover.width;

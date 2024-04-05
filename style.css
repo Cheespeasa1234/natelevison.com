@@ -107,7 +107,7 @@ main {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-2px);
+    transform: translateY(-5px);
   }
   100% {
     transform: translateY(0px);
@@ -122,11 +122,11 @@ main {
 .widgets {
   display: flex;
   justify-content: center;
+  height: min-content;
 }
 
 .widget {
   width: 350px;
-  height: 250px;
   padding: 10px;
   border: 2px solid black;
   border-radius: 5px;
@@ -142,12 +142,15 @@ main {
 }
 
 .widget-book-cover {
-  width: 40%;
-  border-radius: 5px;
+  object-fit: contain;
+  max-width: 50%;
+  max-height: 100%;
+  width: 100%;
+  height: auto;
 }
 
 .widget-content {
-  width: 100%;
+  width: fit-content;
   display: flex;
 }
 
@@ -171,4 +174,34 @@ main {
 .widget-book-opinion {
   font-size: 16px;
   font-style: italic;
+}
+
+.widget-button {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 5px;
+}
+
+div.dvd-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+marquee.dvd-vert {
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+marquee.dvd-horiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+div.dvd {
+  text-decoration: underline;
+  width: 25px;
+  height: 25px;
+  font-size: 10px;
 }

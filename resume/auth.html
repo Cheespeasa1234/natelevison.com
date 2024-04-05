@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Set Key</title>
+</head>
+
+<body>
+    <label for="authKey">Auth Key:</label>
+    <input type="text" id="authKey" name="authKey">
+    <button onclick="setKey()">Set Key</button>
+
+    <script>
+        function setKey() {
+            var key = document.getElementById('authKey').value;
+
+            const d = new Date();
+            d.setTime(d.getTime() + (1 * 24 * 60 * 60 * 1000));
+            let expires = "expires=" + d.toUTCString();
+            document.cookie = `resume-key=${key}; expires=${expires}; path=/;secure`;
+            window.location.href = "/resume"
+        }
+    </script>
+</body>
+
+</html>
