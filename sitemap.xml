@@ -37,20 +37,8 @@
     </url>
     <url>
         <loc>https://natelevison.com/my_projects</loc>
-        <lastmod>2023-07-31</lastmod>
+        <lastmod>2024-04-05</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
-    </url>
-    <url>
-        <loc>https://natelevison.com/my_projects/java</loc>
-        <lastmod>2023-09-14</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    <url>
-        <loc>https://natelevison.com/my_projects/python</loc>
-        <lastmod>2023-09-15</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.6</priority>
     </url>
 </urlset>

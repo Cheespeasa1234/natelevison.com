@@ -6,12 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home - natelevison.com</title>
+    
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./style.css" />
     <link rel="stylesheet" href="./global/components/globalComponents.css" />
+    <script src="./global/components/my-nav.js"></script>
+    <script src="./global/components/my-foot.js"></script>
 </head>
-<script src="./global/components/my-nav.js"></script>
-<script src="./global/components/my-foot.js"></script>
 
 <body>
     <header>
@@ -92,7 +93,8 @@
                 style="border: 2px solid black; border-radius: 5px;" scrollamount="5">
                 <marquee behavior="alternate" scrollamount="5"
                     style="display: flex; flex-direction: column; justify-content:center;">
-                    <div style="text-decoration: underline;width:25px;height:25px;border:1px solid blue;font-size:10px;">
+                    <div
+                        style="text-decoration: underline;width:25px;height:25px;border:1px solid blue;font-size:10px;">
                         DVD</div>
                 </marquee>
             </marquee>
@@ -100,30 +102,10 @@
     </main>
 
     <script>
-
-        // const qlAbout = document.getElementById("ql-about");
-        // const qlUpdates = document.getElementById("ql-updates");
-        // const qlBlog = document.getElementById("ql-blog");
-        // const qlProjects = document.getElementById("ql-projects");
-
-        // qlAbout.addEventListener("click", () => {
-        //     window.location.href = "./about";
-        // });
-        // qlUpdates.addEventListener("click", () => {
-        //     window.location.href = "./blog/updates";
-        // });
-        // qlBlog.addEventListener("click", () => {
-        //     window.location.href = "./blog";
-        // });
-        // qlProjects.addEventListener("click", () => {
-        //     window.location.href = "./my_projects";
-        // });
-
         const floatyLetters = document.querySelectorAll(".floatyletter");
         for (let i = 0; i < floatyLetters.length; i++) {
             floatyLetters[i].style.animationDelay = (i * 0.1) + "s";
         }
-
         const bookCovers = document.querySelectorAll(".widget-book-cover.zoomable");
         for (const bookCover of bookCovers) {
             bookCover.addEventListener("mouseover", () => {
@@ -131,14 +113,14 @@
                 const h = bookCover.height;
                 const scale = 2;
                 const transformScale = scale * 2;
-                bookCover.style.transform = `scale(${scale}) translate(${w / transformScale}px, ${h / transformScale}px)`;
+                bookCover.style.scale = `${scale}`
+                bookCover.style.translate = `${w / transformScale}px ${h / transformScale}px`;
             });
-
             bookCover.addEventListener("mouseout", () => {
-                bookCover.style.transform = "";
+                bookCover.style.scale = ''
+                bookCover.style.translate = '';
             });
         }
-
     </script>
 
 </body>
