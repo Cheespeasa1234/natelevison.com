@@ -338,6 +338,32 @@ const posts = [
             Well, time to go. Thanks for reading, <s>everyone</s> grandma!
         <p>
         `
+    },
+    {
+        id: 14,
+        title: "8 months of changes",
+        date_display: "Apr 16, 2024, 14:46:28",
+        date_iso: "2024-04-16T18:45:02.460Z",
+        content: /* html */ `
+        <p>
+            The last post was an understatement. It's been EIGHT MONTHS. What am I doing with myself?
+        </p>
+        <p>
+            School has been fine. But this is about the website. As you can see, this website has nearly had a full revamp, visually. It also is hosted on NGINX, hooray!
+        </p>
+        <p>
+            I've also been writing other blog articles. That's pretty cool. You've probably seen them though.
+        </p>
+        <p>
+            You can barely recognize the new website, it's changed so much. But I've stuck to my philosophy of self-hosting and homebrewing, and everything (mostly) works! And this website is getting actual visitors now, from important people! This website truly is one of my biggest accomplishments.
+        </p>
+        <p>
+            I'll make another blog post about the projects I've been doing, but in all, this website has made some huge leaps in technology. I am going to a robotics trip tomorrow, my Forgetting article is being published, things are happening, fast. But this website is like a life raft, that I come back to when I need something consistent, something predictable. Pretty cool, I'd say. I really enjoy coding on this website.
+        </p>
+        <p>
+            Thanks for reading, grandma. Bye :D
+        </p>
+        `
     }
 ].reverse();
 

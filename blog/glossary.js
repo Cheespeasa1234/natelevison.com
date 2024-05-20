@@ -25,7 +25,13 @@ const glossary = {
     "js": "JS is a common abbreviation for JavaScript, the scripting language widely used in web development for enhancing website interactivity and functionality.",
     "html": "HTML, or HyperText Markup Language, defines the structure and content of web pages, serving as the foundation for web document rendering in browsers.",
     "tech stack": "A tech stack is the set of server softwares and tools in use by a website. A tech stack includes frontend softwares, databases, and compilers as well.",
-    "java swing": "A GUI library in the Java programming language, that allows for efficient creation of forms, charts, and other basic graphic contexts."
+    "java swing": "A GUI library in the Java programming language, that allows for efficient creation of forms, charts, and other basic graphic contexts.",
+    "edge cases": "Edge cases are scenarios that fall outside the normal range of operation, often overlooked in testing and leading to unexpected behavior in software.",
+    "nesting": "Nesting is putting multiple conditional statements or loops inside one another. Although an essential element of programming, using too many nested statements can lead to complex, inefficient, and hard-to-read code.",
+    "typescript": "TypeScript is a superset of JavaScript that adds static typing and other features to the language, providing better error checking and code completion.",
+    "node": "Node.js is the program that runs JavaScript, not on websites like usually, but on someone's computer, like any old app.",
+    "magic values": "Magic values are hard-coded constants in code that lack context or explanation, making it difficult to understand their purpose or significance.",
+    "iterate": "Iterating is the process of repeating a set of instructions or operations multiple times, often used in loops to traverse data structures or perform repetitive tasks.",
 }
 
 function glossarize(element) {
