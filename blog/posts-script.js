@@ -68,6 +68,10 @@ function getResults(postList) {
             date.classList.add(["post-date"]);
             date.innerHTML = " - " + new Date(post.created).toLocaleDateString();
 
+            const views = document.createElement("span");
+            views.classList.add(["post-views"]);
+            views.innerHTML = " - " + post.views + " views";
+
             const share = document.createElement("button");
             share.classList.add(["post-share"]);
             share.innerHTML = "<i class=\"fa-solid fa-share-from-square\"></i>";
@@ -85,6 +89,7 @@ function getResults(postList) {
             container.appendChild(share);
             container.appendChild(title);
             container.appendChild(date);
+            container.appendChild(views);
             container.appendChild(tags);
 
             container.classList.add(["post-container"])

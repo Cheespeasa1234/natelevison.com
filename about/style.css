@@ -2,7 +2,7 @@ main {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  max-width: 1000px;
+  width: 80%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -57,12 +57,19 @@ main {
   border: 1px solid var(--prim-color);
   color: white;
   border-radius: 5px;
-  padding: 6px 15px 6px 15px;
+  padding: 0.5em 1em;
   margin: 5px;
   cursor: pointer;
   transition: background-color 0.25s;
+  font-size: 1.2em;
 }
 
 .about-more > button:hover {
   background-color: var(--secondary-color);
+}
+
+.about-content {
+  padding-left: 1em;
+  padding-right: 1em;
+  font-size: 1.5em;
 }

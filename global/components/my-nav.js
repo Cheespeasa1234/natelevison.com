@@ -18,9 +18,6 @@ class MyNav extends HTMLElement {
           <a class="nav-link scl" href="https://www.github.com/Cheespeasa1234" target="_blank">
             <i class="fa-brands fa-github"></i>
           </a>
-          <a class="nav-link scl" href="https://www.twitter.com/CiY310" target="_blank">
-            <i class="fa-brands fa-twitter"></i>
-          </a>
           <a class="nav-link scl" href="mailto:natelevison@gmail.com" target="_blank">
             <i class="fa-solid fa-envelope"></i>
           </a>

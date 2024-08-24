@@ -38,7 +38,7 @@ const posts = [
             Yesterday, I presented the pong game I made. I am going to see if chrome still supports applets. I don't think they do, so I'm going to try to find a way to upload the pong game I made to this site. It's really cool, and it features Walter White.
         </p>
         <p>
-            I added an about me page now. I put my email. Please don't email me unless it's important, that is legitimately my only email account that I can use, please don't blow it up. Who am I kidding, no one reads this. I added some of my achievements onto that page. Now that I'm thinking about that, I really haven't done much. Hopefully this site helps.
+            I added an about me page now. I put my email. Please don't email me unless it's important, that is legitimately my only email account that I can use, please don't blow it up. Who am I kidding, no one reads this. I added some of my achievements onto that page. Now that I'm thinking about that, I really haven't done much&{}{ yet}. Hopefully this site helps.
         </p>
         <p>
             I don't know what next project to start on here. My current project has been written entirely in Java and Idon't know how to make Java go on a site. But I will return with more information on that.
@@ -61,7 +61,7 @@ const posts = [
         date_iso: "2022-04-18T12:57:00.000Z",
         content: /* html */ `
         <p>    
-            Hello from Aruba! I am currently in bed in a hotel on Aruba. Pretty cool. Did I mention I'm in Aruba? Anyway, I wanted to talk about my journey to fix the WordleGen and why it broke, and also why im a dumbass for not figuring it out.
+            Hello from Aruba! I am currently in bed in a hotel on Aruba. Pretty cool. Did I mention I'm in Aruba? Anyway, I wanted to talk about my journey to fix the WordleGen and why it broke, and also why &{im a dumbass for not figuring}{it took so long to figure} it out.
         </p>
         <p>
             So I attempted to implement date input and not days input like originally. It works well now, but originally, I thought that the <i>input</i> tag set to Date input would return a Date object, but it actually returns the millisecond value. I then had to convert that to a date and add hours to it and then I could pass it into the generator. It works now but it was broken for a while. I have to email my grandparents and tell them it works again.
@@ -73,7 +73,7 @@ const posts = [
             I decided that I am going to drop the project mainly because I'm not very inspired to do it anymore. However I do kind of want to make a new "compression" system. One of the main file size culprits right now is the WordleGen, because the <i>script</i> tag in the file has to list every single word choice in a row. So maybe, I could figure out how to get the string value of an html file, and then nav to a js file, and then turn that into code for html files. I wanted to do this because sometimes, New York Times adds new words to the roster and that means I have to fix everything. Kinda annoying. But it's fine. Maybe instead, I could make a program to make an array smaller, then decompress it for use in the js.
         </p>
         <p>
-            Also, blog has gone bye bye. I don't want to upkeep it, it's a pain in the ass to maintain, (not like I've been maintaining it anyway) but yeah. I think my site will be better off without it.
+            Also, blog has gone bye bye. I don't want to upkeep it, it's a pain &{in the ass}{} to maintain, (not like I've been maintaining it anyway) but yeah. I think my site will be better off without it.
         </p>
         <p>
             Anyway, just a few things about Aruba. Food ain't bad, weather is SOOOO hot, like way too hot, and I have a cold. However we do have a lot of stuff planned so that should be cool.
@@ -121,7 +121,7 @@ const posts = [
     },
     {
         id: 5,
-        title: "f*** njsla and i added web spider, github, generators, and removed name",
+        title: "&{f***}{i dislike} njsla and i added web spider, github, generators, and removed name",
         date_display: "May 18, 2022, 8:53",
         date_iso: "2022-05-18T12:53:00.000Z",
         content: /* html */ `
@@ -132,7 +132,7 @@ const posts = [
             Also, I made a new page. Go to ./generators and choose username generator. I will put stuff there that is cool.Among us
         </p>
         <p>
-            Also, I migrated the site to github so I have to change things. It is so much better, 000webhost sucks!!!
+            Also, I migrated the site to github so I have to change things. It is so much better&{, 000webhost sucks!!!}{!}
         </p>
         <p>
             Lastly, I removed a lot of personal information, hopefully I didn't leave any, I will do a final sweep later.
@@ -149,7 +149,7 @@ const posts = [
         date_iso: "2022-05-26T14:26:00.000Z",
         content: /* html */ `
         <p>
-            Wassup gamers. I fixed the wordle again, It should be working now. The issue was pretty dumb. It had to do with the generate button being after the script which gave nulls and stuff.
+            Wassup gamers. I fixed the wordle again, It should be working now. The issue was pretty &{dumb}{silly}. It had to do with the generate button being after the script which gave nulls and stuff.
         </p>
         <p>
             I also moved all of the javascript files into /js now, so I would be able to reuse libraries and variables in the future. I put unused js files that I want to keep into /js/unused.
@@ -202,7 +202,7 @@ const posts = [
         date_iso: "2022-11-18T17:36:00.000Z",
         content: /* html */ `
         <p>
-            I made some changes to the site (using href instead of onclick) to make it faster. The whole fractal + backend idea to make it more efficient isn't exactly working out for me. I've managed to make a fully functioning express server, but I have yet to implement it into a frontend without php (which I suck at) or using unsecure methods.
+            I made some changes to the site (using href instead of onclick) to make it faster. The whole fractal + backend idea to make it more efficient isn't exactly working out for me. I've managed to make a fully functioning express server, but I have yet to implement it into a frontend without php (which I &{suck}{am not great} at) or using unsecure methods.
         </p>
         <p>
             Speaking of security, I have no idea how to make a backend without leaking my computer's IP address, and to be honest, I don't know if my parents would buy me a domain and hosting service for hannukkah (they don't entirely trust technology).
@@ -222,7 +222,7 @@ const posts = [
         date_iso: "2023-03-14T01:29:32.410Z",
         content: /* html */ `
         <p>
-            I finished migrating the blog over to the new site. By the way, I didn't post here for a while because I was busy with school. I am still not doing well, though. 
+            I finished migrating the blog over to the new site. By the way, I didn't post here for a while because I was busy with school. &{I am still not doing well, though}{}. 
         </p>
         <p>
             I have changed a lot of things with this website, so here they are...
@@ -297,7 +297,7 @@ const posts = [
             But I think it is time I explain my bouts in the world of the ones and the zeros. With all this AI nonsense, I have been very worried for my future in programming, but I hope that the environment changes, but programmers still exist. Otherwise, what will all of this have been for? I understand I am being a bit of a doomer but when you grew up with tech and coding, code.org, scratch, whatnot, it is really hard to see everything you ever knew about tech just go out the window.
         </p>
         <p>
-            I have still been programming, although at a lower frequency; mainly because I was studying for the AP test, or I was on my ass. But I have been working on <a href="https://www.github.com/Cheespeasa/LeviAntSim">Boids simulation</a> to get better at mathematical functions in computer science. I have struggled with angles because it is so difficult to visualize the internal mathematics for debugging purposes.
+            I have still been programming, although at a lower frequency; mainly because I was studying for the AP test, or I was &{on my ass}{doing nothing}. But I have been working on <a href="https://www.github.com/Cheespeasa/LeviAntSim">Boids simulation</a> to get better at mathematical functions in computer science. I have struggled with angles because it is so difficult to visualize the internal mathematics for debugging purposes.
         </p>
         <p>
             In the physical realm, I have been waiting for a new desk, and possibly a new SSD. The physical storage situation has become ever more dire, and I am seriously almost out of capacity. I predict I have one more month of regular programming usage until I am <i>out</i>.
@@ -317,13 +317,13 @@ const posts = [
             Wow, it really has been a while. What, four months? Crazy. Well, it's about time I give you a life update.
         </p>
         <p>
-            First of all, I returned from Europe. That was very fun, and I saw a lot of things I enjoyed seeing. For example, I saw the colloseum, the pantheon, st peters, a bunch of cool places. I'm really happy that I got to do those things. Also, seeing such a different way of life was so interesting and eye opening. Cool!
+            First of all, I returned from Europe. That was very fun, and I saw a lot of things I enjoyed seeing. For example, I saw the &{colloseum}{Colosseum}, the &{pantheon}{Pantheon}, &{st peters}{St. Peters}, a bunch of cool places. I'm really happy that I got to do those things. Also, seeing such a different way of life was so interesting and eye opening. Cool!
         </p>
         <p>
             Kind of boring, though, so lets talk about the COOL STUFF!! You may not have noticed, but my website is now on natelevison.com! Now please, let me explain to you my journey to getting to this point (it was not easy).
         </p>
         <p>
-            This journey started one month ago, just after I returned from europe. I was curious about what I could do to make my own backend for this website, as until now, I have been using GitHub Pages to do my hosting. I learned port forwarding and http and made my own server! So I bought a domain as well, and after a bit of struggling with DNS, I became the proud owner of natelevison.com.
+            This journey started one month ago, just after I returned from &{europe}{Europe}. I was curious about what I could do to make my own backend for this website, as until now, I have been using GitHub Pages to do my hosting. I learned port forwarding and http and made my own server! So I bought a domain as well, and after a bit of struggling with DNS, I became the proud owner of natelevison.com.
         </p>
         <p>
             I soon realized I can remotely access my computer with SSH, because it would be easier now that there is a domain name. In a nutshell, SSH is a program that allows you to access the terminal of any computer on the public internet, as long as you have the passcode. So that is how I have been coding away from my PC during trips.
@@ -367,18 +367,52 @@ const posts = [
     }
 ].reverse();
 
+
+function replaceAt(str, replacement, index, length) {
+    const beforeSlice = str.slice(0, index);
+    const afterSlice = str.slice(index + length);
+
+    return beforeSlice + replacement + afterSlice;
+}
+
+function setCensorMode(content, mode){
+    // Find all instances of &{option1}{option2}
+    const regex = /&{[^{}]*}{[^{}]*}/gm;
+    const matches = Array.from(content.matchAll(regex));
+
+    console.log(`Swear matches: ${matches.length}`);
+
+    let replaced = content;
+    for (let i = matches.length - 1; i >= 0; i--) {
+        // Get the information about the match
+        const match = matches[i];
+        const matchContent = match[0];
+        const matchIndex = match.index;
+        const matchLength = matchContent.length;
+
+        // Get what we need to replace it with
+        const optionOne = matchContent.slice(2, matchContent.indexOf("}"));
+        const optionTwo = matchContent.slice(matchContent.lastIndexOf("{") + 1, -1);
+        // console.log(`"${optionOne}", "${optionTwo}"`);
+        const option = mode ? optionOne : optionTwo;
+
+        replaced = replaceAt(replaced, option, matchIndex, matchLength);
+    }
+    return replaced;
+}
+
 let articlesDiv = document.querySelector("#articles");
 let latestSpan = document.querySelector("#latest");
 latestSpan.innerHTML = `Latest: ${new Date(posts[0].date_iso).toDateString()}`;
 
 for (let post of posts) {
     article = document.createElement("article");
-    article.innerHTML = `
+    article.innerHTML = setCensorMode(`
         <div id="post-${post.id}" class="title">${post.title}</div>
         <div class="sub">${post.date_display}</div>
         <div class="content">${post.content}</div>
         <br><br><br>
-    `;
+    `, false);
     articlesDiv.appendChild(article);
 }
 

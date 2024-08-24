@@ -1,3 +1,7 @@
+.results-container {
+    width: fit-content;
+}
+
 .post-container {
     border: 1px solid black;
     border-radius: 10px;
@@ -5,8 +9,8 @@
     margin-top: 10px;
     cursor: pointer;
     transition: box-shadow 0.2s;
-    max-width: 600px;
     font-size: 24px;
+    width: 100%;
     font-family: 'Fira Sans', sans-serif;
     overflow: auto;
     max-height: 200px;
@@ -21,7 +25,7 @@
     margin-bottom: 5px;
 }
 
-.post-date {
+.post-date, .post-views {
     font-size: 16px;
     color: #808080;
 }

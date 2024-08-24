@@ -26,7 +26,7 @@ const projects = {
                     text: "APCS Site"
                 }
             ],
-            desc: "This project was a school assignment to make any game you want. I chose to make a game based on my favorite game series of all time, Bloons Tower Defense. And by \"based on\", I mean sloten assets and game mechanics without credit. I enjoyed the learning that came along with developing this game."
+            desc: "This project was a school assignment to make any game you want. I chose to make a game based on my favorite game series of all time, Bloons Tower Defense. And by \"based on\", I mean literally the exact same assets. I enjoyed the learning that came along with developing this game."
         },
         {
             title: "LeviAlchemy",
@@ -107,13 +107,13 @@ const projects = {
                     text: "GitHub"
                 }
             ],
-            desc: "This is my first ever java project. I used it to keep track of my progress over time as I got better with learning Java. It started as a console application, and slowly made the transformation into a fully-fledged Java Swing GUI application. I am very proud of it, even though it doesn't really work anymore. Not sure why."
+            desc: "This is my first ever java project. I used it to keep track of my progress over time as I got better with learning Java. It started as a console application, and slowly made the transformation into a fully-fledged Java Swing GUI application. I am very proud of it, even though it doesn't really work anymore. Probably because I updated my Java version."
         },
         {
             title: "Paint",
             date: "March 2022 - April 2022",
             links: [],
-            desc: "This is just a crappy paint brush app. It helped me learn some efficiency techniques, like storing things as lines and not pixels. It includes an RGB and size slider, so to do this, I stored each point as a point with size and color, drawing lines between each point with the first's data. It was very fun to make."
+            desc: "This is just a simple paint brush app. It helped me learn some efficiency techniques, like storing things as lines and not pixels. It includes an RGB and size slider, so to do this, I stored each point as a point with size and color, drawing lines between each point with the first's data. It was very fun to make."
         },
         {
             title: "Mineswiffer",
