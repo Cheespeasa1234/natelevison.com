@@ -364,6 +364,26 @@ const posts = [
             Thanks for reading, grandma. Bye :D
         </p>
         `
+    },
+    {
+        id: 15,
+        title: "Issues with IPs and DNS",
+        date_display: "Sep 26, 2024, 23:59",
+        date_iso: "2024-09-27T03:59:13.355Z",
+        content: /* html */ `
+        <p>
+            Here I am, again. I don't even want to know how long it's been. Anyway, the reason I'm writing is because I want to be open about the downtime my website has been experiencing.
+        </p>
+        <p>
+            This website is run on my home computer, on my home router. Meaning, my IP address is dynamic and changes occasionally. Additionally, my local subnet address changes frequently, meaning I both have to update my DNS settings on Cloudflare, but I also have to update the port forwarding rules on my router- which I can only do when I am actually at home!
+        </p>
+        <p>
+            The reason this is so bad is that my website is becoming more and more important. I mentioned this website as my crowning achievement in my college apps and I want it to be somewhat functional, and if a recruiter opens it to be greeted by a 523 error nothing good will happen. Also, for TAing in HCS, I made a cheatsheet website so I could embed styled and scripted elements into Canvas pages, which don't allow scripts or CSS classes at all! So if my website goes down, not only will college recruiters get the ick, but my students will get messed with too.
+        </p>
+        <p>
+            This has been the dream for so long but its definitely a challenge. My goal is to save up for my own router, or some other workaround where I don't have to constantly switch IPs. That's all for today, except for that I am working on a new article, a follow up to Forgetting. Still working on it. Talk to you later, and thanks for reading, Grandma!
+        </p>
+        `
     }
 ].reverse();
 
