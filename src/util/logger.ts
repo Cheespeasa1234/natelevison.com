@@ -10,20 +10,17 @@ export function padIP(IP: string): string {
 
 export function logger(req: Request, res: Response, next: NextFunction) {
     // Basic log
-    const forwardedAddress: string | string[] | undefined = req.headers['x-forwarded-for'];
-    const remoteAddress: string | undefined = req.socket.remoteAddress;
-    
-    if (forwardedAddress === undefined || remoteAddress === undefined) {
-        console.error('No IP address found in request');
-        return res.status(400).send('No IP address found in request');
-    }
-    const ipString: string | string[] = forwardedAddress || remoteAddress;
-    if (Array.isArray(ipString)) {
-        console.error('Multiple IP addresses found in request');
-        return res.status(400).send('Multiple IP addresses found in request');
-    }
+    const forwardedAddress: string | string[] = req.headers['x-forwarded-for'] || "?";
+    const remoteAddress: string = req.socket.remoteAddress || "?";
 
-    const ips = ipString.split(', ').map(padIP);
+    const ipString: string | string[] = forwardedAddress || remoteAddress;
+    
+    let ips: string[] = [];
+    if (typeof ipString === "string") {
+        ips = ipString.split(', ').map(padIP);
+    } else {
+        ips = ipString.map(padIP);
+    }
     const ip = ips.join(' -> ');
     const url = req.originalUrl;
     const time = new Date();

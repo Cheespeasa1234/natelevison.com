@@ -14,18 +14,16 @@ function padIP(IP) {
 }
 function logger(req, res, next) {
     // Basic log
-    const forwardedAddress = req.headers['x-forwarded-for'];
-    const remoteAddress = req.socket.remoteAddress;
-    if (forwardedAddress === undefined || remoteAddress === undefined) {
-        console.error('No IP address found in request');
-        return res.status(400).send('No IP address found in request');
-    }
+    const forwardedAddress = req.headers['x-forwarded-for'] || "?";
+    const remoteAddress = req.socket.remoteAddress || "?";
     const ipString = forwardedAddress || remoteAddress;
-    if (Array.isArray(ipString)) {
-        console.error('Multiple IP addresses found in request');
-        return res.status(400).send('Multiple IP addresses found in request');
+    let ips = [];
+    if (typeof ipString === "string") {
+        ips = ipString.split(', ').map(padIP);
     }
-    const ips = ipString.split(', ').map(padIP);
+    else {
+        ips = ipString.map(padIP);
+    }
     const ip = ips.join(' -> ');
     const url = req.originalUrl;
     const time = new Date();

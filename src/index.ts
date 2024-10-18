@@ -27,6 +27,6 @@ app.use("/blog", blogRouter);
 app.get("/*", [express.static(publicFolder, { fallthrough: true }), (req: Request, res: Response) => { res.sendFile(folderRoot + `/${publicFolder}/404.html`) }]);
 
 // start server
-app.listen(3690, () => {
+app.listen(3690, "localhost", () => {
     console.log("Listening on port 3690");
 });
