@@ -1,7 +1,7 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ansi = exports.panic = exports.thresholdIncreaseAttempts = exports.relevanceThreshold = exports.privateFolder = exports.publicFolder = exports.folderRoot = void 0;
-exports.folderRoot = "D:/website/natelevison.com";
+exports.folderRoot = "C:/code/natelevison.com";
 exports.publicFolder = "public_html";
 exports.privateFolder = "private_html";
 exports.relevanceThreshold = 0.4;

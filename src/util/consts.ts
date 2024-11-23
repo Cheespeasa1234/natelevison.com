@@ -1,4 +1,4 @@
-export const folderRoot = "D:/website/natelevison.com";
+export const folderRoot = "C:/code/natelevison.com";
 export const publicFolder = "public_html";
 export const privateFolder = "private_html";
 export const relevanceThreshold = 0.4;
