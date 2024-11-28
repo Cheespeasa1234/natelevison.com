@@ -1,6 +1,6 @@
-import { Request, Response, NextFunction } from 'express';
-import { ansi, privateFolder } from './consts';
-import fs from 'fs';
+import { Request, Response, NextFunction } from 'npm:express';
+import { ansi, privateFolder } from './consts.ts';
+import fs from 'node:fs';
 
 export function padIP(IP: string): string {
     return IP.split('.')

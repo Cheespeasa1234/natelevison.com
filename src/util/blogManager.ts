@@ -1,5 +1,5 @@
-import { Post, folderRoot, privateFolder } from "./consts";
-import fs from "fs";
+import { Post, folderRoot, privateFolder } from "./consts.ts";
+import fs from "node:fs";
 
 /**
  * id: The numerical ID of the article.
@@ -14,7 +14,7 @@ import fs from "fs";
 export const posts: Post[] = [
     {
         id: 0,
-        created: "2022-03-11T17:25:00.000Z",
+        created: 1647019500000,
         tags: ["this", "update", "learntocode", "programming", "web"],
         title: "Update Page",
         name: "the-official-update-page",
@@ -22,35 +22,35 @@ export const posts: Post[] = [
     },
     {
         id: 1,
-        created: "2023-08-21T13:30:13.766Z",
+        created: 1692624613766,
         tags: ["this", "update", "personal"],
         title: "First Post of Remade Blog System",
         name: "first-post-of-remade-blog-system"
     },
     {
         id: 2,
-        created: "2023-08-21T13:30:13.766Z",
+        created: 1692624613766,
         tags: ["this", "learntocode", "personal", "programming", "web", "tutorial"],
         title: "How I Made This Website From Scratch",
         name: "how-i-made-this-website-from-scratch"
     },
     {
         id: 3,
-        created: "2023-09-14T20:56:07.330Z",
+        created: 1694724967330,
         tags: ["learntocode", "philosophy", "ideas"],
         title: "Stay critical of yourself",
         name: "we-are-all-stupid"
     },
     {
         id: 4,
-        created: "2023-09-15T22:05:29.048Z",
+        created: 1694815529048,
         tags: ["personal", "books", "ideas"],
         title: "I am reading too fast",
         name: "i-am-reading-too-fast"
     },
     {
         id: 5,
-        created: "2023-09-20T23:26:04.671Z",
+        created: 1695252364671,
         tags: ["javascript", "node", "learntocode", "web", "backend"],
         title: "How I Made my own Server - Fast",
         name: "how-i-made-my-own-server-fast",
@@ -59,7 +59,7 @@ export const posts: Post[] = [
     {
         id: 6,
         link: "/blog/posts/i-wish-i-could-be-meaner.html",
-        created: "2023-09-21T20:28:21.853Z",
+        created: 1695328101853,
         tags: ["rant"],
         title: "[RANT] I wish I could be meaner.",
         name: "i-wish-i-could-be-meaner",
@@ -69,7 +69,7 @@ export const posts: Post[] = [
     {
         id: 7,
         link: "/blog/posts/its-time-to-say-something.html",
-        created: "2023-11-13T21:20:42.000Z",
+        created: 1699910442000,
         tags: ["politics", "israel", "personal"],
         title: "It's time to say something.",
         name: "its-time-to-say-something",
@@ -78,7 +78,7 @@ export const posts: Post[] = [
     },
     {
         id: 8,
-        created: "2024-01-13T07:30:58.344Z",
+        created: 1705131058344,
         tags: ["personal"],
         title: "Never realized im actually getting older.",
         name: "bye-matpat",
@@ -86,15 +86,15 @@ export const posts: Post[] = [
     },
     {
         id: 9,
-        created: "2024-01-29T16:02:13.986Z",
-        tags: ["personal", "philosophy"],
+        created: 1706544133986,
+        tags: ["personal", "philosophy", "grandma-alzheimers"],
         title: "Forgetting",
         name: "forgetting",
         disableGlossary: true,
     },
     {
         id: 10,
-        created: "2024-03-08T16:41:38.718Z",
+        created: 1709916098718,
         tags: ["programming, java", "swing", "games", "learntocode", "programming"],
         title: "How I wasted 2 months of my life on a stats viewer",
         name: "how-i-wasted-2-months-of-my-life",
@@ -102,7 +102,7 @@ export const posts: Post[] = [
     },
     {
         id: 11,
-        created: "2024-04-08T14:09:16.266Z",
+        created: 1712585356266,
         tags: ["ideas", "philosophy"],
         title: "Why I don't believe in free will",
         name: "free-will",
@@ -111,14 +111,14 @@ export const posts: Post[] = [
     },
     {
         id: 12,
-        created: "2024-04-25T20:40:50.375Z",
+        created: 1714077650375,
         tags: ["personal", "javascript", "typescript", "node", "programming", "backend"],
         title: "The worst function I've ever written",
         name: "the-worst-function-ever",
     },
     {
         id: 13,
-        created: "2024-05-13T13:52:45.107Z",
+        created: 1715608365107,
         tags: [],
         title: "ATCS Final Project Log",
         name: "atcs-final-log",
@@ -126,10 +126,18 @@ export const posts: Post[] = [
     },
     {
         id: 14,
-        created: "2024-08-10T21:30:26.645Z",
+        created: 1723325426645,
         tags: ["philosophy", "personal"],
         title: "I was wrong about free will",
         name: "wrong-about-free-will",
+        unlisted: true
+    },
+    {
+        id: 15,
+        created: 1732815447794,
+        tags: ["philosphy", "personal", "grandma-alzheimers"],
+        title: "Remembering (Forgetting pt. 2)",
+        name: "remembering",
         unlisted: true
     }
 ]
@@ -151,7 +159,7 @@ export function getViews(id: number): number {
 }
 
 export function getPost(name: string): Post | undefined {
-    let res = posts.find(post => post.name === name);
+    const res = posts.find(post => post.name === name);
     
     // get the view count
     if (res) {
@@ -164,7 +172,7 @@ export function getPost(name: string): Post | undefined {
 export function matchesTags(queryTags: string[], postTags: string[]): boolean {
     if (queryTags.length === 0) return true;
     else if (postTags.length === 0) return false;
-    for (let queryTag of queryTags)
+    for (const queryTag of queryTags)
         if (!postTags.includes(queryTag))
             return false;
     return true;
@@ -178,7 +186,7 @@ export function similarity(s1: string, s2: string): number {
         shorter = s1;
     }
 
-    let longerLength = longer.length;
+    const longerLength = longer.length;
     if (longerLength == 0) {
         return 1.0;
     }
@@ -187,15 +195,15 @@ export function similarity(s1: string, s2: string): number {
         s1 = s1.toLowerCase();
         s2 = s2.toLowerCase();
 
-        var costs = new Array();
-        for (var i = 0; i <= s1.length; i++) {
-            var lastValue = i;
-            for (var j = 0; j <= s2.length; j++) {
+        const costs = [];
+        for (let i = 0; i <= s1.length; i++) {
+            let lastValue = i;
+            for (let j = 0; j <= s2.length; j++) {
                 if (i == 0)
                     costs[j] = j;
                 else {
                     if (j > 0) {
-                        var newValue = costs[j - 1];
+                        let newValue = costs[j - 1];
                         if (s1.charAt(i - 1) != s2.charAt(j - 1))
                             newValue = Math.min(Math.min(newValue, lastValue),
                                 costs[j]) + 1;

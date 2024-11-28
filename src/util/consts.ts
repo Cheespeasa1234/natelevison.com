@@ -1,4 +1,4 @@
-export const folderRoot = "C:/code/natelevison.com";
+export const folderRoot = "/mnt/c/code/natelevison.com";
 export const publicFolder = "public_html";
 export const privateFolder = "private_html";
 export const relevanceThreshold = 0.4;
@@ -64,13 +64,13 @@ export type Session = {
 
 export type Post = {
     id: number,
-    created: string,
+    created: number,
     tags: string[],
     title: string,
     name: string,
+    disableGlossary?: boolean,
     starred?: boolean,
     link?: string,
-    disableGlossary?: boolean,
     unlisted?: boolean,
     relevance?: number,
     views?: number

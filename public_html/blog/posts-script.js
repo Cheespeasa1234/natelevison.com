@@ -34,7 +34,7 @@ function getResults(postList) {
 
         let posts = postsJSON.filtered;
         posts.forEach(post => {
-            post.createdInt = post.starred ? Date.now() : new Date(post.created).getTime();
+            post.createdInt = post.starred ? Date.now() : Number(post.created);
         })
 
         posts = posts.sort((a, b) => b.createdInt - a.createdInt);

@@ -1,8 +1,9 @@
 // goal: securely save a pair of coordinates. ensure those who update their coordinates are the same person.
 // needs signup and auth keys
 
-import { createHash, scryptSync, randomBytes, timingSafeEqual, createHmac } from 'crypto';
-import { User, Session } from './util/consts';
+import { createHash, scryptSync, randomBytes, timingSafeEqual, createHmac } from 'npm:crypto';
+import { Buffer } from "node:buffer";
+import { User, Session } from './util/consts.ts';
 
 export const hash = (i: string) => createHash('sha256').update(i).digest('hex');
 
@@ -85,19 +86,4 @@ export function getTodaysKey(password: string) {
     
     const hash = createHash('sha256').update(`${day}${month}${year}:${password}`).digest('hex');
     return hash;
-}
-
-module.exports = {
-    signup: signup,
-    login: login,
-    dothings: dothings,
-    hash: hash,
-    getTodaysKey: (password: string) => {
-        const day = String(new Date().getDate()).padStart(2, '0');
-        const month = String(new Date().getMonth() + 1).padStart(2, '0');
-        const year = new Date().getFullYear();
-        
-        const hash = createHash('sha256').update(`${day}${month}${year}:${password}`).digest('hex');
-        return hash;
-    }
 }

@@ -99,12 +99,10 @@ input:focus {
 
 #search-config-modal {
     border: 2px solid var(--gray-1);
-    height: 100px;
     position: absolute;
     background: #eaeaea;
     padding: 10px;
     max-width: 500px;
-    overflow: wrap;
     border-radius: 5px;
     z-index: 3;
     margin-left: 10px;
@@ -126,7 +124,12 @@ input:focus {
 }
 
 .config-tag:hover:not(.tag-selected) {
-    background-color: #9eff92;
+    background-color: #ffffff;
+}
+
+#search-config-tags {
+    display: flex;
+    flex-wrap: wrap;
 }
 
 @keyframes rotation {

@@ -1,9 +1,9 @@
 // dependencies
-import express, { Router, Request, Response, NextFunction } from "express";
-import { posts, matchesTags, similarity, getPost, tags } from "../util/blogManager";
-import { compile } from "../util/htmt";
-import { ansi, publicFolder, privateFolder, relevanceThreshold, thresholdIncreaseAttempts, panic, Post, PostWithRelevance, folderRoot } from '../util/consts';
-import fs from "fs";
+import express, { Request, Response } from "npm:express";
+import { posts, matchesTags, similarity, getPost, tags } from "../util/blogManager.ts";
+import { compile } from "../util/htmt.ts";
+import { ansi, publicFolder, privateFolder, relevanceThreshold, thresholdIncreaseAttempts, panic, Post, folderRoot } from '../util/consts.ts';
+import fs from "node:fs";
 
 // blog parameters
 const router = express.Router();
@@ -12,13 +12,14 @@ const router = express.Router();
 router.get("/all", (req: Request, res: Response) => {
 
     // Get the parameters
-    let filtered: Post[] = [];
-    let failed: Post[] = [];
+    const filtered: Post[] = [];
+    const failed: Post[] = [];
     const count: number = Number(req.query['count']) || posts.length;
 
     // Get the tags
     const tagsQueryString: string = req.query['tags'] ? req.query['tags'].toString() : "";
     const tags: string[] = tagsQueryString === "" ? [] : tagsQueryString.split(",");
+    console.log("USING TAGS:", tags);
 
     const name: string = req.query['name']?.toString() || "";
     const showRant: boolean = req.query['rants'] == "true";
@@ -29,7 +30,8 @@ router.get("/all", (req: Request, res: Response) => {
         const post: Post = getPost(posts[i].name) as Post;
 
         // check if it has all the tags
-        if ((post.tags.includes("rant") && !showRant) || post.unlisted || !matchesTags(tags, post.tags)) {
+        const validTags: boolean = tags.length === 0 || matchesTags(tags, post.tags);
+        if ((post.tags.includes("rant") && !showRant) || post.unlisted || !validTags) {
             continue;
         }
 
@@ -49,7 +51,7 @@ router.get("/all", (req: Request, res: Response) => {
     // Increase threshold until a result is found
     increaseThreshold: for (let i = 0; i < thresholdIncreaseAttempts; i++) {
         const lowered = relevanceThreshold - (panic * i);
-        for (let failPost of failed) {
+        for (const failPost of failed) {
             if ((failPost.relevance || 0) > lowered) {
                 filtered.push(failPost);
                 break increaseThreshold;
@@ -64,12 +66,12 @@ router.get("/all", (req: Request, res: Response) => {
 router.get("/article/:name", (req: Request, res: Response) => {
     // get the template string
     let template, content;
-    let ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
+    const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
     try {
         template = fs.readFileSync(`${publicFolder}/blog/template/article.html`, "utf8");
         content = fs.readFileSync(`${publicFolder}/blog/template/` + req.params.name + ".html", "utf8");
         fs.appendFileSync(`${privateFolder}/logs/blog.log`, `[${ip}@${new Date().toISOString()}]: requested ${req.params.name}\n`);
-    } catch (e) {
+    } catch (_) {
         res.status(404).sendFile(folderRoot + `/${publicFolder}/404.html`);
         return;
     }
@@ -113,7 +115,7 @@ router.get("/article/:name", (req: Request, res: Response) => {
     res.send(compiled);
 });
 
-router.get("/tags", (req: Request, res, Response) => {
+router.get("/tags", (_req: Request, res: Response) => {
     res.json({ tags });
 });
 
