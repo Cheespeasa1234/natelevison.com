@@ -1,35 +1,64 @@
 :root {
     --x: 50%;
     --y: 50%;
-    transition: all 0.1s;
+    --article-width: 75vw;
+    /* transition: all 0.1s; */
+
+    --font-size-h1: 2.25em;
+    --font-size-h2: 1.75em;
+    --font-size-h3: 1.50em;
+    --font-size-n: 1.25em;
+    --font-size-s: 1.00em;
 }
+
+/* styles for browsers smaller than 960px; */
+/* @media only screen and (max-width: 960px) {
+    :root {
+        --font-size-h1: 1.75em;
+        --font-size-h2: 1.25em;
+        --font-size-h3: 1.0em;
+        --font-size-n: 0.75em;
+        --font-size-s: 0.50em;
+    }
+} */
+/* styles for browsers smaller than ; */
+/* @media only screen and (max-width: 500px) {
+    :root {
+        --font-size-h1: 1.5em;
+        --font-size-h2: 1.0em;
+        --font-size-h3: 0.75em;
+        --font-size-n: 0.50em;
+        --font-size-s: 0.25em;
+    }
+} */
+/* for sumo sized (mac) screens */
+/* @media only screen and (max-width: 300px) {
+    :root {
+        --font-size-h1: 1.5em;
+        --font-size-h2: 1.0em;
+        --font-size-h3: 0.75em;
+        --font-size-n: 0.50em;
+        --font-size-s: 0.25em;
+    }
+} */
 
 .article-head {
-    border: 1px solid black;
-    border-radius: 10px;
     height: 200px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-family: 'Roboto', sans-serif;
     font-weight: bolder;
-    margin: 10px;
-    transition: background-position 0.5s cubic-bezier(0,.58,.5,1);
-    position: relative;
-    margin-left: 10%;
-    margin-right: 10%;
-    overflow:auto;
-}
-
-
-
-.article-head-content {
-    /* center everythign */
+    overflow: auto;
+    width: var(--article-width);
+    background: url("../global/img/leo_visions-nzdvmBa8lb0-unsplash.jpg");
+    background-size: cover;
+    background-position-y: center;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 
 .article-head-background {
@@ -41,26 +70,26 @@
     border-radius: inherit;
     z-index: -1;
     /* make it transparent bg */
-    background: url("https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
     opacity: 0.4;
 }
 
 .article-title {
-    font-size: 40px;
+    font-size: var(--font-size-h1);
     text-align: center;
-    word-wrap:break-word;
+    word-wrap: break-word;
+    font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
-.article-author, .article-date {
-    font-size: 30px;
-    color: #33212a;
+.article-author,
+.article-date {
+    font-size: var(--font-size-h3);
 }
 
 .back-btn {
     width: 100%;
     letter-spacing: 5px;
     text-transform: uppercase;
-    font-size: 20px;
+    font-size: var(--font-size-n);
     transition: letter-spacing 1s;
     max-width: 300px;
     background-color: linear-gradient(90deg, rgba(157, 36, 227, 0.278), rgba(157, 36, 227, 0.141));
@@ -111,12 +140,27 @@
 }
 
 div.content {
-    max-width: 1000px;
+    width: var(--article-width);
     /* center it on the page */
     margin: auto;
-    font-family: 'Fira Sans', sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     line-height: 1.5;
-    font-size: 20px;
+    font-size: var(--font-size-n);
+}
+
+h1 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: var(--font-size-h1);
+}
+
+h2 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: var(--font-size-h2);
+}
+
+h3 {
+    font-family: "Fira Sans", sans-serif;
+    font-size: var(--font-size-h3);
 }
 
 img:not(.logo):not(.banner-ico) {
@@ -127,18 +171,13 @@ img:not(.logo):not(.banner-ico) {
 /* if screen size small, make the article content font size smaller */
 @media only screen and (max-width: 600px) {
     div.content {
-        font-size: 20px;
-    }
-    .article-head * {
-        font-size: 20px;
-    }
-    .back-btn {
-        font-size: 15px;
-        width: fit-content;
+        font-size: var(--font-size-n);
+        width: 100%;
+        padding: 5px;
     }
 
-    .back-btn-arrow1, .back-btn-arrow2, .back-btn-arrow3, .back-btn {
-        display: none;
+    .article-head * {
+        font-size: var(--font-size-n);
     }
 
     img {
@@ -169,8 +208,9 @@ pre {
     border-top-right-radius: 10px;
 }
 
-.quote {
-    padding-left: 20px;
+.quote,
+blockquote {
+    padding-left: 1em;
     border-left: 2px solid gray;
     color: #333;
 }

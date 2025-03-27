@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<articles>
+
+    <article>
+        <id>0</id>
+        <created>1647019500000</created>
+        <title>Update Page</title>
+        
+        <category>
+            <tag>this</tag>
+            <tag>update</tag>
+            <tag>learntocode</tag>
+            <tag>programming</tag>
+            <tag>web</tag>
+        </category>
+
+        <content type="redirect">
+            <url>https://natelevison.com/blog/updates</url>
+        </content>
+
+        <content type="html">
+            <p>Hello, World!</p>
+        </content>
+
+    </article>
+
+
+
+
+
+
+
+
+
+
+
+
+    <article>
+        <id>1</id>
+        <created>1692624613766</created>
+        <title>First Post of Remade Blog System</title>
+
+        <category>
+            <tag>this</tag>
+            <tag>update</tag>
+            <tag>personal</tag>
+        </category>
+
+        <content>
+        </content>
+    </article>
+
+    <article>
+        <id>2</id>
+        <created>1692624613766</created>
+        <title>How I Made This Website From Scratch</title>
+        <content>
+            <tag>this</tag>
+            <tag>learntocode</tag>
+            <tag>personal</tag>
+            <tag>programming</tag>
+            <tag>web</tag>
+            <tag>tutorial</tag>
+        </content>
+    </article>
+
+    <article>
+        <id>3</id>
+        <created>1694724967330</created>
+        <title>Stay critical of yourself</title>
+        <content>
+            <tag>learntocode</tag>
+            <tag>philosophy</tag>
+            <tag>ideas</tag>
+        </content>
+    </article>
+
+    <article>
+        <id>4</id>
+        <created>1694815529048</created>
+        <title>I am reading too fast</title>
+        <content>
+            <tag>personal</tag>
+            <tag>books</tag>
+            <tag>ideas</tag>
+        </content>
+    </article>
+
+    <article>
+        <id>5</id>
+        <created>1695252364671</created>
+        <title>How I Made my own Server - Fast</title>
+    </article>
+
+</articles>

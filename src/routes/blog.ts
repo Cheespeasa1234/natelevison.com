@@ -2,7 +2,8 @@
 import express, { Request, Response } from "npm:express";
 import { posts, matchesTags, similarity, getPost, tags } from "../util/blogManager.ts";
 import { compile } from "../util/htmt.ts";
-import { ansi, publicFolder, privateFolder, relevanceThreshold, thresholdIncreaseAttempts, panic, Post, folderRoot } from '../util/consts.ts';
+import { ansi, publicFolder, privateFolder, relevanceThreshold, thresholdIncreaseAttempts, panic, folderRoot } from '../util/consts.ts';
+import { Post } from "../util/blogManager.ts";
 import fs from "node:fs";
 
 // blog parameters

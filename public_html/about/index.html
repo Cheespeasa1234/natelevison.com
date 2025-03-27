@@ -21,8 +21,13 @@
     </header>
     <main style="margin: auto auto;">
         <div class="about-img">
-            <img src="https://i.stack.imgur.com/y9DpT.jpg">
-            <span>An image of a very handsome young man</span>
+            <div class="content">
+
+            </div>
+            <!-- <img src="../global/img/fit.png"> -->
+            <div class="caption">
+                Nate at a debate tournament
+            </div>
         </div>
         <div class="about-area">
             <div class="about-title">
@@ -62,5 +67,32 @@
         window.location.href = "../my_projects";
     });
 </script>
+
+<style>
+
+    .about-img {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        gap: 5px;
+    }
+
+    .content {
+        background-image: url("../global/img/fit.png");
+        background-size: cover;
+        max-width: 100%;
+        height: 100%;
+        border: 1.25px solid gray;
+    }
+    
+    .caption {
+        font-size: smaller;
+        font-style: italic;
+        width: 100%;
+        padding: 5px;
+        text-align: center;
+    }
+
+</style>
 
 </html>

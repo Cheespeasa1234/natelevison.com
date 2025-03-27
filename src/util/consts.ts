@@ -61,19 +61,3 @@ export type Session = {
     data: any,
     expire: number
 };
-
-export type Post = {
-    id: number,
-    created: number,
-    tags: string[],
-    title: string,
-    name: string,
-    disableGlossary?: boolean,
-    starred?: boolean,
-    link?: string,
-    unlisted?: boolean,
-    relevance?: number,
-    views?: number
-};
-
-export type PostWithRelevance = Post & { relevance: number };

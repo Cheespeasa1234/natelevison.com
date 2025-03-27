@@ -129,7 +129,7 @@ main {
   width: 25%;
   max-height: 10%;
   padding: 10px;
-  border: 2px solid black;
+  border: 0.5px solid gray;
   border-radius: 5px;
   margin: 10px;
   display: flex;

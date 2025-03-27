@@ -9,7 +9,7 @@ main {
 
 .about-img {
   border: 1px solid var(--gray-1);
-  width: 50%;
+  width: 40%;
   margin: 5px;
   border-radius: 5px;
 }

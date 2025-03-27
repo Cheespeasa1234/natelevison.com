@@ -2,6 +2,11 @@ import { Request, Response, NextFunction } from 'npm:express';
 import { ansi, privateFolder } from './consts.ts';
 import fs from 'node:fs';
 
+/**
+ * Pads an IP address string to be 15 characters long, by padding each number element to be three digits always
+ * @param IP The IP address in `*.*.*.*` form
+ * @returns The padded IP address in `...\....\....` form
+ */
 export function padIP(IP: string): string {
     return IP.split('.')
         .map(segment => segment.toString().padStart(3, '0'))

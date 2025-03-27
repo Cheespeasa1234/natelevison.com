@@ -1,16 +1,48 @@
-import { Post, folderRoot, privateFolder } from "./consts.ts";
+import { folderRoot, privateFolder } from "./consts.ts";
 import fs from "node:fs";
 
-/**
- * id: The numerical ID of the article.
- * created: The iso timestamp of the article.
- * tags: The tags of the article.
- * title: The title, as displayed, of the article.
- * name: The filename of the article.
- * starred: Whether or not to pin it.
- * disableGlossary: Disable the code glossary feature.
- * unlisted: Whether or not the article is available publicly.
- */
+export class Post_ {
+    id: number;
+    created: number;
+    tags: string[];
+    title: string;
+    fileName: string;
+    disableGlossary: boolean;
+    starred: boolean;
+    unlisted: boolean;
+    link?: string;
+    relevance?: number;
+    views?: number;
+
+    constructor (id: number, created: number, tags: string[], title: string, fileName: string, enableGlossary?: boolean, starred?: boolean, link?: string, unlisted?: boolean) {
+        this.id = id;
+        this.created = created;
+        this.tags = tags;
+        this.title = title;
+        this.fileName = fileName;
+        this.disableGlossary = !(enableGlossary ?? false);
+        this.starred = starred ?? false;
+        this.unlisted = unlisted ?? false;
+        this.link = link;
+    }
+}
+
+export type Post = {
+    id: number,
+    created: number,
+    tags: string[],
+    title: string,
+    name: string,
+    disableGlossary: boolean,
+    starred?: boolean,
+    link?: string,
+    unlisted?: boolean,
+    relevance?: number,
+    views?: number
+};
+
+export type PostWithRelevance = Post & { relevance: number };
+
 export const posts: Post[] = [
     {
         id: 0,
@@ -18,35 +50,40 @@ export const posts: Post[] = [
         tags: ["this", "update", "learntocode", "programming", "web"],
         title: "Update Page",
         name: "the-official-update-page",
-        starred: true // Pinned to top
+        starred: true, // Pinned to top
+        disableGlossary: true,
     },
     {
         id: 1,
         created: 1692624613766,
         tags: ["this", "update", "personal"],
         title: "First Post of Remade Blog System",
-        name: "first-post-of-remade-blog-system"
+        name: "first-post-of-remade-blog-system",
+        disableGlossary: false,
     },
     {
         id: 2,
         created: 1692624613766,
         tags: ["this", "learntocode", "personal", "programming", "web", "tutorial"],
         title: "How I Made This Website From Scratch",
-        name: "how-i-made-this-website-from-scratch"
+        name: "how-i-made-this-website-from-scratch",
+        disableGlossary: false,
     },
     {
         id: 3,
         created: 1694724967330,
         tags: ["learntocode", "philosophy", "ideas"],
         title: "Stay critical of yourself",
-        name: "we-are-all-stupid"
+        name: "we-are-all-stupid",
+        disableGlossary: false,
     },
     {
         id: 4,
         created: 1694815529048,
         tags: ["personal", "books", "ideas"],
         title: "I am reading too fast",
-        name: "i-am-reading-too-fast"
+        name: "i-am-reading-too-fast",
+        disableGlossary: false,
     },
     {
         id: 5,
@@ -95,10 +132,11 @@ export const posts: Post[] = [
     {
         id: 10,
         created: 1709916098718,
-        tags: ["programming, java", "swing", "games", "learntocode", "programming"],
+        tags: ["programming", "java", "swing", "games", "learntocode", "programming"],
         title: "How I wasted 2 months of my life on a stats viewer",
         name: "how-i-wasted-2-months-of-my-life",
-        unlisted: true // STILL WRITING IT
+        unlisted: true, // STILL WRITING IT
+        disableGlossary: false,
     },
     {
         id: 11,
@@ -107,7 +145,7 @@ export const posts: Post[] = [
         title: "Why I don't believe in free will",
         name: "free-will",
         disableGlossary: true,
-        unlisted: true
+        unlisted: false
     },
     {
         id: 12,
@@ -115,6 +153,7 @@ export const posts: Post[] = [
         tags: ["personal", "javascript", "typescript", "node", "programming", "backend"],
         title: "The worst function I've ever written",
         name: "the-worst-function-ever",
+        disableGlossary: false,
     },
     {
         id: 13,
@@ -122,7 +161,8 @@ export const posts: Post[] = [
         tags: [],
         title: "ATCS Final Project Log",
         name: "atcs-final-log",
-        unlisted: true
+        unlisted: true,
+        disableGlossary: false,
     },
     {
         id: 14,
@@ -130,7 +170,8 @@ export const posts: Post[] = [
         tags: ["philosophy", "personal"],
         title: "I was wrong about free will",
         name: "wrong-about-free-will",
-        unlisted: true
+        unlisted: false,
+        disableGlossary: true,
     },
     {
         id: 15,
@@ -138,13 +179,37 @@ export const posts: Post[] = [
         tags: ["philosphy", "personal", "grandma-alzheimers"],
         title: "Remembering (Forgetting pt. 2)",
         name: "remembering",
-        unlisted: true
+        unlisted: true,
+        disableGlossary: true,
+    },
+    {
+        id: 16,
+        created: 1738610009209,
+        tags: ["personal", "this", "programming"],
+        title: "3 year blog anniversary",
+        name: "3-years",
+        unlisted: true,
+        disableGlossary: true,
+    },
+    {
+        id: 17,
+        created: 1739305914171,
+        tags: ["personal", "judaism", "google", "technology", "politics", "antisemitism"],
+        title: "Boycotting Google",
+        name: "google-boycott",
+        unlisted: true,
+        disableGlossary: true,
     }
 ]
 
-export const tags: string[] = ["this", "update", "learntocode", "programming", "web", "personal", "philosophy", "ideas", "books",
-    "javascript", "node", "tutorial", "backend", "frontend", "java", "swing", "games", "typescript",
-]
+export const tags: string[] = (()=>{
+    let t: Set<string> = new Set<string>();
+    posts.forEach(post => {
+        post.tags.forEach(tag => t = t.add(tag));
+    });
+    console.log("tags:", t)
+    return t;
+})().values().toArray();
 
 export function getViews(id: number): number {
     const blogReadsFileLocation = `${folderRoot}/${privateFolder}/blog_reads.json`;
@@ -195,7 +260,7 @@ export function similarity(s1: string, s2: string): number {
         s1 = s1.toLowerCase();
         s2 = s2.toLowerCase();
 
-        const costs = [];
+        let costs = [];
         for (let i = 0; i <= s1.length; i++) {
             let lastValue = i;
             for (let j = 0; j <= s2.length; j++) {
