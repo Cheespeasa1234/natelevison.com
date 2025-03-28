@@ -95,7 +95,7 @@ export const posts: Post[] = [
     {
         id: 10,
         created: 1709916098718,
-        tags: ["programming, java", "swing", "games", "learntocode", "programming"],
+        tags: ["programming", java", "swing", "games", "learntocode", "programming"],
         title: "How I wasted 2 months of my life on a stats viewer",
         name: "how-i-wasted-2-months-of-my-life",
         unlisted: true // STILL WRITING IT

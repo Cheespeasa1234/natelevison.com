@@ -1,9 +1,7 @@
 export const folderRoot = "/mnt/c/code/natelevison.com";
 export const publicFolder = "public_html";
 export const privateFolder = "private_html";
-export const relevanceThreshold = 0.4;
-export const thresholdIncreaseAttempts = 4;
-export const panic = 0.1;
+
 export const ansi = {
     RESET: "\x1b[0m",
     BRIGHT: "\x1b[1m",
