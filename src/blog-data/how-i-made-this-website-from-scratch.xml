@@ -1,0 +1,19 @@
+<article>
+    <info>
+        <id>2</id>
+        <created>1692624613766</created>
+        <tag>this</tag>
+        <tag>learntocode</tag>
+        <tag>personal</tag>
+        <tag>programming</tag>
+        <tag>web</tag>
+        <tag>tutorial</tag>
+        <name>how-i-made-this-website-from-scratch</name>
+        <title>How I made this website from scratch</title>
+
+        <enableGlossary></enableGlossary>
+    </info>
+    <content>
+        <html>how-i-made-this-website-from-scratch.html</html>
+    </content>
+</article>
