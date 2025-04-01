@@ -1,0 +1,30 @@
+<p>
+    Welcome back everyone. This blog post is going to be about my ~2 month long journey of programming a statistics viewer for Minecraft, using Java Swing. Although I am very proud of the final result, I do wish I had done some things differently, and I will discuss those as well.
+</p>
+
+<section>
+    <h3>The Project</h3>
+    <p>
+        So this project, dubbed "Minecraft StatsViewer" is a Java Swing application that parses nbt and mca data from Minecraft world and displays tons of relevant information about it. I actually learned quite a lot from making this project, from how to productively use libraries, to the internal workings of Minecraft.
+    </p>
+    <p>
+        I would say the structure of the source files are somewhat well designed, so I'd like to cover how I did it really quick.
+    </p>
+</section>
+<section>
+    <h3>Source File Structure</h3>
+    <ul>
+        <ol>
+            <p>The Graphics Components</p>
+            <p>
+                This project heavily utilizes JPanel components to make things dynamic, extensible, and somewhat well written. Each page of the project is its own component. For example, MainPanel and BlankPanel are the panels for the main viewing, and the file opening screen, respectively. The controller chooses which is visible at any point in time. I also have a component called ListPanel and QuantityLabel, which work together to make a list of items that can be dynamically updated, sorted, and displayed whenever and wherever. It is heavily used in the player view panels and in the world panels as well. I tried to not do any tomfoolery, and by that, I mean I used only the components and features provided, with little manual painting.
+            </p>
+            <p>
+                However, the view of the chunks of the world is manually painted, so in a nutshell, here is how it works.
+                <ol>
+                    
+                </ol>
+            </p>
+        </ol>
+    </ul>
+</section>

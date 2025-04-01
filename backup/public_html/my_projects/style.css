@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+
+html {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0px;
+}
+
+.card-java {
+  border: 2px solid #a42a2a;
+  background-color: #e15757;
+}
+
+.card-python {
+  border: 2px solid #2a7fa4;
+  background-color: #57bfe1;
+}
+
+.card-node {
+  border: 2px solid #2aa45e;
+  background-color: #57e18a;
+}
+
+.card-web {
+  border: 2px solid #a42aa4;
+  background-color: #e157e1;
+}
+
+.card {
+  perspective: 150rem;
+  width: 200px;
+  height: 200px;
+  margin: 5px;
+  padding: 10px;
+  border-radius: 10px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-shadow: 0px 0px 5px #000000;
+  overflow: hidden;
+  transition: all 0.5s;
+}
+
+.cards-container {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  .cards-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    width: 100%;
+  }
+  .card {
+    width: 100%;
+    align-self: center;
+  }
+}
+
+.card-seemore {
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 20px;
+  /* make the letters space out*/
+  letter-spacing: 2px;
+  transition: letter-spacing 0.5s;
+}
+
+.divider {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  transform: translateY(10px);
+}
+
+/* when hovering on the card, apply style to the child .seemore */
+.card:hover .card-seemore {
+  letter-spacing: 5px;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px black;
+}
+
+.card-lang-name {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 30px;
+  margin-top: 10px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.card-lang-logo {
+  width: 100px;
+  height: 100px;
+  margin-top: 10px;
+  
+  /* add a glow behind it */
+  filter: drop-shadow(0px 0px 2px #000000);
+}
+
+.spinner {
+  display: none;
+  width: 20%;
+}
+
+.project-container > img {
+  transition: transform 0.5s;
+}
+
+.project-container:hover > img:not(.bg-smaller) {
+  transform: translateX(20px);
+}
+
+.project-container:hover > img.bg-smaller:not(img[src="painpo.png"]) {
+  transform: scale(0.7) translateX(calc(50% + 20px)) translateY(-50%);
+}
+
+.project-container:hover > img[src="painpo.png"] {
+  transform: translateX(40px);
+}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home - natelevison.com</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./global/components/globalComponents.css" />
+    <script src="./global/components/my-nav.js"></script>
+    <script src="./global/components/my-foot.js"></script>
+</head>
+
+<body>
+    <header>
+        <my-nav root="./" selected-index=0 hide-logo></my-nav>
+    </header>
+    <main>
+        <div class="home-title">
+            <div class="home-h1">
+                <div class="floatyletterpre">Welcome to</div>
+                <div class="floatyletter">n</div>
+                <div class="floatyletter">a</div>
+                <div class="floatyletter">t</div>
+                <div class="floatyletter">e</div>
+                <div class="floatyletter">l</div>
+                <div class="floatyletter">e</div>
+                <div class="floatyletter">v</div>
+                <div class="floatyletter">i</div>
+                <div class="floatyletter">s</div>
+                <div class="floatyletter">o</div>
+                <div class="floatyletter">n</div>
+                <div class="floatyletter">.</div>
+                <div class="floatyletter">c</div>
+                <div class="floatyletter">o</div>
+                <div class="floatyletter">m</div>
+                <div class="floatyletter">!</div>
+            </div>
+        </div>
+        <div class="widgets">
+            <!-- <div class="widget">
+                <div class="widget-title">Currently Reading</div>
+                <div class="widget-date">5/9/2024</div>
+                <div class="widget-content">
+                    <img src="global/img/the-martian.jpeg" class="widget-book-cover zoomable" />
+                    <div class="widget-book-text">
+                        <div>
+                            <div class="widget-book-title">The Martian</div>
+                            <div class="widget-book-author">Andy Weir</div>
+                        </div>
+                        <div class="widget-book-opinion">One of the better books I have ever read. It had a good story and seemed- not realistic- but relatable. A tense but good ending. 8/10.</div>
+                    </div>
+                </div>
+            </div> -->
+            <div class="widget">
+                <div class="widget-title">Currently Coding</div>
+                <div class="widget-date">9/26/2024</div>
+                <div class="widget-content">
+                    <!-- <img src="favicon.ico" class="widget-book-cover" /> -->
+                    <div class="widget-book-text">
+                        <div>
+                            <div class="widget-book-title">This Website (frontend</div>
+                            <div class="widget-book-author"><a href="natelevison.com">natelevison.com</a></div>
+                        </div>
+                        <div class="widget-book-opinion">Big changes are coming to the design philosophy of my website. I am taking a Graphic Design course in school, and so far I've made a whole logo and everything.</div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <div class="widget-title">Currently Coding</div>
+                <div class="widget-date">11/13/2024</div>
+                <div class="widget-content">
+                    <!-- <img src="favicon.ico" class="widget-book-cover" /> -->
+                    <div class="widget-book-text">
+                        <div>
+                            <div class="widget-book-title">This Website (backend)</div>
+                            <div class="widget-book-author"><a href="natelevison.com">natelevison.com</a></div>
+                        </div>
+                        <div class="widget-book-opinion">
+                            I have converted the server running this website from Windows Nodejs to WSL deno. Performance should go up, as should security. It is much easier to maintain remotely.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="widget">
+                <div class="widget-title">Quick Links</div>
+                <div class="widget-content"
+                    style="display: flex;flex-direction: column;width: 100%;height:100%;justify-content:center;">
+                    <!-- <a href="/blog/article/wrong-about-free-will">
+                        <button class="widget-button"><b>CORRECTION ARTICLE</b></button>
+                    </a> -->
+                    <a href="/about">
+                        <button class="widget-button">About</button>
+                    </a>
+                    <a href="/blog">
+                        <button class="widget-button">Blog</button>
+                    </a>
+                    <a href="/my_projects">
+                        <button class="widget-button">Projects</button>
+                    </a>
+                    <a href="/blog/updates">
+                        <button class="widget-button">Updates</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- <div style="width:100%;display:flex;justify-content:center;">
+            <marquee direction="down" width="250" height="200" behavior="alternate"
+                style="border: 2px solid black; border-radius: 5px;" scrollamount="5">
+                <marquee behavior="alternate" scrollamount="5"
+                    style="display: flex; flex-direction: column; justify-content:center;">
+                    <div
+                        style="text-decoration: underline;width:25px;height:25px;border:1px solid blue;font-size:10px;">
+                        DVD</div>
+                </marquee>
+            </marquee>
+        </div> -->
+    </main>
+
+    <script>
+        const floatyLetters = document.querySelectorAll(".floatyletter");
+        for (let i = 0; i < floatyLetters.length; i++) {
+            floatyLetters[i].style.animationDelay = (i * 0.1) + "s";
+        }
+        const bookCovers = document.querySelectorAll(".widget-book-cover.zoomable");
+        for (const bookCover of bookCovers) {
+            bookCover.addEventListener("mouseover", () => {
+                const w = bookCover.width;
+                const h = bookCover.height;
+                const scale = 2;
+                const transformScale = scale * 2;
+                bookCover.style.scale = `${scale}`
+                bookCover.style.translate = `${w / transformScale}px ${h / transformScale}px`;
+            });
+            bookCover.addEventListener("mouseout", () => {
+                bookCover.style.scale = ''
+                bookCover.style.translate = '';
+            });
+        }
+    </script>
+
+</body>
+
+</html>

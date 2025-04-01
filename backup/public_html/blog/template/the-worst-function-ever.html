@@ -1,0 +1,155 @@
+<p>
+    A bit strange of a title, but seriously, I am about to show you the worst code I have ever written, and hopefully, will ever write. I was making a discord bot, that would basically allow you to perform simple calculations with Minecraft recipes. I also used Typescript for this, and this time was probably my second time ever using it. This monstrosity that I will now present you had one purpose, which was to expand dynamic recipes into every possible combo.
+</p>
+<p>
+    For example, there is a recipe in minecraft with a &{shit }{}ton of possibilities, for example, the wool conversion recipe. You can take any of the 16 colors of wool, and add any of the 15 other colors to change the original color. So, this function basically takes a compressed notation of this type of recipe, and adds every single possible combination. <i>Yes</i>, this is horribly inefficient, but it worked, so yeah. Here is the code. 
+</p>
+
+<pre class="file-name code">recipeManager.ts</pre>
+<pre><code class="language-ts code snip">/**
+ * Decompresses (partially) the content of a recipe list CSV.
+ * Must use recipe CSV notation (no spec- figure it out yourself)
+ * @param csv - The CSV to decompress
+ * @param variables - The variables to replace in the CSV
+ * @returns The unpacked strings
+ * @author Nate Levison
+ * @see Therapist
+ */
+export function decompressMultiResults(csv: string[][], variables: VariableSet): string[][] {
+
+    // the results to be added to the csv
+    let results: string[][] = [];
+    const headerLength: number = 1;
+    const resultColumn: number = 0;
+    const variableStart: string = "{";
+    const variableEnd: string = "}";
+    const specialVariableNotation: string = "$";
+
+    // for every row in the csv, starting after the header
+    for (let row = headerLength; row < csv.length; row++) {
+
+        // if it needs to be unpacked into multiple results
+        if (csv[row][resultColumn].startsWith(variableStart)) {
+
+            // find the variable it is referencing and get its values
+            const trimmed: string = csv[row][resultColumn].substring(0, csv[row][resultColumn].indexOf(variableEnd) + 1);
+            const variable = variables.getVariable(trimmed);
+
+            // for every value of the variable, make a new row with the result replaced
+            for (let variableEntry = 0; variableEntry < variable.length; variableEntry++) {
+
+                // make a new row where it is the result.
+                let copyOfRow: string[] = csv[row].map(x => x);
+                copyOfRow[resultColumn] = csv[row][resultColumn].replace(trimmed, variable[variableEntry]);
+
+                // find all special variable calls, and replace them with the correct value
+                for (let cellIndex = 0; cellIndex < copyOfRow.length; cellIndex++) {
+
+                    // if the cell contains a special variable call
+                    if (copyOfRow[cellIndex].includes(specialVariableNotation)) {
+
+                        // get the name of the variable and find its values
+                        const replacement: string = variableStart + copyOfRow[cellIndex].substring(copyOfRow[cellIndex].indexOf(specialVariableNotation) + 1, copyOfRow[cellIndex].indexOf(variableEnd)) + variableEnd;
+                        const replacementValues = variables.getVariable(replacement);
+                        console.groupCollapsed("Replacement trace for " + replacement + " in " + copyOfRow[cellIndex]);
+
+                        // if there is no matching entry in the variables, skip this replacement
+                        if (replacementValues[variableEntry] == undefined) {
+                            console.groupEnd();
+                            continue;
+                        }
+
+                        // replace with the same index as the current variable entry
+                        console.log("Attempting to replace " + replacement.replace(variableStart, variableStart + specialVariableNotation) + " with " + replacementValues[variableEntry] + " in " + copyOfRow[cellIndex]);
+                        copyOfRow[cellIndex] = copyOfRow[cellIndex].replace(replacement.replace(variableStart, variableStart + specialVariableNotation), replacementValues[variableEntry]);
+                        console.groupEnd();
+                    }
+                }
+
+                // add the row to the results
+                results.push(copyOfRow.map((col: string) => col.replace("$\//g", "")));
+            }
+
+            // remove this row from the csv
+            csv.splice(row, 1);
+            row--;
+        }
+    }
+
+    // Append the results to the fixed csv
+    results.forEach(result => csv.push(result));
+    return csv;
+}
+</code></pre>
+
+<p>
+    At it's worst, it has SEVEN LEVELS OF NESTING. This is so &{braindead}{terrible}. But it actually makes sense if you look it over.
+</p>
+<section>
+    <h2>The explanation</h2>
+    <p>
+        First of all, obviously, it initializes all the variables it needs, most of which are just magic values I removed for the sake of debugging. This step is very simple. But then we get into the main loop. First, we loop through all the rows in the CSV, excluding the header. But this function only deals with a certain type of row, which is a row that includes variables.
+    </p>
+    <p>
+        The notation is basically like this: to represent any color of wool, you'd say "{Colors} Wool". This would iterate through the values of Colors, and add all the possible combos. At its core, this is the main goal of the function.
+    </p>
+    <p>
+        Now, we isolate the name of the variable, and iterate through the possibilities, with this code:
+    </p>
+    <pre class="file-name code">recipeManager.ts</pre>
+    <pre><code class="language-ts code snip">...
+const trimmed: string = csv[row][resultColumn]
+    .substring(0, csv[row][resultColumn].indexOf(variableEnd) + 1);
+const variable = variables.getVariable(trimmed);
+for (let variableEntry = 0; variableEntry < variable.length; variableEntry++) {
+    ...
+}
+...
+    </code></pre>
+    <p>
+        We are in the endgame now. The last step is basically to make some more rows, populate the item names, and add them to the resulting recipe CSV. This is done with the following code:
+    </p>
+    <pre class="file-name code">recipeManager.ts</pre>
+    <pre><code class="language-ts code snip">...
+// make a new row where it is the result.
+let copyOfRow: string[] = csv[row].map(x => x);
+copyOfRow[resultColumn] = csv[row][resultColumn].replace(trimmed, variable[variableEntry]);
+
+// find all special variable calls, and replace them with the correct value
+for (let cellIndex = 0; cellIndex < copyOfRow.length; cellIndex++) {
+
+    // if the cell contains a special variable call
+    if (copyOfRow[cellIndex].includes(specialVariableNotation)) {
+
+        // get the name of the variable and find its values
+        const replacement: string = variableStart + copyOfRow[cellIndex].substring(copyOfRow[cellIndex].indexOf(specialVariableNotation) + 1, copyOfRow[cellIndex].indexOf(variableEnd)) + variableEnd;
+        const replacementValues = variables.getVariable(replacement);
+        console.groupCollapsed("Replacement trace for " + replacement + " in " + copyOfRow[cellIndex]);
+
+        // if there is no matching entry in the variables, skip this replacement
+        if (replacementValues[variableEntry] == undefined) {
+            console.groupEnd();
+            continue;
+        }
+
+        // replace with the same index as the current variable entry
+        console.log("Attempting to replace " + replacement.replace(variableStart, variableStart + specialVariableNotation) + " with " + replacementValues[variableEntry] + " in " + copyOfRow[cellIndex]);
+        copyOfRow[cellIndex] = copyOfRow[cellIndex].replace(replacement.replace(variableStart, variableStart + specialVariableNotation), replacementValues[variableEntry]);
+        console.groupEnd();
+    }
+}
+
+// add the row to the results
+results.push(copyOfRow.map((col: string) => col.replace("$\//g", "")));
+...
+    </code></pre>
+    <p>
+        This is all Greek to me, at this point. I'm pretty sure I was trying to solve some cases where there are multiple variables, and where the variables contain other variables, but honestly, it probably didn't work out that way.
+    </p>
+    <p>
+        Also, miraculously, this code is somewhat efficient? Like, I have no clue how this actually works that fast, but it's probably because 99% of the values it needs to unpack only need to iterate once or not at all, and the edge cases are just that- edge cases, few and far between.
+    </p>
+    <p>
+        This article was a bit more informal and messy, but y'know, I just wanted to put this out there. Thanks for reading, grandma.
+    </p>
+</section>

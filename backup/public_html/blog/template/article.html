@@ -1,0 +1,85 @@
+<!DOCTYPE htmt>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>${TITLE} - natelevison.com</title>
+    <link rel="stylesheet" href="../glossary.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <link rel="stylesheet" href="../../global/components/globalComponents.css">
+    <link rel="stylesheet" href="https://static.natelevison.com/highlight/styles/github-dark-dimmed.min.css">
+    <link rel="stylesheet" href="../style.css">
+    <script src="https://static.natelevison.com/highlight/highlight.min.js"></script>
+</head>
+<body>
+    <header>
+        <my-nav root="../../
+
+	" selected-index=2></my-nav>
+    </header>
+    <main>
+        <div class="article-head">
+            <div class="article-head-background"></div>
+            <div class="article-head-content">
+                <div class="article-title">${TITLE}</div>
+                <div class="article-author">Nate Levison</div>
+                <div class="article-date">Created on ${DATE}</div>
+                <button class="back-btn" onclick="window.location.href='../'">
+                    <span class="back-btn-arrow1"><</span>
+                    <span class="back-btn-arrow2"><</span>
+                    <span class="back-btn-arrow3"><</span>
+                    <span class="back-btn-name">Back</span>
+                </button>
+            </div>
+        </div>
+        <div class="content">
+            ${MAIN}
+        </div>
+
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <button style="width: 600px; max-width: 600px;" class="back-btn" onclick="window.location.href='../'">
+                <span class="back-btn-arrow1"><</span>
+                <span class="back-btn-arrow2"><</span>
+                <span class="back-btn-arrow3"><</span>
+                <span class="back-btn-name">Read more</span>
+            </button>
+        </div>
+    </main>
+    <my-foot root="../../"></my-foot>
+</body>
+
+<script src="../../global/components/my-nav.js"></script>
+<script src="../../global/components/my-foot.js"></script>
+<script src="../glossary.js"></script>
+<script>
+    if ("${DIS}" == "false") { // what the fuck?
+        const articles = document.querySelectorAll("div.content")
+        articles.forEach(glossarize);
+    }
+
+    const head = document.querySelector(".article-head");
+    document.addEventListener("mousemove", (e) => {
+        
+        const headBounds = head.getBoundingClientRect();
+        const hovering = e.clientX > headBounds.left && e.clientX < headBounds.right && e.clientY > headBounds.top && e.clientY < headBounds.bottom;
+        
+        if(hovering) {
+            // move the background position to follow the mouse, based on center of head
+            const x = (e.clientX - headBounds.left) - (headBounds.width / 2);
+            const y = (e.clientY - headBounds.top) - (headBounds.height / 2);
+            
+            head.style.backgroundPositionX = `${x}px`;
+            head.style.backgroundPositionY = `${y}px`;
+        } else {
+            head.style.backgroundPosition = "50% 50%";
+        }
+
+    })
+
+    hljs.highlightAll();
+
+    const fileNames = document.querySelector(".file-name");
+
+
+</script>
+</html>

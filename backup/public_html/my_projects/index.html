@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nate Levison's Projects - natelevison.com</title>
+    <link rel="stylesheet" href="../global/components/globalComponents.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" />
+</head>
+
+<script defer src="../global/components/components.js"></script>
+<script defer src="./script.js"></script>
+
+<style>
+    :root {
+        --sidebar-width: 200px;
+    }
+
+    main {
+        display: flex;
+        height: 100%;
+    }
+
+    .sidebar {
+        height: 100%;
+        width: var(--sidebar-width);
+        margin-right: 0;
+        background-color: var(--color-4);
+        position: fixed;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .project-group {
+        display: flex;
+        flex-direction: column;
+        height: min-content;
+        transition: all 0.25s ease;
+        padding: 5px;
+    }
+
+    .project-group:hover,
+    .project-group.selected:hover {
+        background-color: rgba(0, 0, 255, 0.1);
+        cursor: pointer;
+    }
+
+    .project-group.selected {
+        background-color: rgba(0, 0, 255, 0.05);
+    }
+
+    .project-group-title {
+        font-size: 24px;
+    }
+
+    .project-group-exp {
+        font-size: 16px;
+    }
+
+    
+    .projects-container {
+        padding: 10px;
+        padding-left: calc(var(--sidebar-width) + 5px);
+    }
+    
+    .projects-content {
+        /* grid layout: 2 per row, take up whole row space */
+        grid-template-columns: repeat(2, 1fr);
+        /* grid-auto-rows: minmax(100px, auto); */
+        grid-gap: 10px;
+        display: grid;
+    }
+
+    .page-hidden {
+        display: none;
+    }
+    
+    /* if screen width is small */
+    @media screen and (max-width: 600px) {
+        .projects-content {
+            /* grid layout: 1 per row, take up whole row space */
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .project-title {
+        font-weight: bold;
+        font-size: 30px;
+        margin-top: 10px;
+        /* text-shadow:  0px 0px 2px black; */
+    }
+
+    .project-container {
+        padding: 10px;
+        border: 2px solid var(--gray-1);
+        border-radius: 5px;
+        margin: 10px;
+        max-height: 240px;
+        /* transition box shadow and transform */
+        transition: box-shadow 0.25s;
+        overflow: scroll;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .project-container>img {
+        transition: transform 0.5s;
+    }
+
+    .project-container:hover>img:not(.bg-smaller) {
+        transform: translateX(20px);
+    }
+
+    .project-container:hover>img.bg-smaller:not(img[src="painpo.png"]) {
+        transform: scale(0.7) translateX(calc(50% + 20px)) translateY(-50%);
+    }
+
+    .project-container:hover>img[src="painpo.png"] {
+        transform: translateX(40px);
+    }
+
+    .project-background-image {
+        /* set a mask that makes it more transparent from left to right, starting at 50% width */
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -ms-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        -o-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) 50%);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+    }
+
+    .bg-smaller {
+        --switch: 90%;
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        transform: scale(0.7) translateX(50%) translateY(-50%);
+    }
+
+    img[src="painpo.png"] {
+        --switch: 90%;
+        transform: translateX(20px);
+        mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -webkit-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+        -moz-mask-image: linear-gradient(to left, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0) var(--switch));
+    }
+
+    .project-lnk {
+        text-decoration: none;
+        color: blue;
+        font-weight: bold;
+        transition: color 0.5s;
+        margin-right: 14px;
+    }
+
+    .project-lnk:hover {
+        color: black;
+        text-decoration: underline;
+        margin-right: 0px;
+    }
+
+    .project-lnk:hover::after {
+        content: " >";
+    }
+
+    .project-container:hover {
+        box-shadow: 0px 0px 5px black;
+    }
+
+    .project-desc {
+        margin-bottom: 0;
+        width: 75%;
+    }
+
+    .section-title {
+        height: fit-content;
+        font-size: 28px;
+        text-align: center;
+        width: 100%;
+    }
+</style>
+
+<body>
+    <header>
+        <my-nav root="../" selected-index="3"></my-nav>
+    </header>
+    <main>
+        <div class="sidebar">
+            <div>
+                <div class="project-group selected">
+                    <span class="project-group-title">Java</span>
+                    <span class="project-group-exp">
+                        <span class="project-count-java"></span>
+                        - 3+ years
+                    </span>
+                </div>
+                <div class="project-group">
+                    <span class="project-group-title">Python</span>
+                    <span class="project-group-exp">
+                        <span class="project-count-python"></span>
+                        - 2+ years
+                    </span>
+                </div>
+                <div class="project-group">
+                    <span class="project-group-title">Web</span>
+                    <span class="project-group-exp">
+                        <span class="project-count-web"></span>
+                        - 3+ years
+                    </span>
+                </div>
+            </div>
+            <div>
+                Nate Levison's Projects
+            </div>
+        </div>
+        <div class="projects-container">
+            <div id="projects-java" class="projects-content">
+                <!-- <span class="section-title">Nate's Java Projects</span><span class="section-title"></span> -->
+            </div>
+            <div id="projects-python" class="projects-content">
+                <!-- <span class="section-title">Nate's Python Projects</span><span class="section-title"></span> -->
+            </div>
+            <div id="projects-web" class="projects-content">
+                <!-- <span class="section-title">Nate's Frontend Projects</span><span class="section-title"></span> -->
+            </div>
+            <br>
+        </div>
+    </main>
+
+    <my-foot root="../"></my-foot>
+    <script>
+
+        const projectSelectors = document.querySelectorAll(".project-group");
+        const projectGroups = document.querySelectorAll(".projects-content");
+
+        function setPage(n) {
+            for (let i = 0; i < projectGroups.length; i++) {
+                if (i == n) {
+                    projectSelectors[i].classList.add(["selected"]);
+                    projectGroups[i].classList.remove(["page-hidden"]);
+                } else {
+                    projectSelectors[i].classList.remove(["selected"]);
+                    projectGroups[i].classList.add(["page-hidden"]);
+                }
+            }
+
+        }
+
+        setPage(0);
+        for (let i = 0; i < projectSelectors.length; i++) {
+            const sel = projectSelectors[i];
+            sel.addEventListener("click", () => {
+                setPage(i);
+            });
+        }
+
+    </script>
+</body>
+
+</html>
