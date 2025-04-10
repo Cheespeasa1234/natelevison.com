@@ -1,0 +1,580 @@
+<script lang="ts">
+    import Logo from "./Logo.svelte";
+</script>
+
+<div class="main">
+    <div class="logos">
+        <Logo />
+        <img src="/spinners/Scoops-kinds-ice-cream-429913259.jpg" class="img-stamp-1">
+        <img src="/spinners/12318_1200_minicky1-267774012.jpg" class="img-stamp-2">
+    </div>
+    <menu class="menu">
+        <div class="menu-col">
+            <div class="menu-section header">
+                <h2>ice cream</h2>
+                <div class="hr"></div>
+            </div>
+            <div class="menu-section">
+                <h3>sizes</h3>
+                <li class="pricer">
+                    <div class="item">1 scoop</div>
+                    <div class="price">$2.00</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">2 scoops</div>
+                    <div class="price">$3.50</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">3 scoops</div>
+                    <div class="price">$5.00</div>
+                </li>
+            </div>
+            <div class="menu-section">
+                <h3>serving</h3>
+                <li class="pricer">
+                    <div class="item">cup</div>
+                    <div class="price">---</div>
+                </li>
+                <li class="pricer">
+                    <div data-allergen="g" class="item">
+                        waffle cone <div class="allergen gluten">G</div>
+                    </div>
+                    <div class="price">---</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">chocolate dip</div>
+                    <div class="price">+ $0.25</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">chocolate sprinkles</div>
+                    <div class="price">+ $0.25</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">rainbow sprinkles</div>
+                    <div class="price">+ $0.25</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">
+                        toppings <div class="allergen gluten">G</div>
+                        <div class="allergen nuts">N</div>
+                    </div>
+                    <div class="price">+ $0.15/e</div>
+                </li>
+            </div>
+            <div class="menu-section">
+                <h3>flavors</h3>
+                <li>
+                    <div class="flavor-pricer">
+                        <div class="item">vanilla</div>
+                    </div>
+                    <div class="price-cap">french vanilla bean</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">chocolate</div>
+                    </div>
+                    <div class="price-cap">rich dark chocolate</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">mint</div>
+                    </div>
+                    <div class="price-cap">chocolate chunk, mint</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            strawberry shortcake <div class="allergen gluten">
+                                G
+                            </div>
+                        </div>
+                    </div>
+                    <div class="price-cap">
+                        strawberries, graham crackers, sweet lemon
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">cherry</div>
+                    </div>
+                    <div class="price-cap">
+                        dark cherry, chocolate chunks, chocolate shavings
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            coconut <div class="allergen nuts">N</div>
+                        </div>
+                    </div>
+                    <div class="price-cap">smooth coconut, vanilla base</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">green apple</div>
+                    </div>
+                    <div class="price-cap">
+                        sour and sweet green apple, vanilla base
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            cookies and cream <div class="allergen gluten">
+                                G
+                            </div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                    </div>
+                    <div class="price-cap">oreo cookies, vanilla base</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">chocolate truffle</div>
+                    </div>
+                    <div class="price-cap">
+                        caramel chocolate truffles, chocolate base
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">jen's morning coffee</div>
+                    </div>
+                    <div class="price-cap">
+                        light coffee with heath bar crunch, vanilla base
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            mike's rocky roadtrip <div class="allergen nuts">
+                                N
+                            </div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                    </div>
+                    <div class="price-cap">
+                        rich chocolate with marshmallow, fudge, and walnuts
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            caramel apple pie <div class="allergen gluten">
+                                G
+                            </div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                    </div>
+                    <div class="price-cap">
+                        apple and cinnamon with caramel swirls and pie crust
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">cotton candy</div>
+                    </div>
+                    <div class="price-cap">
+                        fruity flavoring with pop rocks, vanilla base
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">chocolate chocolate chip</div>
+                    </div>
+                    <div class="price-cap">will you shut up, man?</div>
+                </li>
+            </div>
+        </div>
+        <div class="menu-col">
+            <div class="menu-section header">
+                <h2>bakery</h2>
+                <div class="hr"></div>
+            </div>
+            <div class="menu-section">
+                <h3>muffins</h3>
+                <li class="pricer">
+                    <div class="item">
+                        apple muffin <div class="allergen gluten">G</div>
+                        <div class="allergen egg">E</div>
+                    </div>
+                    <div class="price">$3.00</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">
+                        blueberry muffin <div class="allergen gluten">G</div>
+                        <div class="allergen egg">E</div>
+                    </div>
+                    <div class="price">$3.00</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">
+                        chocolate chip muffin <div class="allergen gluten">
+                            G
+                        </div>
+                        <div class="allergen egg">E</div>
+                    </div>
+                    <div class="price">$3.00</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">
+                        coffee cake muffin <div class="allergen gluten">G</div>
+                        <div class="allergen egg">E</div>
+                    </div>
+                    <div class="price">$3.00</div>
+                </li>
+            </div>
+            <div class="menu-section">
+                <h3>cake slices</h3>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            coffee cake <div class="allergen gluten">G</div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$3.50</div>
+                    </div>
+                    <div class="price-cap">thick coffee crumbles</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            marble chocolate cake <div class="allergen gluten">
+                                G
+                            </div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$3.50</div>
+                    </div>
+                    <div class="price-cap">
+                        chocolate and vanilla sponge, marbled
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            chocolate cake <div class="allergen gluten">G</div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$3.50</div>
+                    </div>
+                    <div class="price-cap">
+                        rich chocolate sponge, chocolate and oreo icing glut
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            frosted lemon cake <div class="allergen gluten">
+                                G
+                            </div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$3.50</div>
+                    </div>
+                    <div class="price-cap">lemon cake, frosted icing</div>
+                </li>
+            </div>
+            <div class="menu-section">
+                <h3>cookies</h3>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            chocolate chip cookie <div class="allergen gluten">
+                                G
+                            </div>
+                            <div class="allergen nuts">N</div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$2.50</div>
+                    </div>
+                    <div class="price-cap">standard with chocolate chunks</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            m&m cookie <div class="allergen gluten">G</div>
+                            <div class="allergen nuts">N</div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$2.50</div>
+                    </div>
+                    <div class="price-cap">standard with m&ms</div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            red velvet cookie <div class="allergen gluten">
+                                G
+                            </div>
+                            <div class="allergen nuts">N</div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$2.50</div>
+                    </div>
+                    <div class="price-cap">
+                        soft red velvet, chocolate chunks
+                    </div>
+                </li>
+
+                <li>
+                    <div class="pricer">
+                        <div class="item">
+                            double chunk chocolate cookie <div
+                                class="allergen gluten"
+                            >
+                                G
+                            </div>
+                            <div class="allergen nuts">N</div>
+                            <div class="allergen egg">E</div>
+                        </div>
+                        <div class="price">$2.50</div>
+                    </div>
+                    <div class="price-cap">
+                        BOOM! chocolate dough, chocolate chunks
+                    </div>
+                </li>
+            </div>
+            <div class="menu-section header">
+                <h2>info</h2>
+                <div class="hr"></div>
+            </div>
+            <div class="menu-section">
+                <h3>contact us ;)</h3>
+                <li class="pricer">
+                    <div class="item">Hours</div>
+                    <div class="price">Mon-Sat, 11:00AM-10:00PM</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">Address</div>
+                    <address class="price">
+                        411 Elm Street, Dallas, Texas
+                    </address>
+                </li>
+                <li class="pricer">
+                    <div class="item">Phone</div>
+                    <div class="price">+1 (877) 527-7454</div>
+                </li>
+                <li class="pricer">
+                    <div class="item">Made By</div>
+                    <div class="price">Nate Levison</div>
+                </li>
+            </div>
+            <div class="menu-section">
+                <h3>allergy info</h3>
+                <i
+                    >Unfortunately, <b>all</b> of our products contain dairy. We
+                    can try our best to accomodate, but unlike the other allergens,
+                    we can not make any guarantees. Please speak to your server for
+                    help.</i
+                >
+
+                <li class="pricer">
+                    <div class="item">Contains Gluten</div>
+                    <div class="price">
+                        <div class="allergen gluten">G</div>
+                    </div>
+                </li>
+                <li class="pricer">
+                    <div class="item">Contains Egg</div>
+                    <div class="price">
+                        <div class="allergen egg">E</div>
+                    </div>
+                </li>
+                <li class="pricer">
+                    <div class="item">Contains Nuts</div>
+                    <div class="price">
+                        <div class="allergen nuts">N</div>
+                    </div>
+                </li>
+            </div>
+        </div>
+    </menu>
+</div>
+
+<style>
+
+    .main {
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        width: var(--w);
+        min-width: var(--w);
+        max-width: var(--w);
+        height: var(--h);
+        min-height: var(--h);
+        max-height: var(--h);
+
+        border: 3px solid black;
+        overflow: hidden;
+    }
+
+    li {
+        list-style-type: none;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        margin: 0;
+    }
+
+    .menu-col {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 80%;
+        margin: 10px 30px;
+        align-self: center;
+    }
+
+    .header {
+        width: fit-content;
+        margin-left: 60px;
+        margin-right: auto;
+    }
+
+    h2 {
+        font-size: 3em;
+        color: var(--color-100);
+        margin: 0;
+        margin-bottom: 3px;
+    }
+
+    h3 {
+        font-size: 2em;
+        color: var(--color-200);
+        margin: 5px 0px;
+        font-family: var(--font-sans-1);
+        font-weight: 300;
+    }
+
+    .hr {
+        border: 3px solid var(--color-100);
+        height: 0;
+    }
+
+    .pricer,
+    .flavor-pricer {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        color: var(--color-300);
+    }
+
+    .item {
+        font-size: 1.3em;
+        font-family: var(--font-sans-2);
+        display: flex;
+        gap: 5px;
+    }
+
+    .price {
+        font-size: 1.3em;
+        font-family: var(--font-sans-2);
+    }
+
+    .price-cap {
+        font-size: 1em;
+        margin-left: 15px;
+        font-style: italic;
+        font-family: var(--font-sans-2);
+        margin-bottom: 3px;
+    }
+
+    .allergen {
+        font-size: 1em;
+        width: 25px;
+        height: 25px;
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+    }
+
+    .gluten {
+        background: rgb(219, 150, 21);
+    }
+
+    .egg {
+        background: rgb(35, 97, 243);
+    }
+
+    .nuts {
+        background: rgb(85, 190, 43);
+    }
+
+    .logos {
+        width: 100%;
+        height: 22.5%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+
+    .logo-top {
+        width: 50%;
+        height: auto;
+    }
+
+    .logo-bot {
+        width: 47%;
+        height: auto;
+    }
+
+    .img-stamp-1, .img-stamp-2 {
+        position: absolute;
+        z-index: -1;
+        width: 25em;
+        height: 25em;
+        overflow: hidden;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 6px solid var(--color-100);
+    }
+
+    .img-stamp-1 {
+        left: -140px;
+        top: -190px;
+    }
+
+    .img-stamp-2 {
+        right: -140px;
+        top: -100px;
+    }
+</style>

@@ -1,4 +1,11 @@
 <script lang="ts">
+    let searchQuery = $state("");
+    function search() {
+        
+    }
+</script>
+
+<!-- <script lang="ts">
     const { selected = -1 } = $props();
     import "./style.css";
 </script>
@@ -95,4 +102,43 @@
             text-align: center;
         }
     }
-</style>
+</style> -->
+
+<nav class="navbar navbar-expand-lg bg-body-secondary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img width="30" height="30" alt="logo" src="/img/logo.png" />
+            natelevison.com
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/blog">Blog</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Projects
+                </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/projects">Gallery</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="/projects/spinners">Spinners</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <form class="d-flex" role="search">
+                <input bind:value={searchQuery} class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button onclick={search} class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

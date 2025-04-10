@@ -45,48 +45,29 @@
 </script>
 
 <main>
-    <div id="searchbox">
-        <input
-            bind:value={paramName}
-            type="text"
-            id="search-input"
-            placeholder="Search..."
-        />
-        <button
-            onclick={getResults}
-            aria-label="Search"
-            class="search-button"
-            id="search"
-        >
-            <i class="fa-solid fa-search"></i>
-        </button>
-        <!-- <button onclick={toggleConfigModal} aria-label="Settings" class="search-button" id="config">
-            <i class="fa-solid fa-gear {filteredTagsLen > 0 ? "spinning" : ""}"></i>
-        </button> -->
-        <!-- <dialog bind:this={searchConfigModal} id="search-config-modal">
-            <span id="filtered-msg">Filtered Tags: 0</span>
-            {#each }
-        </dialog> -->
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Search term" aria-label="Search term" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    </div>      
+    <div class="results-container" id="results">
+        {#if count == -1}
+            Loading...
+        {:else if count == 0}
+            {#if success}
+                No results found.
+            {:else}
+                Something went wrong: <span style="color: red">{message}</span>
+            {/if}
+        {:else}
+            Found {count} result{count == 1 ? "" : "s"} in {time} ms.
+        {/if}
+    
+        {#each results as result}
+            <PostResult {result} />
+        {/each}
     </div>
 </main>
 
-<div class="results-container" id="results">
-    {#if count == -1}
-        Loading...
-    {:else if count == 0}
-        {#if success}
-            No results found.
-        {:else}
-            Something went wrong: <span style="color: red">{message}</span>
-        {/if}
-    {:else}
-        Found {count} result{count == 1 ? "" : "s"} in {time} ms.
-    {/if}
-
-    {#each results as result}
-        <PostResult {result} />
-    {/each}
-</div>
 
 <style>
 
