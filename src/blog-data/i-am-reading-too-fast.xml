@@ -1,0 +1,14 @@
+<article>
+    <info>
+        <id>4</id>
+        <created>1694815529048</created>
+        <tag>personal</tag>
+        <tag>books</tag>
+        <tag>ideas</tag>
+        <name>i-am-reading-too-fast</name>
+        <title>I am reading too fast</title>
+    </info>
+    <content>
+        <html>i-am-reading-too-fast.html</html>
+    </content>
+</article>

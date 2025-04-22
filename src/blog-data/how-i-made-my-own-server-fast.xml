@@ -1,0 +1,18 @@
+<article>
+    <info>
+        <id>5</id>
+        <created>1695252364671</created>
+        <tag>javascript</tag>
+        <tag>node</tag>
+        <tag>learntocode</tag>
+        <tag>web</tag>
+        <tag>backend</tag>
+        <name>how-i-made-my-own-server-fast</name>
+        <title>How I made my own server - fast</title>
+        
+        <enableGlossary>true</enableGlossary>
+    </info>
+    <content>
+        <html>how-i-made-my-own-server-fast.html</html>
+    </content>
+</article>

@@ -1,0 +1,16 @@
+<article>
+    <info>
+        <id>1</id>
+        <created>1692624613766</created>
+        <tag>this</tag>
+        <tag>update</tag>
+        <tag>personal</tag>
+        <title>First Post of Remade Blog System</title>
+        <name>first-post-of-remade-blog-system</name>
+
+        <enableGlossary></enableGlossary>
+    </info>
+    <content>
+        <html>first-post-of-remade-blog-system.html</html>
+    </content>
+</article>

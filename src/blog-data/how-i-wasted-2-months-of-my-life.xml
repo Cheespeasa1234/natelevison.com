@@ -1,0 +1,19 @@
+<article>
+    <info>
+        <id>10</id>
+        <created>1709916098718</created>
+        <tag>programming</tag>
+        <tag>java</tag>
+        <tag>swing</tag>
+        <tag>games</tag>
+        <tag>learntocode</tag>
+        <name>how-i-wasted-2-months-of-my-life</name>
+        <title>How I wasted 2 months of my life on a stats viewer</title>
+        
+        <unlisted></unlisted>
+        <enableGlossary></enableGlossary>
+    </info>
+    <content>
+        <html>how-i-wasted-2-months-of-my-life.html</html>
+    </content>
+</article>

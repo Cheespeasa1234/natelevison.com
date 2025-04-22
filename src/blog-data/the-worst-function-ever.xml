@@ -1,0 +1,19 @@
+<article>
+    <info>
+        <id>12</id>
+        <created>1714077650375</created>
+        <tag>personal</tag>
+        <tag>javascript</tag>
+        <tag>typescript</tag>
+        <tag>node</tag>
+        <tag>programming</tag>
+        <tag>backend</tag>
+        <name>the-worst-function-ever</name>
+        <title>The worst function I've ever written</title>
+
+        <enableGlossary></enableGlossary>
+    </info>
+    <content>
+        <html>the-worst-function-ever.html</html>
+    </content>
+</article>

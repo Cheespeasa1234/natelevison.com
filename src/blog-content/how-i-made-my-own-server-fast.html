@@ -1,0 +1,64 @@
+<p>
+    Hello, World! I am excited to share my (awful) method of making my server. You already know the origins of how I made it, (and if you don't, check <a href="https://natelevison.com/blog/article/how-i-made-this-website-from-scratch">here</a>) so today, I am going to dive into the actual code of how you can make an Express.js server from scratch, fast.
+</p>
+<section>
+    <h3>Installation</h3>
+    <p>
+        There are a few prerequisets that you need to fulfill before beginning your backend journey. First, make a directory where you will make your website. Then, open a terminal, and do the following:
+    </p>
+    <pre class="file-name code">Terminal (Administrator)</pre>
+    <pre><code class="language-sh code snip">$ cd path/to/website
+
+$ npm init
+...
+</code></pre>
+    <p>
+        You will then be prompted to fill out some information about your project. You can fill it out however you want, but make sure that the entry point is <code>index.js</code>. Then, we will install our libraries. Once we are done, we can get into the good stuff.
+    </p>
+    <pre class="file-name code">Terminal (Administrator)</pre>
+    <pre><code class="language-sh code snip">$ npm install express
+...
+$ npm install body-parser
+...
+</code></pre>
+    <p>
+        Yes, I know I just said we can get into the good stuff, but now, we need to set up our project. We will quickly make our directory structure:
+    </p>
+    <pre class="file-name code">Terminal (Administrator)</pre>
+    <pre><code class="language-sh code snip">$ mkdir public
+
+$ mkdir public/about
+
+</code></pre>
+    <p>
+        Great! Now, open your project in your code editor of choice. My personal preference is VSCode, which you can download <a href="https://code.visualstudio.com/">here</a>.
+    </p>
+</section>
+<section>
+    <h3>Programming</h3>
+    <p>
+        You should create an index.js file, in the directory of your server. We will first import our Express app using Node.js's require function:
+    </p>
+    <pre class="file-name code">index.js</pre>
+    <pre><code class="language-js code snip">const express = require("express"); // imports the express module
+const app = express(); // creates an app with express
+</code></pre>
+    <p>
+        Before we continue, let's talk <i>middleware</i>. What is that, you say? Well, middleware is a script that runs before ours does. This can be useful when we use libraries or other modules that take care of stuff for us, in the future. Our first middleware to import is actually built in to express.js, and it is a static file serving middleware.
+    </p>
+    <p>
+        In a nutshell, when you type a path into a website link, like for example, how you are on <code>blog/article/how-i-made-my-own-server-fast</code> right now, the server recieves that information. This path is basically a path to a resource, be it a webpage, an image, a script, or nothing. Our job as the backend programmers is to design a response to every path. Express' static middleware does this for us, by taking the path given, doing a few security checks, and sending the file at the relative path that is provided. This is useful for non-complicated web pages, but can also be expanded upon.
+    </p>
+    <p>
+        Lets start by importing the middleware, and starting our server.
+    </p>
+    <pre class="file-name code">index.js</pre>
+    <pre><code class="language-js code snip">...
+app.use(express.static('public')); // set the static middleware to serve files from the '/public' folder
+
+const PORT = 3000;
+app.listen(PORT, () => {
+    console.log("Server started on port " + PORT + "!");
+});
+</code></pre>
+</section>

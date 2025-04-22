@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nate Levison's Blog Posts</title>
+    <link rel="stylesheet" href="posts-style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta1/css/all.css">
+    <link rel="stylesheet" href="../global/components/globalComponents.css">
+</head>
+
+<body>
+    <header>
+        <my-nav root="../" selected-index=2></my-nav>
+    </header>
+    <main style="padding-left: 10px;padding-top:65px;">
+        <div id="searchbox">
+            <input type="text" id="search-input" placeholder="Search...">
+            <button class="search-button" id="search"><i class="fa-solid fa-search"></i></button>
+            <button class="search-button" id="config"><i id="config-icon" class="fa-solid fa-gear"></i></button>
+            <span id="search-config-modal">
+                <span id="filtered-msg">Filtered Tags: 0</span>
+                <div id="search-config-tags"></div>
+                <label for="enablerantCheckbox">Enable rants: </label>
+                <input id="enablerantCheckbox" type="checkbox">
+            </span>
+        </div>
+        <div class="results-container" id="results"></div>
+    </main>
+    <my-foot root="../"></my-foot>
+</body>
+<script src="posts-script.js"></script>
+<script src="../global/components/my-nav.js"></script>
+<script src="../global/components/my-foot.js"></script>
+
+</html>
