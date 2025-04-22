@@ -40,16 +40,15 @@
 </svelte:head>
 
 <article style="display: {mounted ? "block":"none"}">
-    <div class="article-head">
-        <div class="article-head-background"></div>
-        <div class="article-head-content">
-            <div class="article-title">{title}</div>
-            <div class="article-author">Nate Levison</div>
-            <div class="article-date">
-                Created on {new Date(created).toLocaleString()}
-            </div>
+    <div class="card text-center mb-3">
+        <img src='https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");' class="card-img" alt="Code on a black screen zoomed out">
+        <div class="card-img-overlay d-flex flex-column justify-content-center">
+            <h1 class="text-light card-title">{title}</h1>
+            <h3 class="text-light card-subtitle mb-2">By Nate Levison</h3>
+            <p class="text-light card-text">Created {new Date(created).toLocaleDateString()}</p>
         </div>
     </div>
+    
     <div class="content">
         {@html text}
     </div>
@@ -60,125 +59,71 @@
 </div>
 
 <style>
-    :root {
-        --x: 50%;
-        --y: 50%;
-        transition: all 0.1s;
+
+    article {
+        width: 50%;
+        margin: auto;
     }
 
-    .loading {
-        font-size: 2em;
-        font-weight: 600;
-        padding: 10px;
+    .card-img {
+        height: 200px;
+        object-fit: cover;
     }
 
-    article :global {
-        .article-head {
-            border: 1px solid black;
-            border-radius: 10px;
-            height: 200px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            font-family: "Roboto", sans-serif;
-            font-weight: bolder;
-            margin: 10px;
-            transition: background-position 0.5s cubic-bezier(0, 0.58, 0.5, 1);
-            position: relative;
-            margin-left: 10%;
-            margin-right: 10%;
-            overflow: auto;
-        }
+    .content {
+        max-width: 1000px;
+        /* center it on the page */
+        margin: auto;
+        margin-bottom: 20px;
+        line-height: 1.5;
+        font-size: 20px;
+    }
 
-        .article-head-content {
-            /* center everythign */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
+    img:not(.logo):not(.banner-ico):not(.card-img) {
+        border: 1px solid black;
+        border-radius: 10px;
+    }
 
-        .article-head-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: inherit;
-            z-index: -1;
-            /* make it transparent bg */
-            background: url("https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");
-            opacity: 0.4;
-        }
-
-        .article-title {
-            font-size: 40px;
-            text-align: center;
-            word-wrap: break-word;
-        }
-
-        .article-author,
-        .article-date {
-            font-size: 30px;
-            color: #33212a;
-        }
-
-        .content {
-            max-width: 1000px;
-            /* center it on the page */
-            margin: auto;
-            margin-bottom: 20px;
-            line-height: 1.5;
+    /* if screen size small, make the article content font size smaller */
+    @media only screen and (max-width: 600px) {
+        div.content {
             font-size: 20px;
         }
 
-        img:not(.logo):not(.banner-ico) {
-            border: 1px solid black;
-            border-radius: 10px;
+        img {
+            width: 100%;
         }
+    }
 
-        /* if screen size small, make the article content font size smaller */
-        @media only screen and (max-width: 600px) {
-            div.content {
-                font-size: 20px;
-            }
-            .article-head * {
-                font-size: 20px;
-            }
+    article :global {
 
-            img {
-                width: 100%;
-            }
-        }
+    pre {
+        margin-top: 0;
+    }
 
-        pre {
-            margin-top: 0;
-        }
+    .code {
+        background-color: #282c30;
+    }
 
-        .code {
-            background-color: #282c30;
-        }
+    .snip {
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        padding: 15px;
+    }
 
-        .snip {
-            border-bottom-left-radius: 10px;
-            border-bottom-right-radius: 10px;
-            padding: 15px;
-        }
+    .file-name {
+        color: #96d0ff;
+        margin: 0;
+        padding: 5px 15px;
+        border-bottom: 1px solid #ffffff;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
 
-        .file-name {
-            color: #96d0ff;
-            margin: 0;
-            padding: 5px 15px;
-            border-bottom: 1px solid #ffffff;
-            border-top-left-radius: 10px;
-            border-top-right-radius: 10px;
-        }
-
-        .quote {
-            padding-left: 20px;
-            border-left: 2px solid gray;
-            color: #333;
-        }
+    .quote {
+        padding-left: 20px;
+        border-left: 2px solid gray;
+        color: #333;
+    }
     }
 </style>

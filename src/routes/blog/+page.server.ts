@@ -45,7 +45,12 @@ export const load: PageServerLoad = ({ params, url }) => {
 
     // Sort and prepare results    
     if (sort === "relevance") {
-        sortBySimilarity(allArticleInfos);
+        if (!stringHasContent(name)) {
+            sortByCreated(allArticleInfos);
+            sortByStarred(allArticleInfos);
+        } else {
+            sortBySimilarity(allArticleInfos);
+        }
     } else if (sort === "date") {
         sortByCreated(allArticleInfos);
         sortByStarred(allArticleInfos);

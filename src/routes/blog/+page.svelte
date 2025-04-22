@@ -26,159 +26,87 @@
     async function getResults() {
         const parameters = new URLSearchParams();
         parameters.append("name", paramName);
-        parameters.append("tags", filteredTags.join(","));
-        parameters.append("sort", "date");
+        parameters.append("sort", sortMethods[0]);
 
         window.location.search = parameters.toString();
     }
 
-    let searchConfigModal: HTMLDialogElement;
-    let searchConfigModalOpen: boolean = $state(false);
-    function toggleConfigModal() {
-        if (searchConfigModalOpen) {
-            searchConfigModal.close();
-        } else {
-            searchConfigModal.showModal();
+    let sortMethods = $state([]);
+    function moveToTop(index: number) {
+        // Check if the index is valid
+        if (index < 0 || index >= sortMethods.length) {
+            console.error("Index out of bounds");
+            return;
         }
-        searchConfigModalOpen = !searchConfigModalOpen;
+
+        // Remove the element from its current position
+        const element = sortMethods.splice(index, 1)[0];
+
+        // Add the element to the top of the list
+        sortMethods.unshift(element);
     }
+
+    onMount(() => {
+        sortMethods = [ "relevance", "date", "id" ];
+        const urlParams = new URLSearchParams(window.location.search);
+        const sort = urlParams.get("sort");
+        const index = sortMethods.indexOf(sort);
+        if (index !== -1) {
+            moveToTop(index);2
+        }
+        paramName = urlParams.get("name") ?? "Search..."
+    });
 </script>
 
 <main>
-    <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search term" aria-label="Search term" aria-describedby="button-addon2">
-        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
+    <div class="input-group" style="width: fit-content">
+        <input bind:value={paramName} type="text" class="form-control" placeholder="Search term" aria-label="Search term" aria-describedby="button-addon2">
+        <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-label="sort" aria-expanded="false">
+            <i class="fas fa-sort"></i>
+        </button>
+        <ul class="dropdown-menu">
+            {#each sortMethods as sortMethod, index}
+                {#if index == 0}
+                    <li><button class="dropdown-item">
+                        {sortMethods[index]}
+                        <i class="fa-solid fa-check"></i>
+                    </button></li>
+                    <li><hr class="dropdown-divider"></li>
+                {:else}
+                    <li><button onclick={() => moveToTop(index)} class="dropdown-item">
+                        {sortMethods[index]}
+                    </button></li>
+                {/if}
+            {/each}
+        </ul>
+        <button onclick={getResults} class="btn btn-outline-secondary" type="button" id="button-addon2">Search</button>
     </div>      
-    <div class="results-container" id="results">
-        {#if count == -1}
-            Loading...
-        {:else if count == 0}
-            {#if success}
-                No results found.
-            {:else}
-                Something went wrong: <span style="color: red">{message}</span>
-            {/if}
+    {#if count == -1}
+        Loading...
+    {:else if count == 0}
+        {#if success}
+            No results found.
         {:else}
-            Found {count} result{count == 1 ? "" : "s"} in {time} ms.
+            Something went wrong: <span style="color: red">{message}</span>
         {/if}
+    {:else}
+        Found {count} result{count == 1 ? "" : "s"} in {time} ms.
+    {/if}
+    <div class="results-container" id="results">
     
-        {#each results as result}
-            <PostResult {result} />
+        {#each results as result, index}
+            <PostResult {result} {index}/>
         {/each}
     </div>
 </main>
 
 
 <style>
-
-    .spinning {
-        animation: 0.3s ease-in-out spin;
-    }
-
-    @keyframes spin {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(120deg);
-        }
-    }
-
     .results-container {
-        width: fit-content;
-    }
-
-    #searchbox {
-        border: 2px solid var(--gray-1);
-        width: fit-content;
-        padding: 0px;
-        border-radius: 5px;
-    }
-
-    input#search-input {
-        font-family: "Roboto", sans-serif;
-        border: none;
-        border-radius: 5px;
-        padding: 5px;
-        font-size: 16px;
-        margin: 0px;
-        max-width: 100px;
-        background-color: #eaeaea;
-    }
-
-    button.search-button {
-        background: none;
-        border: none;
-        border-radius: 5px;
-        margin: 0px;
-        width: 30px;
-        height: 30px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: all 0.2s;
-    }
-
-    button.search-button:hover {
-        background: #e0e0e0;
-    }
-
-    input#search-input:placeholder-shown {
-        font-style: italic;
-    }
-    input:focus {
-        outline: none;
-    }
-
-    #search-config-modal {
-        border: 2px solid var(--gray-1);
-        background: #eaeaea;
-        padding: 10px;
-        max-width: 500px;
-        border-radius: 5px;
-        transform: translateY(-200%);
-        transition: all 0.5s;
-    }
-
-    .tag-selected {
-        background-color: rgb(41, 197, 41);
-    }
-
-    .tag-selected:hover,
-    .config-tag:hover {
-        cursor: pointer;
-    }
-
-    .config-tag {
-        transition: all 0.2s;
-        user-select: none;
-    }
-
-    .config-tag:hover:not(.tag-selected) {
-        background-color: #ffffff;
-    }
-
-    #search-config-tags {
+        max-width: 40%;
         display: flex;
-        flex-wrap: wrap;
-    }
-
-    @keyframes rotation {
-        from {
-            transform: rotate(0deg);
-        }
-        to {
-            transform: rotate(359deg);
-        }
-    }
-
-    .rotate {
-        animation: rotation 2s infinite linear;
-    }
-
-    /* if screen size small, make the article content font size smaller */
-    @media only screen and (max-width: 600px) {
-        .post-title {
-            font-size: 20px;
-        }
+        flex-direction: column;
+        gap: 10px;
+        margin-top: 15px;
     }
 </style>

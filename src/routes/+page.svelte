@@ -27,26 +27,11 @@
     </div>
 </div>
 
-<div class="widgets">
-    <!-- <div class="widget">
-            <div class="widget-title">Currently Reading</div>
-            <div class="widget-date">5/9/2024</div>
-            <div class="widget-content">
-                <img src="global/img/the-martian.jpeg" class="widget-book-cover zoomable" />
-                <div class="widget-book-text">
-                    <div>
-                        <div class="widget-book-title">The Martian</div>
-                        <div class="widget-book-author">Andy Weir</div>
-                    </div>
-                    <div class="widget-book-opinion">One of the better books I have ever read. It had a good story and seemed- not realistic- but relatable. A tense but good ending. 8/10.</div>
-                </div>
-            </div>
-        </div> -->
+<!-- <div class="d-none widgets">
     <div class="widget">
         <div class="widget-title">Currently Coding</div>
         <div class="widget-date">9/26/2024</div>
         <div class="widget-content">
-            <!-- <img src="favicon.ico" class="widget-book-cover" /> -->
             <div class="widget-book-text">
                 <div>
                     <div class="widget-book-title">This Website (frontend</div>
@@ -66,7 +51,6 @@
         <div class="widget-title">Currently Coding</div>
         <div class="widget-date">11/13/2024</div>
         <div class="widget-content">
-            <!-- <img src="favicon.ico" class="widget-book-cover" /> -->
             <div class="widget-book-text">
                 <div>
                     <div class="widget-book-title">This Website (backend)</div>
@@ -88,9 +72,6 @@
             class="widget-content"
             style="display: flex;flex-direction: column;width: 100%;height:100%;justify-content:center;"
         >
-            <!-- <a href="/blog/article/wrong-about-free-will">
-                    <button class="widget-button"><b>CORRECTION ARTICLE</b></button>
-                </a> -->
             <a href="/about">
                 <button class="widget-button">About</button>
             </a>
@@ -105,9 +86,65 @@
             </a>
         </div>
     </div>
+</div> -->
+
+<div class="container">
+    <div class="row d-flex align-items-stretch">
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header">
+                    Currently Coding
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">Uhl Testing Program</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Since September 2024</h6>
+                    <p class="card-text">A testing program that administers dynamically generated programming questions, and provides plenty of teacher features to grade and assess students.</p>
+                    <a href="https://github.com/Cheespeasa1234/uhl_tests" class="btn btn-primary">GitHub Repo</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-header">
+                    Currently Coding
+                </div>
+                <div class="card-body">
+                    <h5 class="card-title">This Website</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">Since November 2024</h6>
+                    <p class="card-text">I am currently reworking this website to use svelte, and a better blog system. I also moved over to DigitalOcean, which has been great so far. The old system served me well!</p>
+                    <a href="https://github.com/Cheespeasa1234/natelevison.com/tree/svelte-migration" class="btn btn-primary">GitHub Branch</a>
+                    <a href="https://digitalocean.com" class="btn btn-primary">DigitalOcean</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <div class="card-body">
+                    <h5 class="card-title">Quick Links</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">And socials</h6>
+                    <div class="d-flex flex-column">
+                        <a href="/about" class="m-1 btn btn-primary">About Me</a>
+                        <a href="/projects" class="m-1 btn btn-primary">My Projects</a>
+                        <a target="_blank" href="mailto:nate@natelevison.com" class="m-1 btn btn-primary">Email</a>
+                        <a target="_blank" href="https://github.com" class="m-1 btn btn-primary">GitHub Profile</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <style>
+
+    .card-body {
+        /* border: 2px solid var(--color-101); */
+        background: var(--color-111);
+    }
+    
+    .card-header {
+        background: var(--color-112);
+    }
+
     .quick-links {
         display: flex;
         flex-direction: column;

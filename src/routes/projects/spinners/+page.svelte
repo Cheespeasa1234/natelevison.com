@@ -10,7 +10,7 @@
 </main>
 
 <style>
-    :root {
+    * {
         --font-serif-1: Georgia, 'Times New Roman', Times, serif;
         --font-sans-1: Verdana, Geneva, Tahoma, sans-serif;
         --font-sans-2: Calibri, Geneva, Tahoma, sans-serif;

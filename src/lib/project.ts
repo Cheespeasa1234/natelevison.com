@@ -52,4 +52,16 @@ export const projects: Project[] = [
         start: "December 2024",
         end: "April 2025",
     },
+    {
+        name: "Minecraft StatsViewer",
+        desc: `
+            I have a Minecraft world that I share with a friend, and whenever I want to view statistics, it is a huge pain. So, I developed a fully-featured java program that parses NBT and JSON data, and displays tons of useful information about Minecraft players, such as statistics, inventory, and even a world map.
+        `,
+        tags: ["java"],
+        links: [
+            { url: "https://github.com/Cheespeasa1234/statsviewer", name: "GitHub" }
+        ],
+        start: "January 2024",
+        end: "June 2024"
+    }
 ];

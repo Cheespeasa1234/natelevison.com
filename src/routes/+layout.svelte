@@ -5,6 +5,9 @@
     import Nav from "../Nav.svelte";
     import { onMount } from "svelte";
 
+    import moment from 'moment';
+    moment().format();
+
     export function setTitle(message: string) {
         onMount(() => {
             document.title = "natelevison.com | " + message;
@@ -17,9 +20,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 </svelte:head>
 
-<header>
-    <Nav selected={-1} />
-</header>
+<Nav></Nav>
+
 <main>
     {@render children()}
 </main>
@@ -35,4 +37,5 @@
     main {
         padding: 10px;
     }
+
 </style>
