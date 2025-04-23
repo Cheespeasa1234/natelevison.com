@@ -1,10 +1,10 @@
 import { onMount } from "svelte";
 
-export function setTitle(message: string, template: string = " | Nate Levison") {
-    onMount(() => {
-        document.title = message + template;
-    });
-}
+// export function setTitle(message: string, template: string = " | Nate Levison") {
+//     onMount(() => {
+//         document.title = message + template;
+//     });
+// }
 
 export function since(year: number, month: string): string {
     const monthNumber = new Date(Date.parse(month + " 1, 1971")).getMonth();
@@ -20,3 +20,5 @@ export function since(year: number, month: string): string {
 
     return `${Math.round(years / 0.25) * 0.25} years`;
 }
+
+export const generalSeoTags = "blog,article,search,programming,coding,code,java,web,webdev,web development,python,javascript,typescript";

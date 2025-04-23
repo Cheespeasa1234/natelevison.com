@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { setTitle } from "$lib/frontend_util";
+    import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
     onMount(() => {
         const bookCovers = document.querySelectorAll(".widget-book-cover.zoomable");
@@ -18,13 +18,27 @@
     });
 
     const letters = "natelevison.com!".split("");
-    setTitle("Homepage");
+    const seoTitle = "Home | Nate Levison";
+    const seoDesc = "Nate Levison's official website homepage. Find socials, projects, blog, and read more about Nate.";
+    const seoKeys = generalSeoTags;
 </script>
 
+<svelte:head>
+    <title>{seoTitle}</title>
+    <link rel="canonical" href="https://natelevison.com">
+    <meta name="description" content={seoDesc} />
+    <meta name="keywords" content={seoKeys} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDesc} />
+    <meta property="og:url" content="https://natelevison.com" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDesc} />
+</svelte:head>
+
 <div class="home-title">
-    <div class="home-h1" style="white-space: pre">
+    <h1 class="home-h1" style="white-space: pre">
         <div class="floatyletterpre">Welcome to</div>{#each letters as letter, i}<div class="floatyletter" style="animation-delay: {i * 0.1}s">{letter}</div>{/each}
-    </div>
+    </h1>
 </div>
 
 <!-- <div class="d-none widgets">

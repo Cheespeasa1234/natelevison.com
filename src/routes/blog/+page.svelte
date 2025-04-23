@@ -1,13 +1,11 @@
 <script lang="ts">
-    import { setTitle } from "$lib/frontend_util";
+    import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
     import PostResult from "./PostResult.svelte";
 
     const { data } = $props();
     const { message, success } = data;
     const { results, count, time } = data.data;
-
-    setTitle("Blog Search");
 
     function getColor(word: string): string {
         let hash = 0;
@@ -56,7 +54,24 @@
         }
         paramName = urlParams.get("name") ?? "Search..."
     });
+
+    const seoTitle = "Blog Search | Nate Levison";
+    const seoDesc = "The official blog search page for Nate Levison's blog. Search with the search bar or the filters, and find the article right for you.";
+    const seoKeys = generalSeoTags;
+    const seoAuthor = "Nate Levison";
 </script>
+
+<svelte:head>
+    <title>{seoTitle}</title>
+    <link rel="canonical" href="https://natelevison.com/blog">
+    <meta name="description" content={seoDesc} />
+    <meta name="keywords" content={seoKeys} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDesc} />
+    <meta property="og:url" content="https://natelevison.com/blog" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDesc} />
+</svelte:head>
 
 <main>
     <div class="input-group" style="width: fit-content">

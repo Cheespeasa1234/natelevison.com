@@ -1,7 +1,7 @@
 <script lang="ts">
     import { onMount } from "svelte";
     import hljs from "highlight.js";
-    import { setTitle } from "$lib/frontend_util";
+    import { generalSeoTags } from "$lib/frontend_util";
 
     let mounted = $state(false);
 
@@ -30,8 +30,7 @@
 
     const seoTitle = title + " - Blog | Nate Levison";
     const seoDesc = `A blog article about ${tags.join(", ")}, called ${title}, written by Nate Levison`;
-    const seoKeys = `${tags.join(',')},Nate Levison,Blog,Programming,Article`;
-    const seoAuthor = "Nate Levison";
+    const seoKeys = `${tags.join(',')},${generalSeoTags}`;
 </script>
 
 <svelte:head>
@@ -44,18 +43,14 @@
         src="https://static.natelevison.com/highlight/highlight.min.js"
     ></script>
     <title>{seoTitle}</title>
+    <link rel="canonical" href="https://natelevison.com/blog/article/{name}">
     <meta name="description" content={seoDesc} />
     <meta name="keywords" content={seoKeys} />
-    <meta name="author" content={seoAuthor} />
     <meta property="og:title" content={seoTitle} />
     <meta property="og:description" content={seoDesc} />
-    <meta property="og:type" content="website" />
     <meta property="og:url" content="https://natelevison.com/blog/article/{name}" />
-    <meta property="og:image" content="https://natelevison.com/favicon.png" />
-    <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={seoTitle} />
     <meta name="twitter:description" content={seoDesc} />
-    <meta name="twitter:image" content="https://natelevison.com/favicon.png" />
 </svelte:head>
 
 <article style="display: {mounted ? "block":"none"}">

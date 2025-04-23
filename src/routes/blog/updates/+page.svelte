@@ -1,9 +1,23 @@
 <script lang="ts">
-    import { setTitle } from "$lib/frontend_util";
+    import { generalSeoTags } from "$lib/frontend_util";
     import UpdatePost from "./UpdatePost.svelte";
 
-    setTitle("Updates");
+    const seoTitle = "Update Page | Nate Levison";
+    const seoDesc = "A changelog and blog of changes to Nate's website, natelevison.com. It also shows some of his personal life throughout the years.";
+    const seoKeys = generalSeoTags;
 </script>
+
+<svelte:head>
+    <title>{seoTitle}</title>
+    <link rel="canonical" href="https://natelevison.com/blog/updates">
+    <meta name="description" content={seoDesc} />
+    <meta name="keywords" content={seoKeys} />
+    <meta property="og:title" content={seoTitle} />
+    <meta property="og:description" content={seoDesc} />
+    <meta property="og:url" content="https://natelevison.com/blog/updates" />
+    <meta name="twitter:title" content={seoTitle} />
+    <meta name="twitter:description" content={seoDesc} />
+</svelte:head>
 
 <UpdatePost first id={15} title={"Issues with IPs and DNS"} date={"Sep 26, 2024, 23:59"}>
 
