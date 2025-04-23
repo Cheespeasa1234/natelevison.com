@@ -39,3 +39,7 @@ export function onlyHasGivenChars(text: string, chars: string): boolean {
 
     return true;
 }
+
+export function sanitize(text: string): string {
+    return text.match(/[qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM1234567890 ]/g)?.join('') || '';
+}

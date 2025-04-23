@@ -85,9 +85,19 @@
         Loading...
     {:else if count == 0}
         {#if success}
-            No results found.
+            <p>
+                No results found.
+            </p>
+            <a href="/">
+                <button class="btn btn-primary">Go Home</button>
+            </a>
         {:else}
-            Something went wrong: <span style="color: red">{message}</span>
+            <p>
+                Something went wrong: <span style="color: red">{message}</span>
+            </p>
+            <a href="/">
+                <button class="btn btn-primary">Go Home</button>
+            </a>
         {/if}
     {:else}
         Found {count} result{count == 1 ? "" : "s"} in {time} ms.
