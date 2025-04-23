@@ -1,0 +1,31 @@
+<article>
+    <info>
+        <id>18</id>
+        <created>1745425486034</created>
+        <tag>project</tag>
+        <tag>web</tag>
+        <tag>robotics</tag>
+        <name>project-frtree</name>
+        <title>FRTree</title>
+        <unlisted></unlisted>
+    </info>
+    <content>
+        <project>
+            <html>project-frtree.html</html>
+            <desc>
+                FRTree, heavily inspired by Linktree, is meant to solve a problem we deal with in robotics. There is no standardized method of communication or collaboration with other teams. This means, if you find a team number or a team name you want to know about, there is no website or social media platform where EVERY team can be found.
+                I built a lot of the frontend and most of the backend, utilizing MySQL, SvelteKit, and other backend technologies. Collaborating with my friends, we built a fully-functional application with sign ups, administrator access, and a great user experience. It is absolutely my best backend work.
+            </desc>
+            <link>
+                <url>https://github.com/PioneersTeam1676/frtree</url>
+                <name>GitHub</name>
+            </link>
+            <link>
+                <url>https://frtree.team1676.com</url>
+                <name>Website</name>
+            </link>
+            <start>December 2024</start>
+            <end>April 2025</end>
+        </project>
+    </content>
+</article>

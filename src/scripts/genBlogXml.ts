@@ -10,17 +10,19 @@ function getSitemapString(): string {
     for (const article of articles) {
         const unlisted = article.info.unlisted;
         if (unlisted) continue;
+        
+        const type = article.content.type;
+        if (type === "url") continue;
 
         const created = article.info.created;
         const name = article.info.name;
         const url = article.content.url;
         const starred = article.info.starred;
-        const type = article.content.type;
 
-        const fullUrl = `https://natelevison.com${type === 'html' ? "/" : ""}${url}`;
-        console.log(fullUrl);
-
+        const fullUrl = `https://natelevison.com/${url}`;
         const lastMod = new Date(created).toISOString();
+        
+        console.log(fullUrl);
         console.log(lastMod);
         console.log()
 

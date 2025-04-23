@@ -2,23 +2,16 @@
     import { onMount } from "svelte";
     import hljs from "highlight.js";
     import { generalSeoTags } from "$lib/frontend_util";
+    import type { BlogArticle } from "$lib/blog";
 
     let mounted = $state(false);
 
     const props = $props();
-    const article = props.data.article;
+    const article: BlogArticle = props.data.article;
 
-    const {
-        id,
-        created,
-        tags,
-        name,
-        title,
-        disableGlossary,
-        starred,
-        unlisted,
-    } = article.info;
-    const { text } = article.content;
+    const { info, content } = article;
+    const { id, created, tags, name, title, enableGlossary, starred, unlisted } = info;
+    const { type, text, projectData } = content;
 
     onMount(() => {
         mounted = true;
@@ -29,7 +22,9 @@
     });
 
     const seoTitle = title + " - Blog | Nate Levison";
-    const seoDesc = `A blog article about ${tags.join(", ")}, called ${title}, written by Nate Levison`;
+    const seoDesc = type === "project" ? 
+        `A blog article about ${tags.join(", ")}, called ${title}, written by Nate Levison`
+        : `A description of Nate Levison's project called ${title}`;
     const seoKeys = `${tags.join(',')},${generalSeoTags}`;
 </script>
 
@@ -59,13 +54,19 @@
         <div class="card-img-overlay d-flex flex-column justify-content-center">
             <h1 class="text-light card-title">{title}</h1>
             <h3 class="text-light card-subtitle mb-2">By Nate Levison</h3>
-            <p class="text-light card-text">Created {new Date(created).toLocaleDateString()}</p>
+            <p class="text-light card-text">{projectData.start} - {projectData.end}</p>
         </div>
     </div>
     
     <div class="content">
         {@html text}
     </div>
+
+    {#if type === "project"}
+        <a href="/projects#{projectData.code}">
+            <button class="btn btn-primary">Back to Projects</button>
+        </a>
+    {/if}
 </article>
 
 <div class="loading" style="display: {mounted ? "none":"display"}">

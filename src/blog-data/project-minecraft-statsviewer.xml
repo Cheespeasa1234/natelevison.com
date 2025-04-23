@@ -1,0 +1,27 @@
+<article>
+    <info>
+        <id>20</id>
+        <created>1745431503393</created>
+        <tag>project</tag>
+        <tag>minecraft</tag>
+        <tag>swing</tag>
+        <tag>java</tag>
+        <name>project-minecraft-statsviewer</name>
+        <title>Minecraft StatsViewer</title>
+        <unlisted></unlisted>
+    </info>
+    <content>
+        <project>
+            <html>project-minecraft-statsviewer.html</html>
+            <desc>
+                I have a Minecraft world that I share with a friend, and whenever I want to view statistics, it is a huge pain. So, I developed a fully-featured java program that parses NBT and JSON data, and displays tons of useful information about Minecraft players, such as statistics, inventory, and even a world map.
+            </desc>
+            <link>
+                <url>https://github.com/Cheespeasa1234/statsviewer</url>
+                <name>GitHub</name>
+            </link>
+            <start>January 2024</start>
+            <end>June 2025</end>
+        </project>
+    </content>
+</article>

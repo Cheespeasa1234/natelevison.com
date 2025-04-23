@@ -1,0 +1,27 @@
+<article>
+    <info>
+        <id>19</id>
+        <created>1745425620487</created>
+        <tag>project</tag>
+        <tag>web</tag>
+        <tag>robotics</tag>
+        <name>project-team1676-scouting-interface</name>
+        <title>Team1676 Scouting Interface</title>
+        <unlisted></unlisted>
+    </info>
+    <content>
+        <project>
+            <html>project-team1676-scouting-interface.html</html>
+            <desc>
+                In the 2024 Robotics season, Crescendo, I built the frontend of the scouting interface. In robotics, teams will scout one another in order to determine what teams would make for a good parter in the playoffs. It is essential to collect lots of data about play style, skill level, speed, and strategy, in order to make a good decision.
+                I componentized all my work and made it extendible, and my components and organization are still being used today. It includes paginated forms, a full validation system, and integrates smoothly with the form collection system.
+            </desc>
+            <link>
+                <url>https://github.com/PioneersTeam1676/scouting</url>
+                <name>GitHub</name>
+            </link>
+            <start>December 2023</start>
+            <end>January 2025</end>
+        </project>
+    </content>
+</article>

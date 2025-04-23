@@ -1,7 +1,9 @@
 <script lang="ts">
     import Project from "./Project.svelte";
-    import { projects } from "$lib/project";
     import { generalSeoTags, since } from "$lib/frontend_util";
+    
+    const props = $props();
+    const projects = props.data.projects;
 
     const seoTitle = "My Projects | Nate Levison";
     const seoDesc = "A portfolio of Nate Levison's projects. This page contains descriptions of Nate's proudest programming-related achievements, and can show his experience in his hobby.";
@@ -20,7 +22,7 @@
     <meta name="twitter:description" content={seoDesc} />
 </svelte:head>
 
-<h1>My Projects</h1>
+<h1 class="h2">My Projects</h1>
 
 <ul class="list-group list-group-horizontal mb-2">
     <li class="list-group-item">

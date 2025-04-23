@@ -106,12 +106,12 @@
     <div class="row d-flex align-items-stretch">
         <div class="col">
             <div class="card h-100">
-                <div class="card-header">
+                <h2 class="h6 card-header">
                     Currently Coding
-                </div>
+                </h2>
                 <div class="card-body">
-                    <h5 class="card-title">Uhl Testing Program</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Since September 2024</h6>
+                    <h3 class="h5 card-title">Uhl Testing Program</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since September 2024</h4>
                     <p class="card-text">A testing program that administers dynamically generated programming questions, and provides plenty of teacher features to grade and assess students.</p>
                     <a href="https://github.com/Cheespeasa1234/uhl_tests" class="btn btn-primary">GitHub Repo</a>
                 </div>
@@ -119,12 +119,12 @@
         </div>
         <div class="col">
             <div class="card h-100">
-                <div class="card-header">
+                <h2 class="h6 card-header">
                     Currently Coding
-                </div>
+                </h2>
                 <div class="card-body">
-                    <h5 class="card-title">This Website</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Since November 2024</h6>
+                    <h3 class="h5 card-title">This Website</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since November 2024</h4>
                     <p class="card-text">I am currently reworking this website to use svelte, and a better blog system. I also moved over to DigitalOcean, which has been great so far. The old system served me well!</p>
                     <a href="https://github.com/Cheespeasa1234/natelevison.com/tree/svelte-migration" class="btn btn-primary">GitHub Branch</a>
                     <a href="https://digitalocean.com" class="btn btn-primary">DigitalOcean</a>
@@ -134,8 +134,8 @@
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
-                    <h5 class="card-title">Quick Links</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">And socials</h6>
+                    <h2 class="h5 card-title">Quick Links</h2>
+                    <h3 class="h6 card-subtitle mb-2 text-body-secondary">And socials</h3>
                     <div class="d-flex flex-column">
                         <a href="/about" class="m-1 btn btn-primary">About Me</a>
                         <a href="/projects" class="m-1 btn btn-primary">My Projects</a>

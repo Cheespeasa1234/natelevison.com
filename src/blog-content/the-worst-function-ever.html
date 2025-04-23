@@ -2,7 +2,8 @@
     A bit strange of a title, but seriously, I am about to show you the worst code I have ever written, and hopefully, will ever write. I was making a discord bot, that would basically allow you to perform simple calculations with Minecraft recipes. I also used Typescript for this, and this time was probably my second time ever using it. This monstrosity that I will now present you had one purpose, which was to expand dynamic recipes into every possible combo.
 </p>
 <p>
-    For example, there is a recipe in minecraft with a &{shit }{}ton of possibilities, for example, the wool conversion recipe. You can take any of the 16 colors of wool, and add any of the 15 other colors to change the original color. So, this function basically takes a compressed notation of this type of recipe, and adds every single possible combination. <i>Yes</i>, this is horribly inefficient, but it worked, so yeah. Here is the code. 
+    <!-- For example, there is a recipe in minecraft with a &{shit }{}ton of possibilities, for example, the wool conversion recipe. You can take any of the 16 colors of wool, and add any of the 15 other colors to change the original color. So, this function basically takes a compressed notation of this type of recipe, and adds every single possible combination. <i>Yes</i>, this is horribly inefficient, but it worked, so yeah. Here is the code.  -->
+    For example, there is a recipe in minecraft with a shit ton of possibilities, for example, the wool conversion recipe. You can take any of the 16 colors of wool, and add any of the 15 other colors to change the original color. So, this function basically takes a compressed notation of this type of recipe, and adds every single possible combination. <i>Yes</i>, this is horribly inefficient, but it worked, so yeah. Here is the code. 
 </p>
 
 <pre class="file-name code">recipeManager.ts</pre>
@@ -83,7 +84,8 @@ export function decompressMultiResults(csv: string[][], variables: VariableSet):
 </code></pre>
 
 <p>
-    At it's worst, it has SEVEN LEVELS OF NESTING. This is so &{braindead}{terrible}. But it actually makes sense if you look it over.
+    <!-- At it's worst, it has SEVEN LEVELS OF NESTING. This is so &{braindead}{terrible}. But it actually makes sense if you look it over. -->
+    At it's worst, it has SEVEN LEVELS OF NESTING. This is so braindead. But it actually makes sense if you look it over.
 </p>
 <section>
     <h2>The explanation</h2>

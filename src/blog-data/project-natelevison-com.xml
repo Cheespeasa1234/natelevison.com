@@ -1,0 +1,31 @@
+<article>
+    <info>
+        <id>17</id>
+        <created>1745424973481</created>
+        <tag>project</tag>
+        <tag>web</tag>
+        <tag>personal</tag>
+        <name>project-natelevison-com</name>
+        <title>natelevison.com</title>
+        <unlisted></unlisted>
+    </info>
+    <content>
+        <project>
+            <html>project-natelevison-com.html</html>
+            <desc>
+                This website has been my passion project for more than THREE YEARS now. I wrote my college essay about it, I wrote blog articles on it, and some of my writing here has been published in the school magazine! I am so proud of the work I have done for this website. The CSS is far from decent- but I hate CSS, so it's fine.
+                It is currently on its fourth major iteration- first was a static 000webhost page, second was a better (still static) github.io page, third was a simple node.js / deno backend system, and fourth is a SvelteKit app. I have tended to redesign my website whenever I have completely replaced my skills with better skills, like when I learned backend development, when I improved in server administration, and recently, when I decided to brush off the css cobwebs and start from the ground up.
+            </desc>
+            <link>
+                <url>https://github.com/Cheespeasa1234/natelevison.com</url>
+                <name>GitHub</name>
+            </link>
+            <link>
+                <url>https://natelevison.com</url>
+                <name>Home</name>
+            </link>
+            <start>December 2022</start>
+            <end>Present</end>
+        </project>
+    </content>
+</article>

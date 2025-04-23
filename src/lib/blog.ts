@@ -2,7 +2,9 @@ import fs from "fs";
 import path from "path";
 import parser from "xml-js";
 
-export type ContentType = "html" | "url";
+import { type Project, type ProjectLink } from "./project";
+
+export type ContentType = "html" | "url" | "project";
 
 export type BlogArticle = {
     info: {
@@ -20,6 +22,7 @@ export type BlogArticle = {
         file: string,
         text?: string,
         url: string,
+        projectData?: Project,
     },
     data?: any
 }
@@ -149,6 +152,7 @@ export function getBlogArticle(articleName: string): BlogArticle | undefined {
         let contentString: string;
         let contentText: string | undefined = undefined;
         let contentUrl: string;
+        let contentProject: Project | undefined = undefined;
         if (content.html) {
             contentType = "html";
             contentString = content.html._text;
@@ -158,6 +162,32 @@ export function getBlogArticle(articleName: string): BlogArticle | undefined {
             contentType = "url";
             contentString = content.url._text;
             contentUrl = contentString;
+        } else if (content.project) {
+            contentType = "project";
+            contentString = content.project.html._text;
+            contentText = fs.readFileSync(path.join("src", "blog-content", contentString), "utf-8").toString();
+            contentUrl = path.join("blog", "article", name);
+            let projectLinks: ProjectLink[] = [];
+            const lnk = content.project.link;
+            if (Array.isArray(lnk)) {
+                projectLinks = lnk.map(obj => { return { url: obj.url._text, name: obj.name._text }; });
+            } else {
+                projectLinks = [{ url: lnk.url._text, name: lnk.name._text }];
+            }
+            projectLinks.push({
+                url: contentUrl,
+                name: "Read More",
+            });
+            const project: Project = {
+                name: title,
+                desc: content.project.desc._text,
+                start: content.project.start._text,
+                end: content.project.end._text,
+                tags: tags,
+                links: projectLinks,
+                code: name,
+            };
+            contentProject = project;
         }
 
         const enableGlossary = info.enableGlossary !== undefined ? true : false;
@@ -180,6 +210,7 @@ export function getBlogArticle(articleName: string): BlogArticle | undefined {
                 file: contentString,
                 text: contentText,
                 url: contentUrl,
+                projectData: contentProject
             }
         }
     } catch (e) {

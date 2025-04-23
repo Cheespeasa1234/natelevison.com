@@ -23,8 +23,8 @@
 <div class="container d-flex" style="gap: 10px; margin-bottom: 10px;">
     <div class="card w-50" style="display: flex; flex-direction: column;">
         <div class="card-body" style="flex: 1;">
-            <h5 class="text-center card-title">About Nate Levison</h5>
-            <h6 class="mb-3 text-center card-subtitle mb-2 text-muted">Computer Science, Data Science, Web Development</h6>
+            <h1 class="text-center card-title h5">About Nate Levison</h1>
+            <h2 class="mb-3 text-center card-subtitle mb-2 text-muted h6">Computer Science, Data Science, Web Development</h2>
             <p class="card-text">
                 I am a Computer Science student with a passion for learning and creating, currently a student at Pascack Hills High School. I will be attending The Ohio State University in the class of 2029. I enjoy simple things, like gardening, cooking, my dog, and writing over-complicated programs to automate things I could do manually in 5 minutes. I enjoy learning new programming skills and methods, with the help of my friends.
             </p>
@@ -36,7 +36,7 @@
             </p>
         </div>
         <div class="card-body d-flex flex-column" style="align-items: center">
-            <h6 class="card-subtitle mb-2 text-muted">Still interested?</h6>
+            <h2 class="card-subtitle mb-2 text-muted h6">Still interested?</h2>
             <div>
                 <a href="/blog" style="width: 150px" class="btn btn-primary">Read my blog</a>
                 <a href="/projects" style="width: 150px" class="btn btn-primary">View my projects</a>
@@ -46,7 +46,7 @@
     <div class="card w-50">
         <img class="card-img-top" src="/img/fit-crop.png" alt="Nate at a debate tournament">
         <div class="card-body">
-            <h6 class="mb-3 card-subtitle mb-2 text-muted">Nate at a debate tournament, between rounds, circa 2024</h6>
+            <p class="mb-3 card-subtitle mb-2 text-muted h6">Nate at a debate tournament, between rounds, circa 2024</p>
             <p class="card-text">Nate was a member of Junior Varsity Debate in his Sophomore year and his Junior year, participating in the varsity level in his Senior year.</p>
         </div>
     </div>
@@ -55,7 +55,7 @@
 <div class="container d-flex">
     <div class="card w-100">
         <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted">Skills</h6>
+            <h2 class="card-subtitle mb-2 text-muted h6">Skills</h2>
             <ul class="list-group list-group-horizontal">
                 <li class="list-group-item">
                     <div class="fw-bold">Frontend Webdev</div>

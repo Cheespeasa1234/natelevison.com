@@ -9,6 +9,7 @@
 		"build": "vite build",
 		"preview": "vite preview",
 		"genBlogXml": "tsx src/scripts/genBlogXml.ts",
+		"getNextId": "tsx src/scripts/getNextId.ts",
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch"
