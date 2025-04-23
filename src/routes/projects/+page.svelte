@@ -1,8 +1,9 @@
 <script lang="ts">
     import Project from "./Project.svelte";
     import { projects } from "$lib/project";
-    import { since } from "$lib/frontend_util";
+    import { setTitle, since } from "$lib/frontend_util";
 
+    setTitle("Projects and Portfolio");
 </script>
 
 <h1>My Projects</h1>

@@ -2,7 +2,7 @@
     import { setTitle, since } from "$lib/frontend_util";
     import { onMount } from "svelte";
 
-    setTitle("About");
+    setTitle("About Me");
 </script>
 
 <!-- <div class="container">

@@ -1,8 +1,8 @@
 import { onMount } from "svelte";
 
-export function setTitle(message: string, template: string = "natelevison.com | ") {
+export function setTitle(message: string, template: string = " | Nate Levison") {
     onMount(() => {
-        document.title = template + message;
+        document.title = message + template;
     });
 }
 

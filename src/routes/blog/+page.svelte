@@ -7,7 +7,7 @@
     const { message, success } = data;
     const { results, count, time } = data.data;
 
-    setTitle("Blog");
+    setTitle("Blog Search");
 
     function getColor(word: string): string {
         let hash = 0;

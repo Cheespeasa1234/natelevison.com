@@ -18,7 +18,7 @@
     });
 
     const letters = "natelevison.com!".split("");
-    setTitle("Home");
+    setTitle("Homepage");
 </script>
 
 <div class="home-title">
