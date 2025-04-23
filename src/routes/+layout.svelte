@@ -1,6 +1,6 @@
 <script lang="ts">
     const { children } = $props();
-    import "../style.scss";
+    import "../style.css";
     import "@fortawesome/fontawesome-free/css/all.min.css";
     import Nav from "../Nav.svelte";
     import { onMount } from "svelte";
