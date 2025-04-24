@@ -1,24 +1,73 @@
 <script lang="ts">
-    const { children } = $props();
-    import "../style.css";
+    import moment from "moment";
+    import tippy from "tippy.js";
+
     import "@fortawesome/fontawesome-free/css/all.min.css";
+    import "tippy.js/dist/tippy.css";
+    import "tippy.js/animations/scale.css";
+    import "../style.css";
+
     import Nav from "../Nav.svelte";
     import { onMount } from "svelte";
 
-    import moment from 'moment';
+    const { children } = $props();
+
+    onMount(() => {
+        tippy("[data-tippy-content]", {
+            appendTo: document.body,
+            inertia: true,
+            animation: "scale",
+        });
+
+        function createRipple(event) {
+            const button = event.currentTarget;
+
+            const circle = document.createElement("span");
+            const diameter = Math.max(button.clientWidth, button.clientHeight);
+            const radius = diameter / 2;
+
+            circle.style.width = circle.style.height = `${diameter}px`;
+            circle.style.left = `${event.clientX - button.offsetLeft - radius}px`;
+            circle.style.top = `${event.clientY - button.offsetTop - radius}px`;
+            circle.classList.add("ripple");
+
+            const ripple = button.getElementsByClassName("ripple")[0];
+
+            if (ripple) {
+                ripple.remove();
+            }
+
+            button.appendChild(circle);
+        }
+
+        const buttons = document.getElementsByTagName("button");
+        for (const button of buttons) {
+            button.addEventListener("click", createRipple);
+        }
+    });
+
     moment().format();
 </script>
 
 <svelte:head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-    
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+        integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+        crossorigin="anonymous"
+    />
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+        crossorigin="anonymous"
+    ></script>
+
     <title>Nate Levison</title>
     <meta name="author" content="Nate Levison" />
-    
+
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://natelevison.com/favicon.png" />
-    
+
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://natelevison.com/favicon.png" />
 </svelte:head>
@@ -39,6 +88,15 @@
 
     main {
         padding: 10px;
+        animation: 1s ease-out 0s 1 sideInLeft;
     }
 
+    @keyframes slideInLeft {
+        0% {
+            transform: translateX(-100%);
+        }
+        100% {
+            transform: translateX(0);
+        }
+    }
 </style>

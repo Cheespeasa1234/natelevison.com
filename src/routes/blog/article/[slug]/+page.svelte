@@ -3,6 +3,8 @@
     import hljs from "highlight.js";
     import { generalSeoTags } from "$lib/frontend_util";
     import type { BlogArticle } from "$lib/blog";
+    import { glossarizeParagraph } from "$lib/glossarizer";
+    import tippy from "tippy.js";
 
     let mounted = $state(false);
 
@@ -19,6 +21,19 @@
         codeBlocks.forEach((codeBlock) => {
             hljs.highlightElement(codeBlock);
         });
+
+        if (enableGlossary) {
+            const ps = document.querySelectorAll("p");
+            console.log(ps);
+            ps.forEach(glossarizeParagraph);
+            tippy("[data-tippy-content]", {
+                appendTo: document.body,
+                inertia: true,
+                animation: "scale",
+            });
+        } else {
+            console.log("No glossary");
+        }
     });
 
     const seoTitle = title + " - Blog | Nate Levison";
@@ -54,7 +69,11 @@
         <div class="card-img-overlay d-flex flex-column justify-content-center">
             <h1 class="text-light card-title">{title}</h1>
             <h3 class="text-light card-subtitle mb-2">By Nate Levison</h3>
-            <p class="text-light card-text">{projectData.start} - {projectData.end}</p>
+            {#if type==="project"}
+                <p class="text-light card-text">{projectData.start} - {projectData.end}</p>
+            {:else}
+                <p class="text-light card-text">Created {new Date(created).toLocaleDateString()}</p>
+            {/if}
         </div>
     </div>
     
@@ -140,5 +159,13 @@
         border-left: 2px solid gray;
         color: #333;
     }
+
+    [data-tippy-content] {
+        text-decoration-line: underline;
+        text-decoration-style: dotted;
+        text-decoration-color: gray;
+        cursor: help;
+    }
+
     }
 </style>

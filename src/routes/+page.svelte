@@ -1,6 +1,40 @@
 <script lang="ts">
     import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
+
+    const startFloatKeyframes: Keyframe[] = [
+        { transform: "translateY(0px) rotate(0deg)" },
+        // { transform: "translateY(-5px) rotate(0deg)" },
+        { 
+            transform: "translateY(2.5px) rotate(2deg)",
+            opacity: 1,
+        },
+    ];
+    const startFloatOptions: KeyframeAnimationOptions = {
+        duration: 1000,
+        iterations: 1,
+        easing: "ease",
+        id: "startFloat",
+    };
+
+    const floatKeyframes: Keyframe[] = [
+        { 
+            transform: "translateY(2.5px) rotate(2.4deg)",
+            opacity: 1,
+        },
+        { 
+            transform: "translateY(-2.5px) rotate(-2.4deg)",
+            opacity: 1,
+        },
+    ];
+    const floatOptions: KeyframeAnimationOptions = {
+        duration: 3000,
+        iterations: Infinity,
+        direction: "alternate",
+        easing: "ease-in-out",
+        id: "float",
+    };
+
     onMount(() => {
         const bookCovers = document.querySelectorAll(".widget-book-cover.zoomable");
         for (const bookCover of bookCovers) {
@@ -14,6 +48,17 @@
             bookCover.addEventListener("mouseout", () => {
                 bookCover.setAttribute("style", "")
             });
+        }
+
+        const floatyLetters = document.querySelectorAll("[data-float-wait]");
+        for (const floatyLetter of floatyLetters) {
+            const wait: number = parseFloat(floatyLetter.getAttribute("data-float-wait")) * 180;
+            setTimeout(() => {
+                const animation = floatyLetter.animate(startFloatKeyframes, startFloatOptions);
+                animation.onfinish = () => {
+                    floatyLetter.animate(floatKeyframes, floatOptions);
+                };
+            }, wait);
         }
     });
 
@@ -37,7 +82,10 @@
 
 <div class="home-title">
     <h1 class="home-h1" style="white-space: pre">
-        <div class="floatyletterpre">Welcome to</div>{#each letters as letter, i}<div class="floatyletter" style="animation-delay: {i * 0.1}s">{letter}</div>{/each}
+        <div class="floatyletterpre">Welcome to&nbsp;</div>
+        {#each letters as letter, i}
+            <div class="floatyletter" data-float-wait={i}>{letter}</div>
+        {/each}
     </h1>
 </div>
 
@@ -159,63 +207,6 @@
         background: var(--color-112);
     }
 
-    .quick-links {
-        display: flex;
-        flex-direction: column;
-        align-content: center;
-        justify-content: center;
-        text-align: center;
-        margin: auto;
-        max-width: fit-content;
-    }
-
-    .ql-row {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
-
-    .quick-link {
-        border: 1px solid rgb(85, 85, 85);
-        background: var(--fourth-color);
-        padding: 5px;
-        margin: 5px;
-        border-radius: 5px;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-        transition: box-shadow 0.2s ease-in-out;
-        width: 350px;
-    }
-
-    .quick-link:hover {
-        box-shadow: 1px 1px 5px 1px rgba(71, 71, 71, 0.5);
-        background: var(--fifth-color);
-        cursor: pointer;
-    }
-
-    .ql-ttl {
-        font-size: 2em;
-        font-weight: bold;
-        margin: 0;
-    }
-
-    .ql-dsc {
-        font-size: 1.2em;
-        margin-bottom: 10px;
-        font-weight: 600;
-    }
-
-    .ql-int {
-        width: 400px;
-        height: 200px;
-        border: 1px dashed #838383;
-        border-radius: 5px;
-    }
-
     .home-title {
         margin: 10px;
         display: flex;
@@ -231,126 +222,12 @@
         display: flex;
     }
 
-    .home-h2 {
-        font-size: 2.2em;
-    }
-
     .floatyletterpre {
         margin-right: 5px;
     }
 
-    @keyframes float {
-        0% {
-            transform: translateY(0px);
-        }
-        50% {
-            transform: translateY(-5px);
-        }
-        100% {
-            transform: translateY(0px);
-        }
-    }
-
-    /* when home title hovered, style all floatyletters once */
     .floatyletter {
-        animation: float 0.5s ease-in-out 1;
-    }
-
-    .widgets {
-        display: flex;
-        justify-content: center;
-        height: min-content;
-    }
-
-    .widget {
-        width: 25%;
-        max-height: 10%;
-        padding: 10px;
-        border: 2px solid black;
-        border-radius: 5px;
-        margin: 10px;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        overflow: hidden;
-    }
-
-    .widget-title {
-        font-size: 24px;
-        padding: 5px;
-    }
-
-    .widget-date {
-        font-size: 16px;
-        color: #808080;
-    }
-
-    .widget-book-cover {
-        object-fit: contain;
-        max-width: 50%;
-        max-height: 100%;
-        width: 100%;
-        height: auto;
-        border-radius: 5px;
-        transition:
-            translate 0.25s,
-            scale 0.25s;
-    }
-
-    .widget-content {
-        width: fit-content;
-        display: flex;
-    }
-
-    .widget-book-text {
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-
-    .widget-book-title {
-        font-size: 20px;
-        font-weight: bold;
-    }
-
-    .widget-book-author {
-        font-size: 18px;
-        font-weight: bold;
-    }
-
-    .widget-book-opinion {
-        font-size: 16px;
-        font-style: italic;
-    }
-
-    .widget-button {
-        width: 100%;
-        padding: 5px;
-        margin-bottom: 5px;
-    }
-
-    div.dvd-container {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-    }
-
-    marquee.dvd-vert {
-        border: 2px solid black;
-        border-radius: 5px;
-    }
-
-    marquee.dvd-horiz {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    div.dvd {
-        text-decoration: underline;
-        width: 25px;
-        height: 25px;
-        font-size: 10px;
+        opacity: 0.75;
+        margin-left: 0.75px;
     }
 </style>
