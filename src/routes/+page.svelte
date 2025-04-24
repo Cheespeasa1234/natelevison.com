@@ -87,68 +87,8 @@
             <div class="floatyletter" data-float-wait={i}>{letter}</div>
         {/each}
     </h1>
+    <h2>The one place for everything Nate Levison</h2>
 </div>
-
-<!-- <div class="d-none widgets">
-    <div class="widget">
-        <div class="widget-title">Currently Coding</div>
-        <div class="widget-date">9/26/2024</div>
-        <div class="widget-content">
-            <div class="widget-book-text">
-                <div>
-                    <div class="widget-book-title">This Website (frontend</div>
-                    <div class="widget-book-author">
-                        <a href="natelevison.com">natelevison.com</a>
-                    </div>
-                </div>
-                <div class="widget-book-opinion">
-                    Big changes are coming to the design philosophy of my
-                    website. I am taking a Graphic Design course in school, and
-                    so far I've made a whole logo and everything.
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="widget">
-        <div class="widget-title">Currently Coding</div>
-        <div class="widget-date">11/13/2024</div>
-        <div class="widget-content">
-            <div class="widget-book-text">
-                <div>
-                    <div class="widget-book-title">This Website (backend)</div>
-                    <div class="widget-book-author">
-                        <a href="natelevison.com">natelevison.com</a>
-                    </div>
-                </div>
-                <div class="widget-book-opinion">
-                    I have converted the server running this website from
-                    Windows Nodejs to WSL deno. Performance should go up, as
-                    should security. It is much easier to maintain remotely.
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="widget">
-        <div class="widget-title">Quick Links</div>
-        <div
-            class="widget-content"
-            style="display: flex;flex-direction: column;width: 100%;height:100%;justify-content:center;"
-        >
-            <a href="/about">
-                <button class="widget-button">About</button>
-            </a>
-            <a href="/blog">
-                <button class="widget-button">Blog</button>
-            </a>
-            <a href="/projects">
-                <button class="widget-button">Projects</button>
-            </a>
-            <a href="/blog/updates">
-                <button class="widget-button">Updates</button>
-            </a>
-        </div>
-    </div>
-</div> -->
 
 <div class="container">
     <div class="row d-flex align-items-stretch">
@@ -197,6 +137,10 @@
 </div>
 
 <style>
+
+    .card {
+        
+    }
 
     .card-body {
         /* border: 2px solid var(--color-101); */
