@@ -26,14 +26,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/blog">Blog</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/projects">Projects</a>
+                </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="/projects" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Projects
+                    More
                 </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/projects">Gallery</a></li>
-                        <li><hr class="dropdown-divider"></li>
                         <li><a class="dropdown-item" href="/projects/spinners">Spinners</a></li>
+                        <li><a class="dropdown-item" href="https://static.natelevison.com/old">Old Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                        <li><a class="dropdown-item" href="https://status.natelevison.com">Status Page <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
+                        <li><a class="dropdown-item" href="https://github.com/Cheespeasa1234/natelevison.com">GitHub Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                     </ul>
                 </li>
             </ul>

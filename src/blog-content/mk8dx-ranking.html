@@ -1,0 +1,85 @@
+<script defer>
+    console.log("Hello, World!");
+    class Rank extends HTMLElement {
+        constructor() {
+            super();
+        }
+
+        connectedCallback() {
+            console.log("Connected callback!");
+            const name = this.getAttribute("t-name");
+            const cup = this.getAttribute("t-cup");
+            const game = this.getAttribute("t-game") || "Wii U";
+            
+            const design = parseInt(this.getAttribute("t-design"));
+            const theme = parseInt(this.getAttribute("t-theme"));
+            const music = parseInt(this.getAttribute("t-music"));
+            const fun = parseInt(this.getAttribute("t-fun"));
+
+            const finalScore = (design + theme + music + fun) / 4;
+            this.setAttribute("t-score", finalScore + "");
+
+            const infoPanelDiv = document.createElement("div");
+            infoPanelDiv.innerHTML = `
+                <h2 class="title"><i>${game}</i> - ${name}</h2>
+                <table>
+                    <tr>
+                        <th>Design</th>
+                        <th>Theme</th>
+                        <th>Music</th>
+                        <th>Fun</th>
+                    </tr>
+                    <tr>
+                        <td>${design}/10</td>
+                        <td>${theme}/10</td>
+                        <td>${music}/10</td>
+                        <td>${fun}/10</td>
+                    </tr>
+                </table>
+            `;
+
+            const style = document.createElement("style");
+            style.innerHTML = `
+                th {
+                    color: red;
+                }
+
+                table {
+                    margin-bottom: 10px;
+                }
+                
+                h2 {
+                    font-size: 3em;
+                }
+
+                i {
+                    color: gray;
+                }
+                    
+            `;
+
+            
+            this.appendChild(infoPanelDiv);
+            this.appendChild(style);
+        }
+    }
+
+    customElements.define("track-rank", Rank);
+</script>
+
+<track-rank t-name="Mario Kart Stadium" t-cup="Mushroom" t-design=7 t-theme=6 t-music=7 t-fun=5>
+    <h3>Design</h3>
+    <p>
+        This track is pretty good for what it needs to do. As the first track in the whole game, it can't be mind-bogglingly excellent, or the rest of the game would seem terrible. It functions great as a beginner course. It has a variety of turns that are easy to understand, and the antigravity section is easy to transition into. It does actually challenge beginners, starting with some soft turns then a 180 degree turn. It also introduces the glider wonderfully.
+    </p>
+    <p>
+        It has plenty of easy shortcuts that entice the player, urging them to explore a way to skip the grassy sections. Coins are hard to get, which I dislike as a competitive player, but for a beginner, they will more understand the value of coins, and understand that in order to get coins, they might have to go out of their way and take a bad line.
+    </p>
+    <p>
+        Again, as a competitive player, I think the beginning of the antigravity section is way too boring. When gliders and underwater were introduced in 3DS, those completely changed how you drive, but in 8, not much changed for the controller. It just feels lame.
+    </p>
+    <h3>Theme</h3>
+    <p>
+        The stadium is so energetic. I love how randomly, in the crowd, they will choose a random flag of a player's emblem. I love the screens that show the player, and the colors, and the vibe is amazing. It really feels epic, and crazy. The helicopter is hilarious, and as a kid, I loved to ram into it. But I'll get into that.
+    </p>
+</track-rank>
