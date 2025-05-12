@@ -19,7 +19,28 @@
     <meta name="twitter:description" content={seoDesc} />
 </svelte:head>
 
-<UpdatePost first id={15} title={"Issues with IPs and DNS"} date={"Sep 26, 2024, 23:59"}>
+<UpdatePost first id={16} title={"Website Revamp #8518234.359 + 3453i"} date={"May 2, 2025, 8:46"}>
+    <p>
+        Long time no see. I got admitted to OSU and that's where I committed about a month ago. I'm majoring in Pre-Computer Science and Engineering. Fitting.
+    </p>
+    <p>
+        This website was pretty stagnant as I didn't want to risk destroying it. Once I got admitted, I went all out and fully revamped the website, rewrote it from scratch in SvelteKit, redid the blog system, and added back all the swear words.
+    </p>
+    <p>
+        The projects system is now an extension of the revamped blog system (article coming soon). The website now heavily uses Bootstrap, has a more consistent styleset, and has a full sitemap and is partially optimized for SEO.
+    </p>
+    <p>
+        I also am hosting on DigitalOcean now. My power goes out sometimes, and my internet goes out every night, and the computer I was using was god-awful. About $6/month and my website went from 80% uptime to 100% uptime. I've taken everything I've learned about website development to make this change as good as possible and I think it went great.
+    </p>
+    <p>
+        I'm still working on writing the projects articles, and I have a few blog article ideas queued up, but I'm excited for the future of this website, where I don't need to hold my tongue anymore. Not excited to rewrite the glossarizer though. That will be terrible.
+    </p>
+    <p>
+        Now, to fullfill a contractual obligation- Thank you Mr. Casamento and Mrs. Schneider for looking at my website. Thanks for reading, Grandma.
+    </p>
+</UpdatePost>
+
+<UpdatePost id={15} title={"Issues with IPs and DNS"} date={"Sep 26, 2024, 23:59"}>
 
     <p>
         Here I am, again. I don't even want to know how long it's been. Anyway, the reason I'm writing is because I want to be open about the downtime my website has been experiencing.
