@@ -63,6 +63,19 @@
     <meta name="twitter:description" content={seoDesc} />
 </svelte:head>
 
+{#snippet backBtn()}
+
+    {#if type === "project"}
+        <a href="/projects#{projectData.code}" class="mb-3 d-flex back-btn-container">
+            <button class="btn btn-primary back-btn">Back</button>
+        </a>
+    {:else}
+        <a href="/blog" class="mb-3 d-flex back-btn-container">
+            <button class="btn btn-primary back-btn">Back</button>
+        </a>
+    {/if}
+{/snippet}
+
 <article style="display: {mounted ? "block":"none"}">
     <div class="card text-center mb-3">
         <img src='https://images.unsplash.com/photo-1584949091598-c31daaaa4aa9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80");' class="card-img" alt="Code on a black screen zoomed out">
@@ -76,16 +89,16 @@
             {/if}
         </div>
     </div>
+
+    {@render backBtn()}
     
     <div class="content">
         {@html text}
     </div>
-
-    {#if type === "project"}
-        <a href="/projects#{projectData.code}">
-            <button class="btn btn-primary">Back to Projects</button>
-        </a>
-    {/if}
+    
+    
+    {@render backBtn()}
+    
 </article>
 
 <div class="loading" style="display: {mounted ? "none":"display"}">
@@ -118,8 +131,13 @@
         border-radius: 10px;
     }
 
+    .back-btn {
+        margin: auto;
+        font-size: 1.25em;
+    }
+
     /* if screen size small, make the article content font size smaller */
-    @media only screen and (max-width: 600px) {
+    @media only screen and (max-width: 900px) {
         div.content {
             font-size: 20px;
         }
@@ -127,8 +145,18 @@
         img {
             width: 100%;
         }
+
+        article {
+            width: 95%;
+        }
+
+        .back-btn {
+            margin: auto;
+            width: 100%;
+        }
     }
 
+    /* CSS that applies to children */
     article :global {
 
     pre {

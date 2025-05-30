@@ -115,10 +115,9 @@
             </a>
         {/if}
     {:else}
-        Found {count} result{count == 1 ? "" : "s"} in {time} ms.
+        <div class="mt-1">Found {count} result{count == 1 ? "" : "s"} in {time} ms.</div>
     {/if}
     <div class="results-container" id="results">
-    
         {#each results as result, index}
             <PostResult {result} {index}/>
         {/each}
@@ -128,7 +127,6 @@
 
 <style>
     .results-container {
-        max-width: 40%;
         display: flex;
         flex-direction: column;
         gap: 10px;

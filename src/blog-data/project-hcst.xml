@@ -1,0 +1,34 @@
+<article>
+    <info>
+        <id>22</id>
+        <created>1748451948733</created>
+        <tag>project</tag>
+        <tag>web</tag>
+        <tag>java</tag>
+        <tag>ts</tag>
+        <tag>database</tag>
+        <tag>full stack</tag>
+        <tag>oauth</tag>
+        <name>project-hcst</name>
+        <title>Honors Computer Science Testing</title>
+        <unlisted></unlisted>
+    </info>
+    <content>
+        <project>
+            <html>project-hcst.html</html>
+            <desc>
+                The Honors Computer Science Testing program is the most complicated and the largest single project I have created myself. I wrote all of it myself, and it includes a backend with a custom interpreter, a database system, authentication, and a sveltekit frontend. It also uses Google OAuth. It administers and grades students on automatically generated tests.
+            </desc>
+            <link>
+                <url>https://github.com/Cheespeasa1234/uhl_tests</url>
+                <name>GitHub</name>
+            </link>
+            <link>
+                <url>https://hcst.natelevison.com</url>
+                <name>Website</name>
+            </link>
+            <start>September 2024</start>
+            <end>June 2025</end>
+        </project>
+    </content>
+</article>

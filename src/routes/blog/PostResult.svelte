@@ -54,7 +54,13 @@
 
 <style>
     .card {
-        transition: all 0.25s;
+        width: 50%;
+    }
+
+    @media screen and (max-width: 900px) {
+        .card {
+            width: 100%;
+        }
     }
 
     .card:hover {
@@ -74,6 +80,7 @@
         color: white;
         padding: 2px 4px;
         border-radius: 5px;
+        min-width: fit-content;
     }
 
     .t2 {

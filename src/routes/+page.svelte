@@ -81,17 +81,17 @@
 </svelte:head>
 
 <div class="home-title">
-    <h1 class="home-h1" style="white-space: pre">
-        <div class="floatyletterpre">Welcome to&nbsp;</div>
+    <h1 class="floatyletterpre mb-0">Welcome to</h1>
+    <span class="h1 d-flex">
         {#each letters as letter, i}
             <div class="floatyletter" data-float-wait={i}>{letter}</div>
         {/each}
-    </h1>
-    <h2>The one place for everything Nate Levison</h2>
+    </span>
+    <h2 class="text-muted">The one place for everything Nate Levison</h2>
 </div>
 
-<div class="container">
-    <div class="row d-flex align-items-stretch">
+<div class="container widget-cont">
+    <div class="widgetrow row d-flex align-items-stretch">
         <div class="col">
             <div class="card h-100">
                 <h2 class="h6 card-header">
@@ -138,8 +138,28 @@
 
 <style>
 
-    .card {
-        
+    @media screen and (max-width: 900px) {
+        .widgetrow {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .widget-cont {
+            padding: 0;
+        }
+
+        .card-body > .btn {
+            width: 100%;
+            margin-bottom: 10px;
+        }
+
+        .floatyletterpre {
+            font-size: 2.5rem;
+        }
+        .floatyletter {
+            font-size: 2.5rem;
+        }
     }
 
     .card-body {
@@ -160,16 +180,10 @@
         text-align: center;
     }
 
-    .home-h1 {
-        font-size: 2.5em;
-        font-weight: 600;
-        display: flex;
-    }
-
     .floatyletterpre {
         margin-right: 5px;
     }
-
+    
     .floatyletter {
         opacity: 0.75;
         margin-left: 0.75px;

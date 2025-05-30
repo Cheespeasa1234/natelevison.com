@@ -20,8 +20,8 @@
     <meta name="twitter:description" content={seoDesc} />
 </svelte:head>
 
-<div class="container d-flex" style="gap: 10px; margin-bottom: 10px;">
-    <div class="card w-50" style="display: flex; flex-direction: column;">
+<div class="container d-flex main-row" style="gap: 10px; margin-bottom: 10px;">
+    <div class="card top-part" style="display: flex; flex-direction: column;">
         <div class="card-body" style="flex: 1;">
             <h1 class="text-center card-title h5">About Nate Levison</h1>
             <h2 class="mb-3 text-center card-subtitle mb-2 text-muted h6">Computer Science, Data Science, Web Development</h2>
@@ -43,7 +43,7 @@
             </div>
         </div>
     </div>
-    <div class="card w-50">
+    <div class="card top-part">
         <img class="card-img-top" src="/img/fit-crop.png" alt="Nate at a debate tournament">
         <div class="card-body">
             <p class="mb-3 card-subtitle mb-2 text-muted h6">Nate at a debate tournament, between rounds, circa 2024</p>
@@ -52,31 +52,41 @@
     </div>
 </div>
 
+{#snippet skill(name: string, year: number, month: string)}
+    <div class="list-group-item">
+        <div class="fw-bold">{name}</div>
+        <div>{since(year, month)}</div>
+    </div>
+{/snippet}
+
 <div class="container d-flex">
     <div class="card w-100">
         <div class="card-body">
             <h2 class="card-subtitle mb-2 text-muted h6">Skills</h2>
-            <ul class="list-group list-group-horizontal">
-                <li class="list-group-item">
-                    <div class="fw-bold">Frontend Webdev</div>
-                    {since(2022, "December")}
-                </li>
-                <li class="list-group-item">
-                    <div class="fw-bold">Backend Webdev</div>
-                    {since(2022, "December")}
-                </li>
-                <li class="list-group-item">
-                    <div class="fw-bold">Java</div>
-                    {since(2022, "September")}
-                </li>
-                <li class="list-group-item">
-                    <div class="fw-bold">Python</div>
-                    {since(2023, "January")}
-                </li>
-            </ul>
+            <div class="d-flex text-center" style="gap: 20px; flex-wrap: wrap">
+                {@render skill("Frontend", 2022, "December")}
+                {@render skill("Backend", 2022, "December")}
+                {@render skill("Java", 2022, "September")}
+                {@render skill("Python", 2023, "January")}
+            </div>
         </div>
     </div>
 </div>
 
 <style>
+    @media screen and (max-width: 900px) {
+        .main-row {
+            flex-direction: column-reverse;
+        }
+
+        .top-part {
+            width: 100%;
+        }
+    }
+
+    @media screen and not (max-width: 900px) {
+        .top-part {
+            width: 50%;
+        }
+    }
 </style>

@@ -2,7 +2,7 @@
     const { id, title, date, modified, first, children }: { id: number, title: string, date: string, first?: boolean, modified?: {date: string, cause: string}[], children: any } = $props();
 </script>
 
-<div class="card mb-3" style="width: 50%;">
+<div class="card mb-3">
     {#if first}
         <div class="card-header">
             Newest
@@ -22,4 +22,7 @@
             {@render children()}
         </div>
     </div>
-  </div>
+</div>
+
+<style>
+</style>
