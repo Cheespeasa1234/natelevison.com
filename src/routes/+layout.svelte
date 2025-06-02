@@ -56,6 +56,7 @@
     />
     <script
         src="/bootstrap-5.3.6-dist/js/bootstrap.bundle.min.js"
+        async
     ></script>
     <meta name="author" content="Nate Levison" />
 
