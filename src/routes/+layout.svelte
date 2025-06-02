@@ -61,8 +61,6 @@
         integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
         crossorigin="anonymous"
     ></script>
-
-    <title>Nate Levison</title>
     <meta name="author" content="Nate Levison" />
 
     <meta property="og:type" content="website" />

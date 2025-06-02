@@ -1,7 +1,18 @@
 <script lang="ts">
+    import { generalSeoTags } from "$lib/frontend_util";
     import ProjectProgress from "./ProjectProgress.svelte";
+    import Seo from "../../Seo.svelte";
 
 </script>
+
+<svelte:head>
+    <Seo 
+        title="Progress"
+        desc="A tracker page to display progress on Nate's individual projects."
+        keys={[generalSeoTags]}
+        canonUrl="https://natelevison.com/progress"
+    />
+</svelte:head>
 
 <div class="text-center p-3">
     <h1 class="h3">Progress Page</h1>

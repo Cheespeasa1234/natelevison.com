@@ -1,22 +1,16 @@
 <script lang="ts">
     import { generalSeoTags } from "$lib/frontend_util";
     import UpdatePost from "./UpdatePost.svelte";
-
-    const seoTitle = "Update Page | Nate Levison";
-    const seoDesc = "A changelog and blog of changes to Nate's website, natelevison.com. It also shows some of his personal life throughout the years.";
-    const seoKeys = generalSeoTags;
+    import Seo from "../../../Seo.svelte";
 </script>
 
 <svelte:head>
-    <title>{seoTitle}</title>
-    <link rel="canonical" href="https://natelevison.com/blog/updates">
-    <meta name="description" content={seoDesc} />
-    <meta name="keywords" content={seoKeys} />
-    <meta property="og:title" content={seoTitle} />
-    <meta property="og:description" content={seoDesc} />
-    <meta property="og:url" content="https://natelevison.com/blog/updates" />
-    <meta name="twitter:title" content={seoTitle} />
-    <meta name="twitter:description" content={seoDesc} />
+    <Seo 
+        title="Update Page | Nate Levison"
+        desc="A changelog and blog of changes to Nate's website, natelevison.com. It also shows some of his personal life throughout the years."
+        keys={[generalSeoTags]}
+        canonUrl="updates"
+    />
 </svelte:head>
 
 <div class="text-center m-3 p-2 d-flex flex-column justify-content-center align-items-center">

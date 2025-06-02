@@ -5,6 +5,7 @@
     import type { BlogArticle } from "$lib/blog";
     import { glossarizeParagraph } from "$lib/glossarizer";
     import tippy from "tippy.js";
+    import Seo from "../../../../Seo.svelte";
 
     let mounted = $state(false);
 
@@ -52,15 +53,13 @@
         defer
         src="https://static.natelevison.com/highlight/highlight.min.js"
     ></script>
-    <title>{seoTitle}</title>
-    <link rel="canonical" href="https://natelevison.com/blog/article/{name}">
-    <meta name="description" content={seoDesc} />
-    <meta name="keywords" content={seoKeys} />
-    <meta property="og:title" content={seoTitle} />
-    <meta property="og:description" content={seoDesc} />
-    <meta property="og:url" content="https://natelevison.com/blog/article/{name}" />
-    <meta name="twitter:title" content={seoTitle} />
-    <meta name="twitter:description" content={seoDesc} />
+
+    <Seo 
+        title={title + " - Blog"}
+        desc={type === "project" ? `A description of Nate Levison's project called ${title}.` : `A blog article about ${tags.join(", ")}, called ${title}, written by Nate Levison`}
+        keys={[generalSeoTags, tags]}
+        canonUrl="https://natelevison.com/blog/article/{name}"
+    />
 </svelte:head>
 
 {#snippet backBtn()}

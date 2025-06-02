@@ -8,6 +8,10 @@
     <img class="img" src="/img/80d364-3450615783.png" alt="Dejected brown ant with a stick over his shoulder, with a bag tied to it">
 </div>
 
+<svelte:head>
+    <title>{$page.status} ${page.error.message}</title>
+</svelte:head>
+
 <style>
     :global(main) {
         height: 100%;

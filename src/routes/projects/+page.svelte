@@ -1,25 +1,19 @@
 <script lang="ts">
     import Project from "./Project.svelte";
+    import Seo from "../../Seo.svelte";
     import { generalSeoTags, since } from "$lib/frontend_util";
     
     const props = $props();
     const projects = props.data.projects;
-
-    const seoTitle = "My Projects | Nate Levison";
-    const seoDesc = "A portfolio of Nate Levison's projects. This page contains descriptions of Nate's proudest programming-related achievements, and can show his experience in his hobby.";
-    const seoKeys = generalSeoTags;
 </script>
 
 <svelte:head>
-    <title>{seoTitle}</title>
-    <link rel="canonical" href="https://natelevison.com">
-    <meta name="description" content={seoDesc} />
-    <meta name="keywords" content={seoKeys} />
-    <meta property="og:title" content={seoTitle} />
-    <meta property="og:description" content={seoDesc} />
-    <meta property="og:url" content="https://natelevison.com" />
-    <meta name="twitter:title" content={seoTitle} />
-    <meta name="twitter:description" content={seoDesc} />
+    <Seo
+        title="My Projects"
+        desc="A portfolio of Nate Levison's projects. This page contains descriptions of Nate's proudest programming-related achievements, and can show his experience in his hobby."
+        keys={[generalSeoTags]}
+        canonUrl="https://natelevison.com/projects"
+    />
 </svelte:head>
 
 <h1 class="h2">My Projects</h1>

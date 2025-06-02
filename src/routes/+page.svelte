@@ -1,6 +1,7 @@
 <script lang="ts">
     import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
+    import Seo from "../Seo.svelte";
 
     const startFloatKeyframes: Keyframe[] = [
         { transform: "translateY(0px) rotate(0deg)" },
@@ -63,21 +64,15 @@
     });
 
     const letters = "natelevison.com!".split("");
-    const seoTitle = "Home | Nate Levison";
-    const seoDesc = "Nate Levison's official website homepage. Find socials, projects, blog, and read more about Nate.";
-    const seoKeys = generalSeoTags;
 </script>
 
 <svelte:head>
-    <title>{seoTitle}</title>
-    <link rel="canonical" href="https://natelevison.com">
-    <meta name="description" content={seoDesc} />
-    <meta name="keywords" content={seoKeys} />
-    <meta property="og:title" content={seoTitle} />
-    <meta property="og:description" content={seoDesc} />
-    <meta property="og:url" content="https://natelevison.com" />
-    <meta name="twitter:title" content={seoTitle} />
-    <meta name="twitter:description" content={seoDesc} />
+    <Seo
+        title="Home"
+        desc="Nate Levison's official website homepage. Find socials, projects, blog, and read more about Nate."
+        keys={[generalSeoTags]}
+        canonUrl="https://natelevison.com"
+    />
 </svelte:head>
 
 <div class="home-title">

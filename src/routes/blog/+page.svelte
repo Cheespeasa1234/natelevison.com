@@ -2,6 +2,7 @@
     import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
     import PostResult from "./PostResult.svelte";
+    import Seo from "../../Seo.svelte";
 
     const { data } = $props();
     const { message, success } = data;
@@ -54,23 +55,15 @@
         }
         paramName = urlParams.get("name") ?? "Search..."
     });
-
-    const seoTitle = "Blog Search | Nate Levison";
-    const seoDesc = "The official blog search page for Nate Levison's blog. Search with the search bar or the filters, and find the article right for you.";
-    const seoKeys = generalSeoTags;
-    const seoAuthor = "Nate Levison";
 </script>
 
 <svelte:head>
-    <title>{seoTitle}</title>
-    <link rel="canonical" href="https://natelevison.com/blog">
-    <meta name="description" content={seoDesc} />
-    <meta name="keywords" content={seoKeys} />
-    <meta property="og:title" content={seoTitle} />
-    <meta property="og:description" content={seoDesc} />
-    <meta property="og:url" content="https://natelevison.com/blog" />
-    <meta name="twitter:title" content={seoTitle} />
-    <meta name="twitter:description" content={seoDesc} />
+    <Seo
+        title="Blog Search"
+        desc="The official blog search page for Nate Levison's blog. Search with the search bar or the filters, and find the article right for you."
+        keys={[generalSeoTags]}
+        canonUrl="https://natelevison.com/blog"
+    />
 </svelte:head>
 
 <main>

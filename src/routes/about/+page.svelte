@@ -1,24 +1,17 @@
 <script lang="ts">
     import { generalSeoTags, since } from "$lib/frontend_util";
-    import { onMount } from "svelte";
-
-    const seoTitle = "About Me | Nate Levison";
-    const seoDesc = "The about me portfolio of Nate Levison. Learn about his passion, his website, and his journey so far. You can also learn about his socials and contact information if necessary.";
-    const seoKeys = generalSeoTags + ",about,aboutme,porfolio";
-    const seoAuthor = "Nate Levison";
+    import Seo from "../../Seo.svelte";
 </script>
 
 <svelte:head>
-    <title>{seoTitle}</title>
-    <link rel="canonical" href="https://natelevison.com/about">
-    <meta name="description" content={seoDesc} />
-    <meta name="keywords" content={seoKeys} />
-    <meta property="og:title" content={seoTitle} />
-    <meta property="og:description" content={seoDesc} />
-    <meta property="og:url" content="https://natelevison.com/about" />
-    <meta name="twitter:title" content={seoTitle} />
-    <meta name="twitter:description" content={seoDesc} />
+    <Seo
+        title="About Me"
+        desc="The about me portfolio of Nate Levison. Learn about his passion, his website, and his journey so far. You can also learn about his socials and contact information if necessary."
+        keys={[generalSeoTags, "about", "aboutme", "portfolio"]}
+        canonUrl="https://natelevison.com/about"
+    />
 </svelte:head>
+
 
 <div class="container d-flex main-row" style="gap: 10px; margin-bottom: 10px;">
     <div class="card top-part" style="display: flex; flex-direction: column;">
