@@ -23,4 +23,4 @@ client_secret.json
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
 
-/backup/private_html/*
+static/sitemaps/blog.xml
