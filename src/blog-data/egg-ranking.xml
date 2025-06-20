@@ -1,0 +1,14 @@
+<article>
+    <info>
+        <id>23</id>
+        <created>1750440981877</created>
+        <tag>personal</tag>
+        <tag>food</tag>
+        <tag>ranking</tag>
+        <name>egg-ranking</name>
+        <title>Egg Style Ranking</title>
+    </info>
+    <content>
+        <html>egg-ranking.html</html>
+    </content>
+</article>
