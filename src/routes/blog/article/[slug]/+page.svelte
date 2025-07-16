@@ -96,8 +96,7 @@
     </div>
     
     
-    {@render backBtn()}
-    
+    {@render backBtn()}<br>
 </article>
 
 <div class="loading" style="display: {mounted ? "none":"display"}">
@@ -181,10 +180,14 @@
         border-top-right-radius: 10px;
     }
 
-    .quote {
+    .quote, blockquote {
         padding-left: 20px;
         border-left: 2px solid gray;
         color: #333;
+    }
+
+    blockquote > p {
+        margin-bottom: 10px;
     }
 
     [data-tippy-content] {

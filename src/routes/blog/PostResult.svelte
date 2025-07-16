@@ -18,7 +18,7 @@
 </script>
 
 <!-- svelte-ignore a11y_click_events_have_key_events -->
-<div class="card" onclick={clicked} role="link" tabindex={index}>
+<div class="card mb-2" onclick={clicked} role="link" tabindex={index}>
     {#if index === 0}
         <div class="card-header">
             Top Result
