@@ -12,12 +12,16 @@
         </div>
         <div class="progress">
             {#if status === 1}
+            <!-- ongoing -->
                 <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="{pct}" aria-valuemin="0" aria-valuemax="100" style="width: {pct}%">Ongoing</div>
             {:else if status === 2}    
+            <!-- completed -->
                 <div class="progress-bar bg-success" role="progressbar" aria-valuenow="{pct}" aria-valuemin="0" aria-valuemax="100" style="width: {pct}%">Complete</div>
             {:else if status === 3}    
+            <!-- suspended -->
                 <div class="progress-bar bg-danger" role="progressbar" aria-valuenow="{pct}" aria-valuemin="0" aria-valuemax="100" style="width: {pct}%">Suspended</div>
             {:else}
+            <!-- normal -->
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="{pct}" aria-valuemin="0" aria-valuemax="100" style="width: {pct}%"></div>
             {/if}
         </div>

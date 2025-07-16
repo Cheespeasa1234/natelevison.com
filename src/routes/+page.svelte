@@ -93,10 +93,10 @@
                     Currently Coding
                 </h2>
                 <div class="card-body">
-                    <h3 class="h5 card-title">Uhl Testing Program</h3>
-                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since September 2024</h4>
-                    <p class="card-text">A testing program that administers dynamically generated programming questions, and provides plenty of teacher features to grade and assess students.</p>
-                    <a href="https://github.com/Cheespeasa1234/uhl_tests" class="btn btn-primary">GitHub Repo</a>
+                    <h3 class="h5 card-title">Spotify BPM Detector</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since June 2025</h4>
+                    <p class="card-text">A webapp that connects and authenticates with Spotify to track the BPM of the song you are listening to, and then play a gif at that BPM.</p>
+                    <a href="https://github.com/Cheespeasa1234/spotify-bpm" class="btn btn-primary">GitHub Repo</a>
                 </div>
             </div>
         </div>
@@ -106,11 +106,9 @@
                     Currently Coding
                 </h2>
                 <div class="card-body">
-                    <h3 class="h5 card-title">This Website</h3>
-                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since November 2024</h4>
-                    <p class="card-text">I am currently reworking this website to use svelte, and a better blog system. I also moved over to DigitalOcean, which has been great so far. The old system served me well!</p>
-                    <a href="https://github.com/Cheespeasa1234/natelevison.com/tree/svelte-migration" class="btn btn-primary">GitHub Branch</a>
-                    <a href="https://digitalocean.com" class="btn btn-primary">DigitalOcean</a>
+                    <h3 class="h5 card-title">Not much...</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since June 2025</h4>
+                    <p class="card-text">I'm off to college in a few weeks! I'm very busy with preparing for that so excuse me for not coding random junk like usual.</p>
                 </div>
             </div>
         </div>

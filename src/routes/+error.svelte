@@ -9,7 +9,7 @@
 </div>
 
 <svelte:head>
-    <title>{$page.status} ${page.error.message}</title>
+    <title>{$page.status} {$page.error.message}</title>
 </svelte:head>
 
 <style>
