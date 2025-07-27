@@ -1,0 +1,280 @@
+b6a3bb1 Fix CURL and non-browser requests
+737064d fix quote style, fix margins, add 3-years blog article
+99b16c8 error page, change statuses
+7b2bcda egg ranking :)
+5df0be9 update sitemaps and robots
+57f2463 preloading poggies
+bac9d14 not sure if this actually fixes anything
+1e4e0f5 download static assets to make it faster
+397ddcf fix blog xml generator
+8924435 add seo helper, add seo to pages, change sitemap, add robots.txt
+3830edd error page, progress page
+91e5c51 mobile rework
+99ff98e continue writing project articles, unlist some, add new update post FINALLY 🥳
+ac56bfc fix sitemap, working on new articles
+a99865f fix anim
+a42167d improve anims, work on glossarizer
+a3b2b1c fix: blog posts with type `url` should not appear in sitemap generation #16 and fix project descriptions should use the blog system #17
+982e6fe remove scss
+e6b62d1 change font styling and fix seo
+2a05e75 add search bar functionality and blog error information and go home button
+be62913 seo for blog articles
+9b2e599 add sitemaps and sitemap makers
+a1bb318 node adapter & readme
+61e9b2c add previous changes before nuke
+85019a7 remove backup
+b3ade1e Merge branch 'svelte-migration'
+d178213 bye bye
+727f301 add comps
+231c14d mecha-oopsie
+5b69d58 oopsie
+70f3efa blog system
+fc00482 changes to blog
+5056674 change git configuration and readme
+cbeef52 node -> deno , fix blog
+eec738b changes
+a67e99e oopsie daisy
+3b46376 delete useless stuff
+e844c11 move to localhost
+d0170a9 ignores
+e2d6377 fix packages
+4e861d8  expand repo to backend as well
+c7e32ef Update README.md
+9f59b41 blog updates
+fb2d71c 1984
+2cbdeb0 add blog post, fix bugs idk
+3451bd2 fix sitemap, fix projects, add dvd
+c7887dd Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+5e7e6fe rm gens
+9d88487 Merge pull request #15 from Cheespeasa1234/Cheespeasa1234-patch-1
+175da7b Merge pull request #14 from Cheespeasa1234/Cheespeasa1234-patch-1-1
+3ab5682 Delete .DS_Store
+42a7c6f Delete resume directory
+a0ca213 resume, styling changes, other
+79be3d6 Merge branch 'main' of https://github.com/Cheespeasa1234/natelevison.com
+4565787 frontpage changes, add projects
+6a7259b Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+6ca2541 htmt is weird
+d4b4be4 delete unused code
+72e2c83 new projects page
+de3b109 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+f11e064 style changes
+d277b31 added readme
+6e6f597 idk what i did
+3072877 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+ab1d909 rant featuer
+27323fe Merge pull request #13 from Cheespeasa1234/Cheespeasa1234-patch-1
+fcdb3c5 Update how-i-made-my-own-server-fast.htmt-part
+061c3d9 Update how-i-made-my-own-server-fast.htmt-part
+af70852 syntax highlight blog, glossarize disableable
+e85d8e7 subdomains, remove shitty stuff
+fc64628 python proj page progress poopy
+51aa2b6 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+acbd894 minesw post, bugs ig i forgor
+24d344d index redirect notice
+0189600 Update and rename index.html to indexOLD.html
+fe85cc7 blog system revamp 50% done
+193018f search page = main page, and better
+302aa95 forgot to press commit for a few weeks...
+878b34c projects page upgrade
+5d53093 a
+581d890 make sure to review before push to prod they said
+78fad01 attributize root
+858cfc8 fix projects links
+78a4301 fix blog
+8e53802 custom element params
+58ec84c styling
+52e0d1d redirect notice
+3.0.0 667a5ea MIGRATION!!!
+93c2f60 tweak animation
+407ab35 revamp projects page
+2720979 links
+440a923 fix css
+4254189 rework links. components into global dir
+55b3b98 blog posts
+2e00ca6 blog post
+651feb7 Added levischedule to my projects page
+64a10ef blog
+18e5001 Create .gitignore
+6b90f27 initial commit
+cf16c4f a
+11f3ce2 ga
+2ebd9c2 rename _old to old
+8c50b4a add old
+044820f LOGO ON NAV, favicon (again), and titles to pages
+32e8320 favi
+fb5a3ed should be the last change
+e2ac80c shadow
+5e30995 favicon, change nav
+e4a19ce header change
+9471023 it dont wowrk
+4b0b85c rounded navbar, favicon
+c1140e9 add favi
+0399313 fix link highlight
+a531660 add blog post
+5fa8c75 migrate blogs. add scroll with url. fix links
+59ca836 fix links
+db6c02a link fixes
+b4a086f move links
+7cd5cec Update index.html
+6cc6927 dad
+c0677c5 custom components works now
+35e628e made components. made styles.
+d312bb0 del err pages. add footer to index. mkdir projects
+755302a made repo for it
+15ac2bf li width to fit content, fixes hover issued
+0c6994c Delete .DS_Store
+2.1.0 6a1240c Merge pull request #12 from Cheespeasa1234/redes
+8bba00a error codes
+c3bd08c reorg + about me stuff
+bc53b52 working on about me. reorganized css.
+2.0.2 e277acf compress old into zip
+2.0.1 ce5f4db basic nav, add about pg
+2.0.0 46a8548 archive old, add shitty landing page
+dc756e1 idk these edits have been here a while
+b65f4c1 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+e3f5c9c Add files via upload
+31311c0 Add files via upload
+b0391aa leonlore
+f28f55b SVELTE
+2263135 quote img
+347df33 fixed the links :thumbsup:
+b0aa7c6 about me fix
+2d9649d Fix clicks not working? Idk what happened
+ac043d1 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+cb8b344 gmaing
+5a2cca5 stuff
+3739e93 added my tech stac
+e7cf24d Merge pull request #11 from Cheespeasa1234/revamp
+c1c6101 fixing socials, fixing stylesheets
+cef4f20 reorganize
+b2c0048 fixed yt button
+cf5f2f7 Added yt link
+60cf598 fixed sitemap, fix links, fix readme and securty md's
+a44cf93 Added favicons to some pages, fixed link icons
+39d143c shut
+64fec1e fix refresh bug
+8e11139 url params fixed
+a09dab1 added mandle gen
+a3d8364 update version >> 1.14.2
+c3053e7 Uploaded Array v1.2
+1183458 Delete .DS_Store
+26afb76 update home page for downloads
+771cd0f Merge pull request #10 from Cheespeasa1234/dwlds
+0402433 added APCS and downloads dirs
+1.8.3 108e19f asd
+1.8.2 4b528dc i fucked up
+1.8.1 2b75c9a something for coding
+1.8.0 dafa448 reorganize
+1.7.22 d34d6be learn
+1.7.21 22e60b2 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+1.7.20 6ea21f6 a
+1.7.19 0a973b9 Delete node.js.yml
+1.7.18 db36803 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+1.7.18 4f98408 trying to add gitignore
+1.7.18 8e76b4a Create node.js.yml
+1.7.18 b079d20 Create stale.yml
+1.7.18 134e907 Create greetings.yml
+1.7.18 6ffd99e Create codeql.yml
+1.7.18 1c378e3 Create dependency-review.yml
+1.7.17 6c3fadd fixed the vuln (sanitized)
+1.7.16 b7e2670 it work
+1.7.15 22270a5 among us
+1.7.14 6881c8d Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+1.7.13 e7178ea h
+1.7.12 4127f2f Create codeql-analysis.yml
+1.7.11 4fcdc9a Create SECURITY.md
+1.7.10 8334e70 unused go away
+1.7.9 44e3392 privacy
+1.7.8 10c3d2f Update index.html
+1.7.7 9e7a1b3 privacy returnto works
+1.7.6 4fe504f Update index.html
+1.7.5f147b41 k
+1.7.4 10f502c k
+1.7.3 7534bed e
+1.7.2 effc36d attempting return statement
+1.7.1 8bbbe24 Update index.html
+1.7.0 d8b46b1 fixed wordlegen, moved all js, added golfed, fixed links
+1.6.18 bc8430 show v
+1.6.17 dc0c7f4 fix 404 and aboutme
+1.6.16 d156641 fixed email gen, show version on index.html
+1.6.15 53fdd9e reorganization and emoji
+1.6.14 ae53d40 email gen
+1.6.13 7b7a855 moved about me, fixed wordle, removed name
+1.6.12 92dcc5d why
+1.6.11 0bea97c why not work lmao
+1.6.10 937e8a8 email gen works
+1.6.9 f9a1116 email link generator in progress
+1.6.8 cb81e34 fix buttons
+1.6.7 4011cc0 bss
+1.6.6 aa00d99 bs
+1.6.5 819adbd Update sitemap.xml
+1.6.4 b5ed7b0 formatting
+1.6.3 62941d7 blog entry, fixed stuff
+1.6.2 9deb94b trying to remove personal information
+1.6.1 b6976cb Create google2c69e3ced3275889.html
+1.6.0 1c10b97 crawlers
+1.5.8 d8592c0 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+1.5.7 a257907 s
+1.5.6 9a72a79 ee
+1.5.5 ff4fcd9 reformat buttons
+1.5.4 1655308 i messed up its better now
+1.5.3 7e78c27 added privacy policy and fixed links
+1.5.2 f33d00c st
+1.5.1 eadf097 Merge branch 'main' of https://github.com/Cheespeasa1234/cheespeasa1234.github.io
+1.5.0 05d1431 moved everything to root
+1.4.7 52956ba Delete _config.yml
+1.4.6 adb073b update index
+1.4.5 2901069 a
+1.4.4 aa9531b w
+1.4.3 099d1cb added punnet square calc
+1.4.2 d303937 fixed wordle, updated words
+1.4.1 d5b3e29 moved blog around, added entry, fixed shit (i have no short term memory)
+1.3.3 a9480e7 credits
+1.3.2 f3a38f0 Merge branch 'main' of https://github.com/Cheespeasa1234/website
+1.3.1 14914d5 smol stuff (birthday :suspect: )
+1.3.0 4058d32 fixed ALL of the improper redirects
+1.2.10 792dc97 we push and pull like a magnet do
+1.2.9 05c9a4f edit blog, pushed wordle changes
+1.2.8 1c93a9e Update index.html
+1.2.7 94352d8 I FIXED IT
+1.2.6 4fe6f61 pme
+1.2.5 c8d4715 pme
+1.2.4 8efb3ad pme
+1.2.3 ab34229 Added article, fixed 404, added PME++
+1.2.2 b6715f5 it works now
+1.2.1 87b05a4 trying to fix things?
+1.2.0 cb712a1 blog works i think
+1.1.4 213d625 privacy policy
+1.1.3 8d9e54d yeah fuck that
+1.1.2 d65aa60 added four zero four and tried to add database but fuck that
+1.1.1 3dee13b added too much shit
+1.1.0 c8f3bfe reorganize
+1.0.6 988ee01 t
+1.0.5 d5fcd65 pages framework + uploaded moms page
+1.0.4 c06bb2d added my moms page lol
+1.0.3 9a88533 Update .DS_Store
+1.0.2 i fucked up again now it is fixed
+1.0.1 f822623 reorganize
+1.0.0 9db7495 reorganized shit, added blog testing
+0.3.7 c40c394 subpages testing
+0.3.6 abe7ff4 Set theme jekyll-theme-cayman
+0.3.5 e89ab17 Update .DS_Store
+0.3.4 02f75f5 colors are epic
+0.3.3 e0e84bc Merge pull request #2 from Cheespeasa1234/modal-and-crap
+0.3.2 bd93568 w
+0.3.1 66a0655 Create things.html
+0.3.0 d0b80f5 Merge branch 'main' of https://github.com/Cheespeasa1234/wordlegen
+0.2.2 9fc4f7f called index now
+0.2.1 a5b863d made things look good
+0.2.0 2ff9b10 added modal :weary:
+0.1.4 b8e803d Update things.html
+0.1.3 f7710e8 organized everything
+0.1.2 6ac3da7 Update things.html
+0.1.1 ca6aabb Update things.html
+0.1.0 29fc686 Merge branch 'main' of https://github.com/Cheespeasa1234/wordlegen
+0.0.5 145baf9 les
+0.0.4 3f18fae Create README.md
+0.0.3 0c94299 Create .DS_Store
+0.0.2 44bcbd uploaded shit
+0.0.1 76cc39b Initial commit
