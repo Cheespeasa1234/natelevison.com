@@ -93,10 +93,11 @@
                     Currently Coding
                 </h2>
                 <div class="card-body">
-                    <h3 class="h5 card-title">Spotify BPM Detector</h3>
-                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since June 2025</h4>
-                    <p class="card-text">A webapp that connects and authenticates with Spotify to track the BPM of the song you are listening to, and then play a gif at that BPM.</p>
-                    <a href="https://github.com/Cheespeasa1234/spotify-bpm" class="btn btn-primary">GitHub Repo</a>
+                    <h3 class="h5 card-title">Nothing</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since August 2025</h4>
+                    <p class="card-text">I'm in college, dudes! I'm too busy for this. But I am still working on my blog. So check it out for updates.</p>
+                    <a href="/blog" class="btn btn-primary">Blog</a>
+                    <a href="/blog/updates" class="btn btn-primary">Update Page</a>
                 </div>
             </div>
         </div>
@@ -106,9 +107,30 @@
                     Currently Coding
                 </h2>
                 <div class="card-body">
-                    <h3 class="h5 card-title">Not much...</h3>
-                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since June 2025</h4>
-                    <p class="card-text">I'm off to college in a few weeks! I'm very busy with preparing for that so excuse me for not coding random junk like usual.</p>
+                    <h3 class="h5 card-title">This table &darr;</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since August 27</h4>
+                    <p class="card-text">I have to put a table here for the requirements. Sorry. So, here are my skills:</p>
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th>Web</th>
+                                <th>Java</th>
+                                <th>Python</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>4 years</td>
+                                <td>3 years</td>
+                                <td>3 years</td>
+                            </tr>
+                            <tr>
+                                <td>I use Java for many passion projects.</td>
+                                <td>I use web technologies for my website.</td>
+                                <td>I use Python for small utilities and ideas.</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -130,6 +152,10 @@
 </div>
 
 <style>
+
+    th {
+        width: 30%;
+    }
 
     @media screen and (max-width: 900px) {
         .widgetrow {
