@@ -101,7 +101,7 @@
                 </div>
             </div>
         </div>
-        <div class="col">
+        <!-- <div class="col">
             <div class="card h-100">
                 <h2 class="h6 card-header">
                     Currently Coding
@@ -133,7 +133,7 @@
                     </table>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="col">
             <div class="card h-100">
                 <div class="card-body">
