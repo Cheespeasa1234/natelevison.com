@@ -17,12 +17,12 @@
     <div class="card top-part" style="display: flex; flex-direction: column;">
         <div class="card-body" style="flex: 1;">
             <h1 class="text-center card-title h5">About Nate Levison</h1>
-            <h2 class="mb-3 text-center card-subtitle mb-2 text-muted h6">Computer Science, Data Science, Web Development</h2>
+            <h2 class="mb-3 text-center card-subtitle mb-2 text-muted h6">Computer Science && Engineering</h2>
             <p class="card-text">
-                I am a Computer Science student with a passion for learning and creating, currently a student at Pascack Hills High School. I will be attending The Ohio State University in the class of 2029. I enjoy simple things, like gardening, cooking, my dog, and writing over-complicated programs to automate things I could do manually in 5 minutes. I enjoy learning new programming skills and methods, with the help of my friends.
+                I am a Computer Science student with a passion for learning and creating, currently a student at THE Ohio State University, class of 2029, majoring in Computer Science and Engineering. I enjoy simple things, like gardening, cooking, my dog, and writing over-complicated programs to automate things I could do manually in 5 minutes. I enjoy learning new programming skills and methods, and finding cool ways to use them.
             </p>
             <p class="card-text">
-                I learned the concepts of programming many years ago, in Elementary School. But I have only formally programmed for {since(2022, "September")}, by starting out in Java, building GUIs and games. I also learned static web development at the same time, where I built <a href="https://static.natelevison.com/old">my first website</a>. I frequently have taken on passion projects, sometimes leading me out of my comfort zone.
+                I learned the concepts of programming many years ago, in Elementary School, by starting out in Java, building GUIs and games. I also learned static web development at the same time, where I built <a href="https://static.natelevison.com/old">my first website</a>. I frequently have taken on passion projects, sometimes leading me out of my comfort zone.
             </p>
             <p class="card-text">
                 I value giving back, so I volunteer occasionally, in various fields. I couldn't have gotten to where I am without the kindness that my family has shown me, which is why I value and appreciate them so much. It's also why I thank my grandma for reading after every blog.
@@ -57,10 +57,10 @@
         <div class="card-body">
             <h2 class="card-subtitle mb-2 text-muted h6">Skills</h2>
             <div class="d-flex text-center" style="gap: 20px; flex-wrap: wrap">
-                {@render skill("Frontend", 2022, "December")}
+                {@render skill("Frontend", 2021, "December")}
                 {@render skill("Backend", 2022, "December")}
-                {@render skill("Java", 2022, "September")}
-                {@render skill("Python", 2023, "January")}
+                {@render skill("Java", 2021, "September")}
+                {@render skill("Python", 2022, "January")}
             </div>
         </div>
     </div>
