@@ -197,5 +197,10 @@
         cursor: help;
     }
 
+    .spoileralert {
+        color: red;
+        margin-bottom: 50vh;
+    }
+
     }
 </style>
