@@ -1,4 +1,5 @@
-import { getBlogArticle, getAllBlogNames, stringHasContent, wordSimilarity, type BlogArticle, sortBySimilarity, sortByCreated, sortById, sortByStarred } from "$lib/blog";
+import { getBlogArticle, getAllBlogNames, type BlogArticle, sortBySimilarity, sortByCreated, sortById, sortByStarred } from "$lib/blog";
+import { stringHasContent, wordSimilarity } from '$lib/util';
 import type { PageServerLoad } from "./$types";
 
 export const load: PageServerLoad = ({ params, url }) => {

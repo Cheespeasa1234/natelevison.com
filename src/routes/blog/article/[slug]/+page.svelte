@@ -25,7 +25,6 @@
 
         if (enableGlossary) {
             const ps = document.querySelectorAll("p");
-            console.log(ps);
             ps.forEach(glossarizeParagraph);
             tippy("[data-tippy-content]", {
                 appendTo: document.body,

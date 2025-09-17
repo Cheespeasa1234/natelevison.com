@@ -4,8 +4,6 @@
 
     const { result, index }: { result: BlogArticle, index: number } = $props();
 
-    console.log(result);
-
     function clicked() {
         window.location.href = result.content.url;
     }

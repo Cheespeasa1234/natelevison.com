@@ -66,4 +66,6 @@ export namespace HTTP {
     export const NOT_FOUND = 404;
     export const INTERNAL_SERVER_ERROR = 500;
     export const NOT_IMPLEMENTED = 501;
+    export const TEMPORARY_REDIRECT = 307;
+    export const PERMANENT_REDIRECT = 308;
 }

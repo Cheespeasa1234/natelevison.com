@@ -2,10 +2,35 @@ import fs from "fs";
 import path from "path";
 import parser from "xml-js";
 
-import { type Project, type ProjectLink } from "./project";
-
+/**
+ * What type of content a article XML file is containing.
+ * An HTML type means there is an HTML file in blog-content to render.
+ * A URL type means it should be a redirect (update page, etc).
+ * A project type means it isn't a normal article, instead it is for the projects page.
+ */
 export type ContentType = "html" | "url" | "project";
 
+/**
+ * A link to a project.
+ */
+export type ProjectLink = { url: string; name: string }
+
+/**
+ * A project I have done.
+ */
+export type Project = {
+    name: string;
+    code: string;
+    desc: string;
+    tags: string[];
+    links: ProjectLink[];
+    start: string;
+    end: string;
+};
+
+/**
+ * A blog article, and all of its data.
+ */
 export type BlogArticle = {
     info: {
         id: number,
@@ -27,102 +52,107 @@ export type BlogArticle = {
     data?: any
 }
 
+export function getAllProjects(): Project[] {
+    const articleNames = getAllBlogNames().filter(name => name.startsWith("project"));
+    const articles = articleNames.map(name => getBlogArticle(name));
+    sortById(articles);
+    const projects = articles.map(article => article.content.projectData).toReversed();
+    return projects;
+}
+
+export const projects = getAllProjects();
+
+/**
+ * Returns a list of articles, sorted by similarity, descending.
+ * @param articles The articles to sort
+ * @returns The sorted articles
+ */
 export function sortBySimilarity(articles: BlogArticle[]) {
     articles.sort((a, b) => b.data.similarity - a.data.similarity);
 }
 
+/**
+ * Returns a list of articles, sorted by date created, descending.
+ * @param articles The articles to sort
+ * @returns The sorted articles
+ */
 export function sortByCreated(articles: BlogArticle[]) {
     articles.sort((a, b) => b.info.created - a.info.created);
 }
 
+/**
+ * Returns a list of articles, sorted by id number, descending.
+ * @param articles The articles to sort
+ * @returns The sorted articles
+ */
 export function sortById(articles: BlogArticle[]) {
     articles.sort((a, b) => b.info.id - a.info.id);
 }
 
+/**
+ * Returns a list of articles, sorted by first starred articles, then non starred.
+ * @param articles The articles to sort
+ * @returns The sorted articles
+ */
 export function sortByStarred(articles: BlogArticle[]) {
     articles.sort((a, b) => (b.info.starred ? 1 : 0) - (a.info.starred ? 1 : 0));
 }
 
-export function stringHasContent(str: string): boolean {
-    if (str == undefined) return false;
-    if (str.length === 0) return false;
+/**
+ * Returns whether or not the given article code is a valid code.
+ * It is NOT a valid article code if there is any character which is not alphanumeric,
+ * or a space, hyphen, or period. Those are the only valid characters.
+ * @param s The string to check
+ * @returns Whether or not it is a safe article code
+ */
+function isSafeArticleCode(s: string) {
+    const alpha = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+    const numeric = "01234567890";
+    const special = " -.";
+    for (let i = 0; i < s.length; i++) {
+        const c = s.charAt(i);
+        if (!alpha.includes(c) && !numeric.includes(c) && !special.includes(c)) {
+            return false;
+        }
+    }
     return true;
 }
 
-function editDistance(s1: string, s2: string) {
-    s1 = s1.toLowerCase();
-    s2 = s2.toLowerCase();
-
-    let costs = new Array();
-    for (let i = 0; i <= s1.length; i++) {
-        let lastValue = i;
-        for (let j = 0; j <= s2.length; j++) {
-            if (i == 0)
-                costs[j] = j;
-            else {
-                if (j > 0) {
-                    let newValue = costs[j - 1];
-                    if (s1.charAt(i - 1) != s2.charAt(j - 1))
-                        newValue = Math.min(Math.min(newValue, lastValue),
-                            costs[j]) + 1;
-                    costs[j - 1] = lastValue;
-                    lastValue = newValue;
-                }
-            }
-        }
-        if (i > 0)
-            costs[s2.length] = lastValue;
+/**
+ * Returns whether or not the name of an article, as in the url, is a real one that has a real article
+ * @param name The name of the article to check
+ * @returns Whether or not that article exists at all
+ */
+export function isNameRealArticle(name: string): boolean {
+    if (!isSafeArticleCode(name)) {
+        return false;
     }
-    return costs[s2.length];
+    const file = path.join("src", "blog-data", name + ".xml");
+    if (fs.existsSync(file)) {
+        return true;
+    }
+    return false;
 }
 
-function similarity(s1: string, s2: string) {
-    let longer = s1;
-    let shorter = s2;
-    if (s1.length < s2.length) {
-        longer = s2;
-        shorter = s1;
-    }
-    let longerLength: number = longer.length;
-    if (longerLength == 0) {
-        return 1.0;
-    }
-    return (longerLength - editDistance(longer, shorter)) / longerLength;
-}
-
-export function wordSimilarity(source: string, query: string): number {
-    // Get cleaned text
-    const alphaNumSpaceRegex = /[^a-zA-Z0-9 ]/g;
-    const sourceSan = source.replace(alphaNumSpaceRegex, ' ').toLowerCase();
-    const querySan = query.replace(alphaNumSpaceRegex, ' ').toLowerCase();
-
-    // Find how many words in the query are in the source
-    const sourceWords = sourceSan.split(" ");
-    const queryWords = querySan.split(" ");
-    const total = queryWords.length;
-    let count = 0;
-    for (const queryWord of queryWords) {
-        // Find the max similarity to another word in the list
-        let maxSimilarity = 0;
-        for (const sourceWord of sourceWords) {
-            const sim = similarity(queryWord, sourceWord);
-            if (sim > maxSimilarity) {
-                maxSimilarity = sim;
-            }
-        }
-        count += Math.pow(maxSimilarity, 3);
-    }
-
-    return count / total;
-}
-
+/**
+ * Returns a list of all the blog articles currently in the blog-data directory
+ * @returns The list of blog data file names (article names)
+ */
 export function getAllBlogNames(): string[] {
-    const folder = "src/blog-data";
-    const files = fs.readdirSync(folder);
+    const folder = path.join("src", "blog-data");
+    const files = fs.readdirSync(folder) || [];
     return files.map(file => file.substring(0, file.length - 4));
 }
 
+/**
+ * Returns the XML content as a string of an article. If the article DNE,
+ * or it is not even checked because it is not safe, it will return an empty string.
+ * @param articleName The article to get
+ * @returns The xml file as a string of the article, or an empty string
+ */
 function getXmlContent(articleName: string): string {
+    if (!isSafeArticleCode(articleName)) return "";
+    if (!isNameRealArticle(articleName)) return "";
     const folder = path.join("src", "blog-data", articleName + ".xml");
     return fs.readFileSync(folder, "utf-8").toString();
 }
@@ -130,9 +160,16 @@ function getXmlContent(articleName: string): string {
 const enableMemo = false;
 const memo = {};
 
+/**
+ * Parses the XML file of an article and returns the data found in it.
+ * Returns undefined if: the article is not found, the article is not safe to check,
+ * @param articleName The article name to get
+ * @returns The article data if found, undefined if something went wrong
+ */
 export function getBlogArticle(articleName: string): BlogArticle | undefined {
     try {
         const text = getXmlContent(articleName);
+        if (text.length == 0) return undefined;
         const article = (parser.xml2js(text, { compact: true }) as any).article;
 
         const info = article.info;
@@ -140,18 +177,18 @@ export function getBlogArticle(articleName: string): BlogArticle | undefined {
         const created = info.created._text;
         let tags = [];
         if (Array.isArray(info.tag)) {
-            tags = info.tag.map(obj => obj._text);
+            tags = info.tag.map((obj: { _text: any; }) => obj._text);
         } else {
             tags = [info.tag._text];
         }
         const title = info.title._text;
         const name = info.name._text;
 
-        let contentType: ContentType;
+        let contentType: ContentType = "html";
         const content = article.content;
-        let contentString: string;
+        let contentString: string = "";
         let contentText: string | undefined = undefined;
-        let contentUrl: string;
+        let contentUrl: string = "";
         let contentProject: Project | undefined = undefined;
         if (content.html) {
             contentType = "html";
