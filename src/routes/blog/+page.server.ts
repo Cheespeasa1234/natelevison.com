@@ -2,6 +2,9 @@ import { getBlogArticle, getAllBlogNames, type BlogArticle, sortBySimilarity, so
 import { stringHasContent, wordSimilarity } from '$lib/util';
 import type { PageServerLoad } from "./$types";
 
+/**
+ * On /blog load, parse the search query in the URL and return a list of articles that match.
+ */
 export const load: PageServerLoad = ({ params, url }) => {
     const startTime = Date.now();
 

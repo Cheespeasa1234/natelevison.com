@@ -157,9 +157,6 @@ function getXmlContent(articleName: string): string {
     return fs.readFileSync(folder, "utf-8").toString();
 }
 
-const enableMemo = false;
-const memo = {};
-
 /**
  * Parses the XML file of an article and returns the data found in it.
  * Returns undefined if: the article is not found, the article is not safe to check,

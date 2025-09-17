@@ -16,22 +16,20 @@ const redirects: {[id: string]: RedirectData} = {
 	}
 }
 
+/**
+ * On /s/[slug] load, see if slug is a valid shortlink, and if so, go there.
+ */
 export const load: PageServerLoad = ({ params }) => {
 	const slug = params.slug;
 
-	if (slug.startsWith("ba")) {
-		const articlecode = slug.substring(2);
-		if (isNameRealArticle(articlecode)) {
-			throw redirect(HTTP.PERMANENT_REDIRECT, "/blog/article/" + articlecode);
-		} else {
-			error(HTTP.NOT_FOUND);
-		}
+	if (isNameRealArticle(slug)) {
+		throw redirect(HTTP.PERMANENT_REDIRECT, "/blog/article/" + slug);
 	}
 
 	const redirectData: RedirectData | undefined = redirects[slug];
 	if (redirectData !== undefined) {
 		throw redirect(redirectData.status, redirectData.url); // Replace with your target URL
 	} else {
-		error(404);
+		error(HTTP.NOT_FOUND);
 	}
 }

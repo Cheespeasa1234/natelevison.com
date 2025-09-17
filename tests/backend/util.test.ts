@@ -1,4 +1,4 @@
-import { onlyHasGivenChars, removeAllInvalidCharacters, alphanum, stringHasContent, similarity, wordSimilarity } from "../src/lib/util";
+import { onlyHasGivenChars, removeAllInvalidCharacters, alphanum, stringHasContent, similarity, wordSimilarity } from "../../src/lib/util";
 
 describe("string operation testing suite", () => {
     test("checks if string only has given chars", () => {
@@ -47,10 +47,4 @@ describe("string operation testing suite", () => {
         expect(wordSimilarity("a432983fh4bc", "edau")).toEqual(similarity("a432983fh4bc", "edau"));
         expect(wordSimilarity("a4329 83fh4bc", "edau")).toEqual(similarity("a43 29 83fh4 bc", "edau"));
     });
-});
-
-describe("blog api testing suite", () => {
-
-    
-
 });

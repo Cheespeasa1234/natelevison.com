@@ -1,5 +1,3 @@
-import { onMount } from "svelte";
-
 const glossary: Map<string | string[], string> = new Map();
 glossary.set("API", "Short for Application Programming Interface- a method for two aspects of a complex program, or even separate programs, to communicate.");
 glossary.set("CSS", "Cascading Style Sheets is a programming language on the web for styling and designing web pages, like fonts and colors.");

@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
-import * as blog from "../src/lib/blog";
-import { type BlogArticle } from "../src/lib/blog";
+import * as blog from "../../src/lib/blog";
+import { type BlogArticle } from "../../src/lib/blog";
 
 // Mock fs and path
 jest.mock("fs");

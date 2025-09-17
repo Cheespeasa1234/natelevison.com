@@ -5,8 +5,7 @@
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
-		"prebuild": "tsx src/scripts/genBlogXml.ts",
-		"build": "vite build",
+		"build": "jest -c jest.config.backend.cjs && jest -c jest.config.frontend.cjs && tsx src/scripts/genBlogXml.ts && vite build",
 		"preview": "vite preview",
 		"genBlogXml": "tsx src/scripts/genBlogXml.ts",
 		"getNextId": "tsx src/scripts/getNextId.ts",
@@ -14,7 +13,7 @@
 		"prepare": "svelte-kit sync || echo ''",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
-		"test": "jest"
+		"test": "jest -c jest.config.backend.cjs && jest -c jest.config.frontend.cjs"
 	},
 	"devDependencies": {
 		"@jest/globals": "^30.1.2",
@@ -23,6 +22,7 @@
 		"@sveltejs/vite-plugin-svelte": "^5.0.0",
 		"@types/jest": "^30.0.0",
 		"jest": "^30.1.3",
+		"jest-environment-jsdom": "^30.1.2",
 		"svelte": "^5.0.0",
 		"svelte-check": "^4.0.0",
 		"ts-jest": "^29.4.2",
