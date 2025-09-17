@@ -21,7 +21,7 @@
 <ul class="list-group list-group-horizontal mb-2">
     <li class="list-group-item">
         <div class="fw-bold">Frontend Webdev</div>
-        {since(2022, "December")}
+        {since(2021, "December")}
     </li>
     <li class="list-group-item">
         <div class="fw-bold">Backend Webdev</div>
@@ -29,11 +29,11 @@
     </li>
     <li class="list-group-item">
         <div class="fw-bold">Java</div>
-        {since(2022, "September")}
+        {since(2021, "September")}
     </li>
     <li class="list-group-item">
         <div class="fw-bold">Python</div>
-        {since(2023, "January")}
+        {since(2022, "January")}
     </li>
 </ul>
 

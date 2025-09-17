@@ -34,6 +34,7 @@
                     More
                 </a>
                     <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/about/bowie">About Bowie</a></li>
                         <li><a class="dropdown-item" href="/projects/spinners">Spinners</a></li>
                         <li><a class="dropdown-item" href="/progress">Progress Updates</a></li>
                         <li><a class="dropdown-item" href="https://status.natelevison.com">Status Page</a></li>
