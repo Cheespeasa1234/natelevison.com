@@ -201,5 +201,13 @@
         margin-bottom: 50vh;
     }
 
+    section {
+        margin-bottom: 1.5em;
+    }
+
+    sub {
+        vertical-align: 0.9em;
+    }
+
     }
 </style>

@@ -1,0 +1,5 @@
+div .sourcer-works-cited {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9em;
+}

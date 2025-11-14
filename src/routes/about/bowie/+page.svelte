@@ -31,7 +31,7 @@
             <h2 class="card-subtitle mb-2 text-muted h6">Still interested?</h2>
             <div>
                 <button disabled style="width: 200px" class="btn disabled">Bowie doesn't have a blog</button>
-                <button disabled  style="width: 200px" class="btn disabled">Bowie doesn't have projects</button>
+                <button disabled style="width: 200px" class="btn disabled">Bowie doesn't have projects</button>
             </div>
         </div>
     </div>
