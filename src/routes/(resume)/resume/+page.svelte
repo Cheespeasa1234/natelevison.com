@@ -10,7 +10,8 @@
 
 {#if mounted}
     <nav class="no-print">
-        <button onclick={() => window.print()}>Print this page</button>
+        <button onclick={() => window.print()}>Print</button>
+        <a href="/resume.pdf" target="_blank"><button>PDF version</button></a>
         <a href="https://natelevison.com"><button>Back to my website</button></a>
     </nav>
     <main>
