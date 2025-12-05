@@ -153,9 +153,9 @@
 
 <style>
 
-    th {
+    /* th {
         width: 30%;
-    }
+    } */
 
     @media screen and (max-width: 900px) {
         .widgetrow {

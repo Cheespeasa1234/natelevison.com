@@ -1,6 +1,6 @@
 <script lang="ts">
     import { generalSeoTags, since } from "$lib/frontend_util";
-    import Seo from "../../Seo.svelte";
+    import Seo from "../../../Seo.svelte";
 </script>
 
 <svelte:head>
