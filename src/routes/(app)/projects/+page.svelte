@@ -1,6 +1,6 @@
 <script lang="ts">
     import Project from "./Project.svelte";
-    import Seo from "../../Seo.svelte";
+    import Seo from "$lib/components/Seo.svelte";
     import { generalSeoTags, since } from "$lib/frontend_util";
     
     const props = $props();

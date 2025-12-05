@@ -1,7 +1,7 @@
 <script lang="ts">
     import { generalSeoTags } from "$lib/frontend_util";
     import UpdatePost from "./UpdatePost.svelte";
-    import Seo from "../../../Seo.svelte";
+    import Seo from "$lib/components/Seo.svelte";
 </script>
 
 <svelte:head>

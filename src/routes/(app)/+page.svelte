@@ -1,7 +1,7 @@
 <script lang="ts">
     import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
-    import Seo from "../Seo.svelte";
+    import Seo from "$lib/components/Seo.svelte";
 
     const startFloatKeyframes: Keyframe[] = [
         { transform: "translateY(0px) rotate(0deg)" },
@@ -82,7 +82,7 @@
             <div class="floatyletter" data-float-wait={i}>{letter}</div>
         {/each}
     </span>
-    <h2 class="text-muted">The one place for everything Nate Levison</h2>
+    <h2 class="text-muted h4">The one place for everything Nate Levison</h2>
 </div>
 
 <div class="container widget-cont">

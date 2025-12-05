@@ -5,7 +5,7 @@
     import type { BlogArticle } from "$lib/blog";
     import { glossarizeParagraph } from "$lib/glossarizer";
     import tippy from "tippy.js";
-    import Seo from "../../../../Seo.svelte";
+    import Seo from "$lib/components/Seo.svelte";
 
     let mounted = $state(false);
 

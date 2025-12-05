@@ -2,7 +2,7 @@
     import { generalSeoTags } from "$lib/frontend_util";
     import { onMount } from "svelte";
     import PostResult from "./PostResult.svelte";
-    import Seo from "../../Seo.svelte";
+    import Seo from "$lib/components/Seo.svelte";
 
     const { data } = $props();
     const { message, success } = data;
