@@ -16,7 +16,7 @@
     </nav>
     <main>
         <h1 style="margin-top: 0; margin-bottom: 5px;">Nathaniel Levison</h1>
-        <h2 style="margin-top: 5px; font-size: 1.2em;">OSU ‘2029 &bullet; Computer Science &amp; Engineering</h2>
+        <h2 style="margin-top: 5px; font-size: 1.2em;">OSU 2029 &bullet; Computer Science &amp; Engineering</h2>
 
         <div class="row">
             <div class="col">
@@ -36,7 +36,7 @@
         <h3>Summary</h3>
         <p>
             Computer Science &amp; Engineering Student at The Ohio State University
-            ‘2029, with a passion in software development and web development. Eager
+            2029, with a passion in software development and web development. Eager
             to gain experience in the field.
         </p>
 
@@ -88,7 +88,7 @@
             </li>
             <li>
                 <h4>
-                    <a href="https://FRCTree.team1676.com">FRCTree.team1676.com</a> &bullet; Developer & bullet;
+                    <a href="https://FRCTree.team1676.com">FRCTree.team1676.com</a> &bullet; Developer &bullet;
                     December 2024 - April 2025
                 </h4>
                 Worked with teammates to design and build Linktree-like websites for
@@ -101,14 +101,13 @@
         <h3>Education</h3>
         <ul>
             <li>
-                <h4>B.S. in Computer Science & Engineering (Expected 2029)</h4>
+                <h4>B.S. in Computer Science &amp; Engineering (Expected 2029)</h4>
                 <i>The Ohio State University</i>, Columbus, OH<br>
-                Freshman
             </li>
             <li>
                 <h4>High School Diploma (2025)</h4>
                 <i>Pascack Hills High School</i>, Montvale, NJ<br>
-                TA for Honors Computer Science
+                Teacher Assistant for Honors Computer Science
             </li>
         </ul>
     </main>
