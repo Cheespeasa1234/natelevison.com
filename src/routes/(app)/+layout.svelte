@@ -2,7 +2,6 @@
     import moment from "moment";
     import tippy from "tippy.js";
 
-    import "@fortawesome/fontawesome-free/css/all.min.css";
     import "tippy.js/dist/tippy.css";
     import "tippy.js/animations/scale.css";
     import "bootstrap/dist/css/bootstrap.min.css";
