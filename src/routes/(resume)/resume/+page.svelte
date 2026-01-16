@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
+    import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
     import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
     import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
     import { onMount } from 'svelte';
@@ -11,7 +11,7 @@
 {#if mounted}
     <nav class="no-print">
         <button onclick={() => window.print()}>Print</button>
-        <a href="/resume.pdf" target="_blank"><button>PDF version</button></a>
+        <a href="/natelevison_resume_4.1.3.pdf" target="_blank"><button>PDF version</button></a>
         <a href="https://natelevison.com"><button>Back to my website</button></a>
     </nav>
     <main>
@@ -23,27 +23,26 @@
                 <FontAwesomeIcon icon={faEnvelope} />
                 <FontAwesomeIcon icon={faGithub} />
                 <FontAwesomeIcon icon={faLinkedin} />
-                <img class="handshake" src="https://osu.joinhandshake.com/favicon.png" alt="handshake">
+                <FontAwesomeIcon icon={faGlobe} />
             </div>
             <div class="col">
                 <a href="mailto:natelevison@gmail.com">natelevison@gmail.com</a>
                 <a href="https://github.com/Cheespeasa1234">github.com/Cheespeasa1234</a>
                 <a href="https://linkedin.com/in/natelevison">linkedin.com/in/natelevison</a>
-                <a href="https://osu.joinhandshake.com/profiles/natelevison">osu.joinhandshake.com/profiles/natelevison</a>
+                <a href="https://natelevison.com">natelevison.com</a>
             </div>
         </div>
 
         <h3>Summary</h3>
         <p>
             Computer Science &amp; Engineering Student at The Ohio State University
-            2029, with a passion in software development and web development. Eager
+            2029, with a passion in software development and web development, and hobbyist writer. Eager
             to gain experience in the field.
         </p>
 
         <h3>Skills</h3>
         <p>
-            Experienced in Java, SvelteKit, Microsoft Excel, TypeScript, and other
-            web development technologies. Proficient in Python, MySQL, and MatLab.
+            Experienced in Java, SvelteKit, Microsoft Excel and TypeScript. Proficient in Python, MySQL, and MatLab.
             Frequent user of Git, GitHub, VSCode, and Google Sheets.
         </p>
 
@@ -51,27 +50,23 @@
         <ul>
             <li>
                 <h4>
-                    Gottheimer for Congress &bullet; Intern &bullet; May 2024 -
-                    November 2024
+                    Teacher Assistant &bullet; Honors Computer Science &bullet;
+                    <span class="nobold">September 2024 - June 2025</span>
                 </h4>
-                Helped organize documents, conducted voter outreach through phone banking,
-                and managed contact information with spreadsheets.
+                Graded assignments, assisted in instruction, and completed a full-stack testing program for quizzes, with Google OAuth, SQLite, and a custom backend.
             </li>
             <li>
                 <h4>
-                    Honors Computer Science &bullet; Teacher Assistant &bullet;
-                    September 2024 - June 2025
+                    InfoTech Member &bullet; FRC Team 1676 &bullet; <span class="nobold">September 2023 - June 2025</span>
                 </h4>
-                Graded assignments, assisted in instruction, and completed a full-stack
-                custom testing program.
+                Built user interfaces for scouting infrastructure used by the entire team, designed UI for FRCTree, assisted in backend server management, collaborating with 3-4 team members.
             </li>
             <li>
                 <h4>
-                    FRC Team 1676 &bullet; InfoTech &bullet; September 2023 - June
-                    2025
+                    Intern &bullet; Gottheimer for Congress &bullet; <span class="nobold">May 2024 -
+                    November 2024</span>
                 </h4>
-                Built user interfaces for scouting infrastructure used by the entire
-                team, designed UI for FRCTree, assisted in backend server management.
+                Helped organize documents, conducted voter outreach through phone banking, and managed contact information with spreadsheets.
             </li>
         </ul>
 
@@ -79,8 +74,8 @@
         <ul>
             <li>
                 <h4>
-                    <a href="https://natelevison.com">natelevison.com</a> &bullet; Developer &bullet; March 2022
-                    - Present
+                    <a href="https://natelevison.com">natelevison.com</a> &bullet; Developer &bullet; <span class="nobold">March 2022
+                    - Present</span>
                 </h4>
                 Built a personal blog, portfolio, and homepage as a passion project.
                 While making and maintaining it, gained skills in full-stack web development,
@@ -89,23 +84,20 @@
             <li>
                 <h4>
                     <a href="https://FRCTree.team1676.com">FRCTree.team1676.com</a> &bullet; Developer &bullet;
-                    December 2024 - April 2025
+                    <span class="nobold">December 2024 - April 2025</span>
                 </h4>
-                Worked with teammates to design and build Linktree-like websites for
-                FIRST Robotics Competition teams to share their social media platforms.
-                Designed user experience around predicted audience metrics and created
-                an authentication system from scratch.
+                Designed user authentication system and API for a social platform for FRC Robotics Teams. Collaborated with team members to optimize user design and codebase.
             </li>
         </ul>
 
         <h3>Education</h3>
         <ul>
             <li>
-                <h4>B.S. in Computer Science &amp; Engineering (Expected 2029)</h4>
+                <h4>B.S. in Computer Science &amp; Engineering <span class="nobold">(Expected 2029)</span></h4>
                 <i>The Ohio State University</i>, Columbus, OH<br>
             </li>
             <li>
-                <h4>High School Diploma (2025)</h4>
+                <h4>High School Diploma <span class="nobold">(2025)</span></h4>
                 <i>Pascack Hills High School</i>, Montvale, NJ<br>
                 Teacher Assistant for Honors Computer Science
             </li>
@@ -141,30 +133,34 @@
     
     main {
         width: 8.5in;
-        height: 11in;
+        height: min-content;
         font-family: sans-serif;
-        padding: 10px;
+        padding: 20px;
+        max-width: 90vw;
     }
     
     h1, h2, h3, h4, h5, h6 {
         font-family: "Roboto Slab", serif;
     }
 
-    li {
-        margin-bottom: 5px;
+    ul {
+        margin-top: 0;
+    }
+
+    h3, h4 {
+        margin-bottom: 0.2em;
+    }
+    
+    li:not(*:last-child) {
+        margin-bottom: 1em;
+    }
+
+    p {
+        margin-top: 0.2em;
     }
 
     h4 {
-        margin-bottom: 0;
-    }
-
-    h3 {
-        margin-bottom: 0;
-    }
-    
-    .handshake {
-        width: 1em;
-        filter: grayscale(1);
+        margin-top: 0;
     }
 
     @media print {
@@ -175,5 +171,15 @@
         .yes-print {
             display: block !important;
         }
+    }
+
+    a, a:visited {
+        color: rgb(0, 110, 255);
+    }
+
+    .nobold {
+        font-weight: normal;
+        /* font-style: italic; */
+        color: rgb(78, 78, 78);
     }
 </style>
