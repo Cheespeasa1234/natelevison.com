@@ -16,6 +16,26 @@
     const { id, created, tags, name, title, enableGlossary, starred, unlisted } = info;
     const { type, text, projectData } = content;
 
+    function wordCount(text: string): number {
+        let count: number = 0;
+        let textLow: string = text.toLowerCase();
+        let textHi: string = text.toUpperCase();
+        for (let i = 1; i < text.length; i++) {
+            let c = text.charAt(i);
+            if (c === " ") {
+                let cLow = textLow.charAt(i - 1);
+                let cHi = textHi.charAt(i - 1);
+                if (cLow !== cHi) {
+                    count++;
+                }
+            }
+        }
+        let cfLow = textLow.charAt(text.length - 1);
+        let cfHi = textHi.charAt(text.length - 1);
+        if (cfLow != cfHi) count++;
+        return count;
+    }
+
     onMount(() => {
         mounted = true;
         const codeBlocks = document.querySelectorAll("code");
@@ -83,7 +103,7 @@
             {#if type==="project"}
                 <p class="text-light card-text">{projectData.start} - {projectData.end}</p>
             {:else}
-                <p class="text-light card-text">Created {new Date(created).toLocaleDateString()}</p>
+                <p class="text-light card-text mb-1">Created {new Date(created).toLocaleDateString()} - {wordCount(text)} words - {text.length} chars</p>
             {/if}
         </div>
     </div>
