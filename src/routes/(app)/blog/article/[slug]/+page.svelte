@@ -2,7 +2,7 @@
     import { onMount } from "svelte";
     import hljs from "highlight.js";
     import { generalSeoTags } from "$lib/frontend_util";
-    import type { BlogArticle } from "$lib/blog";
+    import type { BlogArticle } from "$lib/blog/BlogArticle";
     import { glossarizeParagraph } from "$lib/glossarizer";
     import tippy from "tippy.js";
     import Seo from "$lib/components/Seo.svelte";
@@ -12,9 +12,8 @@
     const props = $props();
     const article: BlogArticle = props.data.article;
 
-    const { info, content } = article;
-    const { id, created, tags, name, title, enableGlossary, starred, unlisted } = info;
-    const { type, text, projectData } = content;
+    const { id, created, tags, name, title, enableGlossary, starred, unlisted, content } = article;
+    const { type, html, url, project } = content;
 
     function wordCount(text: string): number {
         let count: number = 0;
@@ -84,7 +83,7 @@
 {#snippet backBtn()}
 
     {#if type === "project"}
-        <a href="/projects#{projectData.code}" class="mb-3 d-flex back-btn-container">
+        <a href="/projects#{project.code}" class="mb-3 d-flex back-btn-container">
             <button class="btn btn-primary back-btn">Back</button>
         </a>
     {:else}
@@ -101,9 +100,9 @@
             <h1 class="text-light card-title">{title}</h1>
             <h3 class="text-light card-subtitle mb-2">By Nate Levison</h3>
             {#if type==="project"}
-                <p class="text-light card-text">{projectData.start} - {projectData.end}</p>
+                <p class="text-light card-text">{project.start} - {project.end}</p>
             {:else}
-                <p class="text-light card-text mb-1">Created {new Date(created).toLocaleDateString()} - {wordCount(text)} words - {text.length} chars</p>
+                <p class="text-light card-text mb-1">Created {new Date(created).toLocaleDateString()} - {wordCount(html)} words - {html.length} chars</p>
             {/if}
         </div>
     </div>
@@ -111,7 +110,7 @@
     {@render backBtn()}
     
     <div class="content">
-        {@html text}
+        {@html html}
     </div>
     
     
