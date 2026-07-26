@@ -36,23 +36,18 @@
         <h3>Summary</h3>
         <p>
             Computer Science &amp; Engineering Student at The Ohio State University
-            2029, with a passion in software development and web development, and hobbyist writer and game developer. Eager to gain experience in the field.
+            2029, with a passion in software development and web development, and hobbyist writer. Eager
+            to gain experience in the field.
         </p>
 
         <h3>Skills</h3>
         <p>
-            Experienced in Java, SvelteKit, Microsoft Excel and TypeScript. Proficient in Python, MySQL and MatLab. Frequent user of Git, GitHub, VSCode, and Google Sheets.
+            Experienced in Java, SvelteKit, Microsoft Excel and TypeScript. Proficient in Python, MySQL, and MatLab.
+            Frequent user of Git, GitHub, VSCode, and Google Sheets.
         </p>
 
         <h3>Experience</h3>
         <ul>
-            <li>
-                <h4>
-                    Online Instructor &bullet; iDTech &bullet;
-                    <span class="nobold">June 2026 - August 2026</span>
-                </h4>
-                Taught multiple students in Arduino, Java, and Scratch through private lessons, and virtual tech camp. Communicated with clients, and developed lesson material for each student.
-            </li>
             <li>
                 <h4>
                     Teacher Assistant &bullet; Honors Computer Science &bullet;
@@ -66,19 +61,13 @@
                 </h4>
                 Built user interfaces for scouting infrastructure used by the entire team, designed UI for FRCTree, assisted in backend server management, collaborating with 3-4 team members.
             </li>
-            <!-- <li>
+            <li>
                 <h4>
                     Intern &bullet; Gottheimer for Congress &bullet; <span class="nobold">May 2024 -
                     November 2024</span>
                 </h4>
                 Helped organize documents, conducted voter outreach through phone banking, and managed contact information with spreadsheets.
-            </li> -->
-            <!-- <li>
-                <h4>
-                    Employee &bullet; Dairy Queen, Ridgewood NJ &bullet; <span class="nobold">March 2022 - August 2022</span>
-                </h4>
-                Prepared product, maintained sanitation, and handled customers during business hours. Worked with coworkers to divide tasks and cover stations during peak hours, ensuring consistent, efficient service.
-            </li> -->
+            </li>
         </ul>
 
         <h3>Projects</h3>

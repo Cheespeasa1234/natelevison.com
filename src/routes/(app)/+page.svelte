@@ -93,11 +93,25 @@
                     Currently Coding
                 </h2>
                 <div class="card-body">
-                    <h3 class="h5 card-title">Nothing</h3>
-                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since August 2025</h4>
-                    <p class="card-text">I'm in college, dudes! I'm too busy for this. But I am still working on my blog. So check it out for updates.</p>
+                    <h3 class="h5 card-title">Blog Rework 4</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since April 2026</h4>
+                    <p class="card-text">I have been simplifying the code that runs the blog section on this website. Previously, each blog article required an XML file and another file with the content, but the pages were not svelte and were inserted via text replacement, which is not exactly good.</p>
                     <a href="/blog" class="btn btn-primary">Blog</a>
                     <a href="/blog/updates" class="btn btn-primary">Update Page</a>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card h-100">
+                <h2 class="h6 card-header">
+                    Currently Coding
+                </h2>
+                <div class="card-body">
+                    <h3 class="h5 card-title">(An unnamed video game)</h3>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since May 2026</h4>
+                    <p class="card-text">I definitely don't have enough of anything to show off yet, nor do I even have a codename for this project. But I have been developing a visual novel for the past few months. I may talk about it on my blog eventually.</p>
+                    <!-- <a href="/blog" class="btn btn-primary">Blog</a>
+                    <a href="/blog/updates" class="btn btn-primary">Update Page</a> -->
                 </div>
             </div>
         </div>
