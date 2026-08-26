@@ -1,4 +1,5 @@
 <script lang="ts">
+    // 4.1.7
     import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
     import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
     import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
@@ -11,32 +12,42 @@
 {#if mounted}
     <nav class="no-print">
         <button onclick={() => window.print()}>Print</button>
-        <a href="/natelevison_resume_4.1.3.pdf" target="_blank"><button>PDF version</button></a>
-        <a href="https://natelevison.com"><button>Back to my website</button></a>
+        <!-- <a href="/natelevison_resume_4.1.3.pdf" target="_blank"><button>PDF version</button></a> -->
+        <button onclick={() => {
+            window.location.href = "/";
+        }}>Back to my website</button>
     </nav>
     <main>
         <h1 style="margin-top: 0; margin-bottom: 5px;">Nathaniel Levison</h1>
         <h2 style="margin-top: 5px; font-size: 1.2em;">OSU 2029 &bullet; Computer Science &amp; Engineering</h2>
 
-        <div class="row">
-            <div class="col">
-                <FontAwesomeIcon icon={faEnvelope} />
-                <FontAwesomeIcon icon={faGithub} />
-                <FontAwesomeIcon icon={faLinkedin} />
-                <FontAwesomeIcon icon={faGlobe} />
+        <div style="display: flex; gap: 20px">
+            <div>
+                <div>
+                    <FontAwesomeIcon icon={faEnvelope} />
+                    <a href="mailto:natelevison@gmail.com">natelevison@gmail.com</a>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faGlobe} />
+                    <a href="https://natelevison.com">https://natelevison.com</a>
+                </div>
             </div>
-            <div class="col">
-                <a href="mailto:natelevison@gmail.com">natelevison@gmail.com</a>
-                <a href="https://github.com/Cheespeasa1234">github.com/Cheespeasa1234</a>
-                <a href="https://linkedin.com/in/natelevison">linkedin.com/in/natelevison</a>
-                <a href="https://natelevison.com">natelevison.com</a>
+            <div>
+                <div>
+                    <FontAwesomeIcon icon={faLinkedin} />
+                    <a href="https://linkedin.com/in/natelevison">linkedin.com/in/natelevison</a>
+                </div>
+                <div>
+                    <FontAwesomeIcon icon={faGithub} />
+                    <a href="https://github.com/Cheespeasa1234">github.com/Cheespeasa1234</a>
+                </div>
             </div>
         </div>
 
         <h3>Summary</h3>
         <p>
             Computer Science &amp; Engineering Student at The Ohio State University
-            2029, with a passion in software development and web development, and hobbyist writer and game developer. Eager to gain experience in the field.
+            2029, with a passion in software development and web development, and hobbyist writer and game developer.
         </p>
 
         <h3>Skills</h3>
@@ -104,8 +115,9 @@
         <h3>Education</h3>
         <ul>
             <li>
-                <h4>B.S. in Computer Science &amp; Engineering <span class="nobold">(Expected 2029)</span></h4>
+                <h4>B.S. in Computer Science &amp; Engineering, Minor in Business <span class="nobold">(Expected 2029)</span></h4>
                 <i>The Ohio State University</i>, Columbus, OH<br>
+                Completed: CSE 2231 & 2321, In Progress: CSE 2331 & 2421, ECON 2001 <br>
             </li>
             <li>
                 <h4>High School Diploma <span class="nobold">(2025)</span></h4>
