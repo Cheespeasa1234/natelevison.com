@@ -93,7 +93,7 @@
                     Currently Coding
                 </h2>
                 <div class="card-body">
-                    <h3 class="h5 card-title">Blog Rework 4</h3>
+                    <h3 class="h5 card-title">Blog Rework 4 (on hold)</h3>
                     <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since April 2026</h4>
                     <p class="card-text">I have been simplifying the code that runs the blog section on this website. Previously, each blog article required an XML file and another file with the content, but the pages were not svelte and were inserted via text replacement, which is not exactly good.</p>
                     <a href="/blog" class="btn btn-primary">Blog</a>

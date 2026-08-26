@@ -117,7 +117,8 @@
             <li>
                 <h4>B.S. in Computer Science &amp; Engineering, Minor in Business <span class="nobold">(Expected 2029)</span></h4>
                 <i>The Ohio State University</i>, Columbus, OH<br>
-                Completed: CSE 2231 & 2321, In Progress: CSE 2331 & 2421, ECON 2001 <br>
+                Completed: CSE 2231 & 2321
+                In Progress: CSE 2331 & 2421, ECON 2001 <br>
             </li>
             <li>
                 <h4>High School Diploma <span class="nobold">(2025)</span></h4>
