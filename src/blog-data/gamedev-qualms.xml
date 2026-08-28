@@ -1,0 +1,15 @@
+<article>
+    <info>
+        <id>30</id>
+        <created>1787884026133</created>
+        <tag>personal</tag>
+        <tag>programming</tag>
+        <tag>gamedev</tag>
+        <tag>java</tag>
+        <name>gamedev-qualms</name>
+        <title>My qualms with Game Development</title>
+    </info>
+    <content>
+        <html>gamedev-qualms.html</html>
+    </content>
+</article>

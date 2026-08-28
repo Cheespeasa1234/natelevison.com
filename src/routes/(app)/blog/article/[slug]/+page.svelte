@@ -17,24 +17,35 @@
     const { type, text, projectData } = content;
 
     function wordCount(text: string): number {
-        let count: number = 0;
-        let textLow: string = text.toLowerCase();
-        let textHi: string = text.toUpperCase();
-        for (let i = 1; i < text.length; i++) {
-            let c = text.charAt(i);
-            if (c === " ") {
-                let cLow = textLow.charAt(i - 1);
-                let cHi = textHi.charAt(i - 1);
-                if (cLow !== cHi) {
-                    count++;
-                }
+        // let count: number = 0;
+        // let textLow: string = text.toLowerCase();
+        // let textHi: string = text.toUpperCase();
+        // for (let i = 1; i < text.length; i++) {
+        //     let c = text.charAt(i);
+        //     if (c === " ") {
+        //         let cLow = textLow.charAt(i - 1);
+        //         let cHi = textHi.charAt(i - 1);
+        //         if (cLow !== cHi) {
+        //             count++;
+        //         }
+        //     }
+        // }
+        // let cfLow = textLow.charAt(text.length - 1);
+        // let cfHi = textHi.charAt(text.length - 1);
+        // if (cfLow != cfHi) count++;
+        // return count;
+        let count = 0;
+        text.split(" ").forEach(x=>{
+            if (x != "" && x.trim().length > 0) {
+                // console.log(`'${x}'`);
+                count++;
             }
-        }
-        let cfLow = textLow.charAt(text.length - 1);
-        let cfHi = textHi.charAt(text.length - 1);
-        if (cfLow != cfHi) count++;
+        });
         return count;
     }
+
+    let contentEl;
+    let wordCountEst = $state(0);
 
     onMount(() => {
         mounted = true;
@@ -54,6 +65,9 @@
         } else {
             console.log("No glossary");
         }
+
+        console.log(contentEl.innerText)
+        wordCountEst = wordCount(contentEl.innerText);
     });
 
     const seoTitle = title + " - Blog | Nate Levison";
@@ -103,14 +117,14 @@
             {#if type==="project"}
                 <p class="text-light card-text">{projectData.start} - {projectData.end}</p>
             {:else}
-                <p class="text-light card-text mb-1">Created {new Date(created).toLocaleDateString()} - {wordCount(text)} words - {text.length} chars</p>
+                <p class="text-light card-text mb-1">Created {new Date(created).toLocaleDateString()} - {wordCount(text)} words</p>
             {/if}
         </div>
     </div>
 
     {@render backBtn()}
     
-    <div class="content">
+    <div bind:this={contentEl} class="content">
         {@html text}
     </div>
     

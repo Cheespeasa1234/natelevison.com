@@ -37,10 +37,17 @@
         </div>
     </div>
     <div class="card top-part">
-        <img class="card-img-top" src="/img/fit-crop.png" alt="Nate at a debate tournament">
+        <div style="">
+            <img
+                class="card-img-top"
+                src="/img/me at statue of liberty.jpg"
+                alt="Nate on a ferry past the Statue of Liberty"
+                style="height: 500px; object-fit: cover; object-position: 50% 50%"
+            >
+        </div>
         <div class="card-body">
-            <p class="mb-3 card-subtitle mb-2 text-muted h6">Nate at a debate tournament, between rounds, circa 2024</p>
-            <p class="card-text">Nate was a member of Junior Varsity Debate in his Sophomore year and his Junior year, participating in the varsity level in his Senior year.</p>
+            <p class="mb-3 card-subtitle mb-2 text-muted h6">Nate passing the Statue of Liberty on a school trip, circa 2025</p>
+            <!-- <p class="card-text">Nate was a member of Junior Varsity Debate in his Sophomore year and his Junior year, participating in the varsity level in his Senior year.</p> -->
         </div>
     </div>
 </div>

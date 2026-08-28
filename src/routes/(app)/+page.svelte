@@ -108,7 +108,7 @@
                 </h2>
                 <div class="card-body">
                     <h3 class="h5 card-title">(An unnamed video game)</h3>
-                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since May 2026</h4>
+                    <h4 class="h6 card-subtitle mb-2 text-body-secondary">Since April 2026</h4>
                     <p class="card-text">I definitely don't have enough of anything to show off yet, nor do I even have a codename for this project. But I have been developing a visual novel for the past few months. I may talk about it on my blog eventually.</p>
                     <!-- <a href="/blog" class="btn btn-primary">Blog</a>
                     <a href="/blog/updates" class="btn btn-primary">Update Page</a> -->

@@ -1,0 +1,91 @@
+<section>
+<p>
+    So, it's been a while since I wrote here. Actually adding the blog article files was pretty much a lost art to me- luckily I thought ahead and added a bunch of documentation and tools in my code that made all of this so much easier. Thank you, 2024 Nate.
+</p>
+<p>
+    But anyway, I'm here to talk about gamedev... or at least, my attempts at it. Over the years, I've tried a few times to make a game. At first, I had a concept for a "Smoothie Game", which... would have something to do with smoothies? On multiple occasions, I attempted to make one.
+</p>
+<p>
+    The first "serious" attempt was in my freshman year of High School (five years ago!), when I first learned about classes in Java. I made some sort of Fruit class, where every fruit had a color, a flavor, a value, a name, etc.
+</p>
+<p>
+    Every time I learned some new thing, like text input, Swing, Python, or pygame, I made another attempt. However, the most serious attempt at the Smoothie Game was during an iDTech Python AI camp. Or something like that. (Speaking of, I worked as an Online Instructor for iDTech this summer. Full circle moment.)
+</p>
+<p>
+    I had a character who could walk around, and pick up fruit items into their inventory. The hardest part was having the items move towards the player, like they do in Minecraft. I ended up (unwittingly) designing exponential interpolation from scratch.
+</p>
+</section>
+<section>
+    <h2>The Latest Attempt</h2>
+<p>
+    Time jump a few years, and after learning as much as I could about Java, it was time to start again. This time, I had an actual idea.
+</p>
+<p>
+    There are certain things I want to discuss, or just talk about. But for most of them, this blog isn't the right spot... my family would think it's weird... or it would best be communicated visually. In recent years, I've become even more enamored with the work of Toby Fox (I'm listening to Who might you be? from Deltarune Chapter 5 on repeat right now).
+</p>
+<p>
+    Seeing the types of things Toby was able to communicate through his work, I felt a game would be the best way to discuss some of my feelings. For example, my struggles with reading people emotionally. It's difficult to just come on here and write a thousand-word blog article talking about that stuff. But, what if I made a unique character, and gave them the same emotional problems I had?
+</p>
+<p>
+    This realization happened around junior year of High School. Slowly, the two main characters of the game came to be. I think that even if this current prototype of the game fails to keep my interest, I will continue working on these characters.
+</p>
+<p>
+    Okay, great. I have a few characters, and a basic plot, and an idea (No, I'm not ready to share it). What now?
+</p>
+</section>
+<section>
+    <h2>Picking a technology</h2>
+<p>
+    The first thing I considered was Java. The options were GameMaker, C++, or Python, but when considering my expertise in Java and the challenges with distribution with Python, I decided on Java.
+</p>
+<p>
+    After a lot of back and forth with Claude, I decided on LibGdx as the game library. I also ended up designing a SynchronousQueue system that allowed me to write code that ran asynchronously.
+</p>
+<sub>Grandma, in language you'll understand, most code runs as fast as it can, without stopping for anyone. But say I wanted to make an animation- some code needs to wait and slow down. So, I let one segment of my code run as fast as it wants, but there is another section of the code that runs only when the other code lets it.</sub>
+<p>
+    This prototype has gone further than anything else I've done. There's a dialogue system... an animation system... scripts... programmer art... a menu system... I'm terrified that I'll have to move on.
+</p>
+<p>
+    The cracks are starting to show, though. As is typical with my ADHD, I haven't touched the codebase since I returned to college. I've mainly been trying to plot out the game, and figure out the side characters.
+</p>
+<p>
+    I have made character designs for the main three characters, by making them in Tomodachi Life (WHICH ONLY SLIGHTLY DISAPPOINTED ME). I've also developed a lot of their unique personalities, and I have to say, I really have enjoyed this process.
+</p>
+<p>
+    In order to prevent my giving up on this, last semester, I joined the Writing Club at OSU (Haha literature club shut up). I also just joined some sort of game development club, so we'll see how that goes after the first meeting next week.
+</p>
+</section>
+<section>
+    <h2>Struggles</h2>
+    <p>
+        Johnny, look, look! Nate's talking about his kampfs! I think I'll use my credit card.
+    </p>
+    <p>
+        I think the most difficult part of the approach I've chosen is coding everything from scratch. Claude can only do so much- it's still up to me to make major design decisions and make code that I'll be able to maintain.
+    </p>
+    <p>
+        AI chatbots have this tendency to make enterprise-level code, even if you are a small developer in your mom's basement just coding in Python. That's a major flaw it has.
+    </p>
+    <p>
+        Oh, this text is probably also being used for AI training. Screw you.
+    </p>
+    <p>
+        But anyway, it's really difficult to make new systems for different things. One thing many people take for granted in game engines is the incredibly-extensible node system. In different engines it's called different things, but every game object can be almost everything. When you code everything from scratch, you have to make that all yourself! And if you have an unhealthy relationship with polymorphism like I do, adding functionality like this quickly can become a trap of adding features and designing interfaces you will never need.
+    </p>
+    <sub>Grandma- polymorphism is the relationship between different "classes". Say I have an apple. That apple inherits traits from fruits- fruits are sweet, and have seeds. Fruits inherit properties from food- food gives energy, and is edible. In polymorphism, you make things inherit other things to "simplify" your code, as more specific things can inherit behavior from more general ones.</sub>
+    <p>
+        <i>But</i>, you may ask, <i>why not use a game engine if it has all those features you want?</i> Great question. The answer? I'm stubborn. And using a game engine means I forfeit some of my control over my code. It also means I have to design my systems in a certain way.
+    </p>
+    <p>
+        I think it also has to do with how much I enjoy the initial process of designing systems and seeing them come to life. Seeing the dialogue system I made appear the first time was a magical experience. 10/10 would recommend.
+    </p>
+</section>
+<section>
+    <h2>Conclusion</h2>
+    <p>
+        Anyway, that's all I really want to share. Hopefully, if these characters I've made end up in a video game that I share, a lot of my feelings and actions will make more sense to you all.
+    </p>
+    <p>
+        Much love, grandma, and grandpa.
+    </p>
+</section>

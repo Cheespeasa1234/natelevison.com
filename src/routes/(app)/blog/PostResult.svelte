@@ -29,7 +29,7 @@
         <h6 class="card-subtitle mb-2 text-body-secondary">Published {new Date(result.info.created).toLocaleDateString()}</h6>
         <div class="post-tags card-text">
             {#if result.info.starred}
-                <div class="post-tag t2">
+                <div class="post-tag-s t2">
                     <i class="fa fa-solid fa-star"></i>
                 </div>
             {/if}
@@ -80,8 +80,15 @@
         border-radius: 5px;
         min-width: fit-content;
     }
+    .post-tag-s {
+        background: gold;
+        color: white;
+        padding: 2px 4px;
+        border-radius: 5px;
+        min-width: fit-content;
+    }
 
-    .t2 {
+    .t2:not(.post-tag-s) {
         background: var(--color-150);
     }
 </style>
