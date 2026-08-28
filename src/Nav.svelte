@@ -38,7 +38,9 @@
                         <!-- <li><a class="dropdown-item" href="/projects/spinners">Spinners</a></li> -->
                         <!-- <li><a class="dropdown-item" href="/progress">Progress Updates</a></li> -->
                         <li><a class="dropdown-item" href="https://status.natelevison.com">Status Page</a></li>
-                        <li><a class="dropdown-item" href="/resume">Resume</a></li>
+                        <li><button class="dropdown-item" onclick={() => {
+                            window.location.href = "/resume";
+                        }}>Resume</button></li>
                         <li><hr class="dropdown-divider"></li>
                         <!-- <li><a class="dropdown-item" href="https://static.natelevison.com/old">Old Website <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li>
                         <li><a class="dropdown-item" href="https://github.com/Cheespeasa1234/natelevison.com">GitHub Repository <i class="fa-solid fa-arrow-up-right-from-square"></i></a></li> -->

@@ -9,7 +9,7 @@ import { HTTP } from '$lib/apis';
 export const load: PageServerLoad = ({ params }) => {
     const name = params.slug;
     if (!isNameRealArticle(name)) {
-        return error(HTTP.NOT_FOUND, `Article ${name} not found. (1)`);
+        return error(HTTP.NOT_FOUND, `Article <code>${name}</code> not found. (1)`);
     }
 
     const article = getBlogArticle(name);
