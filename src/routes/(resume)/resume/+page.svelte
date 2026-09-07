@@ -1,5 +1,5 @@
 <script lang="ts">
-    // 4.1.7
+    // 4.1.8
     import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
     import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
     import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
@@ -7,8 +7,41 @@
     import "bootstrap/dist/css/bootstrap.min.css";
     import Nav from '../../../Nav.svelte';
 
+    const expMajor = [
+        "Java",
+        "Microsoft Excel", // move this higher if data also
+        "SvelteKit",
+        "TypeScript"
+    ];
+
+    const expMinor = [
+        "Python",
+        "MySQL", // move this higher if its a job with data being important
+        "C",
+        "GCC",
+        "GDB",
+        "MatLab"
+    ];
+
+    const expUser = [
+        "Git",
+        "Vim",
+        "Linux" // move this higher if its a low-level programming
+    ];
+
     function beforeprint() {
         document.title = "natelevison_resume_4.1.8";
+    }
+
+    // formats a list
+    function listOfItems(list: string[]): string {
+        let output: string = "";
+        for (let i = 0; i < list.length - 1; i++) {
+            output += list[i] + ", ";
+        }
+        // output += list[list.length - 2] + " and ";
+        output += " and " + list[list.length - 1];
+        return output;
     }
 
     let mounted = $state(false);
@@ -44,41 +77,68 @@
         }}>Back to my website</button>
     </nav> -->
     <main>
-        <h1 style="margin-top: 0; margin-bottom: 5px;">Nathaniel Levison</h1>
-        <h2 style="margin-top: 5px; font-size: 1.2em;">OSU 2029 &bullet; Computer Science &amp; Engineering</h2>
-
-        <div style="display: flex; gap: 20px; margin-bottom: 10px;">
-            <div>
+        <div class="header">
+            <h1 style="margin-top: 0; margin-bottom: 5px;">Nathaniel Levison</h1>
+            <h2 style="margin-top: 5px; font-size: 1.2em;">OSU 2029 &bullet; Computer Science &amp; Engineering</h2>
+    
+            <div style="display: flex; gap: 20px; margin-bottom: 10px;">
                 <div>
-                    <FontAwesomeIcon icon={faEnvelope} />
-                    <a href="mailto:natelevison@gmail.com">natelevison@gmail.com</a>
+                    <div>
+                        <FontAwesomeIcon icon={faEnvelope} />
+                        <a href="mailto:natelevison@gmail.com">natelevison@gmail.com</a>
+                    </div>
+                    <div>
+                        <FontAwesomeIcon icon={faGlobe} />
+                        <a href="https://natelevison.com">https://natelevison.com</a>
+                    </div>
                 </div>
                 <div>
-                    <FontAwesomeIcon icon={faGlobe} />
-                    <a href="https://natelevison.com">https://natelevison.com</a>
-                </div>
-            </div>
-            <div>
-                <div>
-                    <FontAwesomeIcon icon={faLinkedin} />
-                    <a href="https://linkedin.com/in/natelevison">linkedin.com/in/natelevison</a>
-                </div>
-                <div>
-                    <FontAwesomeIcon icon={faGithub} />
-                    <a href="https://github.com/Cheespeasa1234">github.com/Cheespeasa1234</a>
+                    <div>
+                        <FontAwesomeIcon icon={faLinkedin} />
+                        <a href="https://linkedin.com/in/natelevison">linkedin.com/in/natelevison</a>
+                    </div>
+                    <div>
+                        <FontAwesomeIcon icon={faGithub} />
+                        <a href="https://github.com/Cheespeasa1234">github.com/Cheespeasa1234</a>
+                    </div>
                 </div>
             </div>
         </div>
+        <hr>
 
         <h3>Summary</h3>
         <p>
             Computer Science &amp; Engineering Student at The Ohio State University 2029, with a passion in software development and web development, and hobbyist writer and game developer. Eager to gain experience in the industry.
         </p>
+        <!-- <hr> -->
 
         <h3>Skills</h3>
         <p>
-            Experienced in Java, SvelteKit, Microsoft Excel and TypeScript. Proficient in Python, C, GCC, GDB, MySQL, MatLab. Frequent user of Git, Vim, and Linux.
+            <!-- Experienced in Java, SvelteKit, Microsoft Excel and TypeScript. Proficient in Python, C, GCC, GDB, MySQL, MatLab. Frequent user of Git, Vim, and Linux. -->
+            Experienced in {listOfItems(expMajor)}. Proficient in {listOfItems(expMinor)}. Frequent user of {listOfItems(expUser)}.
         </p>
+        <hr>
+        <!-- <hr>
+        <hr> -->
+
+                <!-- <hr> -->
+
+        <h3>Education</h3>
+        <ul>
+            <li>
+                <h4>B.S. Computer Science &amp; Engineering, <span class="nobold">Minor in Business (Expected 2029)</span></h4>
+                <i>The Ohio State University</i>, Columbus, OH<br>
+                Completed: CSE 2231 & 2321
+                In Progress: CSE 2331 & 2421, ECON 2001 <br>
+            </li>
+            <li>
+                <h4>High School Diploma <span class="nobold">(2025)</span></h4>
+                <i>Pascack Hills High School</i>, Montvale, NJ<br>
+                Teacher Assistant for Honors Computer Science
+            </li>
+        </ul>
+
+        <hr>
 
         <h3>Experience</h3>
         <ul>
@@ -116,6 +176,7 @@
                 Prepared product, maintained sanitation, and handled customers during business hours. Worked with coworkers to divide tasks and cover stations during peak hours, ensuring consistent, efficient service.
             </li> -->
         </ul>
+        <!-- <hr> -->
 
         <h3>Projects</h3>
         <ul>
@@ -137,20 +198,6 @@
             </li>
         </ul>
 
-        <h3>Education</h3>
-        <ul>
-            <li>
-                <h4>B.S. Computer Science &amp; Engineering, <span class="nobold">Minor in Business (Expected 2029)</span></h4>
-                <i>The Ohio State University</i>, Columbus, OH<br>
-                Completed: CSE 2231 & 2321
-                In Progress: CSE 2331 & 2421, ECON 2001 <br>
-            </li>
-            <li>
-                <h4>High School Diploma <span class="nobold">(2025)</span></h4>
-                <i>Pascack Hills High School</i>, Montvale, NJ<br>
-                Teacher Assistant for Honors Computer Science
-            </li>
-        </ul>
     </main>
 {:else}
     Loading...
@@ -174,10 +221,24 @@
         .yes-print {
             display: block !important;
         }
+
+        hr {
+            break-inside: avoid;
+            break-before: avoid;
+            break-after: avoid;
+        }
     }
 
+    
     a, a:visited {
         color: rgb(0, 110, 255);
+    }
+    hr {
+        /* display: block; */
+        color: transparent;
+        border: 0.5px solid gray;
+        /* width: 80%; */
+        margin: 14px 10px;
     }
 
     .nobold {
@@ -190,12 +251,13 @@
         width: 8.5in;
         height: min-content;
         font-family: sans-serif;
-        padding: 25px;
+        padding: 15px;
         max-width: 90vw;
+        margin: auto;
     }
 
     p, li {
-        font-size: 1.0em;
+        font-size: 0.98em;
     }
 
     ul, p {
@@ -211,7 +273,7 @@
     }
 
     h1 {
-        font-size: 1.9em;
+        font-size: 1.7em;
     }
 
     h2 {
@@ -219,12 +281,12 @@
     }
 
     h3 {
-        font-size: 1.4em;
+        font-size: 1.1em;
         margin-bottom: 0.2em;
     }
     
     h4 {
-        font-size: 1.1em;
+        font-size: 1.05em;
         margin-bottom: 0.2em;
         margin-top: 0;
     }
@@ -235,6 +297,14 @@
 
     :root {
         
+    }
+
+    .header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
     }
     
 </style>
