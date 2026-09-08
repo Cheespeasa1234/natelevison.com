@@ -1,5 +1,5 @@
 <script lang="ts">
-    // 4.1.8
+    // 4.1.9
     import { faEnvelope, faGlobe } from '@fortawesome/free-solid-svg-icons';
     import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
     import { FontAwesomeIcon } from '@fortawesome/svelte-fontawesome';
