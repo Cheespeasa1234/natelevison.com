@@ -7,6 +7,8 @@
     import "bootstrap/dist/css/bootstrap.min.css";
     import Nav from '../../../Nav.svelte';
 
+    const currentResumeName = "natelevison_resume_4.1.10";
+
     const expMajor = [
         "Java",
         "Microsoft Excel", // move this higher if data also
@@ -30,7 +32,7 @@
     ];
 
     function beforeprint() {
-        document.title = "natelevison_resume_4.1.8";
+        document.title = currentResumeName;   
     }
 
     // formats a list
@@ -64,7 +66,7 @@
                 window.print();
             }}>Print</button>
             <!-- <a href="/natelevison_resume_4.1.3.pdf" target="_blank"><button>PDF version</button></a> -->
-            <a href="/natelevison_resume_4.1.8.pdf" download>
+            <a href="/{currentResumeName}.pdf" download>
                 <button class="btn btn-primary">Download</button>
             </a>
         </div>
