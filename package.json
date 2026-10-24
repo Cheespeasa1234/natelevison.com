@@ -1,7 +1,7 @@
 {
 	"name": "natelevison.com",
 	"private": true,
-	"version": "4.1.9",
+	"version": "4.1.10",
 	"type": "module",
 	"scripts": {
 		"dev": "vite dev",
@@ -42,8 +42,6 @@
 		"sass": "^1.87.0",
 		"tippy.js": "^6.3.7",
 		"tsx": "^4.19.3",
-		"xml-js": "^1.6.11",
-		"xml2js": "^0.6.2",
-		"xmldom": "^0.6.0"
+		"xml-js": "^1.6.11"
 	}
 }

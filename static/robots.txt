@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: https://static.natelevison.com/
-Disallow: https://hcst.natelevison.com/
-Disallow: https://hcst_api.natelevison.com/
+Disallow:
+
 Sitemap: https://natelevison.com/sitemap.xml

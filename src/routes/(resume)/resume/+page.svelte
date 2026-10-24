@@ -18,6 +18,7 @@
 
     const expMinor = [
         "Python",
+        "Godot",
         "MySQL", // move this higher if its a job with data being important
         "C",
         "GCC",
@@ -130,8 +131,8 @@
             <li>
                 <h4>B.S. Computer Science &amp; Engineering, <span class="nobold">Minor in Business (Expected 2029)</span></h4>
                 <i>The Ohio State University</i>, Columbus, OH<br>
-                Completed: CSE 2231 & 2321
-                In Progress: CSE 2331 & 2421, ECON 2001 <br>
+                Completed: Software I & II (OOP), Foundations I<br>
+                In Progress: Systems I (C), Int. Digital Logic, Foundations II<br>
             </li>
             <li>
                 <h4>High School Diploma <span class="nobold">(2025)</span></h4>
@@ -193,10 +194,10 @@
             </li>
             <li>
                 <h4>
-                    <a href="https://FRCTree.team1676.com">FRCTree.team1676.com</a> &bullet; Developer &bullet;
-                    <span class="nobold">December 2024 - April 2025</span>
+                    Cliché &bullet; Developer, Team Lead &bullet;
+                    <span class="nobold">September 2026 GCC Game Jam</span>
                 </h4>
-                Designed user authentication system and API for a social platform for FRC Robotics Teams. Collaborated with team members to optimize user design and codebase.
+                Led a team of five during a club game jam, and produced a game after three days, using Godot. Coordinated meetings and work for programmers, artists, and music production, to ensure the product was completed on time and to a high quality, on a strict deadline of three days.
             </li>
         </ul>
 
@@ -240,7 +241,7 @@
         color: transparent;
         border: 0.5px solid gray;
         /* width: 80%; */
-        margin: 14px 10px;
+        margin: 12px 10px;
     }
 
     .nobold {
@@ -248,6 +249,7 @@
         /* font-style: italic; */
         color: rgb(78, 78, 78);
     }
+    
 
     main {
         width: 8.5in;
@@ -259,7 +261,7 @@
     }
 
     p, li {
-        font-size: 0.98em;
+        font-size: 0.9em;
     }
 
     ul, p {
@@ -288,9 +290,9 @@
     }
     
     h4 {
-        font-size: 1.05em;
+        font-size: 0.95em;
         margin-bottom: 0.2em;
-        margin-top: 0;
+        margin-top: 0.4em;
     }
 
     :global(body) {
