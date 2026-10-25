@@ -1,0 +1,15 @@
+<article>
+    <info>
+        <id>32</id>
+        <created>1792954873613</created>
+        <tag>personal</tag>
+        <tag>programming</tag>
+        <tag>gamedev</tag>
+        <tag>godot</tag>
+        <name>gamedev-joys</name>
+        <title>My JOY with Game Development</title>
+    </info>
+    <content>
+        <html>gamedev-joys.html</html>
+    </content>
+</article>

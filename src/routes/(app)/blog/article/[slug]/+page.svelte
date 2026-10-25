@@ -1,6 +1,11 @@
 <script lang="ts">
     import { onMount } from "svelte";
+
     import hljs from "highlight.js";
+    import 'highlight.js/styles/github-dark-dimmed.min.css';
+    import javascript from "highlight.js/lib/languages/javascript";
+    import gdscript from "@exercism/highlightjs-gdscript";
+
     import { generalSeoTags } from "$lib/frontend_util";
     import type { BlogArticle } from "$lib/blog";
     import { glossarizeParagraph } from "$lib/glossarizer";
@@ -48,9 +53,18 @@
     let wordCountEst = $state(0);
 
     onMount(() => {
+        function gdscript4(hljs) {
+            const lang = gdscript(hljs);
+            lang.keywords.keyword += " await";
+            lang.keywords.built_in += " range";
+            return lang;
+        }
+        console.log(gdscript4(hljs));
+        hljs.registerLanguage('gdscript', gdscript4);
+        hljs.registerAliases(["godot", "gd"], { languageName: "gdscript" });
         mounted = true;
-        const codeBlocks = document.querySelectorAll("code");
-        codeBlocks.forEach((codeBlock) => {
+        const codeBlocks = document.querySelectorAll("pre>code");
+        codeBlocks.forEach((codeBlock: any) => {
             hljs.highlightElement(codeBlock);
         });
 
@@ -66,7 +80,7 @@
             console.log("No glossary");
         }
 
-        console.log(contentEl.innerText)
+        // console.log(contentEl.innerText)
         wordCountEst = wordCount(contentEl.innerText);
     });
 
@@ -78,14 +92,14 @@
 </script>
 
 <svelte:head>
-    <link
+    <!-- <link
         rel="stylesheet"
         href="https://static.natelevison.com/highlight/styles/github-dark-dimmed.min.css"
-    />
-    <script
+    /> -->
+    <!-- <script
         defer
         src="https://static.natelevison.com/highlight/highlight.min.js"
-    ></script>
+    ></script> -->
 
     <Seo 
         title={title + " - Blog"}
@@ -189,6 +203,14 @@
 
     /* CSS that applies to children */
     article :global {
+
+    code:not(pre>code) {
+        padding: 5px;
+        border-radius: 5px;
+        white-space: nowrap;
+        background-color: #e3e3e3;
+        color: #00475d;
+    }
 
     pre {
         margin-top: 0;

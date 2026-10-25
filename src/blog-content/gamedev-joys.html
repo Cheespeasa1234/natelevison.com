@@ -1,0 +1,124 @@
+<section>
+    <p>
+        So, regarding my game, I started it from scratch again after I learned more about Godot (see my resume). And needless to say, it has completely changed my mind about game development. It is actually really fun.
+    </p>
+    <p>
+        The main problems I were struggling with in my <a href="https://natelevison.com/blog/article/gamedev-qualms">previous article</a> was synchronization, excessive OOP, and having to re-invent the wheel every time I wanted a new feature.
+    </p>
+    <p>
+        The most significant feature I was lacking was animations. Moving a character on screen from one spot to another over the course of 1 second seems simple, right? Well, the way I was going about it, NO! It took me weeks to realize that there is one game engine perfect for me, that has that functionality built in!
+    </p>
+</section>
+<section>
+    <h3>Godot</h3>
+    <p>
+        Godot is a free and open-source game engine on multiple platforms. Every component in your game is a 'scene', which is a node in a tree of your game objects. Different scenes have different functionality; for example, in a Mario game, you might see a Player scene, a bunch of Goomba scenes, a bunch of Coin scenes, a MusicManager scene, stuff like that.
+    </p>
+    <p>
+        Almost all of my qualms were addressed by this engine. The dialogue system I spent days on in my previous prototype took me only about an hour. Adding new features is as simple as dragging in new built-in scenes, that have tons of features for different purposes.
+    </p>
+    <p>
+        Though, there is one thing I dislike about Godot, and that is its proprietary scripting language- GDScript. It's almost identical to python, with a few tiny syntax adjustments and functionality changes. But what I hate is its type system, or lack thereof.
+    </p>
+    <sub>
+        Grandma- "types" are exactly what they sound like. In code, you have different items you need to manage. Some are numbers, some are pieces of text, some are objects, and so on. Those are the types of those things. In complicated code, you have more complicated types, like a list of texts, a map which maps numbers to lists of functions, and so on. A type system is how the programmer can understand what the types of their variables are, and how they can ensure they don't, for example, add a number to a color (which makes no sense to do).
+    </sub>
+</section>
+<section>
+    <h3>GDScript Type System</h3>
+    <p>
+        I first learned to code seriously in Java, and so I appreciate strong type systems. They have saved me from countless foot guns. The same can not be said about GDScript. The type system seems kind of clunky; you can't strictly type functions as objects, you can't type 2D arrays, there are no generic types, and the typeof function is actually just returning a list of hard coded primitives; this means you can't compare two scenes by their types. Literally, <code>typeof(something)</code> returns AN INTEGER. Meaning, you can't get the typeof user-defined classes!! It only works on the primitive types, like <code>int</code>, <code>PackedInt32Array</code>, and <code>Dictionary</code>. But not any of the scenes! Why would you EVER need that?!
+    </p>
+    <p>
+        And also, the way to define a class is really stupid.
+    </p>
+    <sub>
+        Grandma- "classes" are how you describe what an object is made out of. For example, for a <code>Person</code> class, you need to define what properties a "Person" has. It would have a name, an age, a height... and so on.
+    </sub>
+    <p>
+        In GDScript, there are, for some reason, I think two different ways to define a class. You can make a new class that is inside a class, or you can use class_name, which transforms the script itself into a class? When combined with the autoload functionality, I keep messing things up. It is stupidly hard to just have a static function.
+    </p>
+    <p>
+        I understand that GDScript is a scripting language, and thus, typing is less important. But it seriously helps with my chain of thought. My code can get real messy sometimes because I can't figure out what types I'm dealing with. Yes, this is my fault, but a type system would make it so much easier...!
+    </p>
+    <p>
+        My next complaint is signals and functions. Functions are in a weird in between state of being first-class objects and being objects with properties. In order to pass a function as a variable or a parameter, you can only use the <code>Callable</code> type. This means you can not type by what parameters are in the function. I don't usually say this, but, Typescript does it well. I really like the syntax: <code>const my_func: (a: int, b: int) => int;</code>. It's so cool.
+    </p>
+    <p>
+        I guess we're talking about type systems now, and I have to say, I REALLY like how Rust does enums. In my opinion, an <code>enum</code> represents some sort of primitive value that can't be modified, and that represents one entry in some stratified finite set of possible values. In Rust, you can add parameters, have different types, have constructors, a bunch of weird stuff but it's so cool. I wish Java had anything of the sort. But who are we kidding- we need more useless <code>Stream</code> functionality! Right? Right?
+    </p>
+    <p>
+        But evidently, I digress. The biggest flaw in the type system of Godot, in my opinion, is the restriction on nested types. For example, in Java, you could do <code>int[][]</code> or <code>List&lt;List&lt;Integer&gt;&gt;</code>. But, in Godot, writing <code>Array[Array[int]]</code> causes an error, because you can't have nested types. I have no idea why this is, but if I had to guess, it is probably some hardcoded garbage.
+    </p>
+    <p>
+        I get that Godot is meant to be beginner-friendly, but then why include complicated functionality that requires more complicated code, if you won't provide code to manage it?
+    </p>
+</section>
+<section>
+    <h3>Tweens</h3>
+    <p>
+        Now, this is something about Godot that I love. I mentioned earlier how animating certain things is really difficult when programming it from scratch. In GDScript, you can asynchronously start animations and do tons of things with them. In my game, I use the following tween:
+    </p>
+    <pre class="file-name code">vn.gd</pre>
+    <pre><code class="language-gdscript code snip">for i in range(3):
+  tween.tween_interval(0.1);
+  tween.tween_callback(Utils.setter(vn.heartBlink, 'visible', false));
+  tween.tween_interval(0.05);
+  tween.tween_callback(vn.sfx_noise.play);
+  tween.tween_callback(Utils.setter(vn.heartBlink, 'visible', true));
+tween.tween_callback(vn.sfx_battlefall.play);
+tween.tween_callback(Utils.setter(vn.heartBlink, 'visible', true));
+tween.tween_property(vn.heartBlink, "position", stage.position, 0.3);</code></pre>
+    <p>
+        Basically, step by step, what this does is:
+    </p>
+    <ol>
+        <li>Wait 0.1 seconds</li>
+        <li>Make the heart icon invisible</li>
+        <li>Wait 0.05 seconds</li>
+        <li>Play a sound, and make the heart icon visible</li>
+        <li>Repeat all of that two more times</li>
+        <li>Play a sound</li>
+        <li>Make the heart icon visible</li>
+        <li>Smoothly move the heart to the center of the screen over 0.3 seconds</li>
+    </ol>
+    <p>
+        The best part about this, is that code runs instantly. While the animation has started, you can start running more operations. This is called a <code>coroutine</code>. In simple terms, a coroutine is a piece of code that will go off on its own, and no matter how slow it runs, and no matter what it does, the main piece of code will proceed onwards without it. It's like having a secretary go print something for you; you can do other work while you wait.
+    </p>
+    <p>
+        I had to manually add this feature using threads and stuff in my older Java prototype. In Godot, it's as easy as:
+    </p>
+    <pre class="file-name code">.gd</pre>
+    <pre><code class="language-gdscript code snip">func _ready():
+  await some_coroutine();
+  some_other_function();
+  some_coroutine();
+  some_other_other_function();</code></pre>
+    <p>
+        In this code, the function <code>some_other_function</code> will wait for <code>some_coroutine</code> to finish. Then, the next time the coroutine is ran, <code>some_other_other_function</code> will <i>not</i> wait for it. This is so amazing, although I do wish the type system specified whether a function was a coroutine, like in Typescript, with <code>Promise&lt;T&gt;</code>.
+    </p>
+    <p>
+        I spent so long making a <code>SynchronousQueue</code> system in Java, using a bunch of records and matching to get this same functionality, and it was awful. With Godot, it's easy as pie. This tweening functionality is built off of the asynchronous features of Godot, and my oh my, it has helped so much. The script above with the heart icon is from my game, which is a recreation of the battle start animation from Undertale. I'm using Undertale / Deltarune (UTDR) assets as placeholders right now. Speaking of audio assets...
+    </p>
+</section>
+<section>
+    <h3>Music</h3>
+    <p>
+        You're not gonna believe this, but, I managed to make music. Anyone with a trained ear will realize the music is heavily inspired by UTDR music; I even use the same soundfonts. I'm still struggling to make good synths, like square waves, though.
+    </p>
+    <p>
+        I've been using <a href="https://kirastudio.org/">KiraStudio</a>, and it's genuinely incredible. It made everything so simple. Yeah, it's missing some features, but just like Godot, that's the trade-off for being beginner-friendly. I've made a couple songs, and I think my best work so far is the game over theme.
+    </p>
+    <p>
+        No, I will not be sharing it :)
+    </p>
+</section>
+<section>
+    <h3>Conclusion</h3>
+    <p>
+        I have a lot more to say about Godot, but I forget, so I'll update this article later. I have really enjoyed programming this so far, so perhaps there will be more updates of this sort in the future.
+    </p>
+    <p>
+        I also have made some significant security upgrades to this site in my absence, and I have an update post coming out soon. Check the <a href="https://natelevison.com/blog/updates">Update Page</a> for the update. Anyway, thanks for reading, Grandma.
+    </p>
+</section>

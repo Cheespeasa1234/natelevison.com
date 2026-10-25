@@ -15,13 +15,53 @@
 
 <div class="text-center m-3 p-2 d-flex flex-column justify-content-center align-items-center">
     <h1 class="h2">Website Update Page</h1>
-    <h2 class="h4 text-muted">Last update: May 2, 2025</h2>
+    <h2 class="h4 text-muted">Last update: October 25, 2026</h2>
     <a href="/blog">
         <button class="btn btn-primary back-btn">Back to blog</button>
     </a>
 </div>
 <div class="posts-container">
-    <UpdatePost first id={16} title={"Website Revamp #8518234.359 + 3453i"} date={"May 2, 2025, 8:46"}>
+    <UpdatePost first id={17} title={"Security Upgrades"} date={"October 25, 2026, 4:38 PM"}>
+        <p>
+            Even longer time, no see. This update post is regarding recent security changes to this site.
+        </p>
+        <p>
+            With the advice of Claude, I did a lot of upgrading. To be honest, I had been putting it off for way too long, and it took a whole weekend, but I pulled it off. What finally pushed me to do the change was the recent zero-day exploits dropped in PHP and the eMudhra CA issues, and the NGINX vulnerabilities.
+        </p>
+        <p>
+            All of these vulnerabilities kind of worried me, so I decided to get it over with. Some of the improvements I made include:
+        </p>
+        <ul>
+            <li>More encryption</li>
+            <li>More usage of Cloudflare</li>
+            <li>Stricter firewall / bot fighting</li>
+            <li>Stricter required TLS protocol</li>
+            <li>Updated software</li>
+            <li>Isolated services</li>
+        </ul>
+        <p>
+            Grandma, I know you don't understand a lot of those words. Let me try to explain each. You know what encryption is. It's making messages secret. Now, my website and Cloudflare, who is a company who helps me run this site, communicate privately. By going to my website, you are actually connecting to Cloudflare, who then talks to my server privately. It keeps me from exposing my shitty $6/month server to the open internet. Yeah, Cloudflare. I'm also using more WAF rules (firewall rules), and I now only accept connections from Cloudflare, meaning you can't directly connect to my site by going around Cloudflare.
+        </p>
+        <p>
+            The TLS protocol is what encrypts <i>your</i> messages. Look at the top of the browser, and click on the URL you are accessing this site from: you can see the word "https". This stands for HyperText Transfer Protocol (Secure), as opposed to "http", which lacks the "secure". HTTPS encrypts all communication between client and server, and there are different protocols to handle the encryption. The older ones are weaker and have been hackable for decades now. So, I now only accept requests from people using modern TLS protocols (literally everyone except people on Windows XP still).
+        </p>
+        <p>
+            I also updated my software (self explanatory), and lastly, isolated some of my services. "Services" are different pieces of code running separately on the computer, doing different jobs. I "isolated" them by restricting what files they could access and removing permissions they didn't need. It's pretty basic cybersecurity that I had been sleeping on for far too long.
+        </p>
+        <p>
+            This process of updating and securing my site has changed my view on AI a bit. Yes, I still think the current research into AI is irresponsible, but it still makes mistakes and needs an intelligent handler to know what to ask it. I don't think it'll be like this for long; but from now on, instead of avoiding AI like the plague it is, I will research it and stay more up-to-date, as this industry will become ai-dominated, whether I like it or not, and no matter how much the people protest it.
+        </p>
+        <p>
+            I'm 1/4 of the way through my second year at OSU. I'm a business minor as well now, and I've been doing okay socially, and well with grades. Not so well with employment. Literally no one is getting back to me, which sucks. So, recruiters / AI screeners, if you are reading this, check out my <a href="/resume">resume</a>. It's really good. I also have been learning C in my Systems 1 class, which I've actually really enjoyed. I guess I'm no longer larping by saying "long time, no C".
+        </p>
+        <p>
+            On a personal note, I've been working a lot on my own video game, which you can read about <a href="/blog/article/gamedev-qualms">here</a> and <a href="/blog/article/gamedev-joys">here</a>. It's strongly inspired by Undertale and Deltarune; speaking of which, Deltarune Chapter 5 came out, and it was awesome. Chapter 7 dropping is probably one of the things I look forward to the most right now, and definitely the longest-term one I have.
+        </p>
+        <p>
+            Anyway, I've been alright, and I have a lot to still talk about, so more blog articles will be coming in the coming months. Thanks for reading, grandma.
+        </p>
+    </UpdatePost>
+    <UpdatePost id={16} title={"Website Revamp #8518234.359 + 3453i"} date={"May 2, 2025, 8:46"}>
         <p>
             Long time no see. I got admitted to OSU and that's where I committed about a month ago. I'm majoring in Pre-Computer Science and Engineering. Fitting.
         </p>
